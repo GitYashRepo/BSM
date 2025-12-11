@@ -3,6 +3,7 @@
 import { Mail, Phone, MapPin, Instagram, Facebook, Linkedin, ArrowRight } from "lucide-react"
 import Link from "next/link"
 import { useState } from "react"
+import { backgroundColor } from "@/components/webcomp/webcolor/bgcolor";
 
 export default function Footer() {
    const [phone, setPhone] = useState("")
@@ -19,7 +20,7 @@ export default function Footer() {
    }
 
    return (
-      <footer className="bg-black text-white overflow-hidden">
+      <footer className="text-white overflow-hidden" style={{ backgroundColor: backgroundColor.velvet }}>
          {/* Section 1: Minimal Hero with Split Design */}
          <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen border-b border-white/10 pb-10">
             {/* Left: Large Typography */}
@@ -73,7 +74,7 @@ export default function Footer() {
                               className={`w-5 h-5 mt-1 transition-all duration-300 ${hoveredLink === label ? "text-[#D99726] translate-y-1" : "text-white/50"}`}
                            />
                            <div>
-                              <p className="text-xs uppercase tracking-widest text-gray-500 mb-2">{label}</p>
+                              <p className="text-xs uppercase tracking-widest text-gray-300 mb-2">{label}</p>
                               <p
                                  className={`text-lg font-light transition-colors duration-300 ${hoveredLink === label ? "text-[#D99726]" : "text-white"}`}
                               >
@@ -100,13 +101,13 @@ export default function Footer() {
                      key={title}
                      className="group p-6 md:p-8 border border-white/10 hover:border-[#D99726] hover:bg-[#D99726]/5 transition-all duration-500 cursor-pointer"
                   >
-                     <p className="text-xs uppercase tracking-widest text-gray-500 group-hover:text-[#D99726] mb-3 transition-colors duration-300">
+                     <p className="text-xs uppercase tracking-widest text-gray-300 group-hover:text-[#D99726] mb-3 transition-colors duration-300">
                         {title}
                      </p>
-                     <p className="text-2xl md:text-3xl font-light text-white/70 group-hover:text-white transition-colors duration-300">
+                     <p className="text-2xl md:text-3xl font-light text-white/90 group-hover:text-white transition-colors duration-300">
                         {title}
                      </p>
-                     <p className="text-xs text-gray-600 mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                     <p className="text-xs text-gray-400 mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         {description}
                      </p>
                   </div>
@@ -164,12 +165,12 @@ export default function Footer() {
                   <p className="text-xl font-light">
                      <span className="text-[#D99726]">BLUSH</span> by Sakshi Makeovers
                   </p>
-                  <p className="text-xs text-gray-500 mt-2">Premium Beauty Services</p>
+                  <p className="text-xs text-gray-400 mt-2">Premium Beauty Services</p>
                </div>
 
                <div className="grid grid-cols-2 md:grid-cols-3 gap-12">
                   <div>
-                     <p className="text-xs uppercase tracking-widest text-gray-500 mb-4">Company</p>
+                     <p className="text-xs uppercase tracking-widest text-gray-300 mb-4">Company</p>
                      <ul className="space-y-2">
                         {["About", "Services", "Locations"].map((item) => (
                            <li key={item}>
@@ -184,7 +185,7 @@ export default function Footer() {
                      </ul>
                   </div>
                   <div>
-                     <p className="text-xs uppercase tracking-widest text-gray-500 mb-4">Legal</p>
+                     <p className="text-xs uppercase tracking-widest text-gray-300 mb-4">Legal</p>
                      <ul className="space-y-2">
                         {["Privacy", "Terms", "Cookies"].map((item) => (
                            <li key={item}>
@@ -199,16 +200,16 @@ export default function Footer() {
                      </ul>
                   </div>
                   <div>
-                     <p className="text-xs uppercase tracking-widest text-gray-500 mb-4">Follow</p>
+                     <p className="text-xs uppercase tracking-widest text-gray-300 mb-4">Follow</p>
                      <ul className="space-y-2 flex gap-4">
                         {[
-                           { icon: Instagram, label: "Instagram" },
-                           { icon: Facebook, label: "Facebook" },
-                           { icon: Linkedin, label: "LinkedIn" },
-                        ].map(({ icon: Icon, label }) => (
+                           { icon: Instagram, label: "Instagram", link: "https://www.instagram.com/sakshi.makeovers" },
+                           { icon: Facebook, label: "Facebook", link: "https://www.facebook.com/share/1C6Croo93d/?mibextid=wwXIfr" },
+                           // { icon: Linkedin, label: "LinkedIn" },
+                        ].map(({ icon: Icon, label, link }) => (
                            <li key={label}>
                               <Link
-                                 href="#"
+                                 href={link}
                                  className="text-gray-400 hover:text-[#D99726] transition-colors duration-300"
                                  aria-label={label}
                               >
@@ -221,7 +222,7 @@ export default function Footer() {
                </div>
             </div>
 
-            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-xs text-gray-600">
+            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-xs text-gray-200">
                <p>© 2025 BLUSH. All rights reserved.</p>
                <a href="http://www.webtechware.in" target="_blank" rel="noopener noreferrer"><p>Crafted with elegance & precision by Web Tech Ware</p></a>
             </div>

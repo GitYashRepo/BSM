@@ -2,6 +2,7 @@
 
 import { ChevronRight, Sparkles, Phone, Mail, MapPin, Clock } from "lucide-react";
 import { useState } from "react";
+import { backgroundColor } from "@/components/webcomp/webcolor/bgcolor";
 
 const navItems = [
    {
@@ -128,7 +129,7 @@ const BottomBar = () => {
    };
 
    return (
-      <div className="bg-[#272727] text-white relative">
+      <div className="text-white relative" style={{ backgroundColor: backgroundColor.velvet }}>
          <div className="container mx-auto px-4">
             <nav className="flex items-center justify-center gap-1">
                {navItems.map((item) => (
@@ -138,7 +139,7 @@ const BottomBar = () => {
                      onMouseEnter={() => handleMouseEnter(item.label)}
                      onMouseLeave={handleMouseLeave}
                   >
-                     <button className="px-4 py-2 text-navbar-bottom-foreground text-sm font-medium tracking-wide hover:text-[#D99726] transition-colors nav-link-hover flex items-center gap-1">
+                     <button className="px-4 py-2 text-navbar-bottom-foreground text-sm font-medium tracking-wide hover:bg-[#D99726] transition-colors nav-link-hover flex items-center gap-1">
                         {item.label}
                      </button>
 
