@@ -1,0 +1,214 @@
+/* Salon Slider - Awwwards Style */
+
+/* Slide animations */
+@keyframes slide-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-out-up {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+}
+
+@keyframes clip-reveal {
+  from {
+    clip-path: inset(0 0 100% 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Animation classes */
+.animate-slide-in-up {
+  animation: slide-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-out-up {
+  animation: slide-out-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-clip-reveal {
+  animation: clip-reveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out forwards;
+}
+
+/* Staggered delays */
+.delay-100 {
+  animation-delay: 0.1s;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
+}
+
+.delay-300 {
+  animation-delay: 0.3s;
+}
+
+.delay-400 {
+  animation-delay: 0.4s;
+}
+
+/* Clip path utilities */
+.clip-path-full {
+  clip-path: inset(0 0 0 0);
+}
+
+.clip-path-reveal-out {
+  animation: clip-reveal-out 1s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+}
+
+@keyframes clip-reveal-out {
+  from {
+    clip-path: inset(0 0 0 0);
+  }
+  to {
+    clip-path: inset(100% 0 0 0);
+  }
+}
+
+/* Image transition */
+.slider-image-wrapper {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.slider-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.05);
+  transition: transform 8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.slider-image.active {
+  transform: scale(1);
+}
+
+/* Progress bar */
+.slider-progress {
+  width: 2px;
+  background: hsl(var(--border));
+  position: relative;
+  overflow: hidden;
+}
+
+.slider-progress-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: hsl(var(--foreground));
+  animation: progress-fill 5s linear forwards;
+}
+
+@keyframes progress-fill {
+  from {
+    height: 0%;
+  }
+  to {
+    height: 100%;
+  }
+}
+
+/* Navigation dots */
+.slider-nav-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: hsl(var(--muted-foreground) / 0.3);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.slider-nav-dot:hover {
+  background: hsl(var(--muted-foreground) / 0.6);
+}
+
+.slider-nav-dot.active {
+  background: hsl(var(--foreground));
+  transform: scale(1.2);
+}
+
+/* Watermark number */
+.watermark-number {
+  font-size: clamp(15rem, 25vw, 30rem);
+  font-weight: 200;
+  line-height: 0.8;
+  color: transparent;
+  -webkit-text-stroke: 1px hsl(var(--foreground) / 0.08);
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Drag cursor */
+.drag-cursor {
+  cursor: grab;
+}
+
+.drag-cursor:active {
+  cursor: grabbing;
+}
+
+/* Minimal button style */
+.slider-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid hsl(var(--border));
+  background: transparent;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.slider-btn:hover {
+  background: hsl(var(--foreground));
+  color: hsl(var(--background));
+  border-color: hsl(var(--foreground));
+}
+
+/* Text reveal animation */
+.text-reveal {
+  overflow: hidden;
+}
+
+.text-reveal-inner {
+  display: block;
+  transform: translateY(100%);
+  animation: text-reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes text-reveal {
+  to {
+    transform: translateY(0);
+  }
+}
