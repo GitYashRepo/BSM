@@ -4,6 +4,7 @@ import "./globals.css";
 import { ColorThemeProvider } from "@/components/color-theme-provider";
 import Navbar from "@/components/webcomp/Navbar/Navbar";
 import Footer from "@/components/webcomp/Footer/Footer";
+import DealsPopup from "@/components/webcomp/Deals/Dealspupup";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,6 +29,7 @@ export default function RootLayout({ children }) {
       >
          <LenisProvider>
             {/* <ColorThemeProvider attribute="class" defaultTheme="system" enableSystem> */}
+               <DealsPopup />
                <Navbar />
                {children}
                <Footer />

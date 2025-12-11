@@ -1,7 +1,7 @@
 "use client";
 
 import { ChevronRight, Sparkles, Phone, Mail, MapPin, Clock } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { backgroundColor } from "@/components/webcomp/webcolor/bgcolor";
 
 const navItems = [
@@ -128,6 +128,14 @@ const BottomBar = () => {
       setActiveMenu(null);
    };
 
+   useEffect(() => {
+      if (activeMenu) {
+         document.body.style.overflow = "hidden";
+      } else {
+         document.body.style.overflow = "";
+      }
+   }, [activeMenu]);
+
    return (
       <div className="text-white relative" style={{ backgroundColor: backgroundColor.velvet }}>
          <div className="container mx-auto px-4">
@@ -144,90 +152,92 @@ const BottomBar = () => {
                      </button>
 
                      {activeMenu === item.label && (
-                        <div
-                           className="fixed left-0 right-0 bg-card shadow-2xl border-t border-border mega-menu-enter z-50"
-                           style={{ top: "auto" }}
-                        >
-                           <div className="container max-h-[60vh] overflow-y-scroll mx-auto px-8 py-8">
-                              <div className="grid grid-cols-12 gap-8">
-                                 <div className="col-span-4">
-                                    <h3 className="text-lg font-display font-semibold text-[#D99276] mb-2 flex items-center gap-2">
-                                       {item.label}
-                                    </h3>
-                                    <ul className="space-y-2">
-                                       {item.items.map((subItem) => (
-                                          <li key={subItem.label}>
-                                             <a
-                                                href={subItem.href}
-                                                className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors group"
-                                             >
-                                                <ChevronRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
-                                                <span>{subItem.label}</span>
-                                             </a>
-                                          </li>
-                                       ))}
-                                    </ul>
-                                 </div>
-
-                                 {item.featured && (
+                        <div className="absolute left-0 w-full">
+                           <div
+                              className="fixed left-0 right-0 bg-card shadow-2xl border-t border-border mega-menu-enter z-50"
+                              style={{ top: "auto" }}
+                           >
+                              <div className="container max-h-[60vh] overflow-y-auto pointer-events-auto mx-auto px-8 py-8">
+                                 <div className="grid grid-cols-12 gap-8">
                                     <div className="col-span-4">
-                                       <div className="bg-secondary/50 rounded-xl p-6 h-full">
-                                          <div className="flex items-center gap-2 mb-3">
-                                             <Sparkles className="w-5 h-5 text-[#D99276]" />
-                                             <h4 className="font-display font-semibold text-[#D99276]">
-                                                {item.featured.title}
-                                             </h4>
-                                          </div>
-                                          <p className="text-muted-foreground text-sm mb-4">
-                                             {item.featured.description}
-                                          </p>
-                                          <a
-                                             href="#"
-                                             className="inline-flex items-center gap-2 text-[#D99276] font-medium text-sm hover:underline"
-                                          >
-                                             Learn More
-                                             <ChevronRight className="w-4 h-4" />
-                                          </a>
-                                       </div>
-                                    </div>
-                                 )}
-
-                                 <div className="col-span-4">
-                                    <div className="bg-muted rounded-xl p-6">
-                                       <h4 className="font-display font-semibold text-[#D99276] mb-4">
-                                          Quick Contact
-                                       </h4>
-                                       <ul className="space-y-3 text-sm">
-                                          <li className="flex items-center gap-3 text-muted-foreground">
-                                             <Phone className="w-4 h-4 text-primary" />
-                                             <div>
-                                                <p className="font-medium text-foreground">90531-02324</p>
-                                                <p className="text-xs">Bookings</p>
-                                             </div>
-                                          </li>
-                                          <li className="flex items-center gap-3 text-muted-foreground">
-                                             <Phone className="w-4 h-4 text-primary" />
-                                             <div>
-                                                <p className="font-medium text-foreground">94684-56266</p>
-                                                <p className="text-xs">Reception (Sakshi Ma'am)</p>
-                                             </div>
-                                          </li>
-                                          <li className="flex items-center gap-3 text-muted-foreground">
-                                             <Mail className="w-4 h-4 text-primary" />
-                                             <p className="font-medium text-foreground">sakshimakeovers@gmail.com</p>
-                                          </li>
-                                          <li className="flex items-center gap-3 text-muted-foreground">
-                                             <Clock className="w-4 h-4 text-primary" />
-                                             <p>10:00 AM - 8:00 PM</p>
-                                          </li>
+                                       <h3 className="text-lg font-display font-semibold text-[#D99276] mb-2 flex items-center gap-2">
+                                          {item.label}
+                                       </h3>
+                                       <ul className="space-y-2">
+                                          {item.items.map((subItem) => (
+                                             <li key={subItem.label}>
+                                                <a
+                                                   href={subItem.href}
+                                                   className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors group"
+                                                >
+                                                   <ChevronRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                                                   <span>{subItem.label}</span>
+                                                </a>
+                                             </li>
+                                          ))}
                                        </ul>
-                                       <div className="mt-4 pt-4 border-t border-border">
-                                          <p className="text-xs text-muted-foreground">
-                                             For Complaints: Nitin (CEO)
-                                          </p>
-                                          <p className="text-sm font-medium text-foreground">
-                                             946-777-777-3 <span className="text-xs text-muted-foreground">(WhatsApp only)</span>
-                                          </p>
+                                    </div>
+
+                                    {item.featured && (
+                                       <div className="col-span-4">
+                                          <div className="bg-secondary/50 rounded-xl p-6 h-full">
+                                             <div className="flex items-center gap-2 mb-3">
+                                                <Sparkles className="w-5 h-5 text-[#D99276]" />
+                                                <h4 className="font-display font-semibold text-[#D99276]">
+                                                   {item.featured.title}
+                                                </h4>
+                                             </div>
+                                             <p className="text-muted-foreground text-sm mb-4">
+                                                {item.featured.description}
+                                             </p>
+                                             <a
+                                                href="#"
+                                                className="inline-flex items-center gap-2 text-[#D99276] font-medium text-sm hover:underline"
+                                             >
+                                                Learn More
+                                                <ChevronRight className="w-4 h-4" />
+                                             </a>
+                                          </div>
+                                       </div>
+                                    )}
+
+                                    <div className="col-span-4">
+                                       <div className="bg-muted rounded-xl p-6">
+                                          <h4 className="font-display font-semibold text-[#D99276] mb-4">
+                                             Quick Contact
+                                          </h4>
+                                          <ul className="space-y-3 text-sm">
+                                             <li className="flex items-center gap-3 text-muted-foreground">
+                                                <Phone className="w-4 h-4 text-primary" />
+                                                <div>
+                                                   <p className="font-medium text-foreground">90531-02324</p>
+                                                   <p className="text-xs">Bookings</p>
+                                                </div>
+                                             </li>
+                                             <li className="flex items-center gap-3 text-muted-foreground">
+                                                <Phone className="w-4 h-4 text-primary" />
+                                                <div>
+                                                   <p className="font-medium text-foreground">94684-56266</p>
+                                                   <p className="text-xs">Reception (Sakshi Ma'am)</p>
+                                                </div>
+                                             </li>
+                                             <li className="flex items-center gap-3 text-muted-foreground">
+                                                <Mail className="w-4 h-4 text-primary" />
+                                                <p className="font-medium text-foreground">sakshimakeovers@gmail.com</p>
+                                             </li>
+                                             <li className="flex items-center gap-3 text-muted-foreground">
+                                                <Clock className="w-4 h-4 text-primary" />
+                                                <p>10:00 AM - 7:00 PM</p>
+                                             </li>
+                                          </ul>
+                                          <div className="mt-4 pt-4 border-t border-border">
+                                             <p className="text-xs text-muted-foreground">
+                                                For Complaints: Nitin (CEO)
+                                             </p>
+                                             <p className="text-sm font-medium text-foreground">
+                                                946-777-777-3 <span className="text-xs text-muted-foreground">(WhatsApp only)</span>
+                                             </p>
+                                          </div>
                                        </div>
                                     </div>
                                  </div>
