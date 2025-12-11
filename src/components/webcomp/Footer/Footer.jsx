@@ -25,7 +25,7 @@ export default function Footer() {
          <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen border-b border-white/10 pb-10">
             {/* Left: Large Typography */}
             <div className="flex flex-col justify-center items-start px-8 md:px-12 lg:px-16 py-16 lg:py-0">
-               <span className="text-[#D99726] text-sm font-light tracking-widest uppercase pt-16 mb-8">Let's Connect</span>
+               <span className="text-[#D99726] text-xs font-light tracking-widest uppercase pt-16 mb-8">Let's Connect</span>
                <h2 className="text-6xl md:text-7xl lg:text-8xl font-light leading-tight tracking-tight mb-12 font-serif text-white/90 hover:text-white transition-colors duration-300">
                   Transform Your Beauty
                </h2>

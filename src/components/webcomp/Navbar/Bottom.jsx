@@ -6,6 +6,18 @@ import { backgroundColor } from "@/components/webcomp/webcolor/bgcolor";
 
 const navItems = [
    {
+      label: "About",
+      items: [
+         { label: "About Me", href: "aboutme" },
+         { label: "About Us", href: "aboutus" },
+         { label: "Our Team", href: "ourteam" }
+      ],
+      featured: {
+         title: "Bridal Special",
+         description: "Complete bridal package with pre-bridal treatments, trials & D-day makeup",
+      },
+   },
+   {
       label: "Makeup",
       items: [
          { label: "Bridal Makeup", href: "#bridal" },
@@ -99,11 +111,11 @@ const navItems = [
    {
       label: "Contact",
       items: [
-         { label: "Book Appointment", href: "#book" },
-         { label: "Our Locations", href: "#locations" },
+         { label: "Book Appointment", href: "contact#appointment" },
+         { label: "Our Locations", href: "contact#location" },
          { label: "Working Hours", href: "#hours" },
-         { label: "Customer Support", href: "#support" },
-         { label: "Complaints", href: "#complaints" },
+         { label: "Customer Support", href: "contact" },
+         { label: "Complaints", href: "contact" },
       ],
       featured: {
          title: "Get In Touch",
