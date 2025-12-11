@@ -69,39 +69,9 @@ const slides = [
 ];
 
 
-// const slides = [
-//    {
-//       id: 1,
-//       tag: "BLUSH",
-//       heading: "Hair",
-//       title: "Artistry",
-//       description: "Experience the finest hair care services crafted with precision and elegance.",
-//       buttonText: "EXPLORE",
-//       image: "/images/img5.jpg",
-//    },
-//    {
-//       id: 2,
-//       tag: "BLUSH",
-//       heading: "Makeup",
-//       title: "Mastery",
-//       description: "Transform your look with our expert color treatments and techniques.",
-//       buttonText: "EXPLORE",
-//       image: "/images/img6.jpg",
-//    },
-//    {
-//       id: 3,
-//       tag: "BLUSH",
-//       heading: "Bridal",
-//       title: "Perfection",
-//       description: "Achieve your ideal texture with our specialized treatments and styling.",
-//       buttonText: "EXPLORE",
-//       image: "/images/img2.jpg",
-//    },
-// ]
+const SLIDE_DURATION = 3000
 
-const SLIDE_DURATION = 6000
-
-export default function HairSalonSlider() {
+export default function SalonSlider() {
    const [current, setCurrent] = useState(0)
    const [direction, setDirection] = useState(0)
    const [progress, setProgress] = useState(0)
@@ -265,31 +235,6 @@ export default function HairSalonSlider() {
                            <h2 className="text-4xl md:text-3xl lg:text-6xl font-bold text-black leading-none">{slide.heading}</h2>
                         </motion.div>
 
-
-
-                        {/* <motion.div
-                        key={`desc-${current}`}
-                        variants={contentVariants}
-                        initial="hidden"
-                        animate="visible"
-                        exit="exit"
-                        custom={2}
-                        className="mb-8"
-                     >
-                        <p className="text-sm md:text-base text-gray-600 max-w-md leading-relaxed">{slide.description}</p>
-                     </motion.div> */}
-
-                        {/* <button
-                           key={`button-${current}`}
-                           variants={contentVariants}
-                           initial="hidden"
-                           animate="visible"
-                           exit="exit"
-                           custom={3}
-                           className="w-auto flex flex-row gap-4 items-center hover:text-[#D99726] cursor-pointer"
-                        >
-                           <span>{slide.buttonText}</span><span className="w-[80px] h-[1px] border border-black"></span>
-                        </button> */}
                         <button
                            key={`button-${current}`}
                            variants={contentVariants}
@@ -297,26 +242,11 @@ export default function HairSalonSlider() {
                            animate="visible"
                            exit="exit"
                            custom={3}
-                           className="
-                                group
-                                w-auto flex flex-row gap-4 items-center
-                                cursor-pointer
-                                text-black
-                                hover:text-[#D99726]
-                                transition-colors duration-300
-                              "
+                           className=" group w-auto flex flex-row gap-4 items-center cursor-pointer text-black hover:text-[#D99726] transition-colors duration-300"
                         >
                            <span>{slide.buttonText}</span>
 
-                           <span
-                              className="
-                                   h-[1px]
-                                   w-[80px]
-                                   bg-black
-                                   transition-all duration-300
-                                   group-hover:w-[120px]
-                                   group-hover:bg-[#D99726]
-                                 "
+                           <span className=" h-[1px] w-[80px] bg-black transition-all duration-300 group-hover:w-[120px] group-hover:bg-[#D99726]"
                            ></span>
                         </button>
 
