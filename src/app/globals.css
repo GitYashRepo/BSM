@@ -8,6 +8,22 @@
   font-style: normal;
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html, body {
+   scrollbar-width: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+   width: 0;
+   height: 0;
+}
 
 @layer base {
   :root {
