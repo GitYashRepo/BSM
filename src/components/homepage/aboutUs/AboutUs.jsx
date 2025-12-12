@@ -64,44 +64,6 @@ export default function SalonSections() {
 
          {/* Services Section */}
 
-         {/* <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-4xl mb-10 font-serif tracking-wide"
-         >
-            OUR SERVICES
-         </motion.h2>
-
-         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-7xl px-4 auto-rows-[220px] md:auto-rows-[300px]">
-            {services.map((s, index) => (
-               <motion.div
-                  key={s.id}
-                  onMouseEnter={() => setHovered(s.id)}
-                  onMouseLeave={() => setHovered(null)}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className={`relative overflow-hidden rounded-xl cursor-pointer ${s.layout}`}
-               >
-                  <img
-                     src={s.img}
-                     alt={s.name}
-                     className={`w-full h-full object-cover transition-all duration-500 ${hovered && hovered !== s.id ? "blur-sm brightness-50" : "brightness-100"}`}
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                     <motion.span
-                        animate={{ opacity: hovered === s.id ? 1 : 0.7, scale: hovered === s.id ? 1.1 : 1 }}
-                        className="text-white tracking-[0.4em] text-lg md:text-xl font-semibold drop-shadow-2xl"
-                     >
-                        {s.name}
-                     </motion.span>
-                  </div>
-               </motion.div>
-            ))}
-         </div> */}
       </div>
    );
 }
