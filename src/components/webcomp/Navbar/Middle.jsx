@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const MiddleBar = () => {
    return (
-      <div className="bg-navbar-middle border-b border-border">
+      <div className="bg-navbar-middle border-b border-border px-14">
          <div className="container mx-auto px-4 py-1">
             <div className="flex items-center justify-between gap-6">
                {/* Logo */}

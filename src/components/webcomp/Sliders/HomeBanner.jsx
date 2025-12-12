@@ -161,7 +161,7 @@ export default function SalonSlider() {
          ref={sliderRef}
          onMouseMove={handleMouseMove}
          onMouseLeave={handleMouseLeave}
-         className="relative w-full h-screen overflow-hidden bg-white flex"
+         className="relative w-full h-[80vh] overflow-hidden bg-white flex"
       >
          {/* Left Side - White background with black text */}
          <div className="w-1/2 flex flex-col justify-between p-8 md:p-12 lg:p-16 z-10 bg-white">
