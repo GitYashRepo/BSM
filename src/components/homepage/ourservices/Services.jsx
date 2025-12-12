@@ -44,16 +44,16 @@ const services = [
       duration: "75-90 min",
       price: "From $120",
    },
-   {
-      number: "05",
-      title: "Bridal\nMakeup",
-      category: "BRIDAL",
-      description:
-         "Flawless bridal makeup for your special day with trials, touch-up kits, and complete packages for the bridal party.",
-      image: "/images/img2.jpg",
-      duration: "2-3 hours",
-      price: "From $250",
-   },
+   // {
+   //    number: "05",
+   //    title: "Bridal\nMakeup",
+   //    category: "BRIDAL",
+   //    description:
+   //       "Flawless bridal makeup for your special day with trials, touch-up kits, and complete packages for the bridal party.",
+   //    image: "/images/img2.jpg",
+   //    duration: "2-3 hours",
+   //    price: "From $250",
+   // },
 ]
 
 export function ServiceSection() {
@@ -83,31 +83,6 @@ export function ServiceSection() {
                   {services.map((service, index) => {
                      const cardRef = useRef(null)
                      const cursorRef = useRef(null)
-
-                     // useEffect(() => {
-                     //    const card = cardRef.current
-                     //    const cursor = cursorRef.current
-                     //    if (!card || !cursor) return
-
-                     //    let raf
-
-                     //    const handleMove = (e) => {
-                     //       const rect = card.getBoundingClientRect()
-                     //       const x = e.clientX - rect.left
-                     //       const y = e.clientY - rect.top
-
-                     //       raf = requestAnimationFrame(() => {
-                     //          cursor.style.transform = `translate(${x - 40}px, ${y - 40}px)`
-                     //       })
-                     //    }
-
-                     //    card.addEventListener("mousemove", handleMove)
-
-                     //    return () => {
-                     //       card.removeEventListener("mousemove", handleMove)
-                     //       cancelAnimationFrame(raf)
-                     //    }
-                     // }, [])
 
                      useEffect(() => {
                         const card = cardRef.current;
@@ -155,7 +130,7 @@ export function ServiceSection() {
                                     ? "lg:col-span-5"
                                     : index === 3
                                        ? "lg:col-span-7"
-                                       : "lg:col-span-5"
+                                       : "lg:col-span-0"
                               }`}
                            onClick={() => setActiveIndex(index)}
                         >
