@@ -224,7 +224,7 @@ export default function Footer() {
 
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-xs text-gray-200">
                <p>© 2025 BLUSH. All rights reserved.</p>
-               <a href="http://www.webtechware.in" target="_blank" rel="noopener noreferrer"><p>Crafted with elegance & precision by Web Tech Ware</p></a>
+               <a href="http://www.webtechware.in" target="_blank" rel="noopener noreferrer"><p>Designed & Developed by WTW</p></a>
             </div>
          </div>
       </footer>

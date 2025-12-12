@@ -69,7 +69,7 @@ const slides = [
 ];
 
 
-const SLIDE_DURATION = 3000
+const SLIDE_DURATION = 5000
 
 export default function SalonSlider() {
    const [current, setCurrent] = useState(0)
@@ -173,7 +173,7 @@ export default function SalonSlider() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.5 }}
-                  className="text-xs md:text-xs tracking-widest text-[#D99726] font-light uppercase"
+                  className="text-xs md:text-sm tracking-widest text-[#750851] font-bold uppercase"
                >
                   {slide.tag}
                </motion.div>
@@ -184,7 +184,7 @@ export default function SalonSlider() {
                <div className="flex flex-col items-center justify-start pt-12">
                   <div className="w-[1px] h-40 bg-gray-200 relative rounded-full overflow-hidden">
                      <motion.div
-                        className="absolute top-0 left-0 w-full bg-[#D99726] rounded-full"
+                        className="absolute top-0 left-0 w-full bg-[#750851] rounded-full"
                         style={{ height: `${progress}%` }}
                         transition={{ type: "linear" }}
                      />
@@ -220,7 +220,7 @@ export default function SalonSlider() {
                            custom={1}
                            className="relative z-10 py-4"
                         >
-                           <p className="text-sm uppercase tracking-widest md:text-md lg:text-md text-[#D99726] font-light">{slide.title}</p>
+                           <p className="text-sm uppercase tracking-widest md:text-md lg:text-md text-[#750851] font-light">{slide.title}</p>
                         </motion.div>
 
                         <motion.div

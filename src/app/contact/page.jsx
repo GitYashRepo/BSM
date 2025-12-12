@@ -149,7 +149,7 @@ export default function ContactPage() {
                         required
                      />
 
-                     <input
+                     {/* <input
                         name="email"
                         type="email"
                         placeholder="Your Email"
@@ -157,7 +157,7 @@ export default function ContactPage() {
                         onChange={handleInputChange}
                         className="w-full bg-transparent border-b border-border py-3"
                         required
-                     />
+                     /> */}
 
                      <input
                         name="phone"
@@ -168,7 +168,7 @@ export default function ContactPage() {
                         required
                      />
 
-                     <select
+                     {/* <select
                         name="contactMethod"
                         value={formData.contactMethod}
                         onChange={handleInputChange}
@@ -179,7 +179,7 @@ export default function ContactPage() {
                         <option value="Call">Call</option>
                         <option value="WhatsApp">WhatsApp</option>
                         <option value="Email">Email</option>
-                     </select>
+                     </select> */}
 
                      {/* Services Multi Select */}
                      <div>
@@ -198,7 +198,7 @@ export default function ContactPage() {
                         </div>
                      </div>
 
-                     <select
+                     {/* <select
                         name="staff"
                         value={formData.staff}
                         onChange={handleInputChange}
@@ -209,15 +209,15 @@ export default function ContactPage() {
                         {staffOptions.map((s) => (
                            <option key={s} value={s}>{s}</option>
                         ))}
-                     </select>
+                     </select> */}
 
-                     <input type="date" name="date" value={formData.date} onChange={handleInputChange} className="w-full bg-transparent border-b border-border py-3" required />
-                     <input type="time" name="time" value={formData.time} onChange={handleInputChange} className="w-full bg-transparent border-b border-border py-3" required />
+                     {/* <input type="date" name="date" value={formData.date} onChange={handleInputChange} className="w-full bg-transparent border-b border-border py-3" required />
+                     <input type="time" name="time" value={formData.time} onChange={handleInputChange} className="w-full bg-transparent border-b border-border py-3" required /> */}
 
                      {/* <input type="date" name="altDate" value={formData.altDate} onChange={handleInputChange} className="w-full bg-transparent border-b border-border py-3" />
                      <input type="time" name="altTime" value={formData.altTime} onChange={handleInputChange} className="w-full bg-transparent border-b border-border py-3" /> */}
 
-                     <select
+                     {/* <select
                         name="occasion"
                         value={formData.occasion}
                         onChange={handleInputChange}
@@ -228,14 +228,14 @@ export default function ContactPage() {
                         <option value="Wedding">Wedding</option>
                         <option value="Party">Party</option>
                         <option value="Shoot">Photoshoot</option>
-                     </select>
+                     </select> */}
 
                      <textarea
                         name="notes"
                         value={formData.notes}
                         onChange={handleInputChange}
                         rows={4}
-                        placeholder="Any special requests?"
+                        placeholder="Any special requests? [ OPTIONAL ]"
                         className="w-full bg-transparent border-b border-border py-3 resize-none"
                      />
 
