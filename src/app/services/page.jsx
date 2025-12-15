@@ -21,7 +21,7 @@ export default function Services() {
    }, []);
 
    return (
-      <div className="relative w-screen h-screen overflow-hidden">
+      <div className="relative w-screen h-[80vh] overflow-hidden">
          <h1 className="text-center text-2xl">Click on the Pages to flip it !</h1>
          <UI />
          <Canvas className="absolute inset-0" shadows camera={{
