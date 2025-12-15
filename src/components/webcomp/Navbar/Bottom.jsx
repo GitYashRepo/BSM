@@ -495,7 +495,7 @@ const BottomBar = () => {
                         </ul>
 
                         <div className="mt-4 pt-4 border-t border-border">
-                           <p className="text-xs text-muted-foreground">For Complaints: Mr. Nitin Mukhija</p>
+                           <p className="text-xs text-muted-foreground">For Complaints: Mr. Nitin (Brand Steward)</p>
                            <p className="text-sm font-medium text-foreground">
                               946-777-777-3 <span className="text-xs text-muted-foreground">(WhatsApp only)</span>
                            </p>
