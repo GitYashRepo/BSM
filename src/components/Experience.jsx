@@ -1,3 +1,5 @@
+"use client";
+
 import { Environment, Float, OrbitControls } from "@react-three/drei";
 import { Book } from "./Book";
 import { MOUSE } from "three";
@@ -24,10 +26,10 @@ export const Experience = () => {
             }}
             enableDamping
          />
-         <Environment preset="studio"></Environment>
+         <Environment preset="warehouse"></Environment>
          <directionalLight
             position={[2, 5, 2]}
-            intensity={2.5}
+            intensity={1.1}
             // castShadow
             shadow-mapSize-width={2048}
             shadow-mapSize-height={2048}
