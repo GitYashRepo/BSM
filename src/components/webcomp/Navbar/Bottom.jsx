@@ -379,6 +379,18 @@ const navItems = [
       },
    },
    {
+      label: "Gallery",
+      items: [
+         { label: "Bridal Gallery", href: "gallery#bridal" },
+         { label: "Party Makeup", href: "gallery#party" },
+         { label: "Video Gallery", href: "gallery#video" },
+      ],
+      featured: {
+         title: "Our Gallery",
+         description: "We're here to help you look your best",
+      },
+   },
+   {
       label: "Contact",
       items: [
          { label: "Book Appointment", href: "contact#appointment" },
