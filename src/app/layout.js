@@ -1,7 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import LenisProvider from "./providers/LenisProvider";
 import "./globals.css";
-import { ColorThemeProvider } from "@/components/color-theme-provider";
+// import { ColorThemeProvider } from "@/components/color-theme-provider";
 import Navbar from "@/components/webcomp/Navbar/Navbar";
 import Footer from "@/components/webcomp/Footer/Footer";
 import DealsPopup from "@/components/webcomp/Deals/Dealspupup";
