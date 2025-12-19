@@ -1,5 +1,6 @@
 "use client"
 
+import AnimatedText from "@/components/AnimatedText/AnimatedText"
 import { useEffect, useRef, useState } from "react"
 
 export function StatsSection() {
@@ -13,9 +14,13 @@ export function StatsSection() {
    return (
       <section className="relative bg-neutral-50 overflow-hidden px-10 pt-6">
          <div className="max-w-6xl mx-auto px-4">
-            <p className="text-xl tracking-[0.4em] uppercase text-neutral-400 mb-6">
+            <AnimatedText
+               as="p"
+               animation="char"
+               className="text-xl uppercase text-neutral-600 mb-6"
+            >
                By the Numbers
-            </p>
+            </AnimatedText>
 
             <div className="flex flex-row justify-between">
                {stats.map((stat, index) => (
