@@ -68,7 +68,7 @@ export default function Services() {
          {showCanvas ? (
             <>
                <UI />
-               <Canvas className="absolute inset-0 mb-10" shadows camera={{
+               <Canvas className="absolute inset-0 mb-10 " shadows camera={{
                   position: [-0.5, 1, cameraZ],
                   fov: 45,
                }}>
