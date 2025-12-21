@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react"
 import { ArrowUpRight, Minus } from "lucide-react"
+import AnimatedText from "@/components/AnimatedText/AnimatedText"
 
 const services = [
    {
@@ -65,14 +66,21 @@ export function ServiceSection() {
          <div className="relative px-6 lg:px-12 pt-16 lg:pt-24 pb-12">
             <div className="max-w-screen-2xl mx-auto">
                <div className="mb-6">
-                  <span className="text-xs lg:text-sm font-mono tracking-widest uppercase text-muted-foreground">
+                  <AnimatedText
+                     as="p"
+                     animation="char"
+                     className="text-xs lg:text-sm font-mono tracking-widest uppercase text-muted-foreground"
+                  >
                      Our Services
-                  </span>
+                  </AnimatedText>
                </div>
-               <h1 className="text-[15vw] lg:text-[12vw] xl:text-[10vw] leading-[0.85] font-light tracking-tighter">
-                  <span className="block">Transform</span>
-                  <span className="block text-secondary">Your Look</span>
-               </h1>
+               <AnimatedText
+                  as="h3"
+                  animation="word"
+                  className="text-[15vw] lg:text-[12vw] xl:text-[10vw] leading-[0.85] font-light tracking-tighter"
+               >
+                  Transform Your Look
+               </AnimatedText>
             </div>
          </div>
 
@@ -83,36 +91,28 @@ export function ServiceSection() {
                   {services.map((service, index) => {
                      const cardRef = useRef(null)
                      const cursorRef = useRef(null)
-
                      useEffect(() => {
                         const card = cardRef.current;
                         const cursor = cursorRef.current;
                         if (!card || !cursor) return;
-
                         let mouseX = 0;
                         let mouseY = 0;
                         let currentX = 0;
                         let currentY = 0;
-                        const speed = 0.15; // lower = smoother (0.1–0.2 recommended)
-
+                        const speed = 0.15;
                         const handleMove = (e) => {
                            const rect = card.getBoundingClientRect();
                            mouseX = e.clientX - rect.left;
                            mouseY = e.clientY - rect.top;
                         };
-
                         const follow = () => {
                            currentX += (mouseX - currentX) * speed;
                            currentY += (mouseY - currentY) * speed;
-
                            cursor.style.transform = `translate(${currentX - 40}px, ${currentY - 40}px)`;
-
                            requestAnimationFrame(follow);
                         };
-
                         card.addEventListener("mousemove", handleMove);
                         requestAnimationFrame(follow);
-
                         return () => {
                            card.removeEventListener("mousemove", handleMove);
                         };
@@ -181,12 +181,14 @@ export function ServiceSection() {
                                  </div>
 
                                  <div className="space-y-4 z-20">
-                                    <h2
+                                    <AnimatedText
+                                       as="h1"
+                                       animation="word"
                                        className="text-5xl lg:text-6xl xl:text-7xl font-light leading-[0.9] tracking-tight whitespace-pre-line"
                                        style={{ textShadow: "2px 2px 20px rgba(0,0,0,0.3)" }}
                                     >
                                        {service.title}
-                                    </h2>
+                                    </AnimatedText>
 
                                     <p className="text-sm lg:text-base leading-relaxed max-w-md opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-100">
                                        {service.description}
@@ -216,7 +218,13 @@ export function ServiceSection() {
                <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
                   <div className="space-y-2">
                      <p className="text-xs font-mono tracking-wider uppercase opacity-60">Ready to begin?</p>
-                     <h3 className="text-2xl lg:text-4xl font-light tracking-tight">Book your transformation today</h3>
+                     <AnimatedText
+                        as="h3"
+                        animation="word"
+                        className="text-2xl lg:text-4xl font-light tracking-tight"
+                     >
+                        Book your transformation today
+                     </AnimatedText>
                   </div>
 
                   <button className="group relative px-8 py-4 my-10 bg-primary text-primary-foreground overflow-hidden transition-all duration-300 hover:scale-105">
