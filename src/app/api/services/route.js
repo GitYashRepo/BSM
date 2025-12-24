@@ -1,5 +1,5 @@
 import { connectDB } from "@/lib/mongodb";
-import Service from "@/lib/models/Service";
+import Service from "@/models/Service";
 import { verifyToken } from "@/lib/auth";
 
 export async function GET(req) {
