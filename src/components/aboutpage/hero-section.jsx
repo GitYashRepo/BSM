@@ -24,7 +24,7 @@ export function HeroSection() {
          <div className="container mx-auto px-6 relative z-10">
             <div className="max-w-6xl mx-auto">
                <div
-                  className="flex items-center justify-center mb-12 opacity-0 animate-fade-in"
+                  className="flex items-center justify-center mb-12 animate-fade-in"
                   style={{ animationDelay: "0.3s" }}
                >
                   <div className="flex items-center gap-4">
@@ -35,7 +35,7 @@ export function HeroSection() {
                </div>
 
                <h1
-                  className="text-7xl md:text-8xl lg:text-[10rem] font-serif font-extralight mb-10 leading-[0.9] text-center text-[#2d2520] opacity-0 animate-fade-in text-balance"
+                  className="text-7xl md:text-8xl lg:text-[8rem] font-serif font-extralight mb-10 leading-[0.9] text-center text-[#2d2520] animate-fade-in text-balance"
                   style={{ animationDelay: "0.6s" }}
                >
                   Beauty
@@ -44,13 +44,13 @@ export function HeroSection() {
                </h1>
 
                <p
-                  className="text-xl md:text-2xl text-[#6b5d52] max-w-3xl mx-auto leading-relaxed text-center font-light opacity-0 animate-fade-in text-balance"
+                  className="text-xl md:text-2xl text-[#6b5d52] max-w-3xl mx-auto leading-relaxed text-center font-light animate-fade-in text-balance"
                   style={{ animationDelay: "0.9s" }}
                >
                   Where artistry meets elegance in the heart of luxury beauty
                </p>
 
-               <div className="mt-20 flex justify-center opacity-0 animate-fade-in" style={{ animationDelay: "1.2s" }}>
+               <div className="mt-20 flex justify-center animate-fade-in" style={{ animationDelay: "1.2s" }}>
                   <div className="flex flex-col items-center gap-3">
                      <span className="text-[10px] tracking-[0.3em] text-[#8b7355] uppercase">Discover</span>
                      <div className="w-[1px] h-16 bg-gradient-to-b from-[#c89b6d] to-transparent animate-pulse" />

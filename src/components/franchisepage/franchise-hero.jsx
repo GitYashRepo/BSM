@@ -64,7 +64,7 @@ export function FranchiseHero() {
                      <div className="text-sm text-[#6b5d54] tracking-wide">Success Rate</div>
                   </div>
                   <div className="border-l border-[#b8936d]/30 pl-6 text-left">
-                     <div className="text-4xl md:text-5xl font-serif text-[#b8936d] mb-2">$2M+</div>
+                     <div className="text-4xl md:text-5xl font-serif text-[#b8936d] mb-2">2Lakh+</div>
                      <div className="text-sm text-[#6b5d54] tracking-wide">Avg Revenue</div>
                   </div>
                </div>

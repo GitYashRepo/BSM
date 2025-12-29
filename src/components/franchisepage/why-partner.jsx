@@ -47,7 +47,7 @@ export function WhyPartner() {
    ]
 
    return (
-      <section className="py-32 px-6 lg:px-12 bg-[#2c2420] text-[#faf8f6]">
+      <section id="whypartnerwithus" className="py-32 px-6 lg:px-12 bg-[#2c2420] text-[#faf8f6]">
          <div className="max-w-7xl mx-auto">
             {/* Section Header */}
             <div className="mb-20 fade-in-section">

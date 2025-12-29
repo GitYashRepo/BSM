@@ -2,7 +2,7 @@
 
 export function InvestmentDetails() {
    return (
-      <section className="py-32 px-6 lg:px-12 bg-gradient-to-b from-[#faf8f6] to-[#f5f1ed]">
+      <section id="investment" className="py-32 px-6 lg:px-12 bg-gradient-to-b from-[#faf8f6] to-[#f5f1ed]">
          <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
                {/* Left Content */}
@@ -24,19 +24,19 @@ export function InvestmentDetails() {
                   <div className="space-y-6">
                      <div className="flex justify-between items-center py-4 border-b border-[#b8936d]/20">
                         <span className="text-[#2c2420] font-medium">Initial Franchise Fee</span>
-                        <span className="text-2xl font-serif text-[#b8936d]">$50,000</span>
+                        <span className="text-2xl font-serif text-[#b8936d]">Rs. 50,000</span>
                      </div>
                      <div className="flex justify-between items-center py-4 border-b border-[#b8936d]/20">
                         <span className="text-[#2c2420] font-medium">Setup & Equipment</span>
-                        <span className="text-2xl font-serif text-[#b8936d]">$75,000</span>
+                        <span className="text-2xl font-serif text-[#b8936d]">Rs. 75,000</span>
                      </div>
                      <div className="flex justify-between items-center py-4 border-b border-[#b8936d]/20">
                         <span className="text-[#2c2420] font-medium">Working Capital</span>
-                        <span className="text-2xl font-serif text-[#b8936d]">$25,000</span>
+                        <span className="text-2xl font-serif text-[#b8936d]">Rs. 25,000</span>
                      </div>
                      <div className="flex justify-between items-center py-6 bg-[#b8936d]/5 px-6 -mx-6 rounded-lg">
                         <span className="text-[#2c2420] font-semibold text-lg">Total Investment</span>
-                        <span className="text-3xl font-serif text-[#b8936d] font-semibold">$150,000</span>
+                        <span className="text-3xl font-serif text-[#b8936d] font-semibold">Rs. 150,000</span>
                      </div>
                   </div>
                </div>

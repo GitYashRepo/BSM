@@ -47,7 +47,7 @@ export default function Services() {
    return (
       <div className="relative w-screen h-[80vh] overflow-hidden">
          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 md:gap-4 w-full py-1 px-6 md:px-10 border-b border-border/50">
-            <div className="flex-1">
+            {/* <div className="flex-1">
                <h1 className="text-xl md:text-xl lg:text-xl font-bold tracking-tight uppercase text-balance leading-none">
                   {showCanvas ? "Interactive Experience" : "Explore Our Services"}
                </h1>
@@ -63,25 +63,25 @@ export default function Services() {
                </div>
 
                <ToggleSwitch checked={showCanvas} onChange={() => setShowCanvas((v) => !v)} />
-            </div>
+            </div> */}
          </div>
-         {showCanvas ? (
-            <>
-               <UI />
-               <Canvas className="absolute inset-0 mb-10 " shadows camera={{
-                  position: [-0.5, 1, cameraZ],
-                  fov: 45,
-               }}>
-                  <group position-y={0}>
-                     <Suspense fallback={null}>
-                        <Experience />
-                     </Suspense>
-                  </group>
-               </Canvas>
-            </>
-         ) : (
+         {/* {showCanvas ? ( */}
+         <>
+            <UI />
+            <Canvas className="absolute inset-0 mb-10 " shadows camera={{
+               position: [-0.5, 1, cameraZ],
+               fov: 45,
+            }}>
+               <group position-y={0}>
+                  <Suspense fallback={null}>
+                     <Experience />
+                  </Suspense>
+               </group>
+            </Canvas>
+         </>
+         {/* ) : (
             <ServicesPanel />
-         )}
+         )} */}
       </div>
    )
 }

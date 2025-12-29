@@ -35,7 +35,7 @@ export default function FranchisePage() {
          <WhyPartner />
          <InvestmentDetails />
          <SupportTraining />
-         <SuccessStories />
+         {/* <SuccessStories /> */}
          <ApplyNow />
       </div>
    )

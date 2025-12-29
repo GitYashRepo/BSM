@@ -23,7 +23,7 @@ export function SupportTraining() {
    ]
 
    return (
-      <section className="py-32 px-6 lg:px-12 bg-[#faf8f6]">
+      <section id="support" className="py-32 px-6 lg:px-12 bg-[#faf8f6]">
          <div className="max-w-7xl mx-auto">
             {/* Header */}
             <div className="text-center mb-20 fade-in-section">

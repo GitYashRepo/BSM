@@ -28,7 +28,7 @@ export function ApplyNow() {
    }
 
    return (
-      <section className="py-32 px-6 lg:px-12 bg-gradient-to-br from-[#faf8f6] via-[#f5f1ed] to-[#ede6df]">
+      <section id="apply" className="py-32 px-6 lg:px-12 bg-gradient-to-br from-[#faf8f6] via-[#f5f1ed] to-[#ede6df]">
          <div className="max-w-5xl mx-auto">
             {/* Header */}
             <div className="text-center mb-16 fade-in-section">
@@ -154,9 +154,9 @@ export function ApplyNow() {
                            className="w-full px-4 py-3 border border-[#b8936d]/20 rounded-lg focus:outline-none focus:border-[#b8936d] focus:ring-1 focus:ring-[#b8936d] transition-colors bg-white"
                         >
                            <option value="">Select range</option>
-                           <option value="150k">$150,000</option>
-                           <option value="150-200k">$150,000 - $200,000</option>
-                           <option value="200k+">$200,000+</option>
+                           <option value="150k">Rs. 150,000</option>
+                           <option value="150-200k">Rs. 150,000 - Rs. 200,000</option>
+                           <option value="200k+">Rs. 200,000+</option>
                         </select>
                      </div>
                   </div>

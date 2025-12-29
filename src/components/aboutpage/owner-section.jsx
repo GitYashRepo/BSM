@@ -10,7 +10,7 @@ export function OwnerSection() {
                      <div className="relative">
                         <div className="aspect-[4/5] overflow-hidden bg-[#f5ebe6]">
                            <img
-                              src="/professional-portrait-of-elegant-makeup-artist-sak.jpg"
+                              src="/images/img11.jpg"
                               alt="Sakshi Mukhija - Founder & Lead Artist"
                               className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
                            />
@@ -54,7 +54,7 @@ export function OwnerSection() {
 
                         <div className="pt-12 space-y-6">
                            <div className="flex items-baseline gap-4 border-b border-[#e5d5c8] pb-3">
-                              <span className="text-4xl font-serif font-light text-[#c89b6d]">1500+</span>
+                              <span className="text-4xl font-serif font-light text-[#c89b6d]">500+</span>
                               <span className="text-sm text-[#8b7355] tracking-wider">Happy Brides</span>
                            </div>
                            <div className="flex items-baseline gap-4 border-b border-[#e5d5c8] pb-3">
