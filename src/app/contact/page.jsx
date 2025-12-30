@@ -7,21 +7,21 @@ import Link from "next/link"
 
 const contactData = [
    {
-      title: "General Inquiries",
+      title: "Reception / General Inquiries",
       description: "Reach out to us for any questions",
-      details: ["90531-02324"],
+      details: ["94684-56266", "Reception"],
       icon: <Phone className="w-6 h-6" />,
    },
    {
-      title: "Reception",
+      title: "Sakshi Mukhija",
       description: "Book appointments & service info",
-      details: ["94684-56266", "Sakshi Ma'am"],
+      details: ["90531-02324", "Sakshi Mukhija"],
       icon: <Phone className="w-6 h-6" />,
    },
    {
       title: "Complaints & Support",
       description: "For any concerns or feedback",
-      details: ["Nitin (CEO)", "946-777-777-3", "WhatsApp Only"],
+      details: ["94677-77773", "Nitin (Brand Steward)", "WhatsApp Only"],
       icon: <Mail className="w-6 h-6" />,
    },
    {
@@ -33,13 +33,13 @@ const contactData = [
    {
       title: "Franchise Opportunities",
       description: "Interested in partnership?",
-      details: ["Nitin (CEO)", "946-777-777-3"],
+      details: ["Nitin (Brand Steward)", "94677-77773"],
       icon: <Phone className="w-6 h-6" />,
    },
    {
       title: "Visit Us",
       description: "Located in Rewari, India",
-      details: ["See map below"],
+      details: ["Click to Get Direction"],
       icon: <MapPin className="w-6 h-6" />,
    },
 ]
@@ -123,9 +123,19 @@ export default function ContactPage() {
                         <div className="mb-4 text-[#D99726] transition-transform duration-300 group-hover:scale-105">{item.icon}</div>
                         <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
                         <p className="text-sm text-muted-foreground mb-4">{item.description}</p>
-                        {item.details.map((d, i) => (
-                           <p key={i} className="text-sm font-medium">{d}</p>
-                        ))}
+                        {item.details.map((d, i) =>
+                           d === "Click to Get Direction" ? (
+                              <a
+                                 key={i}
+                                 href="#location"
+                                 className="text-sm font-medium text-[#D99726] underline cursor-pointer"
+                              >
+                                 {d}
+                              </a>
+                           ) : (
+                              <p key={i} className="text-sm font-medium">{d}</p>
+                           )
+                        )}
                      </div>
                   ))}
                </div>

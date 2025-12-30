@@ -278,9 +278,9 @@ const navItems = [
    {
       label: "About",
       items: [
-         { label: "About Me", href: "aboutme" },
-         { label: "About Us", href: "aboutus" },
-         { label: "Our Team", href: "ourteam" }
+         { label: "Who Am I ?", href: "about" },
+         { label: "About BSM", href: "aboutus" },
+         // { label: "Our Team", href: "ourteam" }
       ],
       featured: {
          title: "Bridal Special",
@@ -367,23 +367,23 @@ const navItems = [
    {
       label: "Franchise",
       items: [
-         { label: "Why Partner With Us", href: "#why-partner" },
-         { label: "Investment Details", href: "#investment" },
-         { label: "Support & Training", href: "#support" },
-         { label: "Success Stories", href: "#success" },
-         { label: "Apply Now", href: "#apply" },
+         { label: "Why Partner With Us", href: "franchise#whypartnerwithus" },
+         { label: "Investment Details", href: "franchise#investment" },
+         { label: "Support & Training", href: "franchise#support" },
+         // { label: "Success Stories", href: "/franchise#success" },
+         { label: "Apply Now", href: "franchise#apply" },
       ],
       featured: {
          title: "Own a BSM Franchise",
-         description: "Contact Nitin (CEO): 946-777-777-3",
+         description: "Contact Nitin (CEO): 94677-77773",
       },
    },
    {
       label: "Gallery",
       items: [
-         { label: "Bridal Gallery", href: "gallery#bridal" },
-         { label: "Party Makeup", href: "gallery#party" },
-         { label: "Video Gallery", href: "gallery#video" },
+         { label: "Bridal Gallery", href: "gallery" },
+         { label: "Party Makeup", href: "gallery" },
+         { label: "Video Gallery", href: "gallery" },
       ],
       featured: {
          title: "Our Gallery",
@@ -485,14 +485,14 @@ const BottomBar = () => {
                            <li className="flex items-center gap-3 text-muted-foreground">
                               <Phone className="w-4 h-4 text-primary" />
                               <div>
-                                 <p className="font-medium text-foreground">90531-02324</p>
+                                 <p className="font-medium text-foreground">94684-56266</p>
                                  <p className="text-xs">Reception</p>
                               </div>
                            </li>
                            <li className="flex items-center gap-3 text-muted-foreground">
                               <Phone className="w-4 h-4 text-primary" />
                               <div>
-                                 <p className="font-medium text-foreground">94684-56266</p>
+                                 <p className="font-medium text-foreground">90531-02324</p>
                                  <p className="text-xs">(Sakshi Mukhija - Owner)</p>
                               </div>
                            </li>
@@ -509,7 +509,7 @@ const BottomBar = () => {
                         <div className="mt-4 pt-4 border-t border-border">
                            <p className="text-xs text-muted-foreground">For Complaints: Mr. Nitin (Brand Steward)</p>
                            <p className="text-sm font-medium text-foreground">
-                              946-777-777-3 <span className="text-xs text-muted-foreground">(WhatsApp only)</span>
+                              94677-77773 <span className="text-xs text-muted-foreground">(WhatsApp only)</span>
                            </p>
                         </div>
                      </div>
