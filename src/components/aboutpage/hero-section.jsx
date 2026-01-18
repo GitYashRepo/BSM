@@ -1,61 +1,43 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { ArrowRight, Sparkles } from "lucide-react"
 
 export function HeroSection() {
-   const [scrollY, setScrollY] = useState(0)
-
-   useEffect(() => {
-      const handleScroll = () => setScrollY(window.scrollY)
-      window.addEventListener("scroll", handleScroll)
-      return () => window.removeEventListener("scroll", handleScroll)
-   }, [])
-
    return (
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-         <div
-            className="absolute inset-0 bg-gradient-to-br from-[#f8f5f2] via-[#faf8f6] to-[#f5ebe6]"
-            style={{ transform: `translateY(${scrollY * 0.5}px)` }}
-         />
-
-         <div className="absolute top-20 right-20 w-96 h-96 bg-[#d4a574]/10 rounded-full blur-3xl" />
-         <div className="absolute bottom-20 left-20 w-80 h-80 bg-[#c89b6d]/10 rounded-full blur-3xl" />
-
-         <div className="container mx-auto px-6 relative z-10">
-            <div className="max-w-6xl mx-auto">
-               <div
-                  className="flex items-center justify-center mb-12 animate-fade-in"
-                  style={{ animationDelay: "0.3s" }}
-               >
-                  <div className="flex items-center gap-4">
-                     <div className="h-px w-16 bg-[#c89b6d]" />
-                     <span className="text-xs tracking-[0.4em] text-[#8b7355] uppercase font-light">Blush by Sakshi</span>
-                     <div className="h-px w-16 bg-[#c89b6d]" />
-                  </div>
+      <section className="scroll-section relative min-h-screen flex items-center justify-center pt-32 pb-24 px-6 lg:px-12 bg-white">
+         <div className="max-w-6xl mx-auto text-center space-y-12">
+            {/* Icon Accent */}
+            <div className="flex justify-center">
+               <div className="w-16 h-16 rounded-full border border-[#6E2E35]/20 flex items-center justify-center bg-[#6E2E35]/5">
+                  <Sparkles size={32} className="text-[#6E2E35]" strokeWidth={1.5} />
                </div>
+            </div>
 
-               <h1
-                  className="text-7xl md:text-8xl lg:text-[8rem] font-serif font-extralight mb-10 leading-[0.9] text-center text-[#2d2520] animate-fade-in text-balance"
-                  style={{ animationDelay: "0.6s" }}
-               >
-                  Beauty
-                  <br />
-                  Redefined
+            {/* Main Heading */}
+            <div className="space-y-8">
+               <h1 className="text-6xl md:text-7xl lg:text-8xl font-light text-[#1a1a1a] leading-0.7">
+                  <span className="text-line block">The Art of</span>
+                  <span className="text-line block">
+                     <span className="text-[#6E2E35] font-serif italic">Luxury Beauty</span>
+                  </span>
+                  <span className="text-line block">Perfected</span>
                </h1>
-
-               <p
-                  className="text-xl md:text-2xl text-[#6b5d52] max-w-3xl mx-auto leading-relaxed text-center font-light animate-fade-in text-balance"
-                  style={{ animationDelay: "0.9s" }}
-               >
-                  Where artistry meets elegance in the heart of luxury beauty
+               <p className="text-line text-xl text-[#666] font-light max-w-2xl mx-auto leading-relaxed">
+                  Discover the story behind our premium salon franchise and the passion that drives excellence in every detail.
                </p>
+            </div>
 
-               <div className="mt-20 flex justify-center animate-fade-in" style={{ animationDelay: "1.2s" }}>
-                  <div className="flex flex-col items-center gap-3">
-                     <span className="text-[10px] tracking-[0.3em] text-[#8b7355] uppercase">Discover</span>
-                     <div className="w-[1px] h-16 bg-gradient-to-b from-[#c89b6d] to-transparent animate-pulse" />
-                  </div>
-               </div>
+            {/* CTA Button */}
+            <div className="flex justify-center pt-8">
+               <button className="text-line flex items-center gap-3 px-10 py-4 border border-[#6E2E35]/30 hover:border-[#6E2E35] bg-white hover:bg-[#6E2E35]/5 text-[#6E2E35] transition-all duration-300 rounded-lg font-light">
+                  Explore Our Journey
+                  <ArrowRight size={18} />
+               </button>
+            </div>
+
+            {/* Bottom Decoration */}
+            <div className="flex justify-center pt-12">
+               <div className="w-0.5 h-12 bg-[#6E2E35]/20"></div>
             </div>
          </div>
       </section>

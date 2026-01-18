@@ -5,7 +5,6 @@ import { FranchiseHero } from "@/components/franchisepage/franchise-hero"
 import { WhyPartner } from "@/components/franchisepage/why-partner"
 import { InvestmentDetails } from "@/components/franchisepage/investment-details"
 import { SupportTraining } from "@/components/franchisepage/support-training"
-import { SuccessStories } from "@/components/franchisepage/success-stories"
 import { ApplyNow } from "@/components/franchisepage/apply-now"
 
 export default function FranchisePage() {
@@ -35,7 +34,6 @@ export default function FranchisePage() {
          <WhyPartner />
          <InvestmentDetails />
          <SupportTraining />
-         {/* <SuccessStories /> */}
          <ApplyNow />
       </div>
    )

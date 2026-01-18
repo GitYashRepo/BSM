@@ -249,27 +249,39 @@ export default function ContactPage() {
                         className="w-full bg-transparent border-b border-border py-3 resize-none"
                      />
 
-                     <button type="submit" className="inline-flex items-center gap-2 px-8 py-3 bg-[#D99726] text-white rounded-full">Book Appointment</button>
+                     <button type="submit" className="inline-flex items-center gap-2 px-8 py-3 bg-[#D99726] text-white rounded-full cursor-pointer">Book Appointment</button>
                   </form>
                </div>
 
+
                {/* Map */}
-               <div id="location" className="mb-20">
+               <div id="location">
                   <h2 className="text-4xl text-[#750851] font-serif font-light mb-8">Our Location</h2>
-                  <div className="rounded-lg overflow-hidden border h-96">
-                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3516.6433845018673!2d76.61679521342992!3d28.18775900023444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d6f146b07bd6b%3A0x77bac241d712f26d!2z8J2XlfCdl7nwnZiC8J2YgPCdl7Ug8J2XlfCdmIYg8J2XpvCdl67wnZe48J2YgPCdl7XwnZe2IPCdl6DwnZeu8J2XuPCdl7LwnZe88J2Yg_Cdl7LwnZe_8J2YgCAtIEJlc3QgTWFrZXVwIEFydGlzdCB8IEJyaWRhbCBNYWtldXAgfCBCZWF1dHkgUGFybG91ciBpbiBSZXdhcmk!5e0!3m2!1sen!2sin!4v1765473278030!5m2!1sen!2sin"
-                        width="100%"
-                        height="100%"
-                        style={{ border: 0 }}
-                        allowFullScreen
-                        loading="lazy"
-                     ></iframe>
+                  <div className="flex flex-col gap-4 md:flex-row h-96">
+                     <div className="w-full rounded-lg overflow-hidden">
+                        <iframe
+                           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3516.6433845018673!2d76.61679521342992!3d28.18775900023444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d6f146b07bd6b%3A0x77bac241d712f26d!2z8J2XlfCdl7nwnZiC8J2YgPCdl7Ug8J2XlfCdmIYg8J2XpvCdl67wnZe48J2YgPCdl7XwnZe2IPCdl6DwnZeu8J2XuPCdl7LwnZe88J2Yg_Cdl7LwnZe_8J2YgCAtIEJlc3QgTWFrZXVwIEFydGlzdCB8IEJyaWRhbCBNYWtldXAgfCBCZWF1dHkgUGFybG91ciBpbiBSZXdhcmk!5e0!3m2!1sen!2sin!4v1765473278030!5m2!1sen!2sin"
+                           width="100%"
+                           height="100%"
+                           style={{ border: 0 }}
+                           allowFullScreen
+                           loading="lazy"
+                        ></iframe>
+                     </div>
+                     <div className="w-full rounded-lg overflow-hidden">
+                        <iframe src="https://www.google.com/maps/embed?pb=!4v1768628076582!6m8!1m7!1sCAoSF0NJSE0wb2dLRUlDQWdJQ3hncG5pelFF!2m2!1d28.18774070458566!2d76.61921069227718!3f194.4857593595003!4f-9.52727415992841!5f0.7820865974627469"
+                           width="100%"
+                           height="100%"
+                           style={{ border: 0 }}
+                           allowFullScreen
+                           loading="lazy">
+                        </iframe>
+                     </div>
                   </div>
                </div>
 
                {/* WhatsApp CTA */}
-               <div className="bg-[#D99726]/40 border rounded-lg p-12 text-center">
+               {/* <div className="bg-[#D99726]/40 border rounded-lg p-12 text-center">
                   <h3 className="text-2xl font-semibold mb-4">Quick Response?</h3>
                   <p className="text-muted-foreground mb-6 max-w-xl mx-auto">Message us on WhatsApp for instant help.</p>
                   <a
@@ -279,7 +291,7 @@ export default function ContactPage() {
                   >
                      Chat on WhatsApp
                   </a>
-               </div>
+               </div> */}
             </div>
          </section>
       </div>

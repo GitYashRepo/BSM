@@ -1,62 +1,47 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
-import { Calendar, Instagram, Mail, Phone } from "lucide-react"
+import { MessageCircle, ArrowRight } from "lucide-react"
 
 export function CallToAction() {
+   const handleWhatsAppClick = () => {
+      const phoneNumber = "919876543210"
+      const message = "Hello! I'm interested in learning more about your salon franchise opportunity."
+      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
+      window.open(whatsappUrl, "_blank")
+   }
+
    return (
-      <section className="fade-in-section py-24 md:py-32 bg-primary text-primary-foreground transition-all duration-1000">
-         <div className="container mx-auto px-6">
-            <div className="max-w-4xl mx-auto text-center">
-               <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-light mb-6 text-balance">
-                  Ready to Experience the Blush Difference?
+      <section className="scroll-section py-32 px-6 lg:px-12 bg-[#6E2E35]">
+         <div className="max-w-4xl mx-auto text-center space-y-10">
+            {/* Content */}
+            <div className="space-y-6">
+               <h2 className="text-line text-5xl md:text-6xl font-light text-white leading-tight">
+                  Ready to <span className="font-serif italic">Join</span> Us?
                </h2>
-               <p className="text-lg md:text-xl text-primary-foreground/80 mb-12 leading-relaxed max-w-2xl mx-auto">
-                  {
-                     "Let's create something beautiful together. Book your appointment today and discover why thousands of clients trust us with their most important moments."
-                  }
+               <p className="text-line text-xl text-white/80 font-light max-w-2xl mx-auto leading-relaxed">
+                  Start your journey as a premium salon franchise partner and be part of our growing luxury beauty network
                </p>
-
-               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-                  <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 text-base px-8">
-                     <Calendar className="mr-2" size={20} />
-                     Book Appointment
-                  </Button>
-                  <Button
-                     size="lg"
-                     variant="outline"
-                     className="bg-transparent border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary text-base px-8"
-                  >
-                     View Our Gallery
-                  </Button>
-               </div>
-
-               <div className="border-t border-primary-foreground/20 pt-12">
-                  <p className="text-sm tracking-wider uppercase mb-6 text-primary-foreground/60">Connect With Us</p>
-                  <div className="flex flex-col md:flex-row gap-6 justify-center items-center text-sm">
-                     <a href="tel:+919876543210" className="flex items-center gap-2 hover:text-accent transition-colors">
-                        <Phone size={16} />
-                        <span>+91 98765 43210</span>
-                     </a>
-                     <a
-                        href="mailto:hello@blushbysakshi.com"
-                        className="flex items-center gap-2 hover:text-accent transition-colors"
-                     >
-                        <Mail size={16} />
-                        <span>hello@blushbysakshi.com</span>
-                     </a>
-                     <a
-                        href="https://instagram.com/blushbysakshi"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 hover:text-accent transition-colors"
-                     >
-                        <Instagram size={16} />
-                        <span>@blushbysakshi</span>
-                     </a>
-                  </div>
-               </div>
             </div>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row justify-center gap-6 pt-8">
+               <button
+                  onClick={handleWhatsAppClick}
+                  className="text-line flex items-center justify-center gap-3 px-8 py-5 bg-[#25D366] hover:bg-[#20ba5a] transition-all duration-300 text-white rounded-lg font-light text-base tracking-wide shadow-xl hover:shadow-2xl"
+               >
+                  <MessageCircle size={20} />
+                  Get Started on WhatsApp
+               </button>
+               <button className="text-line flex items-center justify-center gap-3 px-8 py-5 border-2 border-white/30 hover:border-white hover:bg-white/10 text-white transition-all duration-300 rounded-lg font-light text-base tracking-wide">
+                  Learn More
+                  <ArrowRight size={20} />
+               </button>
+            </div>
+
+            {/* Footer Text */}
+            <p className="text-line text-sm text-white/60 font-light pt-6">
+               Join over 50+ successful salon partners in our premium franchise network
+            </p>
          </div>
       </section>
    )

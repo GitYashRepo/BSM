@@ -1,84 +1,70 @@
 "use client"
 
-export function InvestmentDetails() {
-   return (
-      <section id="investment" className="py-32 px-6 lg:px-12 bg-gradient-to-b from-[#faf8f6] to-[#f5f1ed]">
-         <div className="max-w-7xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-               {/* Left Content */}
-               <div className="fade-in-section">
-                  <span className="text-sm tracking-[0.3em] text-[#b8936d] uppercase font-light mb-4 block">
-                     Financial Overview
-                  </span>
-                  <h2 className="text-5xl md:text-6xl font-serif font-light text-[#2c2420] leading-tight mb-8">
-                     Investment
-                     <br />
-                     <span className="italic text-[#b8936d]">Details</span>
-                  </h2>
-                  <p className="text-lg text-[#6b5d54] leading-relaxed mb-12">
-                     Transparent pricing with comprehensive support. Your investment includes everything needed to launch and
-                     operate a successful Blush franchise location.
-                  </p>
+import { Check, MessageCircle } from "lucide-react"
 
-                  {/* Investment Breakdown */}
+export function InvestmentDetails() {
+   const handleWhatsAppClick = () => {
+      const phoneNumber = "919876543210" // Replace with your WhatsApp number
+      const message = "Hello! I'm interested in learning more about your salon franchise opportunity."
+      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
+      window.open(whatsappUrl, "_blank")
+   }
+
+   return (
+      <section id="investment" className="py-32 px-6 lg:px-12 bg-[#FAFAFA]">
+         <div className="max-w-7xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-20 items-start">
+               {/* Left Content */}
+               <div className="space-y-12">
+                  <div>
+                     <p className="text-xs tracking-[0.3em] text-[#6E2E35] uppercase font-light mb-6">Investment Overview</p>
+                     <h2 className="text-5xl md:text-6xl font-light text-[#1a1a1a] leading-tight mb-8">
+                        Your Dream
+                        <br />
+                        <span className="text-[#AC2121] font-serif italic">Awaits</span>
+                     </h2>
+                     <p className="text-base text-[#666] leading-relaxed font-light max-w-lg">
+                        Ready to start your journey? Connect with our team directly on WhatsApp to discuss investment details, customized packages, and your path to owning a premium salon franchise.
+                     </p>
+                  </div>
+
+                  {/* WhatsApp CTA Button */}
                   <div className="space-y-6">
-                     <div className="flex justify-between items-center py-4 border-b border-[#b8936d]/20">
-                        <span className="text-[#2c2420] font-medium">Initial Franchise Fee</span>
-                        <span className="text-2xl font-serif text-[#b8936d]">Rs. 50,000</span>
-                     </div>
-                     <div className="flex justify-between items-center py-4 border-b border-[#b8936d]/20">
-                        <span className="text-[#2c2420] font-medium">Setup & Equipment</span>
-                        <span className="text-2xl font-serif text-[#b8936d]">Rs. 75,000</span>
-                     </div>
-                     <div className="flex justify-between items-center py-4 border-b border-[#b8936d]/20">
-                        <span className="text-[#2c2420] font-medium">Working Capital</span>
-                        <span className="text-2xl font-serif text-[#b8936d]">Rs. 25,000</span>
-                     </div>
-                     <div className="flex justify-between items-center py-6 bg-[#b8936d]/5 px-6 -mx-6 rounded-lg">
-                        <span className="text-[#2c2420] font-semibold text-lg">Total Investment</span>
-                        <span className="text-3xl font-serif text-[#b8936d] font-semibold">Rs. 150,000</span>
-                     </div>
+                     <button
+                        onClick={handleWhatsAppClick}
+                        className="w-full lg:w-auto flex items-center justify-center gap-3 px-8 py-5 bg-[#25D366] hover:bg-[#20ba5a] transition-all duration-300 text-white rounded-lg font-light text-base tracking-wide shadow-lg hover:shadow-xl"
+                     >
+                        <MessageCircle size={20} />
+                        Get Investment Details on WhatsApp
+                     </button>
+                     <p className="text-xs text-[#666] font-light">
+                        Our team responds within minutes. Get personalized pricing and packages tailored to your location.
+                     </p>
                   </div>
                </div>
 
-               {/* Right Content - Additional Info */}
-               <div className="space-y-8 fade-in-section" style={{ transitionDelay: "200ms" }}>
-                  <div className="relative p-10 bg-white rounded-lg shadow-lg border border-[#b8936d]/10">
-                     <div className="absolute -top-6 left-10 bg-[#b8936d] text-white px-6 py-2 text-sm tracking-wide">
-                        WHAT'S INCLUDED
-                     </div>
-                     <ul className="space-y-5 mt-4">
+               {/* Right Content - What's Included */}
+               <div className="space-y-8">
+                  <div className="bg-white p-12 border border-[#6E2E35]/10 hover:border-[#6E2E35]/30 transition-colors">
+                     <h3 className="text-lg font-light text-[#1a1a1a] mb-8 uppercase tracking-[0.15em]">What's Included</h3>
+                     <ul className="space-y-5">
                         {[
-                           "Complete interior design consultation",
+                           "Complete salon design & setup",
                            "Professional equipment & furniture",
                            "Initial product inventory",
-                           "Comprehensive training program",
-                           "Marketing materials & brand assets",
+                           "6-week training program",
+                           "Marketing materials & branding",
                            "Technology & booking systems",
-                           "Grand opening support",
+                           "Grand opening campaign",
                         ].map((item, i) => (
-                           <li key={i} className="flex items-start gap-3">
-                              <div className="w-6 h-6 rounded-full bg-[#b8936d]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                                 <div className="w-2 h-2 rounded-full bg-[#b8936d]" />
+                           <li key={i} className="flex items-start gap-4 group">
+                              <div className="w-5 h-5 rounded-full border border-[#6E2E35]/40 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-[#6E2E35]/10 transition-colors">
+                                 <Check size={12} className="text-[#6E2E35]" strokeWidth={3} />
                               </div>
-                              <span className="text-[#2c2420]">{item}</span>
+                              <span className="text-sm text-[#666] font-light leading-relaxed">{item}</span>
                            </li>
                         ))}
                      </ul>
-                  </div>
-
-                  {/* ROI Info */}
-                  <div className="grid grid-cols-2 gap-6">
-                     <div className="p-6 bg-[#2c2420] text-white rounded-lg">
-                        <div className="text-sm tracking-wide text-[#d4af8c] mb-2">Break-Even</div>
-                        <div className="text-3xl font-serif">18-24</div>
-                        <div className="text-sm text-[#c4b5a8]">Months</div>
-                     </div>
-                     <div className="p-6 bg-[#2c2420] text-white rounded-lg">
-                        <div className="text-sm tracking-wide text-[#d4af8c] mb-2">Avg ROI</div>
-                        <div className="text-3xl font-serif">30-40%</div>
-                        <div className="text-sm text-[#c4b5a8]">Annually</div>
-                     </div>
                   </div>
                </div>
             </div>
