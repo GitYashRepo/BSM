@@ -8,7 +8,7 @@ const navItems = [
       label: "About",
       items: [
          { label: "Who Am I ?", href: "about" },
-         { label: "About BSM", href: "about/bsm" },
+         { label: "About BSM", href: "bsm" },
       ],
       featured: {
          title: "Bridal Special",
