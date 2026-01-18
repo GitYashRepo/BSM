@@ -5,6 +5,8 @@ import "./globals.css";
 import Navbar from "@/components/webcomp/Navbar/Navbar";
 import Footer from "@/components/webcomp/Footer/Footer";
 import DealsPopup from "@/components/webcomp/Deals/Dealspupup";
+import OfferModal from "@/components/OfferModal/offer-modal";
+import WhatsAppWidget from "@/components/WhatsApp/whatsapp-button";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,12 +30,12 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
          <LenisProvider>
-            {/* <ColorThemeProvider attribute="class" defaultTheme="system" enableSystem> */}
-               <DealsPopup />
+               <OfferModal />
+               {/* <DealsPopup /> */}
+               <WhatsAppWidget brandName="Blush" phone = '+919467777773' />
                <Navbar />
                {children}
                <Footer />
-            {/* </ColorThemeProvider> */}
          </LenisProvider>
       </body>
     </html>

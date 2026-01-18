@@ -1,91 +1,92 @@
 "use client"
 
+import { Award, Zap, Users, TrendingUp, Gem, Shield } from "lucide-react"
+
 export function WhyPartner() {
    const benefits = [
       {
          number: "01",
-         title: "Proven Business Model",
-         description:
-            "A tested and refined system that has generated consistent success across multiple locations with documented results.",
-         icon: "📊",
+         title: "Proven Model",
+         description: "Battle-tested business system with consistent success across all locations.",
+         icon: TrendingUp,
       },
       {
          number: "02",
-         title: "Brand Recognition",
-         description:
-            "Leverage the established reputation and trust of Blush by Sakshi Makeovers to attract clients from day one.",
-         icon: "⭐",
+         title: "Brand Trust",
+         description: "Leverage established reputation and premium brand recognition.",
+         icon: Gem,
       },
       {
          number: "03",
-         title: "Complete Training",
-         description:
-            "Comprehensive onboarding program covering operations, marketing, customer service, and advanced beauty techniques.",
-         icon: "🎓",
+         title: "Expert Training",
+         description: "Comprehensive 6-week mastery program covering all operations.",
+         icon: Award,
       },
       {
          number: "04",
-         title: "Marketing Support",
-         description:
-            "Access to professional marketing materials, social media strategies, and ongoing promotional campaigns.",
-         icon: "📱",
+         title: "Marketing Suite",
+         description: "Professional materials, strategies, and digital marketing support.",
+         icon: Zap,
       },
       {
          number: "05",
-         title: "Ongoing Support",
-         description:
-            "Dedicated franchise support team available to help you navigate challenges and optimize your business.",
-         icon: "🤝",
+         title: "24/7 Support",
+         description: "Dedicated team available round-the-clock for guidance.",
+         icon: Shield,
       },
       {
          number: "06",
-         title: "Quality Products",
-         description:
-            "Exclusive access to premium beauty products and tools at wholesale prices through our supplier network.",
-         icon: "✨",
+         title: "Premium Network",
+         description: "Exclusive access to suppliers and partnership opportunities.",
+         icon: Users,
       },
    ]
 
    return (
-      <section id="whypartnerwithus" className="py-32 px-6 lg:px-12 bg-[#2c2420] text-[#faf8f6]">
+      <section id="whypartnerwithus" className="py-32 px-6 lg:px-12 bg-white">
          <div className="max-w-7xl mx-auto">
             {/* Section Header */}
-            <div className="mb-20 fade-in-section">
-               <span className="text-sm tracking-[0.3em] text-[#d4af8c] uppercase font-light mb-4 block">
-                  Partnership Benefits
-               </span>
-               <h2 className="text-5xl md:text-7xl font-serif font-light leading-tight mb-6">
-                  Why Partner
+            <div className="mb-24 max-w-3xl">
+               <p className="text-xs tracking-[0.3em] text-[#6E2E35] uppercase font-light mb-6">Why Partner With Us</p>
+               <h2 className="text-5xl md:text-6xl font-light text-[#1a1a1a] leading-tight mb-6">
+                  Six Reasons to
                   <br />
-                  <span className="italic text-[#d4af8c]">With Us</span>
+                  <span className="text-[#6E2E35] font-serif italic">Join Us</span>
                </h2>
-               <p className="text-lg text-[#c4b5a8] max-w-2xl leading-relaxed">
-                  We provide everything you need to build a successful beauty business, from initial setup to ongoing growth
-                  support.
+               <p className="text-base text-[#666] leading-relaxed max-w-2xl font-light">
+                  Everything you need to build and scale a thriving salon business with confidence.
                </p>
             </div>
 
             {/* Benefits Grid */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-               {benefits.map((benefit, index) => (
-                  <div key={index} className="group fade-in-section" style={{ transitionDelay: `${index * 100}ms` }}>
-                     <div className="relative p-8 bg-[#3a302a]/40 backdrop-blur-sm border border-[#d4af8c]/10 rounded-lg transition-all duration-500 hover:bg-[#3a302a]/60 hover:border-[#d4af8c]/30 hover:-translate-y-2">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+               {benefits.map((benefit, index) => {
+                  const IconComponent = benefit.icon
+                  return (
+                     <div
+                        key={index}
+                        className="group space-y-6 pb-8 border-b border-[#6E2E35]/10 hover:border-[#6E2E35]/30 transition-colors"
+                     >
+                        {/* Icon Circle */}
+                        <div className="w-14 h-14 rounded-full border border-[#6E2E35]/30 flex items-center justify-center group-hover:border-[#6E2E35]/60 group-hover:bg-[#6E2E35]/5 transition-all">
+                           <IconComponent size={22} className="text-[#6E2E35]" />
+                        </div>
+
                         {/* Number */}
-                        <div className="text-6xl font-serif text-[#d4af8c]/20 mb-4 group-hover:text-[#d4af8c]/30 transition-colors">
+                        <div className="text-4xl font-light text-[#6E2E35]/50 group-hover:text-[#6E2E35]/80 transition-colors">
                            {benefit.number}
                         </div>
 
                         {/* Content */}
-                        <h3 className="text-2xl font-serif text-[#faf8f6] mb-4 group-hover:text-[#d4af8c] transition-colors">
-                           {benefit.title}
-                        </h3>
-                        <p className="text-[#c4b5a8] leading-relaxed">{benefit.description}</p>
-
-                        {/* Decorative corner */}
-                        <div className="absolute top-0 right-0 w-16 h-16 border-t border-r border-[#d4af8c]/20 rounded-tr-lg" />
+                        <div className="space-y-3">
+                           <h3 className="text-xl font-light text-[#1a1a1a] group-hover:text-[#6E2E35] transition-colors">
+                              {benefit.title}
+                           </h3>
+                           <p className="text-sm text-[#777] leading-relaxed font-light">{benefit.description}</p>
+                        </div>
                      </div>
-                  </div>
-               ))}
+                  )
+               })}
             </div>
          </div>
       </section>

@@ -7,110 +7,98 @@ export function SuccessStories() {
       {
          name: "Priya Sharma",
          location: "Mumbai, Maharashtra",
-         image: "/success-story-priya.jpg",
-         quote:
-            "Joining Blush was the best decision of my life. In just 18 months, we've become the go-to salon in our area with a loyal client base.",
-         revenue: "$2.5M",
-         year: "2023",
+         image: "/salon-success-story.jpg",
+         quote: "Joining was the best decision. In 18 months, we became the go-to salon in our area.",
+         revenue: "₹25L",
+         year: "2024",
       },
       {
          name: "Anjali Verma",
          location: "Delhi NCR",
-         image: "/success-story-anjali.jpg",
-         quote:
-            "The training and support system is incredible. I had no prior salon experience, but now I'm running one of the most successful locations.",
-         revenue: "$3.1M",
-         year: "2023",
+         image: "/beauty-salon-entrepreneur.jpg",
+         quote: "With no prior experience, the training made me a confident salon owner.",
+         revenue: "₹31L",
+         year: "2024",
       },
       {
          name: "Neha Kapoor",
          location: "Bangalore, Karnataka",
-         image: "/success-story-neha.jpg",
-         quote:
-            "The brand recognition opened doors immediately. Clients trust Blush, and that trust translated to a thriving business from day one.",
-         revenue: "$2.8M",
-         year: "2023",
+         image: "/luxury-beauty-salon.jpg",
+         quote: "The brand trust opened doors immediately. Clients knew Blush quality.",
+         revenue: "₹28L",
+         year: "2024",
       },
    ]
 
    return (
-      <section className="py-32 px-6 lg:px-12 bg-gradient-to-b from-[#2c2420] to-[#1a1614]">
+      <section className="py-32 px-6 lg:px-12 bg-[#FAFAFA]">
          <div className="max-w-7xl mx-auto">
             {/* Header */}
-            <div className="text-center mb-20 fade-in-section">
-               <span className="text-sm tracking-[0.3em] text-[#d4af8c] uppercase font-light mb-4 block">Real Results</span>
-               <h2 className="text-5xl md:text-7xl font-serif font-light text-white leading-tight mb-6">
-                  Success
+            <div className="mb-24 max-w-3xl">
+               <p className="text-xs tracking-[0.3em] text-[#6E2E35] uppercase font-light mb-6">Real Success</p>
+               <h2 className="text-5xl md:text-6xl font-light text-[#1a1a1a] leading-tight mb-8">
+                  Meet Our
                   <br />
-                  <span className="italic text-[#d4af8c]">Stories</span>
+                  <span className="text-[#AC2121] font-serif italic">Success Stories</span>
                </h2>
-               <p className="text-lg text-[#c4b5a8] max-w-2xl mx-auto leading-relaxed">
-                  Meet our franchise partners who have built thriving beauty businesses with Blush by Sakshi Makeovers.
+               <p className="text-base text-[#666] leading-relaxed font-light">
+                  Franchise partners thriving with proven systems and dedicated support.
                </p>
             </div>
 
-            {/* Stories Grid */}
-            <div className="space-y-16">
+            {/* Stories */}
+            <div className="space-y-24">
                {stories.map((story, index) => (
                   <div
                      key={index}
-                     className={`fade-in-section grid lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? "lg:flex-row-reverse" : ""}`}
-                     style={{ transitionDelay: `${index * 200}ms` }}
+                     className={`grid lg:grid-cols-2 gap-16 items-center ${index % 2 === 1 ? "lg:flex-row-reverse" : ""}`}
                   >
                      {/* Image */}
-                     <div className={`relative ${index % 2 === 1 ? "lg:order-2" : ""}`}>
-                        <div className="relative aspect-[4/5] rounded-lg overflow-hidden">
-                           <Image
-                              src={story.image || "/placeholder.svg"}
-                              alt={story.name}
-                              fill
-                              className="object-cover transition-transform duration-700 hover:scale-105"
-                           />
-                           <div className="absolute inset-0 bg-gradient-to-t from-[#2c2420]/60 to-transparent" />
-
-                           {/* Stats Overlay */}
-                           <div className="absolute bottom-6 left-6 right-6">
-                              <div className="flex items-end justify-between text-white">
-                                 <div>
-                                    <div className="text-sm text-[#d4af8c] mb-1">Annual Revenue</div>
-                                    <div className="text-4xl font-serif">{story.revenue}</div>
-                                 </div>
-                                 <div className="text-right">
-                                    <div className="text-sm text-[#d4af8c] mb-1">Year</div>
-                                    <div className="text-2xl font-serif">{story.year}</div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
+                     <div
+                        className={`relative aspect-[3/4] rounded-lg overflow-hidden ${index % 2 === 1 ? "lg:order-2" : ""}`}
+                     >
+                        <Image
+                           src={story.image || "/placeholder.svg?height=400&width=300&query=luxury salon"}
+                           alt={story.name}
+                           fill
+                           className="object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/40 to-transparent" />
                      </div>
 
                      {/* Content */}
-                     <div className={`${index % 2 === 1 ? "lg:order-1" : ""}`}>
-                        <div className="relative">
-                           <div className="absolute -left-4 top-0 text-8xl font-serif text-[#d4af8c]/10">"</div>
-                           <blockquote className="relative text-2xl md:text-3xl font-serif text-white leading-relaxed mb-8 pl-8">
-                              {story.quote}
+                     <div className={`space-y-8 ${index % 2 === 1 ? "lg:order-1" : ""}`}>
+                        <div className="space-y-6">
+                           <blockquote className="text-xl md:text-2xl font-light text-[#1a1a1a] leading-relaxed">
+                              "{story.quote}"
                            </blockquote>
                         </div>
 
-                        <div className="flex items-center gap-4">
-                           <div className="h-px flex-1 bg-gradient-to-r from-[#d4af8c] to-transparent" />
-                           <div className="text-right">
-                              <div className="text-xl font-serif text-[#d4af8c]">{story.name}</div>
-                              <div className="text-sm text-[#c4b5a8] tracking-wide">{story.location}</div>
+                        {/* Stats */}
+                        <div className="flex gap-12">
+                           <div className="space-y-2">
+                              <p className="text-xs uppercase tracking-[0.15em] text-[#6E2E35] font-light">Revenue</p>
+                              <p className="text-2xl font-light text-[#AC2121]">{story.revenue}</p>
+                           </div>
+                           <div className="space-y-2">
+                              <p className="text-xs uppercase tracking-[0.15em] text-[#6E2E35] font-light">Year</p>
+                              <p className="text-2xl font-light text-[#6E2E35]">{story.year}</p>
                            </div>
                         </div>
 
-                        {/* Achievement Tags */}
-                        <div className="flex flex-wrap gap-3 mt-8">
-                           <span className="px-4 py-2 bg-[#d4af8c]/10 border border-[#d4af8c]/30 text-[#d4af8c] text-sm rounded-full">
+                        {/* Name & Location */}
+                        <div className="pt-6 border-t border-[#6E2E35]/10">
+                           <p className="text-lg font-light text-[#1a1a1a]">{story.name}</p>
+                           <p className="text-sm text-[#666] font-light">{story.location}</p>
+                        </div>
+
+                        {/* Tags */}
+                        <div className="flex flex-wrap gap-3">
+                           <span className="px-4 py-2 text-xs uppercase tracking-[0.1em] font-light border border-[#6E2E35]/30 text-[#6E2E35]">
                               Top Performer
                            </span>
-                           <span className="px-4 py-2 bg-[#d4af8c]/10 border border-[#d4af8c]/30 text-[#d4af8c] text-sm rounded-full">
+                           <span className="px-4 py-2 text-xs uppercase tracking-[0.1em] font-light border border-[#AC2121]/30 text-[#AC2121]">
                               5★ Rated
-                           </span>
-                           <span className="px-4 py-2 bg-[#d4af8c]/10 border border-[#d4af8c]/30 text-[#d4af8c] text-sm rounded-full">
-                              Award Winner
                            </span>
                         </div>
                      </div>

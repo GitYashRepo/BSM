@@ -1,113 +1,106 @@
 "use client"
 
+import { Phone, Briefcase, Zap } from "lucide-react"
+
 export function SupportTraining() {
-   const trainingModules = [
+   const trainingPhases = [
       {
          phase: "Phase 1",
          duration: "2 Weeks",
-         title: "Foundation Training",
-         topics: ["Brand philosophy & values", "Business operations", "Customer service excellence", "Product knowledge"],
+         title: "Foundation",
+         topics: ["Brand philosophy", "Operations", "Customer service", "Product knowledge"],
       },
       {
          phase: "Phase 2",
          duration: "3 Weeks",
          title: "Technical Mastery",
-         topics: ["Advanced makeup techniques", "Bridal styling", "Hair treatments", "Safety & hygiene protocols"],
+         topics: ["Advanced techniques", "Bridal styling", "Hair treatments", "Safety protocols"],
       },
       {
          phase: "Phase 3",
          duration: "1 Week",
          title: "Business Launch",
-         topics: ["Marketing strategies", "Staff management", "Financial planning", "Grand opening execution"],
+         topics: ["Marketing", "Staff management", "Financial planning", "Grand opening"],
       },
    ]
 
    return (
-      <section id="support" className="py-32 px-6 lg:px-12 bg-[#faf8f6]">
+      <section id="support" className="py-32 px-6 lg:px-12 bg-white">
          <div className="max-w-7xl mx-auto">
             {/* Header */}
-            <div className="text-center mb-20 fade-in-section">
-               <span className="text-sm tracking-[0.3em] text-[#b8936d] uppercase font-light mb-4 block">
-                  Your Success Journey
-               </span>
-               <h2 className="text-5xl md:text-7xl font-serif font-light text-[#2c2420] leading-tight mb-6">
-                  Support &
+            <div className="mb-24 max-w-3xl">
+               <p className="text-xs tracking-[0.3em] text-[#6E2E35] uppercase font-light mb-6">Your Success Path</p>
+               <h2 className="text-5xl md:text-6xl font-light text-[#1a1a1a] leading-tight mb-8">
+                  Training &
                   <br />
-                  <span className="italic text-[#b8936d]">Training</span>
+                  <span className="text-[#AC2121] font-serif italic">Support</span>
                </h2>
-               <p className="text-lg text-[#6b5d54] max-w-2xl mx-auto leading-relaxed">
-                  Our comprehensive 6-week training program prepares you for every aspect of running a successful salon
-                  franchise.
+               <p className="text-base text-[#666] leading-relaxed font-light">
+                  Comprehensive 6-week program preparing you for every aspect of salon ownership.
                </p>
             </div>
 
             {/* Training Timeline */}
-            <div className="space-y-8 mb-20">
-               {trainingModules.map((module, index) => (
-                  <div key={index} className="group fade-in-section" style={{ transitionDelay: `${index * 150}ms` }}>
-                     <div className="relative grid md:grid-cols-[200px_1fr] gap-8 items-start p-8 bg-white rounded-lg border border-[#b8936d]/10 hover:border-[#b8936d]/30 hover:shadow-xl transition-all duration-500">
+            <div className="space-y-8 mb-24">
+               {trainingPhases.map((module, index) => (
+                  <div key={index} className="group">
+                     <div className="grid md:grid-cols-[220px_1fr] gap-12 items-start py-12 border-b border-[#6E2E35]/10 group-hover:border-[#6E2E35]/30 transition-colors">
                         {/* Phase Info */}
-                        <div className="space-y-2">
-                           <div className="text-sm tracking-[0.2em] text-[#b8936d] uppercase">{module.phase}</div>
-                           <div className="text-4xl font-serif text-[#2c2420]">{module.duration}</div>
-                           <div className="h-1 w-16 bg-gradient-to-r from-[#b8936d] to-transparent" />
+                        <div className="space-y-4">
+                           <p className="text-xs uppercase tracking-[0.15em] text-[#6E2E35] font-light">{module.phase}</p>
+                           <div className="text-3xl font-light text-[#1a1a1a]">{module.duration}</div>
+                           <div className="w-8 h-px bg-[#AC2121]/50" />
                         </div>
 
                         {/* Content */}
-                        <div>
-                           <h3 className="text-2xl font-serif text-[#2c2420] mb-4 group-hover:text-[#b8936d] transition-colors">
+                        <div className="space-y-6">
+                           <h3 className="text-2xl font-light text-[#1a1a1a] group-hover:text-[#6E2E35] transition-colors">
                               {module.title}
                            </h3>
-                           <div className="grid sm:grid-cols-2 gap-3">
+                           <div className="grid sm:grid-cols-2 gap-4">
                               {module.topics.map((topic, i) => (
-                                 <div key={i} className="flex items-center gap-2">
-                                    <div className="w-1.5 h-1.5 rounded-full bg-[#b8936d]" />
-                                    <span className="text-[#6b5d54]">{topic}</span>
+                                 <div key={i} className="flex items-center gap-3">
+                                    <div className="w-1.5 h-1.5 rounded-full bg-[#6E2E35]/50" />
+                                    <span className="text-sm text-[#666] font-light">{topic}</span>
                                  </div>
                               ))}
                            </div>
                         </div>
-
-                        {/* Decorative element */}
-                        <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-[#b8936d]/5 to-transparent rounded-lg" />
                      </div>
                   </div>
                ))}
             </div>
 
             {/* Support Features */}
-            <div className="grid md:grid-cols-3 gap-8 fade-in-section">
-               <div className="relative overflow-hidden p-8 bg-gradient-to-br from-[#2c2420] to-[#3a302a] text-white rounded-lg group hover:-translate-y-2 transition-all duration-500">
-                  <div className="relative z-10">
-                     <div className="text-5xl mb-4">📞</div>
-                     <h3 className="text-xl font-serif mb-3">24/7 Hotline</h3>
-                     <p className="text-[#c4b5a8] text-sm leading-relaxed">
-                        Dedicated support team available round the clock for any urgent concerns or questions.
-                     </p>
+            <div className="grid md:grid-cols-3 gap-8">
+               <div className="bg-gradient-to-br from-[#6E2E35] to-[#4a1f24] p-12 text-white group hover:-translate-y-2 transition-transform space-y-6">
+                  <div className="w-12 h-12 rounded-full border border-white/30 flex items-center justify-center group-hover:bg-white/10 transition-colors">
+                     <Phone size={20} className="text-white" />
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#b8936d]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <h3 className="text-lg font-light uppercase tracking-[0.1em]">24/7 Hotline</h3>
+                  <p className="text-sm font-light text-white/80 leading-relaxed">
+                     Dedicated support team available round-the-clock for immediate assistance.
+                  </p>
                </div>
 
-               <div className="relative overflow-hidden p-8 bg-gradient-to-br from-[#2c2420] to-[#3a302a] text-white rounded-lg group hover:-translate-y-2 transition-all duration-500">
-                  <div className="relative z-10">
-                     <div className="text-5xl mb-4">💼</div>
-                     <h3 className="text-xl font-serif mb-3">Business Coaching</h3>
-                     <p className="text-[#c4b5a8] text-sm leading-relaxed">
-                        Monthly one-on-one sessions with franchise advisors to optimize your operations and growth.
-                     </p>
+               <div className="bg-gradient-to-br from-[#750851] to-[#4a0530] p-12 text-white group hover:-translate-y-2 transition-transform space-y-6">
+                  <div className="w-12 h-12 rounded-full border border-white/30 flex items-center justify-center group-hover:bg-white/10 transition-colors">
+                     <Briefcase size={20} className="text-white" />
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#b8936d]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <h3 className="text-lg font-light uppercase tracking-[0.1em]">Business Coaching</h3>
+                  <p className="text-sm font-light text-white/80 leading-relaxed">
+                     Monthly one-on-one sessions optimizing operations and accelerating growth.
+                  </p>
                </div>
 
-               <div className="relative overflow-hidden p-8 bg-gradient-to-br from-[#2c2420] to-[#3a302a] text-white rounded-lg group hover:-translate-y-2 transition-all duration-500">
-                  <div className="relative z-10">
-                     <div className="text-5xl mb-4">🎯</div>
-                     <h3 className="text-xl font-serif mb-3">Marketing Hub</h3>
-                     <p className="text-[#c4b5a8] text-sm leading-relaxed">
-                        Access to updated marketing materials, campaign templates, and social media content library.
-                     </p>
+               <div className="bg-gradient-to-br from-[#AC2121] to-[#7d1515] p-12 text-white group hover:-translate-y-2 transition-transform space-y-6">
+                  <div className="w-12 h-12 rounded-full border border-white/30 flex items-center justify-center group-hover:bg-white/10 transition-colors">
+                     <Zap size={20} className="text-white" />
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#b8936d]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <h3 className="text-lg font-light uppercase tracking-[0.1em]">Marketing Hub</h3>
+                  <p className="text-sm font-light text-white/80 leading-relaxed">
+                     Access updated materials, campaign templates, and social media content library.
+                  </p>
                </div>
             </div>
          </div>
