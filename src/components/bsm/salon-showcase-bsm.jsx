@@ -93,7 +93,7 @@ export function SalonShowcaseBSM() {
             {/* 3D Card Stack Showcase */}
             <div
                ref={containerRef}
-               className="relative h-[600px] lg:h-[700px] mb-12"
+               className="relative h-[80vh]"
                onMouseMove={handleMouseMove}
             >
                {/* Background Blur Elements */}
@@ -121,7 +121,7 @@ export function SalonShowcaseBSM() {
                               transformStyle: 'preserve-3d',
                            }}
                         >
-                           <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl group">
+                           <div className="relative w-full h-full overflow-hidden shadow-2xl group">
                               <Image
                                  src={item.image || "/placeholder.svg"}
                                  alt={item.title}
@@ -134,19 +134,64 @@ export function SalonShowcaseBSM() {
 
                               {/* Floating Info - Always visible for active */}
                               {isActive && (
-                                 <div className="absolute bottom-0 left-0 right-0 p-10 text-white transform translate-y-6 group-hover:translate-y-0 transition-transform duration-500">
+                                 <div className="absolute top-0 left-0 right-0 p-10 text-white transform translate-y-6 group-hover:translate-y-0 transition-transform duration-500">
                                     <div className="max-w-2xl">
-                                       <p className="text-xs tracking-widest uppercase font-light mb-2 text-white/70">
+                                       <p className="text-xs tracking-widest uppercase font-light mb-2 text-black/70">
                                           Premium Experience
                                        </p>
-                                       <h3 className="text-4xl lg:text-5xl font-light mb-3 font-serif">{item.title}</h3>
-                                       <p className="text-lg text-white/90 font-light">{item.description}</p>
+                                       <h3 className="text-4xl lg:text-5xl font-light mb-3 text-black/90 font-serif">{item.title}</h3>
+                                       <p className="text-lg text-black/90 font-light">{item.description}</p>
                                     </div>
                                  </div>
                               )}
 
                               {/* Decorative frame */}
                               <div className="absolute inset-0 pointer-events-none border border-white/20 rounded-3xl" />
+
+                              {/* Navigation Controls */}
+                              <div className="absolute w-full -bottom-8 bg-white/90 z-10 flex items-center justify-between mb-8">
+                                 {/* Left Navigation */}
+                                 <button
+                                    onClick={prevSlide}
+                                    className="group p-4 hover:bg-[#6E2E35]/10 rounded-full transition-all duration-300"
+                                    aria-label="Previous slide"
+                                 >
+                                    <ChevronLeft className="w-6 h-6 text-[#6E2E35] transition-transform" />
+                                 </button>
+
+                                 {/* Counter and Progress */}
+                                 <div className="flex flex-col items-center gap-4">
+                                    <div className="text-center">
+                                       <p className="text-sm text-[#666] font-light">
+                                          <span className="text-[#6E2E35] font-medium">{activeIndex + 1}</span> of {salonImages.length}
+                                       </p>
+                                    </div>
+
+                                    {/* Dot Navigation with Animation */}
+                                    <div className="flex gap-2">
+                                       {salonImages.map((_, index) => (
+                                          <button
+                                             key={index}
+                                             onClick={() => goToSlide(index)}
+                                             className={`transition-all duration-500 rounded-full cursor-pointer ${index === activeIndex
+                                                ? 'w-8 h-2 bg-[#6E2E35]'
+                                                : 'w-2 h-2 bg-[#6E2E35]/30 hover:bg-[#6E2E35]/60'
+                                                }`}
+                                             aria-label={`Go to slide ${index + 1}`}
+                                          />
+                                       ))}
+                                    </div>
+                                 </div>
+
+                                 {/* Right Navigation */}
+                                 <button
+                                    onClick={nextSlide}
+                                    className="group p-4 hover:bg-[#6E2E35]/10 rounded-full transition-all duration-300"
+                                    aria-label="Next slide"
+                                 >
+                                    <ChevronRight className="w-6 h-6 text-[#6E2E35] group-hover:scale-125 transition-transform" />
+                                 </button>
+                              </div>
                            </div>
                         </div>
                      )
@@ -162,58 +207,15 @@ export function SalonShowcaseBSM() {
                />
             </div>
 
-            {/* Navigation Controls */}
-            <div className="flex items-center justify-between mb-8">
-               {/* Left Navigation */}
-               <button
-                  onClick={prevSlide}
-                  className="group p-4 hover:bg-[#6E2E35]/10 rounded-full transition-all duration-300"
-                  aria-label="Previous slide"
-               >
-                  <ChevronLeft className="w-6 h-6 text-[#6E2E35] group-hover:scale-125 transition-transform" />
-               </button>
 
-               {/* Counter and Progress */}
-               <div className="flex flex-col items-center gap-4">
-                  <div className="text-center">
-                     <p className="text-sm text-[#666] font-light">
-                        <span className="text-[#6E2E35] font-medium">{activeIndex + 1}</span> of {salonImages.length}
-                     </p>
-                  </div>
-
-                  {/* Dot Navigation with Animation */}
-                  <div className="flex gap-2">
-                     {salonImages.map((_, index) => (
-                        <button
-                           key={index}
-                           onClick={() => goToSlide(index)}
-                           className={`transition-all duration-500 rounded-full cursor-pointer ${index === activeIndex
-                              ? 'w-8 h-2 bg-[#6E2E35]'
-                              : 'w-2 h-2 bg-[#6E2E35]/30 hover:bg-[#6E2E35]/60'
-                              }`}
-                           aria-label={`Go to slide ${index + 1}`}
-                        />
-                     ))}
-                  </div>
-               </div>
-
-               {/* Right Navigation */}
-               <button
-                  onClick={nextSlide}
-                  className="group p-4 hover:bg-[#6E2E35]/10 rounded-full transition-all duration-300"
-                  aria-label="Next slide"
-               >
-                  <ChevronRight className="w-6 h-6 text-[#6E2E35] group-hover:scale-125 transition-transform" />
-               </button>
-            </div>
 
             {/* Showcase Cards Grid - Service Cards Below */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 pt-12 border-t border-[#6E2E35]/10">
+            <div className="grid grid-cols-4 mt-5 md:grid-cols-8 lg:grid-cols-8 gap-6 border-t border-[#6E2E35]/10">
                {salonImages.map((item, index) => (
                   <button
                      key={index}
                      onClick={() => goToSlide(index)}
-                     className={`group relative h-40 rounded-2xl overflow-hidden transition-all duration-300 cursor-pointer transform hover:scale-105 ${index === activeIndex ? 'ring-2 ring-[#6E2E35]' : ''
+                     className={`group relative h-20 rounded-2xl overflow-hidden transition-all duration-300 cursor-pointer transform hover:scale-105 ${index === activeIndex ? 'ring-2 ring-[#6E2E35]' : ''
                         }`}
                   >
                      <Image
