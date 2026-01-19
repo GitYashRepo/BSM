@@ -7,15 +7,6 @@ import { StatsSection } from "@/components/homepage/stats/Stats";
 import { InstagramGalleryCard } from "@/components/webcomp/IG/ig";
 import { InfiniteLogoScroller } from "@/components/logoscroller/infinite-logo-scroller";
 
-const SAMPLE_LOGOS = [
-   '/brandLogo/casmara.png',
-   '/brandLogo/chanel.png',
-   '/brandLogo/dior.png',
-   '/brandLogo/kanpaki.png',
-   '/brandLogo/Loreal.png',
-   '/brandLogo/sch-profs.png',
-];
-
 export default function Home() {
    return (
       <div>
@@ -72,7 +63,9 @@ export default function Home() {
                   />
                </div>
             </div>
-            <InfiniteLogoScroller logos={SAMPLE_LOGOS} speed={30} />
+            <InfiniteLogoScroller
+               speed={30}
+            />
          </main>
       </div>
    );
