@@ -173,7 +173,7 @@ export default function SalonSlider() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.5 }}
-                  className="text-xs md:text-sm tracking-widest text-[#750851] font-bold uppercase"
+                  className="text-base md:text-sm tracking-widest text-[#750851] font-bold uppercase"
                >
                   {slide.tag}
                </motion.div>

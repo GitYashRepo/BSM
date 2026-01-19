@@ -47,7 +47,7 @@ export function WhyPartner() {
          <div className="max-w-7xl mx-auto">
             {/* Section Header */}
             <div className="mb-24 max-w-3xl">
-               <p className="text-xs tracking-[0.3em] text-[#6E2E35] uppercase font-light mb-6">Why Partner With Us</p>
+               <p className="text-base tracking-[0.3em] text-[#6E2E35] uppercase font-light mb-6">Why Partner With Us</p>
                <h2 className="text-5xl md:text-6xl font-light text-[#1a1a1a] leading-tight mb-6">
                   Six Reasons to
                   <br />

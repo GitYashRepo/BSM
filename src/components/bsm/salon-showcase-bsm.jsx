@@ -79,7 +79,7 @@ export function SalonShowcaseBSM() {
          <div className="max-w-7xl mx-auto">
             {/* Header */}
             <div className="text-center mb-20">
-               <p className="bsm-text-line text-xs tracking-[0.3em] text-[#6E2E35] uppercase font-light mb-6">
+               <p className="bsm-text-line text-base tracking-[0.3em] text-[#6E2E35] uppercase font-light mb-6">
                   Salon Stories
                </p>
                <h2 className="bsm-text-line text-5xl md:text-6xl font-light text-[#1a1a1a] leading-tight">
@@ -136,7 +136,7 @@ export function SalonShowcaseBSM() {
                               {isActive && (
                                  <div className="absolute top-0 left-0 right-0 p-10 text-white transform translate-y-6 group-hover:translate-y-0 transition-transform duration-500">
                                     <div className="max-w-2xl">
-                                       <p className="text-xs tracking-widest uppercase font-light mb-2 text-black/70">
+                                       <p className="text-base tracking-widest uppercase font-light mb-2 text-black/70">
                                           Premium Experience
                                        </p>
                                        <h3 className="text-4xl lg:text-5xl font-light mb-3 text-black/90 font-serif">{item.title}</h3>

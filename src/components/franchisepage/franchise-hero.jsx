@@ -40,7 +40,7 @@ export function FranchiseHero() {
             <div
                className={`transition-all duration-1000 delay-100 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"}`}
             >
-               <p className="text-xs tracking-[0.3em] text-[#6E2E35] uppercase font-light letter-spacing leading-0">
+               <p className="text-base tracking-[0.3em] text-[#6E2E35] uppercase font-light letter-spacing leading-0">
                   Premium Salon Franchise
                </p>
             </div>
@@ -75,7 +75,7 @@ export function FranchiseHero() {
             <div
                className={` transition-all duration-1000 delay-600 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"}`}
             >
-               <button className="px-12 py-4 bg-[#6E2E35] text-white text-xs uppercase tracking-[0.2em] font-light hover:bg-[#750851] transition-colors duration-300 hover:shadow-lg">
+               <button className="px-12 py-4 bg-[#6E2E35] text-white text-base uppercase tracking-[0.2em] font-light hover:bg-[#750851] transition-colors duration-300 hover:shadow-lg">
                   Explore Opportunity
                </button>
             </div>

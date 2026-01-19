@@ -31,7 +31,7 @@ export function ApplyNow() {
          <div className="max-w-5xl mx-auto">
             {/* Header */}
             <div className="mb-20 max-w-3xl">
-               <p className="text-xs tracking-[0.3em] text-[#6E2E35] uppercase font-light mb-6">Begin Your Journey</p>
+               <p className="text-base tracking-[0.3em] text-[#6E2E35] uppercase font-light mb-6">Begin Your Journey</p>
                <h2 className="text-5xl md:text-6xl font-light text-[#1a1a1a] leading-tight mb-8">
                   Apply
                   <br />
@@ -47,7 +47,7 @@ export function ApplyNow() {
                <div className="grid md:grid-cols-2 gap-6">
                   {/* Name */}
                   <div className="space-y-2">
-                     <label htmlFor="name" className="block text-xs uppercase tracking-[0.15em] text-[#6E2E35] font-light">
+                     <label htmlFor="name" className="block text-base uppercase tracking-[0.15em] text-[#6E2E35] font-light">
                         Full Name *
                      </label>
                      <input
@@ -64,7 +64,7 @@ export function ApplyNow() {
 
                   {/* Email */}
                   <div className="space-y-2">
-                     <label htmlFor="email" className="block text-xs uppercase tracking-[0.15em] text-[#6E2E35] font-light">
+                     <label htmlFor="email" className="block text-base uppercase tracking-[0.15em] text-[#6E2E35] font-light">
                         Email *
                      </label>
                      <input
@@ -81,7 +81,7 @@ export function ApplyNow() {
 
                   {/* Phone */}
                   <div className="space-y-2">
-                     <label htmlFor="phone" className="block text-xs uppercase tracking-[0.15em] text-[#6E2E35] font-light">
+                     <label htmlFor="phone" className="block text-base uppercase tracking-[0.15em] text-[#6E2E35] font-light">
                         Phone *
                      </label>
                      <input
@@ -98,7 +98,7 @@ export function ApplyNow() {
 
                   {/* Location */}
                   <div className="space-y-2">
-                     <label htmlFor="location" className="block text-xs uppercase tracking-[0.15em] text-[#6E2E35] font-light">
+                     <label htmlFor="location" className="block text-base uppercase tracking-[0.15em] text-[#6E2E35] font-light">
                         Location *
                      </label>
                      <input
@@ -117,7 +117,7 @@ export function ApplyNow() {
                   <div className="space-y-2">
                      <label
                         htmlFor="experience"
-                        className="block text-xs uppercase tracking-[0.15em] text-[#6E2E35] font-light"
+                        className="block text-base uppercase tracking-[0.15em] text-[#6E2E35] font-light"
                      >
                         Experience
                      </label>
@@ -140,7 +140,7 @@ export function ApplyNow() {
                   <div className="space-y-2">
                      <label
                         htmlFor="investment"
-                        className="block text-xs uppercase tracking-[0.15em] text-[#6E2E35] font-light"
+                        className="block text-base uppercase tracking-[0.15em] text-[#6E2E35] font-light"
                      >
                         Investment Capacity
                      </label>
@@ -161,7 +161,7 @@ export function ApplyNow() {
 
                {/* Message */}
                <div className="space-y-2 pt-6">
-                  <label htmlFor="message" className="block text-xs uppercase tracking-[0.15em] text-[#6E2E35] font-light">
+                  <label htmlFor="message" className="block text-base uppercase tracking-[0.15em] text-[#6E2E35] font-light">
                      Message
                   </label>
                   <textarea
@@ -179,7 +179,7 @@ export function ApplyNow() {
                <div className="flex items-center gap-6 pt-8">
                   <button
                      type="submit"
-                     className="flex items-center gap-3 px-10 py-4 bg-[#6E2E35] text-white text-xs uppercase tracking-[0.15em] font-light hover:bg-[#750851] transition-colors"
+                     className="flex items-center gap-3 px-10 py-4 bg-[#6E2E35] text-white text-base uppercase tracking-[0.15em] font-light hover:bg-[#750851] transition-colors"
                   >
                      Submit Application
                      <Send size={16} />

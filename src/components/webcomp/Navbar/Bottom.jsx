@@ -49,9 +49,9 @@ const navItems = [
       },
    },
    {
-      label: "Skin",
+      label: "Beauty",
       items: [
-         { label: "Skin", href: "skin" },
+         { label: "Beauty", href: "beauty" },
          { label: "Facial", href: "#facial" },
          { label: "Cleanup", href: "#cleanup" },
          { label: "Bleach", href: "#bleach" },
@@ -88,9 +88,7 @@ const navItems = [
          { label: "Bridal Makeovers", href: "#bridal-makeover" },
          { label: "Pre-Bridal Package", href: "#pre-bridal" },
          { label: "Groom Makeover", href: "#groom" },
-         { label: "Family Package", href: "#family" },
          { label: "Celebrity Styling", href: "#celebrity-styling" },
-         { label: "Destination Wedding", href: "#destination" },
       ],
       featured: {
          title: "Complete Bridal Experience",

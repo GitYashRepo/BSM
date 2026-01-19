@@ -31,7 +31,7 @@ export function Philosophy() {
          <div className="max-w-7xl mx-auto">
             {/* Section Header */}
             <div className="mb-20 text-center">
-               <p className="text-line text-xs tracking-[0.3em] text-[#6E2E35] uppercase font-light mb-6">Our Philosophy</p>
+               <p className="text-line text-base tracking-[0.3em] text-[#6E2E35] uppercase font-light mb-6">Our Philosophy</p>
                <h2 className="text-line text-5xl md:text-6xl font-light text-[#1a1a1a] leading-tight mb-8">
                   Built on <span className="text-[#AC2121] font-serif italic">Core Values</span>
                </h2>
