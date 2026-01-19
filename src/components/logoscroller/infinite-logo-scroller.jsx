@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import React from 'react';
 import { useRef, useEffect, useState } from 'react';
 
@@ -197,9 +198,11 @@ export function InfiniteLogoScroller({
                            backdropFilter: 'blur(10px)',
                         }}
                      >
-                        <img
+                        <Image
                            src={logo}
                            alt={`Logo ${idx}`}
+                           width={96}
+                           height={96}
                            className="max-h-16 max-w-16 md:max-h-24 md:max-w-24 object-contain filter drop-shadow-md transition-transform duration-300"
                         />
                      </div>
