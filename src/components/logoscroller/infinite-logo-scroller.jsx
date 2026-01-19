@@ -1,11 +1,19 @@
 'use client';
 
-import Image from 'next/image';
 import React from 'react';
 import { useRef, useEffect, useState } from 'react';
 
+const SAMPLE_LOGOS = [
+   '/brandLogo/casmara.png',
+   '/brandLogo/chanel.png',
+   '/brandLogo/dior.png',
+   '/brandLogo/kanpaki.png',
+   '/brandLogo/Loreal.png',
+   '/brandLogo/sch-profs.png',
+];
+
 export function InfiniteLogoScroller({
-   logos,
+   // logos,
    speed = 30,
    className = '',
 }) {
@@ -169,8 +177,8 @@ export function InfiniteLogoScroller({
                transition: isDragging ? 'none' : 'none',
             }}
          >
-            {logos.map((logo, idx) => {
-               const angle = (idx / logos.length) * 360;
+            {SAMPLE_LOGOS.map((logo, idx) => {
+               const angle = (idx / SAMPLE_LOGOS.length) * 360;
                const radius = isMobile ? 90 : 180;
                const x = Math.cos((angle * Math.PI) / 180) * radius;
                const y = Math.sin((angle * Math.PI) / 180) * radius;
@@ -198,11 +206,9 @@ export function InfiniteLogoScroller({
                            backdropFilter: 'blur(10px)',
                         }}
                      >
-                        <Image
+                        <img
                            src={logo}
                            alt={`Logo ${idx}`}
-                           width={96}
-                           height={96}
                            className="max-h-16 max-w-16 md:max-h-24 md:max-w-24 object-contain filter drop-shadow-md transition-transform duration-300"
                         />
                      </div>
