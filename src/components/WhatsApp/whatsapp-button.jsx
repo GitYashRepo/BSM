@@ -48,8 +48,8 @@ export default function WhatsAppWidget({ brandName = "Blush by Sakshi Makeover's
                aria-modal="true"
                aria-label="WhatsApp styled chat"
                className={cn(
-                  "fixed z-[999999999999] right-2 sm:right-8 bottom-16 sm:bottom-16",
-                  "w-[280px] sm:w-[360px] h-[60vh] sm:h-[80vh]",
+                  "fixed z-[999999999999] right-2 md:right-2 bottom-2 md:bottom-2",
+                  "w-[280px] sm:w-[360px] h-[60vh] md:h-[70vh]",
                   "rounded-xl shadow-2xl border border-black/5 overflow-hidden flex flex-col",
                   "bg-[#f6f7f5]"
                )}
