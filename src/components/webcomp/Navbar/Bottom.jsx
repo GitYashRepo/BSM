@@ -95,6 +95,7 @@ const navItems = [
    {
       label: "Franchise",
       items: [
+         { label: "Franchise", href: "franchise" },
          { label: "Why Partner With Us", href: "franchise#whypartnerwithus" },
          { label: "Investment Details", href: "franchise#investment" },
          { label: "Support & Training", href: "franchise#support" },
@@ -120,11 +121,9 @@ const navItems = [
    {
       label: "Contact",
       items: [
+         { label: "Contact Support", href: "contact" },
          { label: "Book Appointment", href: "contact#appointment" },
          { label: "Our Locations", href: "contact#location" },
-         // { label: "Working Hours", href: "#hours" },
-         // { label: "Customer Support", href: "contact" },
-         // { label: "Complaints", href: "contact" },
       ],
       featured: {
          title: "Get In Touch",
