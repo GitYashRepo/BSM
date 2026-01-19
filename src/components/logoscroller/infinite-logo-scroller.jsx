@@ -204,7 +204,7 @@ export function InfiniteLogoScroller({
                         }}
                      >
                         <img
-                           src={logo || '/placeholder.svg'}
+                           src={logo}
                            alt={`Logo ${idx}`}
                            className="max-h-16 max-w-16 md:max-h-24 md:max-w-24 object-contain filter drop-shadow-md transition-transform duration-300"
                         />

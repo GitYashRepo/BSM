@@ -6,12 +6,12 @@ import { InstagramGalleryCard } from "@/components/webcomp/IG/ig";
 import { InfiniteLogoScroller } from "@/components/logoscroller/infinite-logo-scroller";
 
 const SAMPLE_LOGOS = [
-   '/brandlogo/casmara.png',
-   '/brandlogo/chanel.png',
-   '/brandlogo/dior.png',
-   '/brandlogo/kanpaki.png',
-   '/brandlogo/Loreal.png',
-   '/brandlogo/sch-profs.png',
+   '/brandLogo/casmara.png',
+   '/brandLogo/chanel.png',
+   '/brandLogo/dior.png',
+   '/brandLogo/kanpaki.png',
+   '/brandLogo/Loreal.png',
+   '/brandLogo/sch-profs.png',
 ];
 
 export default function Home() {
