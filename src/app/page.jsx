@@ -1,3 +1,5 @@
+"use client";
+
 import SalonSlider from "@/components/webcomp/Sliders/HomeBanner";
 import SalonSections from "@/components/homepage/aboutUs/AboutUs";
 import { ServiceSection } from "@/components/homepage/ourservices/Services";
