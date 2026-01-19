@@ -141,14 +141,8 @@ export function InfiniteLogoScroller({
          onTouchEnd={handleTouchEnd}
       >
          {/* Animated background orbs */}
-         <div className="absolute -top-40 -left-40 w-80 h-80 md:w-96 md:h-96 bg-gradient-to-br from-blue-300/30 to-transparent rounded-full blur-3xl animate-pulse" />
-         <div className="absolute -bottom-40 -right-40 w-80 h-80 md:w-96 md:h-96 bg-gradient-to-tl from-indigo-300/30 to-transparent rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-
-         {/* Outer ring */}
-         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <div className="w-64 h-64 md:w-[500px] md:h-[500px] rounded-full border-2 border-slate-200/40 shadow-lg shadow-blue-200/20" />
-            <div className="absolute w-80 h-80 md:w-[600px] md:h-[600px] rounded-full border border-slate-300/20" />
-         </div>
+         <div className="absolute -left-40 w-80 h-80 md:w-96 md:h-96 bg-gradient-to-br from-blue-300/30 to-transparent rounded-full blur-3xl animate-pulse" />
+         <div className="absolute -right-40 w-80 h-80 md:w-96 md:h-96 bg-gradient-to-tl from-indigo-300/30 to-transparent rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
 
          <div className='w-full md:w-[100vh] flex flex-col items-center mb-10'>
             <p className="text-xs tracking-[0.3em] text-[#6E2E35] uppercase font-light mb-2">Products We Use</p>
