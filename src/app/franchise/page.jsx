@@ -6,6 +6,16 @@ import { WhyPartner } from "@/components/franchisepage/why-partner"
 import { InvestmentDetails } from "@/components/franchisepage/investment-details"
 import { SupportTraining } from "@/components/franchisepage/support-training"
 import { ApplyNow } from "@/components/franchisepage/apply-now"
+import { InfiniteLogoScroller } from "@/components/logoscroller/infinite-logo-scroller"
+
+const SAMPLE_LOGOS = [
+   '/brandlogo/casmara.png',
+   '/brandlogo/chanel.png',
+   '/brandlogo/dior.png',
+   '/brandlogo/kanpaki.png',
+   '/brandlogo/Loreal.png',
+   '/brandlogo/sch-profs.png',
+];
 
 export default function FranchisePage() {
    const pageRef = useRef(null)
@@ -34,6 +44,7 @@ export default function FranchisePage() {
          <WhyPartner />
          <InvestmentDetails />
          <SupportTraining />
+         <InfiniteLogoScroller logos={SAMPLE_LOGOS} speed={30} />
          <ApplyNow />
       </div>
    )
