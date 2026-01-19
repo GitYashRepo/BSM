@@ -3,7 +3,16 @@ import SalonSections from "@/components/homepage/aboutUs/AboutUs";
 import { ServiceSection } from "@/components/homepage/ourservices/Services";
 import { StatsSection } from "@/components/homepage/stats/Stats";
 import { InstagramGalleryCard } from "@/components/webcomp/IG/ig";
+import { InfiniteLogoScroller } from "@/components/logoscroller/infinite-logo-scroller";
 
+const SAMPLE_LOGOS = [
+   '/brandlogo/casmara.png',
+   '/brandlogo/chanel.png',
+   '/brandlogo/dior.png',
+   '/brandlogo/kanpaki.png',
+   '/brandlogo/Loreal.png',
+   '/brandlogo/sch-profs.png',
+];
 
 export default function Home() {
    return (
@@ -61,6 +70,7 @@ export default function Home() {
                   />
                </div>
             </div>
+            <InfiniteLogoScroller logos={SAMPLE_LOGOS} speed={30} />
          </main>
       </div>
    );
