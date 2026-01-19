@@ -18,6 +18,7 @@ const navItems = [
    {
       label: "Makeup",
       items: [
+         { label: "Makeup", href: "makeup" },
          { label: "Bridal Makeup", href: "#bridal" },
          { label: "Party Makeup", href: "#party" },
          { label: "HD Makeup", href: "#hd" },
@@ -33,6 +34,7 @@ const navItems = [
    {
       label: "Hair",
       items: [
+         { label: "Hair", href: "hair" },
          { label: "Haircuts", href: "#haircuts" },
          { label: "Hair Color", href: "#color" },
          { label: "Hair Spa", href: "#spa" },
@@ -49,6 +51,7 @@ const navItems = [
    {
       label: "Skin",
       items: [
+         { label: "Skin", href: "skin" },
          { label: "Facial", href: "#facial" },
          { label: "Cleanup", href: "#cleanup" },
          { label: "Bleach", href: "#bleach" },
@@ -65,6 +68,7 @@ const navItems = [
    {
       label: "Esthetics",
       items: [
+         { label: "Esthetics", href: "esthetics" },
          { label: "Skin Treatments", href: "#skin" },
          { label: "Anti-Aging", href: "#anti-aging" },
          { label: "Acne Treatment", href: "#acne" },
@@ -80,6 +84,7 @@ const navItems = [
    {
       label: "Signature Services",
       items: [
+         { label: "Signature Services", href: "signatureservices" },
          { label: "Bridal Makeovers", href: "#bridal-makeover" },
          { label: "Pre-Bridal Package", href: "#pre-bridal" },
          { label: "Groom Makeover", href: "#groom" },
@@ -121,7 +126,7 @@ const navItems = [
    {
       label: "Contact",
       items: [
-         { label: "Contact Support", href: "contact" },
+         { label: "Contact-Support", href: "contact" },
          { label: "Book Appointment", href: "contact#appointment" },
          { label: "Our Locations", href: "contact#location" },
       ],
