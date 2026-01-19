@@ -29,7 +29,7 @@ export function ValueAboutBSM() {
          <div className="max-w-7xl mx-auto">
             {/* Header */}
             <div className="text-center mb-24">
-               <p className="bsm-text-line text-xs tracking-[0.3em] text-[#6E2E35] uppercase font-light mb-6">
+               <p className="bsm-text-line text-base tracking-[0.3em] text-[#6E2E35] uppercase font-light mb-6">
                   Core Values
                </p>
                <h2 className="bsm-text-line text-5xl md:text-6xl font-light text-[#1a1a1a] leading-tight">

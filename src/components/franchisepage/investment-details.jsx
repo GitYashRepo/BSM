@@ -17,7 +17,7 @@ export function InvestmentDetails() {
                {/* Left Content */}
                <div className="space-y-12">
                   <div>
-                     <p className="text-xs tracking-[0.3em] text-[#6E2E35] uppercase font-light mb-6">Investment Overview</p>
+                     <p className="text-base tracking-[0.3em] text-[#6E2E35] uppercase font-light mb-6">Investment Overview</p>
                      <h2 className="text-5xl md:text-6xl font-light text-[#1a1a1a] leading-tight mb-8">
                         Your Dream
                         <br />

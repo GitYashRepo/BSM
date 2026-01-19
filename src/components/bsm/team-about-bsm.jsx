@@ -22,7 +22,7 @@ export function TeamAboutBSM() {
          <div className="max-w-7xl mx-auto">
             {/* Header */}
             <div className="text-center mb-24">
-               <p className="bsm-text-line text-xs tracking-[0.3em] text-[#6E2E35] uppercase font-light mb-6">Our Team</p>
+               <p className="bsm-text-line text-base tracking-[0.3em] text-[#6E2E35] uppercase font-light mb-6">Our Team</p>
                <h2 className="bsm-text-line text-5xl md:text-6xl font-light text-[#1a1a1a] leading-tight">
                   Meet the <span className="text-[#6E2E35] font-serif italic">Collective</span>
                </h2>
@@ -66,7 +66,7 @@ export function TeamAboutBSM() {
 
                      {/* Floating Info Badge - appears on hover */}
                      <div className="absolute top-8 right-8 bg-white/95 backdrop-blur-md rounded-2xl px-6 py-4 shadow-xl opacity-0 group-hover:opacity-100 translate-x-4 group-hover:translate-x-0 transition-all duration-500">
-                        <p className="text-[#6E2E35] text-xs tracking-widest uppercase font-light">Excellence in Unity</p>
+                        <p className="text-[#6E2E35] text-base tracking-widest uppercase font-light">Excellence in Unity</p>
                      </div>
 
                      {/* Bottom Info Card - slides up on hover */}

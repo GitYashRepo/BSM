@@ -8,7 +8,7 @@ export function StoryAboutBSM() {
                {/* Left Content */}
                <div className="space-y-10">
                   <div>
-                     <p className="bsm-text-line text-xs tracking-[0.3em] text-[#6E2E35] uppercase font-light mb-6">Our Story</p>
+                     <p className="bsm-text-line text-base tracking-[0.3em] text-[#6E2E35] uppercase font-light mb-6">Our Story</p>
                      <h2 className="bsm-text-line text-5xl md:text-6xl font-light text-[#1a1a1a] leading-tight mb-8">
                         Born from <span className="text-[#6E2E35] font-serif italic">Passion</span>
                      </h2>

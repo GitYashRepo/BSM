@@ -29,7 +29,7 @@ export function Testimonials() {
          <div className="max-w-7xl mx-auto">
             {/* Header */}
             <div className="text-center mb-20">
-               <p className="text-line text-xs tracking-[0.3em] text-[#6E2E35] uppercase font-light mb-6">Hear from our clients</p>
+               <p className="text-line text-base tracking-[0.3em] text-[#6E2E35] uppercase font-light mb-6">Hear from our clients</p>
                <h2 className="text-line text-5xl md:text-6xl font-light text-[#1a1a1a] leading-tight mb-6">
                   Client <span className="text-[#6E2E35] font-serif italic">Stories</span>
                </h2>
@@ -57,7 +57,7 @@ export function Testimonials() {
 
                         {/* Author */}
                         <div className="border-t border-[#6E2E35]/10 pt-6">
-                           <p className="text-line font-light text-[#1a1a1a] text-sm">{testimonial.name}</p>
+                           <p className="text-line font-light text-[#1a1a1a] text-base">{testimonial.name}</p>
                            <p className="text-xs text-[#6E2E35] font-light uppercase tracking-widest mt-1">{testimonial.role}</p>
                         </div>
                      </div>

@@ -69,7 +69,7 @@ export function ServiceSection() {
                   <AnimatedText
                      as="p"
                      animation="char"
-                     className="text-xs lg:text-sm font-mono tracking-widest uppercase text-muted-foreground"
+                     className="text-base lg:text-sm font-mono tracking-widest uppercase text-muted-foreground"
                   >
                      Our Services
                   </AnimatedText>
@@ -164,10 +164,10 @@ export function ServiceSection() {
                                        </span>
 
                                        <div className="flex flex-col gap-1">
-                                          <span className="text-xs font-mono tracking-wider uppercase opacity-60">
+                                          <span className="text-base font-mono tracking-wider uppercase opacity-60">
                                              {service.category}
                                           </span>
-                                          <div className="flex items-center gap-2 text-xs font-mono opacity-60">
+                                          <div className="flex items-center gap-2 text-base font-mono opacity-60">
                                              <span>{service.duration}</span>
                                              <Minus className="w-3 h-3" />
                                              <span>{service.price}</span>
@@ -217,7 +217,7 @@ export function ServiceSection() {
             <div className="max-w-screen-2xl mx-auto px-6 lg:px-12 py-6 lg:py-8">
                <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
                   <div className="space-y-2">
-                     <p className="text-xs font-mono tracking-wider uppercase opacity-60">Ready to begin?</p>
+                     <p className="text-base font-mono tracking-wider uppercase opacity-60">Ready to begin?</p>
                      <AnimatedText
                         as="h3"
                         animation="word"

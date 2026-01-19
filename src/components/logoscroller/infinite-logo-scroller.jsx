@@ -154,7 +154,7 @@ export function InfiniteLogoScroller({
          <div className="absolute -right-40 w-80 h-80 md:w-96 md:h-96 bg-gradient-to-tl from-indigo-300/30 to-transparent rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
 
          <div className='w-full md:w-[100vh] flex flex-col items-center mb-10'>
-            <p className="text-xs tracking-[0.3em] text-[#6E2E35] uppercase font-light mb-2">Products We Use</p>
+            <p className="text-base tracking-[0.3em] text-[#6E2E35] uppercase font-light mb-2">Products We Use</p>
             <h2 className="text-2xl text-center md:text-6xl font-light text-[#1a1a1a] leading-0.7 mb-2">
                Professional Grade {" "}
                <span className="text-[#AC2121] font-serif italic">Excellence</span>

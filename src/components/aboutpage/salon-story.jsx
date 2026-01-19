@@ -13,7 +13,7 @@ export function SalonStory() {
          <div className="max-w-7xl mx-auto">
             {/* Header */}
             <div className="text-center mb-20">
-               <p className="text-line text-xs tracking-[0.3em] text-[#6E2E35] uppercase font-light mb-6">Our Journey</p>
+               <p className="text-line text-base tracking-[0.3em] text-[#6E2E35] uppercase font-light mb-6">Our Journey</p>
                <h2 className="text-line text-5xl md:text-6xl font-light text-[#1a1a1a] leading-tight">
                   A <span className="text-[#6E2E35] font-serif italic">Timeline</span> of Growth
                </h2>

@@ -29,7 +29,7 @@ export function SupportTraining() {
          <div className="max-w-7xl mx-auto">
             {/* Header */}
             <div className="mb-24 max-w-3xl">
-               <p className="text-xs tracking-[0.3em] text-[#6E2E35] uppercase font-light mb-6">Your Success Path</p>
+               <p className="text-base tracking-[0.3em] text-[#6E2E35] uppercase font-light mb-6">Your Success Path</p>
                <h2 className="text-5xl md:text-6xl font-light text-[#1a1a1a] leading-tight mb-8">
                   Training &
                   <br />
@@ -47,7 +47,7 @@ export function SupportTraining() {
                      <div className="grid md:grid-cols-[220px_1fr] gap-12 items-start py-12 border-b border-[#6E2E35]/10 group-hover:border-[#6E2E35]/30 transition-colors">
                         {/* Phase Info */}
                         <div className="space-y-4">
-                           <p className="text-xs uppercase tracking-[0.15em] text-[#6E2E35] font-light">{module.phase}</p>
+                           <p className="text-base uppercase tracking-[0.15em] text-[#6E2E35] font-light">{module.phase}</p>
                            <div className="text-3xl font-light text-[#1a1a1a]">{module.duration}</div>
                            <div className="w-8 h-px bg-[#AC2121]/50" />
                         </div>

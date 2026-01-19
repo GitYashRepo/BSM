@@ -3,7 +3,7 @@
 
 import React from 'react';
 
-export default function SkinPage() {
+export default function BeautyPage() {
    return (
       <div className="min-h-screen flex items-center justify-center">
          <h1 className="text-4xl font-bold">Skin Page Coming Soon!</h1>
