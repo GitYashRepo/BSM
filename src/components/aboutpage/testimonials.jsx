@@ -29,12 +29,12 @@ export function Testimonials() {
          <div className="max-w-7xl mx-auto">
             {/* Header */}
             <div className="text-center mb-20">
-               <p className="text-line text-xs tracking-[0.3em] text-[#6E2E35] uppercase font-light mb-6">Success Stories</p>
+               <p className="text-line text-xs tracking-[0.3em] text-[#6E2E35] uppercase font-light mb-6">Hear from our clients</p>
                <h2 className="text-line text-5xl md:text-6xl font-light text-[#1a1a1a] leading-tight mb-6">
-                  Franchise <span className="text-[#6E2E35] font-serif italic">Partners</span> Share
+                  Client <span className="text-[#6E2E35] font-serif italic">Stories</span>
                </h2>
                <p className="text-line text-lg text-[#666] font-light max-w-2xl mx-auto">
-                  Hear from our successful salon owners about their transformative journey
+                  Discover why brides and clients trust Blush by Sakshi Makeover's for their most special occasions.
                </p>
             </div>
 
