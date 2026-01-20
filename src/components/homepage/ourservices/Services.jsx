@@ -69,7 +69,7 @@ export function ServiceSection() {
                   <AnimatedText
                      as="p"
                      animation="char"
-                     className="text-base lg:text-sm font-mono tracking-widest uppercase text-muted-foreground"
+                     className="text-base font-mono tracking-widest uppercase text-muted-foreground"
                   >
                      Our Services
                   </AnimatedText>
@@ -153,7 +153,7 @@ export function ServiceSection() {
                                     alt={service.title}
                                     className="w-full h-full object-cover object-top transition-all duration-700 group-hover:scale-105"
                                  />
-                                 <div className="absolute inset-0 bg-primary/60 group-hover:bg-primary/40 transition-colors duration-700" />
+                                 <div className ="absolute inset-0 bg-primary/60 group-hover:bg-primary/40 transition-colors duration-700" />
                               </div>
 
                               <div className="relative h-full flex flex-col justify-between p-6 lg:p-8">

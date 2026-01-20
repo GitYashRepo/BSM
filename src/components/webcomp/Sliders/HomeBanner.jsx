@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
 const slides = [
    {
@@ -14,6 +15,7 @@ const slides = [
       description:
          "Enhance your look with flawless makeup artistry tailored for parties, events, and everyday beauty.",
       buttonText: "EXPLORE",
+      link: "/makeup",
       image: "/images/img2.jpg",
    },
    {
@@ -24,6 +26,7 @@ const slides = [
       description:
          "Experience expert haircuts, smoothening, styling, and treatments crafted for your unique texture.",
       buttonText: "EXPLORE",
+      link: "/hair",
       image: "/images/img5.jpg",
    },
    {
@@ -34,6 +37,7 @@ const slides = [
       description:
          "Refine your features with professional beauty services including brows, lashes, and signature detailing.",
       buttonText: "EXPLORE",
+      link: "/beauty",
       image: "/images/img7.jpg",
    },
    {
@@ -44,16 +48,18 @@ const slides = [
       description:
          "Rejuvenate your skin with premium facials, peels, and esthetic therapies for long-lasting glow.",
       buttonText: "EXPLORE",
+      link: "/esthetics",
       image: "/images/img9.jpg",
    },
    {
       id: 5,
       tag: "BLUSH",
-      heading: "Skin",
+      heading: "Signature Services",
       title: "Glow",
       description:
          "Brighten and nourish your skin with advanced skincare treatments crafted for clarity and hydration.",
       buttonText: "EXPLORE",
+      link: "/signatureservices",
       image: "/images/img3.jpg",
    },
    {
@@ -64,6 +70,7 @@ const slides = [
       description:
          "Experience luxurious bridal makeup designed to stay flawless, elegant, and radiant throughout your special day.",
       buttonText: "EXPLORE",
+      link: "/bridal",
       image: "/images/img8.jpg",
    },
 ];
@@ -232,24 +239,24 @@ export default function SalonSlider() {
                            custom={0}
                            className="mb-6 pb-10 relative z-10"
                         >
-                           <h2 className="text-4xl md:text-3xl lg:text-6xl font-bold text-black leading-none">{slide.heading}</h2>
+                           <h2 className="text-xl md:text-2xl lg:text-4xl font-bold text-black leading-none">{slide.heading}</h2>
                         </motion.div>
 
-                        <button
-                           key={`button-${current}`}
-                           variants={contentVariants}
-                           initial="hidden"
-                           animate="visible"
-                           exit="exit"
-                           custom={3}
-                           className=" group w-auto flex flex-row gap-4 items-center cursor-pointer text-black hover:text-[#D99726] transition-colors duration-300"
-                        >
-                           <span>{slide.buttonText}</span>
-
-                           <span className=" h-[1px] w-[80px] bg-black transition-all duration-300 group-hover:w-[120px] group-hover:bg-[#D99726]"
-                           ></span>
-                        </button>
-
+                        <Link href={slide.link}>
+                           <button
+                              key={`button-${current}`}
+                              variants={contentVariants}
+                              initial="hidden"
+                              animate="visible"
+                              exit="exit"
+                              custom={3}
+                              className=" group w-auto flex flex-row gap-4 items-center cursor-pointer text-black hover:text-[#D99726] transition-colors duration-300"
+                           >
+                              <span>{slide.buttonText}</span>
+                              <span className=" h-[1px] w-[80px] bg-black transition-all duration-300 group-hover:w-[120px] group-hover:bg-[#D99726]"
+                              ></span>
+                           </button>
+                        </Link>
                      </AnimatePresence>
                   </div>
                </div>
