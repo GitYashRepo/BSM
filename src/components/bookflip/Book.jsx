@@ -136,12 +136,12 @@ export default function Book() {
          // onFlip={playFlipSound}
          // onTouchStart={playFlipSound}
          >
-            <div className="w-full h-full bg-background text-foreground overflow-hidden flex items-center justify-center">
+            <div className="w-full h-full bg-amber-200 text-foreground overflow-hidden flex items-center justify-center">
                <div className="absolute inset-0 opacity-30 pointer-events-none">
                   <div className="absolute top-0 right-0 w-64 h-64 bg-accent rounded-full blur-3xl opacity-20"></div>
                   <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary rounded-full blur-3xl opacity-10"></div>
                </div>
-               <div className="relative w-full h-full bg-white overflow-hidden flex flex-col items-center justify-center px-6 py-8">
+               <div className="relative w-full h-full bg-amber-200 overflow-hidden flex flex-col items-center justify-center px-6 py-8">
 
                   <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent"></div>
 
@@ -202,7 +202,7 @@ export default function Book() {
                   className="relative w-full h-full rounded-md shadow-lg bg-gradient-to-br from-white to-gray-100"
                >
 
-                  <div className="absolute right-2 top-1/2 -translate-y-1/2 flex flex-col gap-2 z-10">
+                  <div className="absolute right-2 top-1/2 -translate-y-1/2 flex flex-col gap-5 z-10">
 
                      <button
                         className="px-3 py-2 bg-slate-700 text-white text-sm font-medium hover:bg-slate-800"
@@ -269,14 +269,14 @@ export default function Book() {
                </div>
             ))}
 
-            <div className="w-full h-full bg-background text-foreground overflow-hidden flex items-center justify-center">
+            <div className="w-full h-full bg-amber-200 text-foreground overflow-hidden flex items-center justify-center">
 
                <div className="absolute inset-0 opacity-30 pointer-events-none">
                   <div className="absolute top-0 left-0 w-64 h-64 bg-primary rounded-full blur-3xl opacity-10"></div>
                   <div className="absolute bottom-0 right-0 w-64 h-64 bg-accent rounded-full blur-3xl opacity-20"></div>
                </div>
 
-               <div className="relative w-full h-full bg-white overflow-hidden flex flex-col items-center justify-center px-8 py-10">
+               <div className="relative w-full h-full bg-amber-200 overflow-hidden flex flex-col items-center justify-center px-8 py-10">
 
                   <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent"></div>
 
@@ -312,13 +312,13 @@ export default function Book() {
                </div>
             </div>
 
-            <div className="w-full h-full bg-background text-foreground overflow-hidden flex items-center justify-center">
+            <div className="w-full h-full bg-amber-200 text-foreground overflow-hidden flex items-center justify-center">
                <div className="absolute inset-0 opacity-30 pointer-events-none">
                   <div className="absolute top-0 left-0 w-64 h-64 bg-primary rounded-full blur-3xl opacity-10"></div>
                   <div className="absolute bottom-0 right-0 w-64 h-64 bg-accent rounded-full blur-3xl opacity-20"></div>
                </div>
 
-               <div className="relative w-full h-full bg-white overflow-hidden flex flex-col items-center justify-center px-8 py-10">
+               <div className="relative w-full h-full bg-amber-200 overflow-hidden flex flex-col items-center justify-center px-8 py-10">
 
                   <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent"></div>
 
