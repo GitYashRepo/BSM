@@ -1,6 +1,6 @@
 import { connectDB } from "@/lib/mongodb";
 import Service from "@/models/Service";
-import { verifyToken } from "@/lib/auth";
+import { verifyToken } from "@/lib/initAdmin";
 
 export async function GET(req) {
   await connectDB();
