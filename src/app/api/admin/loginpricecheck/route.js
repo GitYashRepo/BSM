@@ -23,7 +23,7 @@ export async function POST(req) {
     return new Response(JSON.stringify({ message: "Invalid credentials" }), { status: 401 });
   }
 
-  const token = jwt.sign({ id: admin._id, role: "admin" }, JWT_SECRET, { expiresIn: "1h" });
+  const token = jwt.sign({ id: admin._id, role: "subadmin" }, JWT_SECRET, { expiresIn: "1h" });
 
   const cookieStore = await cookies();
   cookieStore.set({
