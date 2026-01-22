@@ -11,7 +11,7 @@ export async function POST(req) {
 
   const { email, password } = await req.json();
 
-  const admin = await Admin.findOne({ email });
+  const admin = await Admin.findOne({ email }); 
   if (!admin) {
     return new Response(JSON.stringify({ message: "Admin not found" }), { status: 404 });
   }

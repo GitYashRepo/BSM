@@ -8,7 +8,7 @@ export async function middleware(req) {
   const { pathname } = req.nextUrl;
 
   const isAdminRoute = pathname.startsWith("/admin");
-  const isAdminPriceRoute = pathname.startsWith("/adminprice");
+  const isAdminPriceRoute = pathname.startsWith("/sub-admin");
 
   // Only protect secured routes
   if (!isAdminRoute && !isAdminPriceRoute) {
@@ -25,7 +25,7 @@ export async function middleware(req) {
 
   if (!token) {
     return NextResponse.redirect(
-      new URL("/admin/login", req.url)
+      new URL("/login", req.url)
     );
   }
 
@@ -46,7 +46,7 @@ export async function middleware(req) {
     console.error("JWT verification failed:", err.message);
 
     const response = NextResponse.redirect(
-      new URL("/admin/login", req.url)
+      new URL("/login", req.url)
     );
 
     response.cookies.set(

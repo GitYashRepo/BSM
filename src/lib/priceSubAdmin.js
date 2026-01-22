@@ -1,4 +1,4 @@
-import SubAdmin from "@/models/Admin";
+import SubAdmin from "@/models/SubAdmin";
 import { connectDB } from "@/lib/mongodb";
 import bcrypt from "bcryptjs";
 
