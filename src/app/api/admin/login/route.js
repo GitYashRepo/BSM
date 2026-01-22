@@ -1,4 +1,4 @@
-import dbConnect from "@/lib/db";
+import { connectDB } from "@/lib/mongodb";
 import Admin from "@/models/Admin";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
@@ -7,7 +7,7 @@ import { cookies } from "next/headers";
 const JWT_SECRET = process.env.JWT_SECRET || "super_secret_jwt_key";
 
 export async function POST(req) {
-  await dbConnect();
+  await connectDB();
 
   const { email, password } = await req.json();
 

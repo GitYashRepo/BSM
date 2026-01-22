@@ -1,5 +1,5 @@
 import Admin from "@/models/Admin";
-import dbConnect from "@/lib/db";
+import { connectDB } from "@/lib/mongodb";
 import bcrypt from "bcryptjs";
 
 const ADMIN_EMAIL = "sakshimakeovers@gmail.com";
@@ -7,7 +7,7 @@ const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
 const ADMIN_NAME = "BSM Admin";
 
 export async function initAdmin() {
-  await dbConnect();
+  await connectDB();
    // Delete any existing admin with same email
   await Admin.deleteMany({ email: ADMIN_EMAIL });
 
