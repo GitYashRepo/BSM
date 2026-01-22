@@ -1,11 +1,13 @@
 "use client";
+
 import { useState } from "react";
-import { Eye, EyeOff } from "lucide-react"; // 👁️ import icons
+import { Eye, EyeOff } from "lucide-react";
 
 export default function LoginPage() {
+   const [role, setRole] = useState("admin");
    const [email, setEmail] = useState("");
    const [password, setPassword] = useState("");
-   const [showPassword, setShowPassword] = useState(false); // 👈 visibility state
+   const [showPassword, setShowPassword] = useState(false);
    const [error, setError] = useState("");
    const [loading, setLoading] = useState(false);
 
@@ -14,8 +16,13 @@ export default function LoginPage() {
       setError("");
       setLoading(true);
 
+      const apiUrl =
+         role === "admin"
+            ? "/api/admin/login"
+            : "/api/admin/loginpricecheck";
+
       try {
-         const res = await fetch("/api/admin/login", {
+         const res = await fetch(apiUrl, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ email, password }),
@@ -26,77 +33,79 @@ export default function LoginPage() {
 
          if (res.ok) {
             setTimeout(() => {
-               window.location.href = "/admin/dashboard";
-            }, 600);
+               role === "admin"
+                  ? (window.location.href = "/admin/dashboard")
+                  : (window.location.href = "/adminprice/ourprice");
+            }, 500);
          } else {
-            setError(data.message || "Login failed. Please try again.");
+            setError(data.message || "Login failed");
             setLoading(false);
          }
       } catch (err) {
-         console.error("Login error:", err);
-         setError("Something went wrong. Please try again later.");
+         console.error(err);
+         setError("Something went wrong. Try again.");
          setLoading(false);
       }
    }
 
    return (
-      <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 px-4">
+      <div className="flex items-center justify-center min-h-screen bg-gray-50 px-4">
          <form
             onSubmit={handleSubmit}
-            className="flex flex-col gap-4 p-6 border border-gray-200 rounded-lg bg-white shadow-md w-full max-w-sm"
+            className="w-full max-w-sm bg-white border rounded-lg shadow-md p-6 flex flex-col gap-4"
          >
-            <h2 className="text-2xl font-bold text-center text-gray-800">
-               Admin Login
-            </h2>
+            <h2 className="text-2xl font-bold text-center">Admin Panel Login</h2>
 
-            {/* Email Input */}
+            <select
+               value={role}
+               onChange={(e) => setRole(e.target.value)}
+               className="border p-2 rounded-md focus:ring-2 focus:ring-blue-400"
+            >
+               <option value="admin">Login as Admin</option>
+               <option value="subadmin">Login as Sub-Admin</option>
+            </select>
+
             <input
                type="email"
                placeholder="Email"
                value={email}
                onChange={(e) => setEmail(e.target.value)}
-               className="border p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
                required
+               className="border p-2 rounded-md focus:ring-2 focus:ring-blue-400"
             />
 
-            {/* Password Input with Eye Toggle */}
             <div className="relative">
                <input
                   type={showPassword ? "text" : "password"}
                   placeholder="Password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="border p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-blue-400 pr-10"
                   required
+                  className="border p-2 rounded-md w-full pr-10 focus:ring-2 focus:ring-blue-400"
                />
                <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500"
                >
-                  {showPassword ? (
-                     <EyeOff className="w-5 h-5" />
-                  ) : (
-                     <Eye className="w-5 h-5" />
-                  )}
+                  {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
                </button>
             </div>
 
-            {/* Error Message */}
             {error && (
                <p className="text-red-500 text-sm text-center">{error}</p>
             )}
 
-            {/* Submit Button with Spinner */}
             <button
-               type="submit"
                disabled={loading}
-               className={`flex justify-center items-center gap-2 bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 transition-colors ${loading ? "opacity-70 cursor-not-allowed" : ""
+               className={`flex justify-center items-center gap-2 bg-blue-500 text-white p-2 rounded-md transition ${loading
+                  ? "opacity-70 cursor-not-allowed"
+                  : "hover:bg-blue-600"
                   }`}
             >
                {loading ? (
                   <>
-                     <span className="w-5 h-5 border-2 border-t-transparent border-white rounded-full animate-spin"></span>
+                     <span className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
                      Logging in...
                   </>
                ) : (
