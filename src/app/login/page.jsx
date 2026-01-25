@@ -36,7 +36,7 @@ export default function LoginPage() {
             setTimeout(() => {
                role === "admin"
                   ? (window.location.href = "/admin/dashboard")
-                  : (window.location.href = "/adminprice/ourprice");
+                  : (window.location.href = "/sub-admin/services");
             }, 500);
          } else {
             setError(data.message || "Login failed");
