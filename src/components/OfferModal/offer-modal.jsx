@@ -40,7 +40,7 @@ export default function OfferModal() {
          {showButton && !open && (
             <Button
                onClick={openModal}
-               className="fixed bottom-20 -left-7 z-[9999] rotate-90 bg-[#300708] border border-white text-white shadow-lg hover:bg-[#300708]/98 hover:cursor-pointer"
+               className="fixed bottom-20 -left-7 z-[999] rotate-90 bg-[#300708] border border-white text-white shadow-lg hover:bg-[#300708]/98 hover:cursor-pointer"
             >
                Offers 🔥
             </Button>

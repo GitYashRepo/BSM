@@ -24,24 +24,24 @@ export default function Footer() {
 
 
    return (
-      <div className="w-full p-4">
+      <div className="w-full md:p-4">
          <div className="relative w-full flex justify-center">
-            <div className="w-full rounded-tl-2xl" style={{ backgroundColor: backgroundColor.velvet }}></div>
+            <div className="w-full md:rounded-tl-2xl" style={{ backgroundColor: backgroundColor.velvet }}></div>
             <img
                src={curveImage}
                alt="Top curve"
                className="hidden w-40 md:block inset-0 z-20 pointer-events-none"
                draggable={false}
             />
-            <div className="w-full rounded-tr-2xl" style={{ backgroundColor: backgroundColor.velvet }}></div>
+            <div className="w-full md:rounded-tr-2xl" style={{ backgroundColor: backgroundColor.velvet }}></div>
          </div>
-         <footer className="text-white overflow-hidden rounded-b-2xl" style={{ backgroundColor: backgroundColor.velvet }}>
+         <footer className="text-white overflow-hidden md:rounded-b-2xl" style={{ backgroundColor: backgroundColor.velvet }}>
             {/* Section 1: Minimal Hero with Split Design */}
             <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen border-b border-white/10 pb-10">
                {/* Left: Large Typography */}
                <div className="flex flex-col justify-center items-start px-8 md:px-12 lg:px-16 py-16 lg:py-0">
                   <span className="text-[#D99726] text-xs font-light tracking-widest uppercase pt-16 mb-8">Let's Connect</span>
-                  <h2 className="text-6xl md:text-7xl lg:text-8xl font-light leading-tight tracking-tight mb-12 font-serif text-white/90 hover:text-white transition-colors duration-300">
+                  <h2 className="text-4xl md:text-7xl lg:text-8xl font-light leading-tight tracking-tight mb-12 font-serif text-white/90 hover:text-white transition-colors duration-300">
                      Transform Your Beauty
                   </h2>
                   <p className="text-base text-gray-400 max-w-sm leading-relaxed mb-12">
@@ -91,7 +91,7 @@ export default function Footer() {
                               <div>
                                  <p className="text-xs uppercase tracking-widest text-gray-300 mb-2">{label}</p>
                                  <p
-                                    className={`text-lg font-light transition-colors duration-300 ${hoveredLink === label ? "text-[#D99726]" : "text-white"}`}
+                                    className={`text-xs font-light transition-colors duration-300 ${hoveredLink === label ? "text-[#D99726]" : "text-white"}`}
                                  >
                                     {value}
                                  </p>
