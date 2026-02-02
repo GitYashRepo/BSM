@@ -2,7 +2,7 @@ import { Sparkles } from "lucide-react";
 
 const TopBar = () => {
    return (
-      <div className="py-1 bg-[#D99246]">
+      <div className="bg-[#D99246]">
          <div className="flex items-center justify-center gap-2 text-sm font-medium animate-fade-in">
             <Sparkles className="w-4 h-4 text-[#750851]" />
             <span className="px-2">
