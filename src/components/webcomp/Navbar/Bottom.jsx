@@ -5,19 +5,9 @@ import { useEffect, useState } from "react"
 
 const navItems = [
    {
-      label: "Get-Tour",
-      items: [
-         { label: "Home", href: "/" },
-         { label: "Experience our interior", href: "gettour" },
-      ],
-      featured: {
-         title: "Bridal Special",
-         description: "Complete bridal package with pre-bridal treatments, trials & D-day makeup",
-      },
-   },
-   {
       label: "About",
       items: [
+         { label: "Experience our interior", href: "gettour" },
          { label: "Who Am I ?", href: "about" },
          { label: "About BSM", href: "bsm" },
       ],

@@ -5,7 +5,7 @@ import BottomBar from "./Bottom";
 import MiddleBar from "./Middle";
 import TopBar from "./TopBar";
 import { useState } from "react";
-import Sidebar from "./Sidebar";
+import MobileSidebar from "./Sidebar";
 
 
 const Navbar = () => {
@@ -30,7 +30,7 @@ const Navbar = () => {
             <BottomBar />
          </div>
 
-         <Sidebar
+         <MobileSidebar
             open={sidebarOpen}
             onClose={() => setSidebarOpen(false)}
          />

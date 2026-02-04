@@ -7,6 +7,7 @@ import Footer from "@/components/webcomp/Footer/Footer";
 import DealsPopup from "@/components/webcomp/Deals/Dealspupup";
 import OfferModal from "@/components/OfferModal/offer-modal";
 import WhatsAppWidget from "@/components/WhatsApp/whatsapp-button";
+import ScrollToTopButton from "@/components/webcomp/Scrolltotop/ScrolltotopButton";
 
 const geistSans = Geist({
    variable: "--font-geist-sans",
@@ -36,6 +37,7 @@ export default function RootLayout({ children }) {
                <Navbar />
                {children}
                <Footer />
+               <ScrollToTopButton />
             </LenisProvider>
          </body>
       </html>
