@@ -49,7 +49,7 @@ export default function SalonSections() {
                   indulgent experience. Step in and discover why Blush is Rewari’s most trusted
                   destination for beauty and grooming.
                </motion.p>
-               <motion.button
+               {/* <motion.button
                   initial={{ opacity: 0, x: 40 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.7 }}
@@ -58,7 +58,7 @@ export default function SalonSections() {
                   className="mt-6 px-6 py-3 bg-amber-600 text-white rounded-xl shadow-md"
                >
                   Read More
-               </motion.button>
+               </motion.button> */}
             </div>
          </motion.section>
 

@@ -33,7 +33,7 @@ export default function WhatsAppWidget({ brandName = "Blush by Sakshi Makeover's
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
             className={cn(
-               "fixed z-50 bottom-2 sm:bottom-2 right-1 size-14 rounded-full",
+               "fixed z-50 bottom-1 sm:bottom-2 right-1 size-14 rounded-full",
                "flex items-center justify-center cursor-pointer",
             )}
          >
