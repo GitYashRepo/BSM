@@ -6,7 +6,7 @@ export default function Book() {
    const flipSoundRef = useRef(null);
    const [scrollPercent, setScrollPercent] = React.useState({});
    const [bookSize, setBookSize] = React.useState({
-      width: 600,
+      width: 400,
       height: 500,
    });
 
