@@ -21,9 +21,8 @@ const AppointmentPopover = () => {
          <PopoverContent
             side="bottom"
             align="end"
-            className="w-72 p-5 rounded-xl shadow-xl"
+            className="w-56 md:w-72 p-5 rounded-xl shadow-xl"
          >
-            {/* Header */}
             <div className="mb-4 text-center">
                <h4 className="text-base font-semibold text-gray-900">
                   Book Your Appointment
@@ -32,16 +31,11 @@ const AppointmentPopover = () => {
                   Blush by Sakshi Makeovers
                </p>
             </div>
-
-            {/* Info text */}
             <p className="text-sm text-gray-600 text-center mb-4">
                Connect with us directly to schedule your beauty session at your
                convenience.
             </p>
-
-            {/* Actions */}
             <div className="space-y-3">
-               {/* Call */}
                <a
                   href="tel:9053102324"
                   className="flex items-center gap-3 p-3 rounded-lg border hover:bg-muted transition"
@@ -56,8 +50,6 @@ const AppointmentPopover = () => {
                      </span>
                   </div>
                </a>
-
-               {/* WhatsApp */}
                <a
                   href="https://wa.me/9467777773"
                   target="_blank"
@@ -75,8 +67,6 @@ const AppointmentPopover = () => {
                   </div>
                </a>
             </div>
-
-            {/* Footer note */}
             <p className="text-[11px] text-muted-foreground text-center mt-4">
                We recommend booking in advance for weekends & bridal services.
             </p>
