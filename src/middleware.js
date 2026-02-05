@@ -2,66 +2,54 @@ import { NextResponse } from "next/server";
 import { jwtVerify } from "jose";
 
 const ADMIN_SECRET = new TextEncoder().encode(process.env.JWT_SECRET);
-const ADMINPRICE_SECRET = new TextEncoder().encode(process.env.JWT_SECRET_PRICE);
+const SUBADMIN_SECRET = new TextEncoder().encode(process.env.JWT_SECRET_PRICE);
 
 export async function middleware(req) {
   const { pathname } = req.nextUrl;
 
   const isAdminRoute = pathname.startsWith("/admin");
-  const isAdminPriceRoute = pathname.startsWith("/sub-admin");
+  const isSubAdminRoute = pathname.startsWith("/sub-admin");
 
-  // Only protect secured routes
-  if (!isAdminRoute && !isAdminPriceRoute) {
+  if (!isAdminRoute && !isSubAdminRoute) {
     return NextResponse.next();
   }
 
-  const token = isAdminRoute
-    ? req.cookies.get("admin_token")?.value
-    : req.cookies.get("subadmin_token")?.value;
-
-  const secret = isAdminRoute
-    ? ADMIN_SECRET
-    : ADMINPRICE_SECRET;
-
-  if (!token) {
-    return NextResponse.redirect(
-      new URL("/login", req.url)
-    );
-  }
+  // Try admin token first
+  const adminToken = req.cookies.get("admin_token")?.value;
+  const subAdminToken = req.cookies.get("subadmin_token")?.value;
 
   try {
-    const { payload } = await jwtVerify(token, secret);
+    /** ---------------- ADMIN TOKEN ---------------- */
+    if (adminToken) {
+      const { payload } = await jwtVerify(adminToken, ADMIN_SECRET);
 
-    // 🔒 Role enforcement
-    if (isAdminRoute && payload.role !== "admin") {
-      throw new Error("Invalid admin role");
+      if (payload.role === "admin") {
+        // ✅ Admin can access BOTH admin & sub-admin
+        return NextResponse.next();
+      }
     }
 
-    if (isAdminPriceRoute && payload.role !== "subadmin") {
-      throw new Error("Invalid adminprice role");
+    /** ---------------- SUBADMIN TOKEN ---------------- */
+    if (subAdminToken && isSubAdminRoute) {
+      const { payload } = await jwtVerify(subAdminToken, SUBADMIN_SECRET);
+
+      if (payload.role === "subadmin") {
+        // ✅ Sub-admin can access ONLY sub-admin
+        return NextResponse.next();
+      }
     }
 
-    return NextResponse.next();
+    throw new Error("Unauthorized");
   } catch (err) {
-    console.error("JWT verification failed:", err.message);
+    const response = NextResponse.redirect(new URL("/login", req.url));
 
-    const response = NextResponse.redirect(
-      new URL("/login", req.url)
-    );
-
-    response.cookies.set(
-      isAdminRoute ? "admin_token" : "subadmin_token",
-      "",
-      { maxAge: 0 }
-    );
+    response.cookies.set("admin_token", "", { maxAge: 0 });
+    response.cookies.set("subadmin_token", "", { maxAge: 0 });
 
     return response;
   }
 }
 
 export const config = {
-  matcher: [
-    "/admin/:path*",
-    "/adminprice/:path*",
-  ],
+  matcher: ["/admin/:path*", "/sub-admin/:path*"],
 };

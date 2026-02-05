@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
+import IntroOverlay from './IntroOverlay'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -1181,108 +1182,81 @@ export function ScrollCanvas() {
    const containerRef = useRef(null)
    const imagesRef = useRef([])
    const currentFrameRef = useRef(0)
+   const [imagesLoaded, setImagesLoaded] = useState(false)
 
-   /**
-    * Draw frame safely
-    */
-   const drawFrame = (frame) => {
+   // Load all images
+   useEffect(() => {
+      let loadedCount = 0
+      imagesRef.current = []
+
+      IMAGE_URLS.forEach((url) => {
+         const img = new Image()
+         img.crossOrigin = 'anonymous'
+
+         const handleLoad = () => {
+            loadedCount++
+            if (loadedCount === IMAGE_URLS.length) {
+               setImagesLoaded(true)
+            }
+         }
+
+         img.onload = handleLoad
+         img.onerror = handleLoad
+         img.src = url
+
+         imagesRef.current.push(img)
+      })
+   }, [])
+
+   // Setup canvas and scroll animation
+   useEffect(() => {
+      if (!imagesLoaded || !canvasRef.current || !containerRef.current) return
+
       const canvas = canvasRef.current
-      if (!canvas) return
-
       const ctx = canvas.getContext('2d')
       if (!ctx) return
 
-      const img = imagesRef.current[frame]
-      if (!img) return
+      const drawFrame = (frameIndex) => {
+         const frame = Math.min(frameIndex, imagesRef.current.length - 1)
+         const img = imagesRef.current[frame]
 
-      ctx.clearRect(0, 0, canvas.width, canvas.height)
+         if (!img || !img.complete || img.naturalWidth === 0) return
 
-      const imgAspect = img.naturalWidth / img.naturalHeight
-      const canvasAspect = canvas.width / canvas.height
+         ctx.clearRect(0, 0, canvas.width, canvas.height)
 
-      let drawWidth, drawHeight, offsetX, offsetY
+         const imgAspect = img.naturalWidth / img.naturalHeight
+         const canvasAspect = canvas.width / canvas.height
 
-      if (imgAspect > canvasAspect) {
-         drawHeight = canvas.height
-         drawWidth = drawHeight * imgAspect
-         offsetX = (canvas.width - drawWidth) / 2
-         offsetY = 0
-      } else {
-         drawWidth = canvas.width
-         drawHeight = drawWidth / imgAspect
-         offsetX = 0
-         offsetY = (canvas.height - drawHeight) / 2
-      }
+         let drawWidth, drawHeight, offsetX, offsetY
 
-      ctx.drawImage(img, offsetX, offsetY, drawWidth, drawHeight)
-   }
-
-   /**
-    * Resize canvas
-    */
-   const resizeCanvas = () => {
-      const canvas = canvasRef.current
-      if (!canvas) return
-
-      canvas.width = window.innerWidth
-      canvas.height = window.innerHeight
-      drawFrame(currentFrameRef.current)
-   }
-
-   /**
-    * Load FIRST frame immediately (instant paint)
-    */
-   useEffect(() => {
-      imagesRef.current = new Array(IMAGE_URLS.length)
-
-      const img = new Image()
-      img.src = IMAGE_URLS[0]
-      img.onload = () => {
-         imagesRef.current[0] = img
-         drawFrame(0)
-      }
-   }, [])
-
-   /**
-    * Progressive background loading
-    */
-   useEffect(() => {
-      let index = 1
-
-      const loadNext = () => {
-         if (index >= IMAGE_URLS.length) return
-
-         const img = new Image()
-         img.src = IMAGE_URLS[index]
-         img.onload = () => {
-            imagesRef.current[index] = img
-         }
-
-         index++
-
-         if ('requestIdleCallback' in window) {
-            requestIdleCallback(loadNext)
+         if (imgAspect > canvasAspect) {
+            drawHeight = canvas.height
+            drawWidth = drawHeight * imgAspect
+            offsetX = (canvas.width - drawWidth) / 2
+            offsetY = 0
          } else {
-            setTimeout(loadNext, 16)
+            drawWidth = canvas.width
+            drawHeight = drawWidth / imgAspect
+            offsetX = 0
+            offsetY = (canvas.height - drawHeight) / 2
          }
+
+         ctx.drawImage(img, offsetX, offsetY, drawWidth, drawHeight)
       }
 
-      loadNext()
-   }, [])
+      const updateCanvasSize = () => {
+         canvas.width = window.innerWidth
+         canvas.height = window.innerHeight
+         drawFrame(currentFrameRef.current)
+      }
 
-   /**
-    * GSAP Scroll animation
-    */
-   useEffect(() => {
-      if (!containerRef.current) return
-
-      resizeCanvas()
-      window.addEventListener('resize', resizeCanvas)
+      window.addEventListener('resize', updateCanvasSize)
+      updateCanvasSize()
 
       const frameObj = { frame: 0 }
 
       const tween = gsap.to(frameObj, {
-         frame: IMAGE_URLS.length - 1,
+         frame: imagesRef.current.length - 1,
          ease: 'none',
          scrollTrigger: {
             trigger: containerRef.current,
@@ -1301,22 +1275,39 @@ export function ScrollCanvas() {
          },
       })
 
+      drawFrame(0)
+
       return () => {
          tween.scrollTrigger?.kill()
          tween.kill()
-         window.removeEventListener('resize', resizeCanvas)
+         window.removeEventListener('resize', updateCanvasSize)
       }
-   }, [])
+   }, [imagesLoaded])
 
    return (
-      <section
-         ref={containerRef}
-         className="relative w-screen h-screen bg-black overflow-hidden"
-      >
-         <canvas
-            ref={canvasRef}
-            className="block w-full h-full"
-         />
-      </section>
+      <>
+         {/* Animation Section */}
+         <div
+            ref={containerRef}
+            className="relative w-screen bg-black"
+         >
+            <div className="w-screen h-screen overflow-hidden bg-black">
+               <canvas
+                  ref={canvasRef}
+                  className="w-full h-full block"
+               />
+            </div>
+         </div>
+
+         {/* Loading indicator */}
+         {!imagesLoaded && (
+            <div className="fixed inset-0 flex items-center justify-center bg-black z-50">
+               <div className="flex flex-col items-center gap-4">
+                  <div className="w-12 h-12 border-4 border-white/20 border-t-white rounded-full animate-spin" />
+                  <p className="text-white text-sm">Loading animation...</p>
+               </div>
+            </div>
+         )}
+      </>
    )
 }

@@ -7,9 +7,9 @@ const navItems = [
    {
       label: "About",
       items: [
-         { label: "Experience our interior", href: "gettour" },
-         { label: "Who Am I ?", href: "about" },
-         { label: "About BSM", href: "bsm" },
+         { label: "Experience our interior", href: "/gettour" },
+         { label: "Who Am I ?", href: "/about" },
+         { label: "About BSM", href: "/bsm" },
       ],
       featured: {
          title: "Bridal Special",
@@ -19,13 +19,13 @@ const navItems = [
    {
       label: "Makeup",
       items: [
-         { label: "Makeup", href: "makeup" },
-         { label: "Bridal Makeup", href: "#bridal" },
-         { label: "Party Makeup", href: "#party" },
-         { label: "HD Makeup", href: "#hd" },
-         { label: "Airbrush Makeup", href: "#airbrush" },
-         { label: "Engagement Makeup", href: "#engagement" },
-         { label: "Celebrity Makeup", href: "#celebrity" },
+         { label: "Makeup", href: "/makeup" },
+         { label: "Bridal Makeup", href: "/makeup#bridal" },
+         { label: "Party Makeup", href: "/makeup#party" },
+         { label: "HD Makeup", href: "/makeup#hd" },
+         { label: "Airbrush Makeup", href: "/makeup#airbrush" },
+         { label: "Engagement Makeup", href: "/makeup#engagement" },
+         { label: "Celebrity Makeup", href: "/makeup#celebrity" },
       ],
       featured: {
          title: "Bridal Special",
@@ -35,14 +35,14 @@ const navItems = [
    {
       label: "Hair",
       items: [
-         { label: "Hair", href: "hair" },
-         { label: "Haircuts", href: "#haircuts" },
-         { label: "Hair Color", href: "#color" },
-         { label: "Hair Spa", href: "#spa" },
-         { label: "Keratin Treatment", href: "#keratin" },
-         { label: "Smoothening", href: "#smoothening" },
-         { label: "Hair Extensions", href: "#extensions" },
-         { label: "Bridal Hairstyling", href: "#bridal-hair" },
+         { label: "Hair", href: "/hair" },
+         { label: "Haircuts", href: "/hair#haircuts" },
+         { label: "Hair Color", href: "/hair#color" },
+         { label: "Hair Spa", href: "/hair#spa" },
+         { label: "Keratin Treatment", href: "/hair#keratin" },
+         { label: "Smoothening", href: "/hair#smoothening" },
+         { label: "Hair Extensions", href: "/hair#extensions" },
+         { label: "Bridal Hairstyling", href: "/hair#bridal-hair" },
       ],
       featured: {
          title: "Hair Transformation",
@@ -52,14 +52,14 @@ const navItems = [
    {
       label: "Beauty",
       items: [
-         { label: "Beauty", href: "beauty" },
-         { label: "Facial", href: "#facial" },
-         { label: "Cleanup", href: "#cleanup" },
-         { label: "Bleach", href: "#bleach" },
-         { label: "Threading", href: "#threading" },
-         { label: "Waxing", href: "#waxing" },
-         { label: "Manicure", href: "#manicure" },
-         { label: "Pedicure", href: "#pedicure" },
+         { label: "Beauty", href: "/beauty" },
+         { label: "Facial", href: "/beauty#facial" },
+         { label: "Cleanup", href: "/beauty#cleanup" },
+         { label: "Bleach", href: "/beauty#bleach" },
+         { label: "Threading", href: "/beauty#threading" },
+         { label: "Waxing", href: "/beauty#waxing" },
+         { label: "Manicure", href: "/beauty#manicure" },
+         { label: "Pedicure", href: "/beauty#pedicure" },
       ],
       featured: {
          title: "Glow Package",
@@ -69,13 +69,13 @@ const navItems = [
    {
       label: "Esthetics",
       items: [
-         { label: "Esthetics", href: "esthetics" },
-         { label: "Skin Treatments", href: "#skin" },
-         { label: "Anti-Aging", href: "#anti-aging" },
-         { label: "Acne Treatment", href: "#acne" },
-         { label: "Pigmentation", href: "#pigmentation" },
-         { label: "Laser Treatment", href: "#laser" },
-         { label: "Chemical Peels", href: "#peels" },
+         { label: "Esthetics", href: "/esthetics" },
+         { label: "Skin Treatments", href: "/esthetics#skin" },
+         { label: "Anti-Aging", href: "/esthetics#anti-aging" },
+         { label: "Acne Treatment", href: "/esthetics#acne" },
+         { label: "Pigmentation", href: "/esthetics#pigmentation" },
+         { label: "Laser Treatment", href: "/esthetics#laser" },
+         { label: "Chemical Peels", href: "/esthetics#peels" },
       ],
       featured: {
          title: "Advanced Skincare",
@@ -85,11 +85,11 @@ const navItems = [
    {
       label: "Signature Services",
       items: [
-         { label: "Signature Services", href: "signatureservices" },
-         { label: "Bridal Makeovers", href: "#bridal-makeover" },
-         { label: "Pre-Bridal Package", href: "#pre-bridal" },
-         { label: "Groom Makeover", href: "#groom" },
-         { label: "Celebrity Styling", href: "#celebrity-styling" },
+         { label: "Signature Services", href: "/signatureservices" },
+         { label: "Bridal Makeovers", href: "/signatureservices#bridal-makeover" },
+         { label: "Pre-Bridal Package", href: "/signatureservices#pre-bridal" },
+         { label: "Groom Makeover", href: "/signatureservices#groom" },
+         { label: "Celebrity Styling", href: "/signatureservices#celebrity-styling" },
       ],
       featured: {
          title: "Complete Bridal Experience",
@@ -99,11 +99,11 @@ const navItems = [
    {
       label: "Franchise",
       items: [
-         { label: "Franchise", href: "franchise" },
-         { label: "Why Partner With Us", href: "franchise#whypartnerwithus" },
-         { label: "Investment Details", href: "franchise#investment" },
-         { label: "Support & Training", href: "franchise#support" },
-         { label: "Apply Now", href: "franchise#apply" },
+         { label: "Franchise", href: "/franchise" },
+         { label: "Why Partner With Us", href: "/franchise#whypartnerwithus" },
+         { label: "Investment Details", href: "/franchise#investment" },
+         { label: "Support & Training", href: "/franchise#support" },
+         { label: "Apply Now", href: "/franchise#apply" },
       ],
       featured: {
          title: "Own a BSM Franchise",
@@ -125,9 +125,9 @@ const navItems = [
    {
       label: "Contact",
       items: [
-         { label: "Contact-Support", href: "contact" },
-         { label: "Book Appointment", href: "contact#appointment" },
-         { label: "Our Locations", href: "contact#location" },
+         { label: "Contact-Support", href: "/contact" },
+         { label: "Book Appointment", href: "/contact#appointment" },
+         { label: "Our Locations", href: "/contact#location" },
       ],
       featured: {
          title: "Get In Touch",

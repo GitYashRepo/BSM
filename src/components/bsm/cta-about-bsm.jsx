@@ -4,7 +4,7 @@ import { MessageCircle, ArrowRight } from "lucide-react"
 
 export function CTAAboutBSM() {
    const handleWhatsAppClick = () => {
-      const phoneNumber = "919876543210"
+      const phoneNumber = "919467777773"
       const message = "Hello! I want to book an appointment at BSM Salon."
       const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
       window.open(whatsappUrl, "_blank")
@@ -32,15 +32,17 @@ export function CTAAboutBSM() {
                   <MessageCircle size={20} />
                   Chat on WhatsApp
                </button>
-               <button className="bsm-text-line flex items-center justify-center gap-3 px-10 py-5 border-2 border-white/30 hover:border-white bg-transparent hover:bg-white/10 text-black transition-all duration-300 rounded-lg font-light text-base tracking-wide">
-                  Book Appointment
-                  <ArrowRight size={20} />
-               </button>
+               <a href="tel:+919467777773">
+                  <button className="bsm-text-line flex items-center justify-center gap-3 px-10 py-5 border-2 border-white/30 hover:border-white bg-transparent hover:bg-white/10 text-black transition-all duration-300 rounded-lg font-light text-base tracking-wide">
+                     Book Appointment
+                     <ArrowRight size={20} />
+                  </button>
+               </a>
             </div>
 
             {/* Footer Text */}
             <p className="bsm-text-line text-sm text-black/60 font-light pt-6">
-               Available Monday to Saturday • We respond within 2 hours
+               Available 7 days • We respond within 2 hours
             </p>
          </div>
       </section>

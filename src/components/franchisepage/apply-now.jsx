@@ -152,9 +152,9 @@ export function ApplyNow() {
                         className="w-full px-0 py-3 border-b border-[#6E2E35]/20 bg-transparent text-[#1a1a1a] focus:outline-none focus:border-[#6E2E35] transition-colors text-sm appearance-none cursor-pointer"
                      >
                         <option value="">Select range</option>
-                        <option value="150k">₹150,000</option>
-                        <option value="150-200k">₹150,000 - ₹200,000</option>
-                        <option value="200k+">₹200,000+</option>
+                        <option value="25l">₹25Lakh</option>
+                        <option value="25-30">₹25Lakh - ₹30Lakh</option>
+                        <option value="30l+">₹30Lakh+</option>
                      </select>
                   </div>
                </div>

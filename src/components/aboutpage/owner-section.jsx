@@ -26,7 +26,7 @@ export function OwnerSection() {
                {/* Right - Content */}
                <div className="space-y-8 text-[#1a1a1a]">
                   <div>
-                     <p className="text-xs tracking-[0.3em] text-[#6E2E35] uppercase font-light mb-6 text-line">Our Founder</p>
+                     <p className="text-md tracking-[0.3em] text-[#6E2E35] uppercase font-light mb-6 text-line">Our Founder</p>
                      <h2 className="text-5xl md:text-6xl font-light leading-tight mb-6 text-line">
                         A <span className="font-serif italic">Vision</span> for Excellence
                      </h2>

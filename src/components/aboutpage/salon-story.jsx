@@ -2,11 +2,38 @@
 
 export function SalonStory() {
    const milestones = [
-      { year: "2015", title: "Founded", description: "First premium salon launched with a vision for excellence" },
-      { year: "2017", title: "Expansion", description: "Opened 5 new locations across major cities" },
-      { year: "2019", title: "Franchise Model", description: "Introduced franchise opportunities for entrepreneurs" },
-      { year: "2023", title: "50+ Salons", description: "Network grew to over 50 premium salon locations" },
-   ]
+      {
+         year: "2015",
+         title: "Founded",
+         description:
+            "Launched our first premium salon with a clear vision to deliver high-quality, personalized beauty and grooming services.",
+      },
+      {
+         year: "2017",
+         title: "Service Expansion",
+         description:
+            "Expanded our offerings to include professional makeup, advanced hair care, skincare treatments, and bridal services.",
+      },
+      {
+         year: "2020",
+         title: "Operational Excellence",
+         description:
+            "Strengthened internal processes, staff training, and service standards to ensure consistency and exceptional customer experience.",
+      },
+      {
+         year: "2022",
+         title: "Brand Recognition",
+         description:
+            "Established a strong reputation through customer loyalty, word-of-mouth growth, and a commitment to quality.",
+      },
+      {
+         year: "2024",
+         title: "Franchise Launch",
+         description:
+            "Introduced franchising opportunities, inviting partners to grow with a proven salon model, strong brand identity, and operational support.",
+      },
+   ];
+
 
    return (
       <section className="scroll-section py-32 px-6 lg:px-12 bg-[#FAFAFA]">
