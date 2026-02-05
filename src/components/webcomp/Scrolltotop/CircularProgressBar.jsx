@@ -23,7 +23,7 @@ const CircularProgressBar = ({
       >
          {/* Background ring */}
          <circle
-            className="fill-none stroke-white"
+            className="fill-none stroke-[#1c1c1c]"
             cx={sqSize / 2}
             cy={sqSize / 2}
             r={radius}
@@ -32,7 +32,7 @@ const CircularProgressBar = ({
 
          {/* Progress ring */}
          <circle
-            className="fill-none stroke-[#300708]"
+            className="fill-none stroke-white"
             cx={sqSize / 2}
             cy={sqSize / 2}
             r={radius}

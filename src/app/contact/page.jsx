@@ -141,7 +141,7 @@ export default function ContactPage() {
                </div>
 
                {/* Appointment Form */}
-               <div id="appointment" className="appointment grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
+               {/* <div id="appointment" className="appointment grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
                   <div>
                      <h2 className="text-4xl text-[#D99726] font-serif font-light mb-4">Book an Appointment</h2>
                      <p className="text-muted-foreground mb-8">
@@ -159,16 +159,6 @@ export default function ContactPage() {
                         required
                      />
 
-                     {/* <input
-                        name="email"
-                        type="email"
-                        placeholder="Your Email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        className="w-full bg-transparent border-b border-border py-3"
-                        required
-                     /> */}
-
                      <input
                         name="phone"
                         placeholder="Phone Number"
@@ -178,20 +168,6 @@ export default function ContactPage() {
                         required
                      />
 
-                     {/* <select
-                        name="contactMethod"
-                        value={formData.contactMethod}
-                        onChange={handleInputChange}
-                        className="w-full bg-transparent border-b border-border py-3"
-                        required
-                     >
-                        <option value="">Preferred Contact Method</option>
-                        <option value="Call">Call</option>
-                        <option value="WhatsApp">WhatsApp</option>
-                        <option value="Email">Email</option>
-                     </select> */}
-
-                     {/* Services Multi Select */}
                      <div>
                         <p className="mb-2 font-medium">Select Services</p>
                         <div className="grid grid-cols-2 gap-2">
@@ -208,38 +184,6 @@ export default function ContactPage() {
                         </div>
                      </div>
 
-                     {/* <select
-                        name="staff"
-                        value={formData.staff}
-                        onChange={handleInputChange}
-                        className="w-full bg-transparent border-b border-border py-3"
-                        required
-                     >
-                        <option value="">Preferred Staff</option>
-                        {staffOptions.map((s) => (
-                           <option key={s} value={s}>{s}</option>
-                        ))}
-                     </select> */}
-
-                     {/* <input type="date" name="date" value={formData.date} onChange={handleInputChange} className="w-full bg-transparent border-b border-border py-3" required />
-                     <input type="time" name="time" value={formData.time} onChange={handleInputChange} className="w-full bg-transparent border-b border-border py-3" required /> */}
-
-                     {/* <input type="date" name="altDate" value={formData.altDate} onChange={handleInputChange} className="w-full bg-transparent border-b border-border py-3" />
-                     <input type="time" name="altTime" value={formData.altTime} onChange={handleInputChange} className="w-full bg-transparent border-b border-border py-3" /> */}
-
-                     {/* <select
-                        name="occasion"
-                        value={formData.occasion}
-                        onChange={handleInputChange}
-                        className="w-full bg-transparent border-b border-border py-3"
-                     >
-                        <option value="">Occasion Type</option>
-                        <option value="Casual">Casual</option>
-                        <option value="Wedding">Wedding</option>
-                        <option value="Party">Party</option>
-                        <option value="Shoot">Photoshoot</option>
-                     </select> */}
-
                      <textarea
                         name="notes"
                         value={formData.notes}
@@ -251,8 +195,7 @@ export default function ContactPage() {
 
                      <button type="submit" className="inline-flex items-center gap-2 px-8 py-3 bg-[#D99726] text-white rounded-full cursor-pointer">Book Appointment</button>
                   </form>
-               </div>
-
+               </div> */}
 
                {/* Map */}
                <div id="location">

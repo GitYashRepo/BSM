@@ -40,7 +40,7 @@ export default function OfferModal() {
          {showButton && !open && (
             <Button
                onClick={openModal}
-               className="fixed bottom-20 -left-7 z-[999] rotate-90 bg-[#300708] border border-white text-white shadow-lg hover:bg-[#300708]/98 hover:cursor-pointer"
+               className="fixed bottom-20 -left-7 z-[999] h-10 px-2 rotate-90 bg-[#300708] border border-white text-lg text-white shadow-lg hover:bg-[#300708]/98 hover:cursor-pointer"
             >
                Offers 🔥
             </Button>
@@ -48,7 +48,7 @@ export default function OfferModal() {
 
          {/* Offer Modal */}
          <div
-            className={`fixed left-2 z-[9999] w-[320px] rounded-xl bg-[#300708] text-white shadow-2xl transition-transform duration-500 ${open ? "bottom-2 translate-y-0 border border-white" : "-bottom-full translate-y-full"
+            className={`fixed left-2 z-[9999] w-[280px] md:w-[500px] h-auto rounded-xl bg-[#300708] text-white shadow-2xl transition-transform duration-500 ${open ? "bottom-2 translate-y-0 border border-white" : "-bottom-full translate-y-full"
                }`}
          >
             {/* Header */}
