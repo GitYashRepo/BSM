@@ -121,7 +121,7 @@ export default function GetTour() {
 
                <section className="about-hero">
                   <div className="about-hero-img">
-                     <img src="/scroll/scroll00015.png" className="w-full" alt="Banner Image" />
+                     <img src="/scroll/scroll00015.png" className="w-full h-full" alt="Banner Image" />
                   </div>
                </section>
 
@@ -144,7 +144,7 @@ export default function GetTour() {
                <section className="services">
                   <div className="services-col">
                      <div className="services-banner">
-                        <img src="/images/img13.jpg" alt="Image" />
+                        <img src="/images/img13.jpg" className="w-full h-full" alt="Image" />
                      </div>
                   </div>
                   <div className="services-col">
@@ -191,7 +191,7 @@ export default function GetTour() {
 
                <section className="about-banner-img">
                   <div className="about-banner-img-wrapper">
-                     <img src="/scroll/scroll00001.png" className="w-full" alt="Image" />
+                     <img src="/scroll/scroll00001.png" className="w-full h-full" alt="Image" />
                   </div>
                </section>
 
@@ -217,19 +217,19 @@ export default function GetTour() {
                      <div className="fav-tools-list-row">
                         <div className="fav-tool">
                            <div className="fav-tool-img">
-                              <img src="/textures/img1.jpg" alt="" />
+                              <img src="/textures/img1.jpg" className="w-full h-full" alt="" />
                            </div>
                            <h4>Makeup</h4>
                         </div>
                         <div className="fav-tool">
                            <div className="fav-tool-img">
-                              <img src="/textures/img2.jpg" alt="" />
+                              <img src="/textures/img2.jpg" className="w-full h-full" alt="" />
                            </div>
                            <h4>Hair</h4>
                         </div>
                         <div className="fav-tool">
                            <div className="fav-tool-img">
-                              <img src="/textures/img3.jpg" alt="" />
+                              <img src="/textures/img3.jpg" className="w-full h-full" alt="" />
                            </div>
                            <h4>Beauty</h4>
                         </div>
@@ -237,19 +237,19 @@ export default function GetTour() {
                      <div className="fav-tools-list-row">
                         <div className="fav-tool">
                            <div className="fav-tool-img">
-                              <img src="/textures/img4.jpg" alt="" />
+                              <img src="/textures/img4.jpg" className="w-full h-full" alt="" />
                            </div>
                            <h4>Esthetics</h4>
                         </div>
                         <div className="fav-tool">
                            <div className="fav-tool-img">
-                              <img src="/textures/img5.jpg" alt="" />
+                              <img src="/textures/img5.jpg" className="w-full h-full" alt="" />
                            </div>
                            <h4>Signature Services</h4>
                         </div>
                         <div className="fav-tool">
                            <div className="fav-tool-img">
-                              <img src="/textures/img6.jpg" alt="" />
+                              <img src="/textures/img6.jpg" className="w-full h-full" alt="" />
                            </div>
                            <h4>Franchise</h4>
                         </div>
