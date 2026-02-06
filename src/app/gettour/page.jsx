@@ -8,6 +8,7 @@ import ReactLenis from "lenis/react";
 import "./gettour.css";
 import AnimatedCopy from "@/components/AnimatedCopy/AnimatedCopy";
 
+
 gsap.registerPlugin(ScrollTrigger);
 
 export default function GetTour() {
