@@ -242,7 +242,7 @@ export default function MakeupPage() {
                            {/* ===================== */}
                            {/* MOBILE (sm and below) */}
                            {/* ===================== */}
-                           <div className="block md:hidden w-full h-full">
+                           <div className="block md:hidden w-full h-full py-4">
                               <div className="w-full h-full grid grid-rows-[auto_1fr_auto] px-4">
                                  {/* IMAGE */}
                                  <div className="flex items-center justify-center">
