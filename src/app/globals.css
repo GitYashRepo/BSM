@@ -8,6 +8,12 @@
   font-style: normal;
 }
 
+:root {
+  --bg: #e3e3db;
+  --bg200: rgba(227, 227, 219, 0.25);
+  --fg: #0f0f0f;
+  --fg200: #1f1f1f;
+}
 
 /* Custom Scrollbar Styles - Awwwards Inspired */
 .custom-scrollbar::-webkit-scrollbar {

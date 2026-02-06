@@ -7,6 +7,7 @@ const navItems = [
    {
       label: "About",
       items: [
+         { label: "Go to Home", href: "/" },
          { label: "Experience our interior", href: "/gettour" },
          { label: "Who Am I ?", href: "/about" },
          { label: "About BSM", href: "/bsm" },
@@ -19,6 +20,7 @@ const navItems = [
    {
       label: "Makeup",
       items: [
+         { label: "Go to Home", href: "/" },
          { label: "Makeup", href: "/makeup" },
          { label: "Bridal Makeup", href: "/makeup#bridal" },
          { label: "Party Makeup", href: "/makeup#party" },
@@ -35,6 +37,7 @@ const navItems = [
    {
       label: "Hair",
       items: [
+         { label: "Go to Home", href: "/" },
          { label: "Hair", href: "/hair" },
          { label: "Haircuts", href: "/hair#haircuts" },
          { label: "Hair Color", href: "/hair#color" },
@@ -52,6 +55,7 @@ const navItems = [
    {
       label: "Beauty",
       items: [
+         { label: "Go to Home", href: "/" },
          { label: "Beauty", href: "/beauty" },
          { label: "Facial", href: "/beauty#facial" },
          { label: "Cleanup", href: "/beauty#cleanup" },
@@ -69,6 +73,7 @@ const navItems = [
    {
       label: "Esthetics",
       items: [
+         { label: "Go to Home", href: "/" },
          { label: "Esthetics", href: "/esthetics" },
          { label: "Skin Treatments", href: "/esthetics#skin" },
          { label: "Anti-Aging", href: "/esthetics#anti-aging" },
@@ -85,6 +90,7 @@ const navItems = [
    {
       label: "Signature Services",
       items: [
+         { label: "Go to Home", href: "/" },
          { label: "Signature Services", href: "/signatureservices" },
          { label: "Bridal Makeovers", href: "/signatureservices#bridal-makeover" },
          { label: "Pre-Bridal Package", href: "/signatureservices#pre-bridal" },
@@ -99,6 +105,7 @@ const navItems = [
    {
       label: "Franchise",
       items: [
+         { label: "Go to Home", href: "/" },
          { label: "Franchise", href: "/franchise" },
          { label: "Why Partner With Us", href: "/franchise#whypartnerwithus" },
          { label: "Investment Details", href: "/franchise#investment" },
@@ -113,6 +120,7 @@ const navItems = [
    {
       label: "Gallery",
       items: [
+         { label: "Go to Home", href: "/" },
          { label: "Bridal Gallery", href: "gallery" },
          { label: "Party Makeup", href: "gallery" },
          { label: "Video Gallery", href: "gallery" },
@@ -125,6 +133,7 @@ const navItems = [
    {
       label: "Contact",
       items: [
+         { label: "Go to Home", href: "/" },
          { label: "Contact-Support", href: "/contact" },
          { label: "Book Appointment", href: "/contact#appointment" },
          { label: "Our Locations", href: "/contact#location" },

@@ -211,43 +211,114 @@ export default function HairPage() {
                className="flex h-full"
                style={{ width: `${hairTopics.length * 100}vw` }}
             >
-               {hairTopics.map((topic) => (
+               {hairTopics.map((topic, index) => (
                   <div
                      key={topic.id}
                      className="w-screen h-screen flex items-center justify-center px-16"
                   >
                      <div className="max-w-6xl w-full">
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
-                           <div className="md:col-span-1">
-                              <div className="relative overflow-hidden rounded-2xl h-80 shadow-xl">
-                                 <img
-                                    src={topic.image}
-                                    alt={topic.title}
-                                    className="w-full h-full object-cover"
-                                 />
+                        <div className="w-screen h-screen">
+                           {/* ===================== */}
+                           {/* MOBILE (sm and below) */}
+                           {/* ===================== */}
+                           <div className="block md:hidden w-full h-full">
+                              <div className="w-full h-full grid grid-rows-[auto_1fr_auto] px-4">
+                                 {/* IMAGE */}
+                                 <div className="flex items-center justify-center">
+                                    <div className="relative w-full h-[38vh] overflow-hidden">
+                                       <img
+                                          src={topic.image}
+                                          alt={topic.title}
+                                          className="absolute inset-0 w-full h-full object-cover"
+                                       />
+                                    </div>
+                                 </div>
+
+                                 {/* TEXT */}
+                                 <div className="flex items-center">
+                                    <div className="w-full">
+
+                                       <div className="flex items-center gap-3 text-[10px] uppercase tracking-widest text-gray-500 mb-2">
+                                          <span className="font-mono">
+                                             {String(index + 1).padStart(2, "0")}
+                                          </span>
+                                          <span className="h-px flex-1 bg-gray-300" />
+                                          <span>{topic.subtitle}</span>
+                                       </div>
+
+                                       <h2 className="text-[clamp(1.6rem,4.5vw,3rem)] leading-tight text-gray-900 mb-3">
+                                          {topic.title}
+                                       </h2>
+
+                                       <div className="text-[13px] leading-snug text-gray-600 space-y-1 mb-4">
+                                          {topic.description.map((point, i) => (
+                                             <p key={i}>{point}</p>
+                                          ))}
+                                       </div>
+
+                                       <button
+                                          onClick={handleWhatsAppClick}
+                                          className="inline-flex items-center gap-2 text-xs uppercase tracking-wide text-gray-900"
+                                       >
+                                          Book Appointment
+                                          <span className="w-8 h-px bg-gray-900" />
+                                       </button>
+
+                                    </div>
+                                 </div>
+
                               </div>
                            </div>
 
-                           <div className="md:col-span-2 space-y-6">
-                              <h2 className="text-4xl md:text-5xl font-light text-gray-900">
-                                 {topic.title}
-                              </h2>
+                           {/* ===================== */}
+                           {/* TABLET + DESKTOP (md+) */}
+                           {/* ===================== */}
+                           <div className="hidden md:grid h-full grid-cols-12 gap-x-20 items-center px-12 lg:px-20">
 
-                              <ul className="space-y-2">
-                                 {topic.description.map((point, i) => (
-                                    <li key={i} className="flex gap-2 text-gray-600">
-                                       <span className="text-amber-600">•</span>
-                                       {point}
-                                    </li>
-                                 ))}
-                              </ul>
+                              {/* TEXT */}
+                              <div className="col-span-5">
 
-                              <button
-                                 onClick={handleWhatsAppClick}
-                                 className="px-8 py-4 bg-amber-600 text-white rounded-lg hover:cursor-pointer"
-                              >
-                                 Book {topic.title}
-                              </button>
+                                 <div className="flex items-center gap-6 text-sm text-gray-500 mb-8">
+                                    <span className="font-mono tracking-wider">
+                                       {String(index + 1).padStart(2, "0")}
+                                    </span>
+                                    <span className="h-px flex-1 bg-gray-200" />
+                                    <span className="uppercase tracking-widest text-xs">
+                                       {topic.subtitle}
+                                    </span>
+                                 </div>
+
+                                 <h2 className="text-[clamp(2.5rem,4vw,4rem)] font-normal leading-tight text-gray-900 mb-8">
+                                    {topic.title}
+                                 </h2>
+
+                                 <div className="space-y-4 max-w-md text-gray-600 leading-relaxed mb-10">
+                                    {topic.description.map((point, i) => (
+                                       <p key={i}>{point}</p>
+                                    ))}
+                                 </div>
+
+                                 <button
+                                    onClick={handleWhatsAppClick}
+                                    className="group inline-flex items-center gap-3 text-sm tracking-wide uppercase text-gray-900"
+                                 >
+                                    Book Appointment
+                                    <span className="w-12 h-px bg-gray-900 group-hover:w-20 transition-all duration-300" />
+                                 </button>
+
+                              </div>
+
+                              {/* IMAGE */}
+                              <div className="col-span-7">
+                                 <div className="relative h-[70vh] overflow-hidden">
+                                    <img
+                                       src={topic.image}
+                                       alt={topic.title}
+                                       className="absolute inset-0 w-full h-full object-cover scale-105"
+                                    />
+                                    <div className="absolute inset-0 bg-black/5" />
+                                 </div>
+                              </div>
                            </div>
                         </div>
                      </div>

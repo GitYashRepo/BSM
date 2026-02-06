@@ -1261,13 +1261,13 @@ export function ScrollCanvas() {
          scrollTrigger: {
             trigger: containerRef.current,
             start: 'top top',
-            end: `+=${window.innerHeight * 4}`,
-            scrub: 0.5,
+            end: `+=${window.innerHeight * 16}`,
+            scrub: 2.2,
             pin: true,
             anticipatePin: 1,
          },
          onUpdate: () => {
-            const frame = Math.round(frameObj.frame)
+            const frame = Math.floor(frameObj.frame)
             if (frame !== currentFrameRef.current) {
                currentFrameRef.current = frame
                drawFrame(frame)
@@ -1300,14 +1300,14 @@ export function ScrollCanvas() {
          </div>
 
          {/* Loading indicator */}
-         {!imagesLoaded && (
+         {/* {!imagesLoaded && (
             <div className="fixed inset-0 flex items-center justify-center bg-black z-50">
                <div className="flex flex-col items-center gap-4">
                   <div className="w-12 h-12 border-4 border-white/20 border-t-white rounded-full animate-spin" />
                   <p className="text-white text-sm">Loading animation...</p>
                </div>
             </div>
-         )}
+         )} */}
       </>
    )
 }

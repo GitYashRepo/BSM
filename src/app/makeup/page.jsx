@@ -222,96 +222,6 @@ export default function MakeupPage() {
             </div>
          </motion.section>
 
-         {/* Horizontal Scroll Section */}
-         {/* <section className="relative py-20 bg-white">
-            <div className="max-w-full mx-auto px-4 md:px-6 lg:px-12">
-               <motion.div
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  transition={{ duration: 0.6 }}
-                  className="mb-12 space-y-2"
-               >
-                  <h2 className="text-4xl md:text-5xl font-light text-gray-900">
-                     Our Makeup Services
-                  </h2>
-                  <p className="text-gray-600 text-lg">
-                     Scroll to explore our specialized makeup techniques and styles
-                  </p>
-               </motion.div>
-
-               <div className="flex justify-end gap-4 mb-8">
-                  <button
-                     onClick={() => scroll("left")}
-                     disabled={!canScrollLeft}
-                     className="p-3 rounded-full border border-amber-600 hover:bg-amber-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-                     aria-label="Scroll left"
-                  >
-                     <ChevronLeft className="w-6 h-6 text-amber-600" />
-                  </button>
-                  <button
-                     onClick={() => scroll("right")}
-                     disabled={!canScrollRight}
-                     className="p-3 rounded-full border border-amber-600 hover:bg-amber-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-                     aria-label="Scroll right"
-                  >
-                     <ChevronRight className="w-6 h-6 text-amber-600" />
-                  </button>
-               </div>
-
-               <div
-                  ref={scrollContainer}
-                  className="flex gap-6 overflow-x-auto scroll-smooth pb-4"
-                  style={{ scrollBehavior: "smooth" }}
-               >
-                  {makeupTopics.map((topic, index) => (
-                     <motion.div
-                        key={topic.id}
-                        initial={{ opacity: 0, x: 50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.5, delay: index * 0.1 }}
-                        className="flex-shrink-0 w-96 group"
-                     >
-                        <div className="h-full flex flex-col bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 border border-gray-100">
-                           <div className="relative h-64 overflow-hidden bg-gray-200">
-                              <img
-                                 src={topic.image || "/placeholder.svg"}
-                                 alt={topic.title}
-                                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                              />
-                              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500" />
-
-                              <div className="absolute top-4 right-4 w-12 h-12 bg-amber-600 text-white rounded-full flex items-center justify-center font-light text-lg">
-                                 {String(index + 1).padStart(2, "0")}
-                              </div>
-                           </div>
-
-                           <div className="flex-1 flex flex-col p-6 space-y-4">
-                              <div className="space-y-1">
-                                 <h3 className="text-3xl font-light text-gray-900">
-                                    {topic.title}
-                                 </h3>
-                                 <p className="text-sm font-serif text-amber-600 tracking-widest uppercase">
-                                    {topic.subtitle}
-                                 </p>
-                              </div>
-
-                              <div className="h-px bg-amber-200" />
-
-                              <p className="text-gray-600 leading-relaxed text-sm flex-1 line-clamp-6">
-                                 {topic.description}
-                              </p>
-
-                              <button className="mt-4 px-6 py-3 bg-amber-600 text-white font-light rounded-lg hover:bg-amber-700 transition-colors duration-300 group-hover:shadow-md">
-                                 Learn More
-                              </button>
-                           </div>
-                        </div>
-                     </motion.div>
-                  ))}
-               </div>
-            </div>
-         </section> */}
-
          {/* Full Description Sections */}
          <section
             ref={horizontalSectionRef}
@@ -328,36 +238,109 @@ export default function MakeupPage() {
                      className="w-screen h-screen flex items-center justify-center px-16"
                   >
                      <div className="max-w-6xl w-full">
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
-                           {/* Image */}
-                           <div className="md:col-span-1">
-                              <div className="relative overflow-hidden rounded-2xl h-80 shadow-xl">
-                                 <img
-                                    src={topic.image}
-                                    alt={topic.title}
-                                    className="w-full h-full object-cover"
-                                 />
+                        <div className="w-screen h-screen">
+                           {/* ===================== */}
+                           {/* MOBILE (sm and below) */}
+                           {/* ===================== */}
+                           <div className="block md:hidden w-full h-full">
+                              <div className="w-full h-full grid grid-rows-[auto_1fr_auto] px-4">
+                                 {/* IMAGE */}
+                                 <div className="flex items-center justify-center">
+                                    <div className="relative w-full h-[38vh] overflow-hidden">
+                                       <img
+                                          src={topic.image}
+                                          alt={topic.title}
+                                          className="absolute inset-0 w-full h-full object-cover"
+                                       />
+                                    </div>
+                                 </div>
+
+                                 {/* TEXT */}
+                                 <div className="flex items-center">
+                                    <div className="w-full">
+
+                                       <div className="flex items-center gap-3 text-[10px] uppercase tracking-widest text-gray-500 mb-2">
+                                          <span className="font-mono">
+                                             {String(index + 1).padStart(2, "0")}
+                                          </span>
+                                          <span className="h-px flex-1 bg-gray-300" />
+                                          <span>{topic.subtitle}</span>
+                                       </div>
+
+                                       <h2 className="text-[clamp(1.6rem,4.5vw,3rem)] leading-tight text-gray-900 mb-3">
+                                          {topic.title}
+                                       </h2>
+
+                                       <div className="text-[13px] leading-snug text-gray-600 space-y-1 mb-4">
+                                          {topic.description.map((point, i) => (
+                                             <p key={i}>{point}</p>
+                                          ))}
+                                       </div>
+
+                                       <button
+                                          onClick={handleWhatsAppClick}
+                                          className="inline-flex items-center gap-2 text-xs uppercase tracking-wide text-gray-900"
+                                       >
+                                          Book Appointment
+                                          <span className="w-8 h-px bg-gray-900" />
+                                       </button>
+
+                                    </div>
+                                 </div>
+
                               </div>
                            </div>
 
-                           {/* Content */}
-                           <div className="md:col-span-2 space-y-6">
-                              <h2 className="text-4xl md:text-5xl font-light text-gray-900">
-                                 {topic.title}
-                              </h2>
+                           {/* ===================== */}
+                           {/* TABLET + DESKTOP (md+) */}
+                           {/* ===================== */}
+                           <div className="hidden md:grid h-full grid-cols-12 gap-x-20 items-center px-12 lg:px-20">
 
-                              <ul className="space-y-2">
-                                 {topic.description.map((point, i) => (
-                                    <li key={i} className="flex gap-2 text-gray-600">
-                                       <span className="text-amber-600">•</span>
-                                       {point}
-                                    </li>
-                                 ))}
-                              </ul>
+                              {/* TEXT */}
+                              <div className="col-span-5">
 
-                              <button onClick={handleWhatsAppClick} className="px-8 py-4 bg-amber-600 text-white rounded-lg hover:cursor-pointer">
-                                 Book {topic.title}
-                              </button>
+                                 <div className="flex items-center gap-6 text-sm text-gray-500 mb-8">
+                                    <span className="font-mono tracking-wider">
+                                       {String(index + 1).padStart(2, "0")}
+                                    </span>
+                                    <span className="h-px flex-1 bg-gray-200" />
+                                    <span className="uppercase tracking-widest text-xs">
+                                       {topic.subtitle}
+                                    </span>
+                                 </div>
+
+                                 <h2 className="text-[clamp(2.5rem,4vw,4rem)] font-normal leading-tight text-gray-900 mb-8">
+                                    {topic.title}
+                                 </h2>
+
+                                 <div className="space-y-4 max-w-md text-gray-600 leading-relaxed mb-10">
+                                    {topic.description.map((point, i) => (
+                                       <p key={i}>{point}</p>
+                                    ))}
+                                 </div>
+
+                                 <button
+                                    onClick={handleWhatsAppClick}
+                                    className="group inline-flex items-center gap-3 text-sm tracking-wide uppercase text-gray-900"
+                                 >
+                                    Book Appointment
+                                    <span className="w-12 h-px bg-gray-900 group-hover:w-20 transition-all duration-300" />
+                                 </button>
+
+                              </div>
+
+                              {/* IMAGE */}
+                              <div className="col-span-7">
+                                 <div className="relative h-[70vh] overflow-hidden">
+                                    <img
+                                       src={topic.image}
+                                       alt={topic.title}
+                                       className="absolute object-top inset-0 w-full h-full object-cover scale-105"
+                                    />
+                                    <div className="absolute inset-0 bg-black/5" />
+                                 </div>
+                              </div>
+
                            </div>
                         </div>
                      </div>
@@ -366,11 +349,9 @@ export default function MakeupPage() {
             </div>
          </section>
 
-
          {/* CTA Section */}
          <section className="bsm-section py-32 px-6 lg:px-12">
             <div className="max-w-4xl mx-auto text-center space-y-10">
-               {/* Content */}
                <div className="space-y-6">
                   <h2 className="bsm-text-line text-5xl md:text-6xl font-light text-black leading-tight">
                      Ready to Experience <span className="font-serif italic">Premium</span> Beauty?
@@ -379,8 +360,6 @@ export default function MakeupPage() {
                      Connect with us today to schedule your transformation. Let's create something extraordinary together.
                   </p>
                </div>
-
-               {/* CTA Buttons */}
                <div className="flex flex-col sm:flex-row gap-6 justify-center pt-8">
                   <button
                      onClick={handleWhatsAppClick}
@@ -396,8 +375,6 @@ export default function MakeupPage() {
                      </button>
                   </a>
                </div>
-
-               {/* Footer Text */}
                <p className="bsm-text-line text-sm text-black/60 font-light pt-6">
                   Available 7 days • We respond within 2 hours
                </p>
