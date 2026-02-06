@@ -1291,23 +1291,26 @@ export function ScrollCanvas() {
             ref={containerRef}
             className="relative w-screen bg-black"
          >
-            <div className="w-screen h-screen overflow-hidden bg-black">
+            <div className="relative w-screen h-screen overflow-hidden bg-black">
+
+               {/* CANVAS */}
                <canvas
                   ref={canvasRef}
                   className="w-full h-full block"
                />
+               {/* CANVAS-ONLY LOADER */}
+               {!imagesLoaded && (
+                  <div className="absolute inset-0 flex items-center justify-center bg-black z-10">
+                     <div className="flex flex-col items-center gap-4">
+                        <div className="w-10 h-10 border-4 border-white/20 border-t-white rounded-full animate-spin" />
+                        <p className="text-white text-xs tracking-wide uppercase">
+                           An extraordinary experience is about to begin.
+                        </p>
+                     </div>
+                  </div>
+               )}
             </div>
          </div>
-
-         {/* Loading indicator */}
-         {/* {!imagesLoaded && (
-            <div className="fixed inset-0 flex items-center justify-center bg-black z-50">
-               <div className="flex flex-col items-center gap-4">
-                  <div className="w-12 h-12 border-4 border-white/20 border-t-white rounded-full animate-spin" />
-                  <p className="text-white text-sm">Loading animation...</p>
-               </div>
-            </div>
-         )} */}
       </>
    )
 }
