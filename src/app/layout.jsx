@@ -8,6 +8,7 @@ import DealsPopup from "@/components/webcomp/Deals/Dealspupup";
 import OfferModal from "@/components/OfferModal/offer-modal";
 import WhatsAppWidget from "@/components/WhatsApp/whatsapp-button";
 import ScrollToTopButton from "@/components/webcomp/Scrolltotop/ScrolltotopButton";
+import PreloadGetTourImages from "@/components/PreloadGetTourImages";
 
 const geistSans = Geist({
    variable: "--font-geist-sans",
@@ -31,6 +32,7 @@ export default function RootLayout({ children }) {
             className={`${geistSans.variable} ${geistMono.variable} antialiased`}
          >
             <LenisProvider>
+               <PreloadGetTourImages />
                <OfferModal />
                {/* <DealsPopup /> */}
                <WhatsAppWidget brandName="Blush" phone='+919467777773' />
