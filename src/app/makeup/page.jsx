@@ -250,7 +250,7 @@ export default function MakeupPage() {
                                        <img
                                           src={topic.image}
                                           alt={topic.title}
-                                          className="absolute inset-0 w-full h-full object-cover"
+                                          className="absolute inset-0 w-full h-full object-cover object-top"
                                        />
                                     </div>
                                  </div>
