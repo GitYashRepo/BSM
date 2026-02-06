@@ -97,21 +97,6 @@ export default function GetTour() {
             2.75
          );
 
-      // const workHeaderSection = stickyWorkHeaderRef.current;
-      // const homeWorkSection = homeWorkRef.current;
-
-      // let workHeaderPinTrigger;
-      // if (workHeaderSection && homeWorkSection) {
-      //    workHeaderPinTrigger = ScrollTrigger.create({
-      //       trigger: workHeaderSection,
-      //       start: "top top",
-      //       endTrigger: homeWorkSection,
-      //       end: "bottom bottom",
-      //       pin: true,
-      //       pinSpacing: false,
-      //    });
-      // }
-
       return () => {
          pinTrigger.kill();
          if (workHeaderPinTrigger) {
@@ -130,7 +115,7 @@ export default function GetTour() {
          <ReactLenis root>
             <div className="page about">
                <section className="about-header">
-                  <h1>Est</h1>
+                  <h1>Estd.</h1>
                   <h1>2015</h1>
                </section>
 
@@ -192,7 +177,7 @@ export default function GetTour() {
 
                         <div className="service-list-row">
                            <div className="service-list-col">
-                              <h5>Est.</h5>
+                              <h5>Estd.</h5>
                            </div>
                            <div className="service-list-col">
                               <p>
