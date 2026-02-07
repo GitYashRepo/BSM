@@ -63,7 +63,7 @@
 
 .sticky-titles h2 {
   position: absolute;
-  font-size: 2.5rem !important;
+  font-size: 2rem !important;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -216,19 +216,11 @@
   display: flex;
   justify-content: center;
   padding: 2em;
-  height: 100svh;
+  height: 30vh;
   margin: 2em;
   border-radius: 1em;
   overflow: hidden;
   border: 1px dashed var(--fg);
-}
-
-.about-hero-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
 }
 
 .about-me-copy {
