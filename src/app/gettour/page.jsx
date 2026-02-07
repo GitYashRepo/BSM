@@ -119,8 +119,8 @@ export default function GetTour() {
                   <h1>2015</h1>
                </section>
 
-               <section className="about-hero">
-                  <div className="about-hero-img">
+               <section className="relative flex justify-center m-2 md:p-[2em] md:m-[2em] h-[40vh] rounded-[1em] overflow-hidden border-[1px] border-black border-dashed md:h-[100vh]">
+                  <div className="absolute top-0 left-0 w-full h-full">
                      <img src="/scroll/scroll00015.png" className="w-full h-full" alt="Banner Image" />
                   </div>
                </section>
@@ -217,19 +217,19 @@ export default function GetTour() {
                      <div className="fav-tools-list-row">
                         <div className="fav-tool">
                            <div className="fav-tool-img">
-                              <img src="/textures/img1.jpg" className="w-full h-full" alt="" />
+                              <img src="/textures/img1.jpg" className="w-full" alt="" />
                            </div>
                            <h4>Makeup</h4>
                         </div>
                         <div className="fav-tool">
                            <div className="fav-tool-img">
-                              <img src="/textures/img2.jpg" className="w-full h-full" alt="" />
+                              <img src="/textures/img2.jpg" className="w-full" alt="" />
                            </div>
                            <h4>Hair</h4>
                         </div>
                         <div className="fav-tool">
                            <div className="fav-tool-img">
-                              <img src="/textures/img3.jpg" className="w-full h-full" alt="" />
+                              <img src="/textures/img3.jpg" className="w-full" alt="" />
                            </div>
                            <h4>Beauty</h4>
                         </div>
@@ -237,19 +237,19 @@ export default function GetTour() {
                      <div className="fav-tools-list-row">
                         <div className="fav-tool">
                            <div className="fav-tool-img">
-                              <img src="/textures/img4.jpg" className="w-full h-full" alt="" />
+                              <img src="/textures/img4.jpg" className="w-full" alt="" />
                            </div>
                            <h4>Esthetics</h4>
                         </div>
                         <div className="fav-tool">
                            <div className="fav-tool-img">
-                              <img src="/textures/img5.jpg" className="w-full h-full" alt="" />
+                              <img src="/textures/img5.jpg" className="w-full" alt="" />
                            </div>
                            <h4>Signature Services</h4>
                         </div>
                         <div className="fav-tool">
                            <div className="fav-tool-img">
-                              <img src="/textures/img6.jpg" className="w-full h-full" alt="" />
+                              <img src="/textures/img6.jpg" className="w-full" alt="" />
                            </div>
                            <h4>Franchise</h4>
                         </div>
@@ -268,13 +268,13 @@ export default function GetTour() {
                <a href="/contact" className="primary sm">Contact</a>
             </div>
             <h2 ref={(el) => (titlesRef.current[0] = el)}>
-               Seamlessly control your smart home with intuitive voice commands—fast, secure, and reliable.
+               Blush Salon offers premium beauty services with personalized, expert care.
             </h2>
             <h2 ref={(el) => (titlesRef.current[1] = el)}>
-               Experience hands-free living with our intelligent, responsive, and voice-activated home automation system.
+               Established in 2015, Blush is trusted for quality and professionalism.
             </h2>
             <h2 ref={(el) => (titlesRef.current[2] = el)}>
-               Transform your home with powerful voice control—effortless automation at your command.
+               Over 500 brides choose Blush for flawless, memorable transformations.
             </h2>
          </section>
          <ScrollCanvas />
