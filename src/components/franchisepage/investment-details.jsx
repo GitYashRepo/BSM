@@ -4,7 +4,7 @@ import { Check, MessageCircle } from "lucide-react"
 
 export function InvestmentDetails() {
    const handleWhatsAppClick = () => {
-      const phoneNumber = "919876543210" // Replace with your WhatsApp number
+      const phoneNumber = "919467777773"
       const message = "Hello! I'm interested in learning more about your salon franchise opportunity."
       const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
       window.open(whatsappUrl, "_blank")
