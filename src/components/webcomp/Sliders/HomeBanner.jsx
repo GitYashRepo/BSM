@@ -216,10 +216,10 @@ export default function SalonSlider() {
             <div className="flex items-center justify-between mt-6 mx-8 md:mx-0">
                <div className="flex gap-3">
                   <button onClick={() => paginate(-1)}>
-                     <ChevronLeft className="w-12 h-12 hover:scale-105" />
+                     <ChevronLeft className="md:w-12 md:h-12 hover:scale-105" />
                   </button>
                   <button onClick={() => paginate(1)}>
-                     <ChevronRight className="w-12 h-12 hover:scale-105" />
+                     <ChevronRight className="md:w-12 md:h-12 hover:scale-105" />
                   </button>
                </div>
 
