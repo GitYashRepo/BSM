@@ -5,6 +5,29 @@ import Link from "next/link"
 import { useState } from "react"
 import { backgroundColor } from "@/components/webcomp/webcolor/bgcolor";
 
+const PagesLinks = [
+   {
+      name: "About",
+      href: "/about"
+   },
+   {
+      name: "Services",
+      href: "/services"
+   },
+   {
+      name: "Locations",
+      href: "/locations"
+   },
+   {
+      name: "Admin",
+      href: "/admin/dashboard"
+   },
+   {
+      name: "Sub-Admin",
+      href: "/sub-admin/services"
+   }
+]
+
 export default function Footer() {
    const [phone, setPhone] = useState("")
    const [isSubmitting, setIsSubmitting] = useState(false)
@@ -48,14 +71,16 @@ export default function Footer() {
                      Experience the artistry of professional makeup and styling with our expert team dedicated to bringing your
                      vision to life.
                   </p>
-                  <button className="group relative px-8 py-3 text-sm font-medium uppercase tracking-widest overflow-hidden hover:text-black transition-colors duration-300">
-                     <span className="relative z-10 flex items-center gap-2">
-                        Get Started
-                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-                     </span>
-                     <div className="absolute inset-0 bg-[#D99726] translate-x-full group-hover:translate-x-0 transition-transform duration-300 z-0"></div>
-                     <div className="absolute inset-0 border border-[#D99726] z-0"></div>
-                  </button>
+                  <Link href="/contact">
+                     <button className="group relative px-8 py-3 text-sm font-medium uppercase tracking-widest overflow-hidden hover:text-black transition-colors duration-300">
+                        <span className="relative z-10 flex items-center gap-2">
+                           Get Started
+                           <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                        </span>
+                        <div className="absolute inset-0 bg-[#D99726] translate-x-full group-hover:translate-x-0 transition-transform duration-300 z-0"></div>
+                        <div className="absolute inset-0 border border-[#D99726] z-0"></div>
+                     </button>
+                  </Link>
                </div>
 
                {/* Right: Contact Grid */}
@@ -102,33 +127,6 @@ export default function Footer() {
                   </div>
                </div>
             </div>
-
-            {/* Section 2: Services Grid with Hover Effects */}
-            {/* <div className="border-b border-white/10">
-               <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/5">
-                  {[
-                     { title: "Makeup", description: "Professional makeup services" },
-                     { title: "Hair", description: "Expert hair styling" },
-                     { title: "Beauty", description: "Complete beauty solutions" },
-                     { title: "Bridal", description: "Specialized bridal packages" },
-                  ].map(({ title, description }) => (
-                     <div
-                        key={title}
-                        className="group p-6 md:p-8 border border-white/10 hover:border-[#D99726] hover:bg-[#D99726]/5 transition-all duration-500 cursor-pointer"
-                     >
-                        <p className="text-xs uppercase tracking-widest text-gray-300 group-hover:text-[#D99726] mb-3 transition-colors duration-300">
-                           {title}
-                        </p>
-                        <p className="text-2xl md:text-3xl font-light text-white/90 group-hover:text-white transition-colors duration-300">
-                           {title}
-                        </p>
-                        <p className="text-xs text-gray-400 mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                           {description}
-                        </p>
-                     </div>
-                  ))}
-               </div>
-            </div> */}
 
             {/* Section 3: Newsletter with Split Layout */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 p-8 md:p-12 lg:p-16 border-b border-white/10">
@@ -185,15 +183,15 @@ export default function Footer() {
 
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-12">
                      <div>
-                        <p className="text-xs uppercase tracking-widest text-gray-300 mb-4">Company</p>
+                        <p className="text-xs uppercase tracking-widest text-gray-300 mb-4">Quick Links</p>
                         <ul className="space-y-2">
-                           {["About", "Services", "Locations"].map((item) => (
-                              <li key={item}>
+                           {PagesLinks.map((item) => (
+                              <li key={item.name}>
                                  <Link
-                                    href="#"
+                                    href={item.href}
                                     className="text-sm text-gray-400 hover:text-[#D99726] transition-colors duration-300 font-light"
                                  >
-                                    {item}
+                                    {item.name}
                                  </Link>
                               </li>
                            ))}

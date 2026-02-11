@@ -16,7 +16,7 @@ const slides = [
          "Enhance your look with flawless makeup artistry tailored for parties, events, and everyday beauty.",
       buttonText: "EXPLORE",
       link: "/makeup",
-      image: "/images/img2.jpg",
+      image: "/banner/Makeup.jpeg",
    },
    {
       id: 2,
@@ -27,7 +27,7 @@ const slides = [
          "Experience expert haircuts, smoothening, styling, and treatments crafted for your unique texture.",
       buttonText: "EXPLORE",
       link: "/hair",
-      image: "/images/img5.jpg",
+      image: "/banner/hairs.jpeg",
    },
    {
       id: 3,
@@ -38,7 +38,7 @@ const slides = [
          "Refine your features with professional beauty services including brows, lashes, and signature detailing.",
       buttonText: "EXPLORE",
       link: "/beauty",
-      image: "/images/img7.jpg",
+      image: "/banner/beauty.jpeg",
    },
    {
       id: 4,
@@ -49,7 +49,7 @@ const slides = [
          "Rejuvenate your skin with premium facials, peels, and esthetic therapies for long-lasting glow.",
       buttonText: "EXPLORE",
       link: "/esthetics",
-      image: "/images/img9.jpg",
+      image: "/banner/Esthetics.jpeg",
    },
    {
       id: 5,
@@ -70,8 +70,8 @@ const slides = [
       description:
          "Experience luxurious bridal makeup designed to stay flawless, elegant, and radiant throughout your special day.",
       buttonText: "EXPLORE",
-      link: "/bridal",
-      image: "/images/img8.jpg",
+      link: "/makeup",
+      image: "/images/img15.jpg",
    },
 ];
 
@@ -114,10 +114,10 @@ export default function SalonSlider() {
    return (
       <div
          ref={sliderRef}
-         className="relative w-full h-[85vh] md:h-[70vh] overflow-hidden bg-white flex flex-col md:flex-row"
+         className="relative w-full h-[85vh] md:h-[80vh] overflow-hidden bg-white flex flex-col justify-between md:flex-row"
       >
          {/* IMAGE SECTION */}
-         <div className="w-full md:w-1/2 h-[55vh] md:h-full relative order-1 md:order-2 overflow-hidden">
+         <div className="w-full md:w-1/3 h-[55vh] md:h-full relative order-1 md:order-2 overflow-hidden">
             <AnimatePresence mode="wait">
                <motion.div
                   key={current}
@@ -139,7 +139,7 @@ export default function SalonSlider() {
          </div>
 
          {/* CONTENT SECTION */}
-         <div className="w-full md:w-1/2 flex flex-col justify-between p-6 md:p-12 lg:p-16 order-2 md:order-1 relative">
+         <div className="w-full md:w-2/3 flex flex-col justify-between p-6 md:p-12 lg:p-16 order-2 md:order-1 relative">
             {/* TAG */}
             <motion.div
                key={`tag-${current}`}
@@ -216,10 +216,10 @@ export default function SalonSlider() {
             <div className="flex items-center justify-between mt-6 mx-8 md:mx-0">
                <div className="flex gap-3">
                   <button onClick={() => paginate(-1)}>
-                     <ChevronLeft />
+                     <ChevronLeft className="w-12 h-12 hover:scale-105" />
                   </button>
                   <button onClick={() => paginate(1)}>
-                     <ChevronRight />
+                     <ChevronRight className="w-12 h-12 hover:scale-105" />
                   </button>
                </div>
 

@@ -8,13 +8,14 @@ const navItems = [
       label: "About",
       items: [
          { label: "Go to Home", href: "/" },
-         { label: "Experience our interior", href: "/gettour" },
          { label: "Who Am I ?", href: "/about" },
          { label: "About BSM", href: "/bsm" },
+         { label: "Experience our interior", href: "/gettour" },
       ],
       featured: {
          title: "Bridal Special",
          description: "Complete bridal package with pre-bridal treatments, trials & D-day makeup",
+         href: "/makeup",
       },
    },
    {
@@ -32,6 +33,7 @@ const navItems = [
       featured: {
          title: "Bridal Special",
          description: "Complete bridal package with pre-bridal treatments, trials & D-day makeup",
+         href: "/makeup",
       },
    },
    {
@@ -50,6 +52,7 @@ const navItems = [
       featured: {
          title: "Hair Transformation",
          description: "Expert stylists for the perfect look you deserve",
+         href: "/hair",
       },
    },
    {
@@ -68,6 +71,7 @@ const navItems = [
       featured: {
          title: "Glow Package",
          description: "Complete beauty treatments for radiant skin",
+         href: "/beauty",
       },
    },
    {
@@ -85,6 +89,7 @@ const navItems = [
       featured: {
          title: "Advanced Skincare",
          description: "Clinical treatments for lasting results",
+         href: "/esthetics",
       },
    },
    {
@@ -100,6 +105,7 @@ const navItems = [
       featured: {
          title: "Complete Bridal Experience",
          description: "From engagement to reception - we've got you covered",
+         href: "/signatureservices",
       },
    },
    {
@@ -115,6 +121,7 @@ const navItems = [
       featured: {
          title: "Own a BSM Franchise",
          description: "Contact Nitin (CEO): 94677-77773",
+         href: "/franchise",
       },
    },
    {
@@ -128,6 +135,7 @@ const navItems = [
       featured: {
          title: "Our Gallery",
          description: "We're here to help you look your best",
+         href: "/gallery",
       },
    },
    {
@@ -141,6 +149,7 @@ const navItems = [
       featured: {
          title: "Get In Touch",
          description: "We're here to help you look your best",
+         href: "/contact",
       },
    },
 ]
@@ -208,7 +217,7 @@ const BottomBar = () => {
 
                            <p className="text-foreground text-sm mb-4">{item.featured.description}</p>
 
-                           <a href="#" className="inline-flex items-center gap-2 text-[#750851] hover:underline">
+                           <a href={item.featured.href} className="inline-flex items-center gap-2 text-[#750851] hover:underline">
                               Learn More <ChevronRight className="w-4 h-4" />
                            </a>
                         </div>
