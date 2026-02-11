@@ -6,6 +6,12 @@ import { MessageCircle, ArrowRight } from "lucide-react";
 
 export default function SignatureServicesPage() {
    const [currentIndex, setCurrentIndex] = useState(0);
+   const [screenWidth, setScreenWidth] = useState(0);
+
+
+   useEffect(() => {
+      setScreenWidth(window.innerWidth);
+   }, []);
 
    const handleWhatsAppClick = () => {
       const phoneNumber = "919053102324";
@@ -137,7 +143,7 @@ export default function SignatureServicesPage() {
             <motion.div
                drag="x"
                dragConstraints={{
-                  left: -(signatureTopics.length - 1) * window.innerWidth,
+                  left: -(signatureTopics.length - 1) * screenWidth,
                   right: 0,
                }}
                dragElastic={0.08}
@@ -153,7 +159,7 @@ export default function SignatureServicesPage() {
 
                   setCurrentIndex(newIndex);
                }}
-               animate={{ x: -currentIndex * window.innerWidth }}
+               animate={{ x: -currentIndex * screenWidth }}
                transition={{ type: "spring", stiffness: 80, damping: 20 }}
                className="flex h-full"
                style={{ width: `${signatureTopics.length * 100}vw` }}

@@ -10,6 +10,12 @@ export default function HairPage() {
    const [canScrollRight, setCanScrollRight] = useState(true);
    const [currentIndex, setCurrentIndex] = useState(0);
    const containerRef = useRef(null);
+   const [screenWidth, setScreenWidth] = useState(0);
+
+
+   useEffect(() => {
+      setScreenWidth(window.innerWidth);
+   }, []);
 
 
    const handleWhatsAppClick = () => {
@@ -179,13 +185,13 @@ export default function HairPage() {
                ref={containerRef}
                drag="x"
                dragConstraints={{
-                  left: -(hairTopics.length - 1) * window.innerWidth,
+                  left: -(hairTopics.length - 1) * screenWidth,
                   right: 0,
                }}
                dragElastic={0.08}
                onDragEnd={(e, info) => {
                   const offset = info.offset.x;
-                  const width = window.innerWidth;
+                  const width = screenWidth;
                   let newIndex = currentIndex;
 
                   if (offset < -100 && currentIndex < hairTopics.length - 1) {
@@ -196,7 +202,7 @@ export default function HairPage() {
 
                   setCurrentIndex(newIndex);
                }}
-               animate={{ x: -currentIndex * window.innerWidth }}
+               animate={{ x: -currentIndex * screenWidth }}
                transition={{ type: "spring", stiffness: 80, damping: 20 }}
                className="flex h-full"
                style={{ width: `${hairTopics.length * 100}vw` }}

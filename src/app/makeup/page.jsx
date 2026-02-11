@@ -8,6 +8,12 @@ export default function MakeupPage() {
    const scrollContainer = useRef(null);
    const [canScrollLeft, setCanScrollLeft] = useState(false);
    const [canScrollRight, setCanScrollRight] = useState(true);
+   const [screenWidth, setScreenWidth] = useState(0);
+
+
+   useEffect(() => {
+      setScreenWidth(window.innerWidth);
+   }, []);
 
    const handleWhatsAppClick = () => {
       const phoneNumber = "919053102324"
@@ -193,7 +199,7 @@ export default function MakeupPage() {
 
             <motion.div
                drag="x"
-               dragConstraints={{ left: -(makeupTopics.length - 1) * window.innerWidth, right: 0 }}
+               dragConstraints={{ left: -(makeupTopics.length - 1) * screenWidth, right: 0 }}
                dragElastic={0.05}
                className="flex h-full"
                style={{ width: `${makeupTopics.length * 100}vw` }}
