@@ -6,6 +6,12 @@ import { MessageCircle, ArrowRight } from "lucide-react";
 
 export default function BeautyPage() {
    const [currentIndex, setCurrentIndex] = useState(0);
+   const [screenWidth, setScreenWidth] = useState(0);
+
+
+   useEffect(() => {
+      setScreenWidth(window.innerWidth);
+   }, []);
 
 
    const handleWhatsAppClick = () => {
@@ -175,7 +181,7 @@ export default function BeautyPage() {
             <motion.div
                drag="x"
                dragConstraints={{
-                  left: -(beautyTopics.length - 1) * window.innerWidth,
+                  left: -(beautyTopics.length - 1) * screenWidth,
                   right: 0,
                }}
                dragElastic={0.08}
@@ -191,7 +197,7 @@ export default function BeautyPage() {
 
                   setCurrentIndex(newIndex);
                }}
-               animate={{ x: -currentIndex * window.innerWidth }}
+               animate={{ x: -currentIndex * screenWidth }}
                transition={{ type: "spring", stiffness: 80, damping: 20 }}
                className="flex h-full"
                style={{ width: `${beautyTopics.length * 100}vw` }}
