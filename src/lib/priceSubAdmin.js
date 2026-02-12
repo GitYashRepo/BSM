@@ -8,7 +8,6 @@ const ADMIN_NAME = "BSM Admin - Price View";
 
 export async function priceSubAdmin() {
   await connectDB();
-   // Delete any existing admin with same email
   await SubAdmin.deleteMany({ email: ADMIN_EMAIL });
 
   const hashed = await bcrypt.hash(ADMIN_PASSWORD, 10);

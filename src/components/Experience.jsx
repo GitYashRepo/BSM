@@ -6,14 +6,7 @@ import { MOUSE } from "three";
 export const Experience = () => {
    return (
       <>
-         {/* <Float
-            rotation-x={-Math.PI / 4}
-            floatIntensity={1}
-            speed={2}
-            rotationIntensity={2}
-         > */}
          <Book />
-         {/* </Float> */}
          <OrbitControls
             enableZoom={true}
             enablePan={true}
@@ -22,7 +15,7 @@ export const Experience = () => {
             mouseButtons={{
                LEFT: MOUSE.ROTATE,
                MIDDLE: MOUSE.PAN,
-               RIGHT: MOUSE.DOLLY, // intentional zoom
+               RIGHT: MOUSE.DOLLY,
             }}
             enableDamping
          />
@@ -30,7 +23,6 @@ export const Experience = () => {
          <directionalLight
             position={[2, 5, 2]}
             intensity={1.1}
-            // castShadow
             shadow-mapSize-width={2048}
             shadow-mapSize-height={2048}
             shadow-bias={-0.0001}

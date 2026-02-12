@@ -1,4 +1,5 @@
 "use client";
+
 import { useState, useEffect } from "react";
 
 export default function Page() {
@@ -16,12 +17,12 @@ export default function Page() {
    const [list, setList] = useState([]);
 
    useEffect(() => {
-      fetch("/api/category").then(r => r.json()).then(setCats);
+      fetch("/api/categories").then(r => r.json()).then(setCats);
       load();
    }, []);
 
    async function load() {
-      const r = await fetch("/api/service");
+      const r = await fetch("/api/services");
       setList(await r.json());
    }
 
@@ -36,7 +37,7 @@ export default function Page() {
    }
 
    async function create() {
-      await fetch("/api/service", {
+      await fetch("/api/services", {
          method: "POST",
          body: JSON.stringify({
             category: cat,

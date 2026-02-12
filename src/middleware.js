@@ -6,7 +6,6 @@ const SUBADMIN_SECRET = new TextEncoder().encode(process.env.JWT_SECRET_PRICE);
 
 export async function middleware(req) {
   const { pathname } = req.nextUrl;
-
   const isAdminRoute = pathname.startsWith("/admin");
   const isSubAdminRoute = pathname.startsWith("/sub-admin");
 
@@ -14,17 +13,14 @@ export async function middleware(req) {
     return NextResponse.next();
   }
 
-  // Try admin token first
   const adminToken = req.cookies.get("admin_token")?.value;
   const subAdminToken = req.cookies.get("subadmin_token")?.value;
 
   try {
-    /** ---------------- ADMIN TOKEN ---------------- */
     if (adminToken) {
       const { payload } = await jwtVerify(adminToken, ADMIN_SECRET);
 
       if (payload.role === "admin") {
-        // ✅ Admin can access BOTH admin & sub-admin
         return NextResponse.next();
       }
     }

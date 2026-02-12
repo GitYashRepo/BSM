@@ -92,7 +92,6 @@ function StatCard({ stat, index }) {
       >
          <div className="space-y-4">
 
-            {/* Number */}
             <div className="flex items-baseline gap-2">
                <span className="text-4xl md:text-4xl lg:text-6xl font-light tracking-tight text-neutral-900 tabular-nums leading-none">
                   {count.toLocaleString()}

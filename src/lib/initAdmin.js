@@ -8,9 +8,7 @@ const ADMIN_NAME = "BSM Admin";
 
 export async function initAdmin() {
   await connectDB();
-   // Delete any existing admin with same email
   await Admin.deleteMany({ email: ADMIN_EMAIL });
-
   const hashed = await bcrypt.hash(ADMIN_PASSWORD, 10);
   await Admin.create({
     name: ADMIN_NAME,

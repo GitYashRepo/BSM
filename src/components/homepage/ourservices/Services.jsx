@@ -48,16 +48,6 @@ const services = [
       duration: "75-90 min",
       href: "/esthetics"
    },
-   // {
-   //    number: "05",
-   //    title: "Bridal\nMakeup",
-   //    category: "BRIDAL",
-   //    description:
-   //       "Flawless bridal makeup for your special day with trials, touch-up kits, and complete packages for the bridal party.",
-   //    image: "/images/img2.jpg",
-   //    duration: "2-3 hours",
-   //    price: "From $250",
-   // },
 ]
 
 export function ServiceSection() {

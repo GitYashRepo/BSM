@@ -31,5 +31,5 @@ export default function PreloadGetTourImages() {
       }
    }, [])
 
-   return null // 👈 renders nothing
+   return null 
 }
