@@ -8,7 +8,7 @@ export default function Page() {
    const [list, setList] = useState([]);
 
    useEffect(() => {
-      fetch("/api/category")
+      fetch("/api/categories")
          .then(r => r.json())
          .then(setCats);
    }, []);

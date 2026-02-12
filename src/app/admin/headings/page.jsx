@@ -1,4 +1,5 @@
 "use client";
+
 import { useState, useEffect } from "react";
 
 export default function Page() {
@@ -9,7 +10,7 @@ export default function Page() {
    const [list, setList] = useState([]);
 
    useEffect(() => {
-      fetch("/api/category").then(r => r.json()).then(setCats);
+      fetch("/api/categories").then(r => r.json()).then(setCats);
    }, []);
 
    async function loadSubs(id) {

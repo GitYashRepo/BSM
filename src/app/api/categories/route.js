@@ -15,24 +15,30 @@ export async function GET() {
 // POST – Create category
 // ======================
 export async function POST(req) {
-  const admin = requireAdmin(req);
-  if (!admin) {
-    return Response.json({ message: "Unauthorized" }, { status: 401 });
-  }
+  try {
+    await connectDB();
+    const { name } = await req.json();
 
-  await connectDB();
-  const { name } = await req.json();
+    const exists = await Category.findOne({ name });
 
-  if (!name) {
+    if (exists) {
+      return Response.json(
+        { message: "Category already exists" },
+        { status: 400 }
+      );
+    }
+
+    const created = await Category.create({ name });
+
+    return Response.json(created);
+  } catch (err) {
     return Response.json(
-      { message: "Category name is required" },
-      { status: 400 }
+      { message: err.message },
+      { status: 500 }
     );
   }
-
-  const category = await Category.create({ name });
-  return Response.json(category, { status: 201 });
 }
+
 
 // ======================
 // PUT – Update category

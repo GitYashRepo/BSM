@@ -6,13 +6,14 @@ export default function Page() {
    const [list, setList] = useState([]);
 
    async function load() {
-      const res = await fetch("/api/category");
+      const res = await fetch("/api/categories");
       setList(await res.json());
    }
 
    async function create() {
-      await fetch("/api/category", {
+      await fetch("/api/categories", {
          method: "POST",
+         headers: { "Content-Type": "application/json" },
          body: JSON.stringify({ name }),
       });
       setName("");
@@ -20,8 +21,9 @@ export default function Page() {
    }
 
    async function del(id) {
-      await fetch("/api/category", {
+      await fetch("/api/categories", {
          method: "DELETE",
+         headers: { "Content-Type": "application/json" },
          body: JSON.stringify({ id }),
       });
       load();
