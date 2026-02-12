@@ -1,17 +1,10 @@
 import { connectDB } from "@/lib/mongodb";
-import Service from "@/models/Service";
+import Offer from "@/models/Offer";
 import { requireAdmin } from "@/lib/requireAdmin";
 
-export async function GET(req) {
+export async function GET() {
   await connectDB();
-
-  const data = await Service.find()
-    .populate("category", "name")
-    .populate("subCategory", "name")
-    .populate("workHeading", "title")
-    .sort({ createdAt: -1 });
-
-  return Response.json(data);
+  return Response.json(await Offer.find().sort({ createdAt: -1 }));
 }
 
 export async function POST(req) {
@@ -20,8 +13,8 @@ export async function POST(req) {
 
   await connectDB();
   const body = await req.json();
+  const created = await Offer.create(body);
 
-  const created = await Service.create(body);
   return Response.json(created);
 }
 
@@ -31,7 +24,7 @@ export async function DELETE(req) {
 
   await connectDB();
   const { id } = await req.json();
-  await Service.findByIdAndDelete(id);
+  await Offer.findByIdAndDelete(id);
 
   return Response.json({ msg: "Deleted" });
 }

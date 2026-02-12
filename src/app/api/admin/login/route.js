@@ -1,40 +1,47 @@
+import { cookies } from "next/headers";
+import { NextResponse } from "next/server";
+import jwt from "jsonwebtoken";
 import { connectDB } from "@/lib/mongodb";
 import Admin from "@/models/Admin";
-import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
-import { cookies } from "next/headers";
-
-const JWT_SECRET = process.env.JWT_SECRET || "super_secret_jwt_key";
 
 export async function POST(req) {
-  await connectDB();
+  try {
+    await connectDB();
 
-  const { email, password } = await req.json();
+    const { email, password } = await req.json();
 
-  const admin = await Admin.findOne({ email }); 
-  if (!admin) {
-    return new Response(JSON.stringify({ message: "Admin not found" }), { status: 404 });
+    const admin = await Admin.findOne({ email });
+    if (!admin) {
+      return NextResponse.json({ error: "Invalid credentials" }, { status: 401 });
+    }
+
+    const valid = await bcrypt.compare(password, admin.password);
+    if (!valid) {
+      return NextResponse.json({ error: "Invalid credentials" }, { status: 401 });
+    }
+
+    const token = jwt.sign(
+      { id: admin._id, role: "admin" },
+      process.env.JWT_SECRET,
+      { expiresIn: "1d" }
+    );
+
+    const cookieStore = await cookies();
+
+    cookieStore.set({
+      name: "admin_token",
+      value: token,
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "lax",
+      path: "/",
+    });
+
+    return NextResponse.json({ success: true });
+
+  } catch (err) {
+    console.error("LOGIN ERROR:", err);
+    return NextResponse.json({ error: "Server error" }, { status: 500 });
   }
-
-  const isMatch = await bcrypt.compare(password, admin.password);
-  if (!isMatch) {
-   console.log("Stored hash:", admin.password);
-   console.log("Given password:", password);
-    return new Response(JSON.stringify({ message: "Invalid credentials" }), { status: 401 });
-  }
-
-  const token = jwt.sign({ id: admin._id, role: "admin" }, JWT_SECRET, { expiresIn: "1h" });
-
-  const cookieStore = await cookies();
-  cookieStore.set({
-    name: "admin_token",
-    value: token,
-    httpOnly: true,
-    secure: false,
-    sameSite: "lax",
-    maxAge: 3600,
-    path: "/",
-  });
-
-  return new Response(JSON.stringify({ message: "Login successful" }), { status: 200 });
 }

@@ -26,15 +26,16 @@ export async function POST(req) {
   const token = jwt.sign({ id: admin._id, role: "subadmin" }, JWT_SECRET, { expiresIn: "1h" });
 
   const cookieStore = await cookies();
-  cookieStore.set({
-    name: "subadmin_token",
-    value: token,
-    httpOnly: true,
-    secure: false,
-    sameSite: "lax",
-    maxAge: 3600,
-    path: "/",
-  });
+
+cookieStore.set({
+  name: "subadmin_token",
+  value: token,
+  httpOnly: true,
+  secure: process.env.NODE_ENV === "production",
+  sameSite: "lax",
+  path: "/",
+});
+
 
   return new Response(JSON.stringify({ message: "Login successful" }), { status: 200 });
 }

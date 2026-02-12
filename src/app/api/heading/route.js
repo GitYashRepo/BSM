@@ -1,14 +1,16 @@
 import { connectDB } from "@/lib/mongodb";
-import Service from "@/models/Service";
+import WorkHeading from "@/models/WorkHeading";
 import { requireAdmin } from "@/lib/requireAdmin";
 
 export async function GET(req) {
   await connectDB();
+  const { searchParams } = new URL(req.url);
+  const subCategoryId = searchParams.get("subCategoryId");
 
-  const data = await Service.find()
-    .populate("category", "name")
+  const filter = subCategoryId ? { subCategory: subCategoryId } : {};
+
+  const data = await WorkHeading.find(filter)
     .populate("subCategory", "name")
-    .populate("workHeading", "title")
     .sort({ createdAt: -1 });
 
   return Response.json(data);
@@ -21,7 +23,7 @@ export async function POST(req) {
   await connectDB();
   const body = await req.json();
 
-  const created = await Service.create(body);
+  const created = await WorkHeading.create(body);
   return Response.json(created);
 }
 
@@ -31,7 +33,7 @@ export async function DELETE(req) {
 
   await connectDB();
   const { id } = await req.json();
-  await Service.findByIdAndDelete(id);
+  await WorkHeading.findByIdAndDelete(id);
 
   return Response.json({ msg: "Deleted" });
 }
