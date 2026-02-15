@@ -32,7 +32,7 @@ export default function HairPage() {
          id: 1,
          title: "Hair",
          subtitle: "Complete Hair Care Solutions",
-         image: "/images/hair1.jpg",
+         image: "/services/hair/hair2.jpg",
          description: [
             "Personalized hair care for every hair type",
             "Healthy, shiny & well-maintained hair",
@@ -44,7 +44,7 @@ export default function HairPage() {
          id: 2,
          title: "Haircuts",
          subtitle: "Precision Cuts & Styling",
-         image: "/images/hair2.jpg",
+         image: "/services/hair/haircut.jpg",
          description: [
             "Customized cuts for face shape",
             "Trendy & classic styles",
@@ -56,7 +56,7 @@ export default function HairPage() {
          id: 3,
          title: "Hair Color",
          subtitle: "Professional Hair Coloring",
-         image: "/images/hair3.jpg",
+         image: "/services/hair/haircolor.png",
          description: [
             "Global, highlights & balayage",
             "Ammonia-free premium colors",
@@ -68,7 +68,7 @@ export default function HairPage() {
          id: 4,
          title: "Hair Spa",
          subtitle: "Deep Nourishment Therapy",
-         image: "/images/hair4.jpg",
+         image: "/services/hair/hairspa.jpg",
          description: [
             "Repairs damaged hair",
             "Improves scalp health",
@@ -80,7 +80,7 @@ export default function HairPage() {
          id: 5,
          title: "Keratin Treatment",
          subtitle: "Smooth & Frizz-Free Hair",
-         image: "/images/hair5.jpg",
+         image: "/services/hair/keratin.jpg",
          description: [
             "Reduces frizz & dryness",
             "Adds shine & smoothness",
@@ -92,7 +92,7 @@ export default function HairPage() {
          id: 6,
          title: "Smoothening",
          subtitle: "Silky Straight Finish",
-         image: "/images/hair6.jpg",
+         image: "/services/hair/smoothning.jpg",
          description: [
             "Naturally straight look",
             "Reduces daily styling effort",
@@ -104,7 +104,7 @@ export default function HairPage() {
          id: 7,
          title: "Hair Extensions",
          subtitle: "Length & Volume Instantly",
-         image: "/images/hair7.jpg",
+         image: "/services/hair/hairext.jpg",
          description: [
             "100% natural-looking extensions",
             "Adds volume & length",
@@ -116,7 +116,7 @@ export default function HairPage() {
          id: 8,
          title: "Bridal Hairstyling",
          subtitle: "Perfect Wedding Hair",
-         image: "/images/hair8.jpg",
+         image: "/services/hair/bridalhairstyle.jpg",
          description: [
             "Elegant bridal hairstyles",
             "Long-lasting hold",
@@ -296,7 +296,7 @@ export default function HairPage() {
                            </div>
 
                            <div className="col-span-7">
-                              <div className="relative h-[70vh] overflow-hidden rounded-2xl">
+                              <div className="relative h-[100vh] overflow-hidden">
                                  <img
                                     src={topic.image}
                                     alt={topic.title}

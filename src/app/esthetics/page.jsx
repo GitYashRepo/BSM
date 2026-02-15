@@ -30,7 +30,7 @@ export default function EstheticsPage() {
          id: 1,
          title: "Esthetics",
          subtitle: "Advanced Skin Care",
-         image: "/images/esthetics1.jpg",
+         image: "/banner/Esthetics.jpeg",
          description: [
             "Advanced aesthetic skin solutions",
             "Personalized skin analysis",
@@ -42,7 +42,7 @@ export default function EstheticsPage() {
          id: 2,
          title: "Skin Treatments",
          subtitle: "Healthy Skin Solutions",
-         image: "/images/esthetics2.jpg",
+         image: "/services/esthetics/skintreat.jpg",
          description: [
             "Customized professional treatments",
             "Improves skin health & texture",
@@ -54,7 +54,7 @@ export default function EstheticsPage() {
          id: 3,
          title: "Anti-Aging",
          subtitle: "Youthful Skin Therapy",
-         image: "/images/esthetics3.jpg",
+         image: "/services/esthetics/antiage.png",
          description: [
             "Reduces fine lines & wrinkles",
             "Boosts collagen production",
@@ -66,7 +66,7 @@ export default function EstheticsPage() {
          id: 4,
          title: "Acne Treatment",
          subtitle: "Clear Skin Solutions",
-         image: "/images/esthetics4.jpg",
+         image: "/services/esthetics/acne.jpg",
          description: [
             "Targets active acne & breakouts",
             "Reduces scars & inflammation",
@@ -78,7 +78,7 @@ export default function EstheticsPage() {
          id: 5,
          title: "Pigmentation",
          subtitle: "Even Skin Tone Care",
-         image: "/images/esthetics5.jpg",
+         image: "/services/esthetics/pigmentation.jpg",
          description: [
             "Reduces dark spots & melasma",
             "Improves overall complexion",
@@ -90,7 +90,7 @@ export default function EstheticsPage() {
          id: 6,
          title: "Laser Treatment",
          subtitle: "Advanced Laser Solutions",
-         image: "/images/esthetics6.jpg",
+         image: "/services/esthetics/laser.jpg",
          description: [
             "Hair & skin laser treatments",
             "Safe, modern laser technology",
@@ -102,7 +102,7 @@ export default function EstheticsPage() {
          id: 7,
          title: "Chemical Peels",
          subtitle: "Skin Renewal Therapy",
-         image: "/images/esthetics7.jpg",
+         image: "/services/esthetics/chempeel.jpg",
          description: [
             "Removes dead skin layers",
             "Improves texture & tone",
@@ -281,7 +281,7 @@ export default function EstheticsPage() {
                            </div>
 
                            <div className="col-span-7">
-                              <div className="relative h-[70vh] overflow-hidden rounded-2xl">
+                              <div className="relative h-[100vh] overflow-hidden">
                                  <img
                                     src={topic.image}
                                     alt={topic.title}
