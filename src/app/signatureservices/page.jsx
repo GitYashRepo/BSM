@@ -28,7 +28,7 @@ export default function SignatureServicesPage() {
          id: 1,
          title: "Signature Services",
          subtitle: "Our Finest Creations",
-         image: "/images/signature1.jpg",
+         image: "/services/sigserv/signature.jpg",
          description: [
             "Exclusive luxury salon experiences",
             "Crafted by expert professionals",
@@ -40,7 +40,7 @@ export default function SignatureServicesPage() {
          id: 2,
          title: "Bridal Makeovers",
          subtitle: "Your Dream Wedding Look",
-         image: "/images/signature2.jpg",
+         image: "/banner/Makeup.jpeg",
          description: [
             "Complete bridal hair & makeup",
             "Personalized consultations & trials",
@@ -52,7 +52,7 @@ export default function SignatureServicesPage() {
          id: 3,
          title: "Pre-Bridal Package",
          subtitle: "Glow Before the Big Day",
-         image: "/images/signature3.jpg",
+         image: "/services/sigserv/pre-bridal.jpg",
          description: [
             "Skin, hair & beauty preparation",
             "Customized multi-session packages",
@@ -64,7 +64,7 @@ export default function SignatureServicesPage() {
          id: 4,
          title: "Groom Makeover",
          subtitle: "Refined & Confident Look",
-         image: "/images/signature4.jpg",
+         image: "/services/sigserv/groom.jpg",
          description: [
             "Professional grooming & styling",
             "Skin, hair & beard perfection",
@@ -76,7 +76,7 @@ export default function SignatureServicesPage() {
          id: 5,
          title: "Celebrity Styling",
          subtitle: "Red-Carpet Ready",
-         image: "/images/signature5.jpg",
+         image: "/services/sigserv/celeb.jpg",
          description: [
             "High-fashion hair & makeup",
             "Inspired by celebrity trends",
@@ -255,7 +255,7 @@ export default function SignatureServicesPage() {
                            </div>
 
                            <div className="col-span-7">
-                              <div className="relative h-[70vh] overflow-hidden rounded-2xl">
+                              <div className="relative h-[100vh] overflow-hidden">
                                  <img
                                     src={topic.image}
                                     alt={topic.title}

@@ -29,7 +29,7 @@ export default function BeautyPage() {
          id: 1,
          title: "Beauty",
          subtitle: "Complete Beauty Care",
-         image: "/images/beauty1.jpg",
+         image: "/banner/beauty.jpeg",
          description: [
             "Professional beauty treatments",
             "Healthy, glowing skin",
@@ -41,7 +41,7 @@ export default function BeautyPage() {
          id: 2,
          title: "Facial",
          subtitle: "Radiant Skin Therapy",
-         image: "/images/beauty2.jpg",
+         image: "/services/beauty/facial.jpg",
          description: [
             "Deep cleansing & hydration",
             "Brightens dull skin",
@@ -53,7 +53,7 @@ export default function BeautyPage() {
          id: 3,
          title: "Cleanup",
          subtitle: "Instant Skin Refresh",
-         image: "/images/beauty3.jpg",
+         image: "/services/beauty/cleanup.jpg",
          description: [
             "Removes dirt & impurities",
             "Quick glow boost",
@@ -65,7 +65,7 @@ export default function BeautyPage() {
          id: 4,
          title: "Bleach",
          subtitle: "Even Skin Tone",
-         image: "/images/beauty4.jpg",
+         image: "/services/beauty/bleach.jpg",
          description: [
             "Lightens facial hair",
             "Instant brightness",
@@ -77,7 +77,7 @@ export default function BeautyPage() {
          id: 5,
          title: "Threading",
          subtitle: "Perfect Brow Shaping",
-         image: "/images/beauty5.jpg",
+         image: "/services/beauty/Threading.jpg",
          description: [
             "Precise eyebrow shaping",
             "Gentle on skin",
@@ -89,7 +89,7 @@ export default function BeautyPage() {
          id: 6,
          title: "Waxing",
          subtitle: "Smooth, Hair-Free Skin",
-         image: "/images/beauty6.jpg",
+         image: "/services/beauty/waxing.jpg",
          description: [
             "Hygienic waxing methods",
             "Smooth & soft skin",
@@ -101,7 +101,7 @@ export default function BeautyPage() {
          id: 7,
          title: "Manicure",
          subtitle: "Beautiful Hands Care",
-         image: "/images/beauty7.jpg",
+         image: "/services/beauty/meni.jpg",
          description: [
             "Nail shaping & cuticle care",
             "Soft, nourished hands",
@@ -113,7 +113,7 @@ export default function BeautyPage() {
          id: 8,
          title: "Pedicure",
          subtitle: "Foot Care & Relaxation",
-         image: "/images/beauty8.jpg",
+         image: "/services/beauty/pedi.jpg",
          description: [
             "Removes tan & dead skin",
             "Soft, healthy feet",
@@ -293,7 +293,7 @@ export default function BeautyPage() {
                            </div>
 
                            <div className="col-span-7">
-                              <div className="relative h-[70vh] overflow-hidden rounded-2xl">
+                              <div className="relative h-[100vh] overflow-hidden">
                                  <img
                                     src={topic.image}
                                     alt={topic.title}

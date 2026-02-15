@@ -9,13 +9,13 @@ const contactData = [
    {
       title: "Reception / General Inquiries",
       description: "Reach out to us for any questions",
-      details: ["94684-56266", "Reception"],
+      details: ["90531-02324", "Reception"],
       icon: <Phone className="w-6 h-6" />,
    },
    {
       title: "Sakshi Mukhija",
       description: "Book appointments & service info",
-      details: ["90531-02324", "Sakshi Mukhija"],
+      details: ["94684-56266", "Sakshi Mukhija"],
       icon: <Phone className="w-6 h-6" />,
    },
    {
@@ -140,68 +140,11 @@ export default function ContactPage() {
                   ))}
                </div>
 
-               {/* Appointment Form */}
-               {/* <div id="appointment" className="appointment grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
-                  <div>
-                     <h2 className="text-4xl text-[#D99726] font-serif font-light mb-4">Book an Appointment</h2>
-                     <p className="text-muted-foreground mb-8">
-                        Provide your details and preferred slot. We will confirm your appointment shortly.
-                     </p>
-                  </div>
-
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                     <input
-                        name="name"
-                        placeholder="Your Name"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        className="w-full bg-transparent border-b border-border py-3"
-                        required
-                     />
-
-                     <input
-                        name="phone"
-                        placeholder="Phone Number"
-                        value={formData.phone}
-                        onChange={handleInputChange}
-                        className="w-full bg-transparent border-b border-border py-3"
-                        required
-                     />
-
-                     <div>
-                        <p className="mb-2 font-medium">Select Services</p>
-                        <div className="grid grid-cols-2 gap-2">
-                           {serviceOptions.map((service) => (
-                              <label key={service} className="flex items-center gap-2 text-sm">
-                                 <input
-                                    type="checkbox"
-                                    checked={formData.services.includes(service)}
-                                    onChange={() => handleMultiSelect(service)}
-                                 />
-                                 {service}
-                              </label>
-                           ))}
-                        </div>
-                     </div>
-
-                     <textarea
-                        name="notes"
-                        value={formData.notes}
-                        onChange={handleInputChange}
-                        rows={4}
-                        placeholder="Any special requests? [ OPTIONAL ]"
-                        className="w-full bg-transparent border-b border-border py-3 resize-none"
-                     />
-
-                     <button type="submit" className="inline-flex items-center gap-2 px-8 py-3 bg-[#D99726] text-white rounded-full cursor-pointer">Book Appointment</button>
-                  </form>
-               </div> */}
-
                {/* Map */}
                <div id="location">
                   <h2 className="text-4xl text-[#750851] font-serif font-light mb-8">Our Location</h2>
-                  <div className="flex flex-col gap-4 md:flex-row h-96">
-                     <div className="w-full rounded-lg overflow-hidden">
+                  <div className="flex flex-col gap-4 md:flex-row h-screen md:h-96">
+                     <div className="w-full h-full rounded-lg overflow-hidden">
                         <iframe
                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3516.6433845018673!2d76.61679521342992!3d28.18775900023444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d6f146b07bd6b%3A0x77bac241d712f26d!2z8J2XlfCdl7nwnZiC8J2YgPCdl7Ug8J2XlfCdmIYg8J2XpvCdl67wnZe48J2YgPCdl7XwnZe2IPCdl6DwnZeu8J2XuPCdl7LwnZe88J2Yg_Cdl7LwnZe_8J2YgCAtIEJlc3QgTWFrZXVwIEFydGlzdCB8IEJyaWRhbCBNYWtldXAgfCBCZWF1dHkgUGFybG91ciBpbiBSZXdhcmk!5e0!3m2!1sen!2sin!4v1765473278030!5m2!1sen!2sin"
                            width="100%"

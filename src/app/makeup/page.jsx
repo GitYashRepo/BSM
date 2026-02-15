@@ -27,7 +27,7 @@ export default function MakeupPage() {
          id: 1,
          title: "Makeup",
          subtitle: "Professional Makeup Artistry",
-         image: "/images/img5.jpg",
+         image: "/banner/Makeup.jpeg",
          description: [
             "Enhances your natural features with precision",
             "Customized to skin tone & face shape",
@@ -39,7 +39,7 @@ export default function MakeupPage() {
          id: 2,
          title: "Bridal",
          subtitle: "Your Special Wedding Day",
-         image: "/images/img7.jpg",
+         image: "/images/img8.jpg",
          description: [
             "Flawless, camera-ready bridal makeup",
             "Long-lasting & waterproof finish",
@@ -87,7 +87,7 @@ export default function MakeupPage() {
          id: 6,
          title: "Engagement",
          subtitle: "Radiant Engagement Looks",
-         image: "/images/img8.jpg",
+         image: "/images/img7.jpg",
          description: [
             "Soft, elegant & radiant makeup",
             "Designed for photography",
@@ -294,7 +294,7 @@ export default function MakeupPage() {
                            </div>
 
                            <div className="col-span-7">
-                              <div className="relative h-[75vh] overflow-hidden rounded-2xl">
+                              <div className="relative h-[100vh] overflow-hidden">
                                  <img
                                     src={topic.image}
                                     alt={topic.title}
