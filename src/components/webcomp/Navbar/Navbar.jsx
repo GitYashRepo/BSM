@@ -3,7 +3,7 @@
 import { useScrollHide } from "@/hooks/use-scroll-hide";
 import BottomBar from "./Bottom";
 import MiddleBar from "./Middle";
-import TopBar from "./TopBar";
+// import TopBar from "./TopBar";
 import { useState } from "react";
 import MobileSidebar from "./Sidebar";
 
@@ -18,9 +18,9 @@ const Navbar = () => {
             className={`transition-all duration-300 ease-in-out ${isVisible ? "opacity-100 max-h-[200px]" : "opacity-0 max-h-0"
                } overflow-hidden`}
          >
-            <div className="hidden md:block">
+            {/* <div className="hidden md:block">
                <TopBar />
-            </div>
+            </div> */}
             <div>
                <MiddleBar onMenuClick={() => setSidebarOpen(true)} />
             </div>

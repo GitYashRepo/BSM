@@ -8,92 +8,23 @@ import { GalleryModal } from "@/components/gallerypage/gallery-modal"
 export default function GalleryPage() {
    const pageRef = useRef(null)
    const [selectedImage, setSelectedImage] = useState(null)
-   const [images] = useState([
-      {
-         id: 1,
-         src: "/luxury-bridal-makeup-beauty-shot.jpg",
-         alt: "Bridal Elegance",
-         category: "Bridal-MakeUp",
-         description: "Classic bridal makeup with soft glam finish",
-      },
-      {
-         id: 2,
-         src: "/modern-hair-styling-salon.jpg",
-         alt: "Modern Styling",
-         category: "Bridal-MakeUp",
-         description: "Contemporary hair styling and treatment",
-      },
-      {
-         id: 3,
-         src: "/elegant-makeup-artistry-close-up.jpg",
-         alt: "Artistry Details",
-         category: "Engagement-MakeUp",
-         description: "Detailed makeup application artistry",
-      },
-      {
-         id: 4,
-         src: "/luxury-spa-beauty-treatment.jpg",
-         alt: "Spa Serenity",
-         category: "Bridal-MakeUp",
-         description: "Relaxing spa and beauty treatments",
-      },
-      {
-         id: 5,
-         src: "/glamorous-evening-makeup-look.jpg",
-         alt: "Evening Glam",
-         category: "Engagement-MakeUp",
-         description: "Sophisticated evening makeup look",
-      },
-      {
-         id: 6,
-         src: "/professional-salon-interior-design.jpg",
-         alt: "Salon Ambiance",
-         category: "Party-MakeUp",
-         description: "Our luxurious salon interior",
-      },
-      {
-         id: 7,
-         src: "/traditional-indian-bridal-jewelry-makeup.jpg",
-         alt: "Traditional Bridal",
-         category: "Bridal-MakeUp",
-         description: "Traditional bridal makeup with jewelry",
-      },
-      {
-         id: 8,
-         src: "/creative-makeup-colorful-artistic.jpg",
-         alt: "Creative Expression",
-         category: "Engagement-MakeUp",
-         description: "Bold and creative makeup artistry",
-      },
-      {
-         id: 9,
-         src: "/natural-beauty-makeup-skincare.jpg",
-         alt: "Natural Beauty",
-         category: "Engagement-MakeUp",
-         description: "Fresh, natural makeup with skincare focus",
-      },
-      {
-         id: 10,
-         src: "/hair-extensions-luxury-salon.jpg",
-         alt: "Hair Extensions",
-         category: "Party-MakeUp",
-         description: "Premium hair extension services",
-      },
-      {
-         id: 11,
-         src: "/wedding-party-makeup-group.jpg",
-         alt: "Bridal Party",
-         category: "Bridal-MakeUp",
-         description: "Complete bridal party transformation",
-      },
-      {
-         id: 12,
-         src: "/professional-makeup-products-tools.jpg",
-         alt: "Professional Tools",
-         category: "Party-MakeUp",
-         description: "Premium makeup products and tools",
-      },
-   ])
+   const [images, setImages] = useState([])
+   const [loading, setLoading] = useState(true)
+
+   useEffect(() => {
+      async function fetchGallery() {
+         try {
+            const res = await fetch("/api/gallery/image")
+            const data = await res.json()
+            setImages(data)
+         } catch (error) {
+            console.error("Failed to fetch gallery images:", error)
+         } finally {
+            setLoading(false)
+         }
+      }
+      fetchGallery()
+   }, [])
 
    useEffect(() => {
       const observer = new IntersectionObserver(

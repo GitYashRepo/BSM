@@ -8,38 +8,23 @@ const ServiceSchema = new mongoose.Schema(
       required: true,
     },
 
-    subCategory: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "SubCategory",
-      required: true,
-    },
-
-    workHeading: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "WorkHeading",
-      required: true,
-    },
-
     workName: {
       type: String,
       required: true,
       trim: true,
     },
 
+    // Free-text allows "500", "1000/1100/1200", etc.
     price: {
-      type: Number,
+      type: String,
       required: true,
-      min: 0,
+      trim: true,
     },
 
     offerPrice: {
-      type: Number,
+      type: String,
       default: null,
-    },
-
-    offerPercentage: {
-      type: Number,
-      default: null,
+      trim: true,
     },
 
     isActive: {
@@ -49,25 +34,6 @@ const ServiceSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
-
-/* ---------------- VALIDATION LOGIC ---------------- */
-
-ServiceSchema.pre("save", function (next) {
-  if (this.offerPrice != null && this.offerPercentage != null) {
-    const calculated =
-      this.price - (this.price * this.offerPercentage) / 100;
-
-    if (Math.round(calculated) !== this.offerPrice) {
-      return next(
-        new Error(
-          "Offer price and percentage do not match"
-        )
-      );
-    }
-  }
-
-  next();
-});
 
 export default mongoose.models.Service ||
   mongoose.model("Service", ServiceSchema);

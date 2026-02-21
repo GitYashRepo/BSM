@@ -4,7 +4,9 @@ const GalleryImageSchema = new mongoose.Schema(
   {
     heading: { type: String },
     description: { type: String },
-    image: { type: String },
+    src: { type: String },
+    alt: { type: String },
+    category: { type: String },
   },
   { timestamps: true }
 );

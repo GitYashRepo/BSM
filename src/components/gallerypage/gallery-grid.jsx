@@ -43,7 +43,7 @@ export function GalleryGrid({ images, onImageClick }) {
 
                   return (
                      <div
-                        key={image.id}
+                        key={image._id || image.id || index}
                         className={`group relative overflow-hidden rounded-lg cursor-pointer fade-in-section ${spanClass}`}
                         style={{ transitionDelay: `${index * 50}ms` }}
                         onClick={() => onImageClick(index)}
@@ -51,7 +51,7 @@ export function GalleryGrid({ images, onImageClick }) {
                         {/* Image */}
                         <Image
                            src={image.src || "/placeholder.svg"}
-                           alt={image.alt}
+                           alt={image.alt || "Gallery Image"}
                            fill
                            className="object-cover transition-all duration-700 group-hover:scale-110"
                         />

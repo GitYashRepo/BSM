@@ -12,11 +12,12 @@ export default function AdminLayout({ children }) {
 
             <nav className="flex flex-col gap-4 text-sm">
                <a href="/admin/categories">Categories</a>
-               <a href="/admin/subcategories">SubCategories</a>
-               <a href="/admin/headings">Headings</a>
+               {/* <a href="/admin/subcategories">SubCategories</a> */}
+               {/* <a href="/admin/headings">Headings</a> */}
                <a href="/admin/dashboard">Services</a>
                <a href="/admin/gallery">Gallery</a>
                <a href="/admin/offers">Offers</a>
+               <a href="/admin/franchise">Franchise</a>
             </nav>
          </aside>
 

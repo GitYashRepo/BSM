@@ -184,9 +184,9 @@ const BottomBar = () => {
       if (!item) return null
 
       return (
-         <div className="absolute left-0 top-full w-full bg-card shadow-2xl border border-border z-[999999]">
-            <div className="max-h-[60vh] overflow-y-scroll">
-               <div className="container mx-auto px-8 py-8">
+         <div className="absolute left-0 top-full w-[90vw] left-1/2 -translate-x-1/2 rounded-b-lg bg-card shadow-2xl border border-border z-[999999]">
+            <div className="max-h-[70vh]">
+               <div className="container mx-auto px-6 py-2">
                   <div className="grid grid-cols-12 gap-8">
                      {/* LEFT COLUMN */}
                      <div className="col-span-4">
@@ -269,7 +269,7 @@ const BottomBar = () => {
    }
 
    return (
-      <div className="text-white relative bg-[#300708]" onMouseLeave={handleMouseLeave}>
+      <div className="text-white relative bg-white shadow-lg" onMouseLeave={handleMouseLeave}>
          <div className="container mx-auto px-4">
             {/* NAVBAR */}
             <nav className="relative flex items-center justify-center gap-1">
@@ -277,7 +277,7 @@ const BottomBar = () => {
                   <button
                      key={item.label}
                      onMouseEnter={() => handleMouseEnter(item.label)}
-                     className="px-4 py-2 text-white text-sm font-medium tracking-wide hover:bg-[#D99726] transition-colors"
+                     className="px-2 py-2 text-black uppercase text-sm font-medium tracking-wide hover:bg-[#D99726] transition-colors"
                   >
                      {item.label}
                   </button>

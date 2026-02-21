@@ -70,7 +70,7 @@ export function GalleryModal({ image, onClose, onNext, onPrev, currentIndex, tot
             <div className="relative w-full h-full max-w-[95vw] max-h-[85vh] sm:max-h-[80vh] md:max-h-[75vh] lg:max-h-[70vh] animate-in fade-in zoom-in-95 duration-700">
                <Image
                   src={image.src || "/placeholder.svg"}
-                  alt={image.alt}
+                  alt={image.alt || "Gallery Image"}
                   fill
                   className="object-contain"
                   priority
