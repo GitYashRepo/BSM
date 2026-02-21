@@ -1,9 +1,10 @@
 "use client";
 
-import { Phone, LogOut, MessageCircle, Menu } from "lucide-react";
+import { Phone, LogOut, MessageCircle, Menu, Instagram, Facebook, } from "lucide-react";
 import AppointmentPopover from "../Appointment/AppointmentPopover";
 import useAdminAuth from "@/hooks/useAdminAuth";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 
 const MiddleBar = ({ onMenuClick }) => {
@@ -28,8 +29,8 @@ const MiddleBar = ({ onMenuClick }) => {
    }
 
    return (
-      <div className="bg-navbar-middle border-b border-border px-2 md:px-14">
-         <div className="container mx-auto md:px-4 py-4 md:py-2">
+      <div className="bg-[#191A1A] px-2 md:px-14">
+         <div className="container mx-auto py-2">
             <div className="flex items-center justify-between gap-6">
                {/* Logo */}
                <div className="flex-shrink-0">
@@ -52,7 +53,7 @@ const MiddleBar = ({ onMenuClick }) => {
                         </div>
 
                         {/* Subtitle */}
-                        <span className="text-[10px] md:text-xs font-bold tracking-widest uppercase text-gray-700">
+                        <span className="text-[10px] md:text-xs font-bold tracking-widest uppercase text-white">
                            By Sakshi Makeovers
                         </span>
                      </div>
@@ -62,12 +63,11 @@ const MiddleBar = ({ onMenuClick }) => {
 
                {/* Contact & Actions */}
                <div className="flex items-center gap-6">
-                  {/* Contact Info */}
-                  {!role && (
+                  {/* {!role && (
                      <div className="hidden lg:flex items-center gap-6 text-sm">
                         <a
                            href="tel:9053102324"
-                           className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+                           className="flex items-center gap-2 text-white hover:text-white/80 transition-colors"
                         >
                            <Phone className="w-4 h-4" />
                            <span>90531-02324</span>
@@ -76,15 +76,31 @@ const MiddleBar = ({ onMenuClick }) => {
                            href="https://wa.me/9467777773"
                            target="_blank"
                            rel="noopener noreferrer"
-                           className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+                           className="flex items-center gap-2 text-white hover:text-white/80 transition-colors"
                         >
                            <MessageCircle className="w-4 h-4" />
                            <span>WhatsApp</span>
                         </a>
                      </div>
-                  )}
+                  )} */}
+                  <ul className="flex gap-4">
+                     {[
+                        { icon: Instagram, label: "Instagram", link: "https://www.instagram.com/sakshi.makeovers" },
+                        { icon: Facebook, label: "Facebook", link: "https://www.facebook.com/share/1C6Croo93d/?mibextid=wwXIfr" },
+                        // { icon: Linkedin, label: "LinkedIn" },
+                     ].map(({ icon: Icon, label, link }) => (
+                        <li key={label}>
+                           <Link
+                              href={link}
+                              className="text-gray-400 hover:text-[#D99726] transition-colors duration-300"
+                              aria-label={label}
+                           >
+                              <Icon className="w-4 h-4" />
+                           </Link>
+                        </li>
+                     ))}
+                  </ul>
 
-                  {/* Action Buttons */}
                   <div className="flex items-center gap-3">
                      {!role && (
                         <div className="hidden md:block">

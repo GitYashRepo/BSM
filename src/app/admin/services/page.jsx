@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { Trash2, Tag } from "lucide-react";
 
-export default function ServicesDashboard() {
+export default function ServicesPage() {
    const [categories, setCategories] = useState([]);
    const [services, setServices] = useState([]);
    const [selectedCategory, setSelectedCategory] = useState("");
@@ -21,54 +21,35 @@ export default function ServicesDashboard() {
       setServices(await res.json());
    }
 
-   useEffect(() => {
-      fetchCategories();
-      fetchServices();
-   }, []);
+   useEffect(() => { fetchCategories(); fetchServices(); }, []);
 
    async function createService(e) {
       e.preventDefault();
-      if (!selectedCategory || !workName || !price) {
-         alert("Please fill all required fields");
-         return;
-      }
+      if (!selectedCategory || !workName || !price) { alert("Please fill all required fields"); return; }
       const res = await fetch("/api/services", {
          method: "POST",
          headers: { "Content-Type": "application/json" },
          body: JSON.stringify({ category: selectedCategory, workName, price, offerPrice }),
       });
-      if (res.ok) {
-         setWorkName(""); setPrice(""); setOfferPrice("");
-         fetchServices();
-      } else {
-         const data = await res.json();
-         alert(data.message || "Failed to create service");
-      }
+      if (res.ok) { setWorkName(""); setPrice(""); setOfferPrice(""); fetchServices(); }
+      else { const data = await res.json(); alert(data.message || "Failed"); }
    }
 
    async function deleteService(id) {
       if (!confirm("Delete this service?")) return;
-      await fetch("/api/services", {
-         method: "DELETE",
-         headers: { "Content-Type": "application/json" },
-         body: JSON.stringify({ id }),
-      });
+      await fetch("/api/services", { method: "DELETE", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ id }) });
       fetchServices();
    }
 
    async function updateOfferPrice(id, val) {
-      const res = await fetch("/api/services", {
-         method: "PUT",
-         headers: { "Content-Type": "application/json" },
-         body: JSON.stringify({ id, offerPrice: val }),
-      });
+      const res = await fetch("/api/services", { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ id, offerPrice: val }) });
       if (res.ok) { setEditingOffer(null); fetchServices(); }
       else alert("Failed to update");
    }
 
    return (
       <div className="p-6">
-         <h1 className="text-2xl font-bold mb-6">Services Dashboard</h1>
+         <h1 className="text-2xl font-bold mb-6">Service Management</h1>
 
          <form onSubmit={createService} className="bg-white p-6 rounded-lg shadow-md mb-8 grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
@@ -80,17 +61,17 @@ export default function ServicesDashboard() {
             </div>
             <div>
                <label className="block text-sm font-medium mb-1">Work Name *</label>
-               <input value={workName} onChange={e => setWorkName(e.target.value)} placeholder="e.g. Loreal Hairspa" className="w-full border p-2 rounded" />
+               <input value={workName} onChange={e => setWorkName(e.target.value)} placeholder="Work Name" className="w-full border p-2 rounded" />
             </div>
             <div>
                <label className="block text-sm font-medium mb-1">Price *</label>
                <input
                   value={price}
                   onChange={e => setPrice(e.target.value)}
-                  placeholder="e.g.  500  or  1000/1100/1200"
+                  placeholder="500  or  1000/1100/1200"
                   className="w-full border p-2 rounded font-mono"
                />
-               <p className="text-xs text-gray-400 mt-1">Use <code>/</code> to separate multiple prices: <code>1000/1100/1200</code></p>
+               <p className="text-xs text-gray-400 mt-1">Use <code>/</code> for multiple sizes: <code>1000/1100/1200</code></p>
             </div>
             <div>
                <label className="block text-sm font-medium mb-1">Offer Price — Optional</label>
@@ -129,7 +110,7 @@ export default function ServicesDashboard() {
                         <td className="p-4 border-b">
                            {editingOffer?.id === s._id ? (
                               <div className="flex items-center gap-1">
-                                 <input value={editingOffer.value} onChange={e => setEditingOffer({ ...editingOffer, value: e.target.value })} className="w-32 border p-1 rounded text-sm font-mono" placeholder="e.g. 900/1000" />
+                                 <input value={editingOffer.value} onChange={e => setEditingOffer({ ...editingOffer, value: e.target.value })} className="w-32 border p-1 rounded text-sm font-mono" placeholder="900/1000/1100" />
                                  <button onClick={() => updateOfferPrice(s._id, editingOffer.value)} className="text-xs bg-green-600 text-white px-2 py-1 rounded">Save</button>
                                  <button onClick={() => setEditingOffer(null)} className="text-xs text-gray-400">✕</button>
                               </div>

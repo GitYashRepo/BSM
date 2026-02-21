@@ -1,6 +1,6 @@
 import { connectDB } from "@/lib/mongodb";
 import Offer from "@/models/Offer";
-import { requireAdmin } from "@/lib/requireAdmin";
+import { verifyToken } from "@/lib/auth";
 
 export async function GET() {
   await connectDB();
@@ -8,8 +8,8 @@ export async function GET() {
 }
 
 export async function POST(req) {
-  const admin = requireAdmin(req);
-  if (!admin) return Response.json({ msg: "Unauthorized" }, { status: 401 });
+  const user = verifyToken(req);
+  if (!user) return Response.json({ msg: "Unauthorized" }, { status: 401 });
 
   await connectDB();
   const body = await req.json();
@@ -19,8 +19,8 @@ export async function POST(req) {
 }
 
 export async function DELETE(req) {
-  const admin = requireAdmin(req);
-  if (!admin) return Response.json({ msg: "Unauthorized" }, { status: 401 });
+  const user = verifyToken(req);
+  if (!user) return Response.json({ msg: "Unauthorized" }, { status: 401 });
 
   await connectDB();
   const { id } = await req.json();

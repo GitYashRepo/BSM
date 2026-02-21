@@ -13,10 +13,35 @@ export function ApplyNow() {
       investment: "",
       message: "",
    })
+   const [status, setStatus] = useState("")
+   const [loading, setLoading] = useState(false)
 
-   const handleSubmit = (e) => {
+   const handleSubmit = async (e) => {
       e.preventDefault()
-      console.log("Form submitted:", formData)
+      setLoading(true)
+      setStatus("")
+
+      try {
+         const res = await fetch("/api/franchise", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(formData)
+         })
+
+         if (res.ok) {
+            setStatus("Success! Your application has been submitted.")
+            setFormData({
+               name: "", email: "", phone: "", location: "",
+               experience: "", investment: "", message: "",
+            })
+         } else {
+            setStatus("Something went wrong. Please try again.")
+         }
+      } catch (err) {
+         setStatus("Network error. Please try again.")
+      } finally {
+         setLoading(false)
+      }
    }
 
    const handleChange = (e) => {
@@ -176,15 +201,23 @@ export function ApplyNow() {
                </div>
 
                {/* Submit */}
-               <div className="flex items-center gap-6 pt-8">
-                  <button
-                     type="submit"
-                     className="flex items-center gap-3 px-10 py-4 bg-[#6E2E35] text-white text-base uppercase tracking-[0.15em] font-light hover:bg-[#750851] transition-colors"
-                  >
-                     Submit Application
-                     <Send size={16} />
-                  </button>
-                  <p className="text-xs text-[#666] font-light">We'll respond within 24 hours</p>
+               <div className="pt-8">
+                  <div className="flex items-center gap-6 mb-4">
+                     <button
+                        type="submit"
+                        disabled={loading}
+                        className="flex items-center gap-3 px-10 py-4 bg-[#6E2E35] text-white text-base uppercase tracking-[0.15em] font-light hover:bg-[#750851] transition-colors disabled:bg-[#6E2E35]/70"
+                     >
+                        {loading ? "Submitting..." : "Submit Application"}
+                        {!loading && <Send size={16} />}
+                     </button>
+                     <p className="text-xs text-[#666] font-light hidden sm:block">We'll respond within 24 hours</p>
+                  </div>
+                  {status && (
+                     <p className={`text-sm ${status.includes("Success") ? "text-green-600" : "text-red-500"}`}>
+                        {status}
+                     </p>
+                  )}
                </div>
             </form>
          </div>
