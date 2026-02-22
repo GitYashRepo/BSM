@@ -34,10 +34,10 @@ export function GalleryGrid({ images, onImageClick }) {
                   // Create varied heights for masonry effect
                   const spanClass = [
                      "row-span-2", // tall
-                     "row-span-1", // short
+                     "row-span-2", // short
                      "row-span-2", // tall
-                     "row-span-3", // extra tall
-                     "row-span-1", // short
+                     "row-span-2", // extra tall
+                     "row-span-2", // short
                      "row-span-2", // tall
                   ][index % 6]
 
@@ -56,18 +56,23 @@ export function GalleryGrid({ images, onImageClick }) {
                            className="object-cover transition-all duration-700 group-hover:scale-110"
                         />
 
-                        {/* Gradient Overlay */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#2c2420]/90 via-[#2c2420]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        {/* Gradient Overlay for Text Readability Always visible */}
+                        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#2c2420]/90 via-[#2c2420]/40 to-transparent opacity-90 transition-opacity duration-500" />
+
+                        {/* Hover Overlay */}
+                        <div className="absolute inset-0 bg-[#2c2420]/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                         {/* Category Badge */}
-                        <div className="absolute top-4 left-4 px-3 py-1 bg-[#b8936d]/90 backdrop-blur-sm text-white text-xs tracking-wide rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 transform -translate-y-2 group-hover:translate-y-0">
-                           {image.category}
+                        <div className="absolute top-4 left-4 z-10 px-3 py-1 bg-[#b8936d]/90 backdrop-blur-sm text-white text-xs tracking-wide rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 transform -translate-y-2 group-hover:translate-y-0">
+                           {image.category || "Gallery"}
                         </div>
 
                         {/* Content */}
-                        <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                           <h3 className="text-white text-xl font-serif mb-2">{image.alt}</h3>
-                           <p className="text-[#c4b5a8] text-sm">{image.description}</p>
+                        <div className="absolute bottom-0 left-0 right-0 p-6 z-10 transition-all duration-500">
+                           <h3 className="text-white text-xl font-serif mb-2 drop-shadow-md">{image.heading || image.alt}</h3>
+                           <div className="overflow-hidden max-h-0 group-hover:max-h-24 transition-all duration-500 ease-in-out">
+                              <p className="text-[#c4b5a8] text-sm overflow-hidden text-ellipsis line-clamp-2">{image.description}</p>
+                           </div>
                         </div>
 
                         {/* Decorative Corner */}

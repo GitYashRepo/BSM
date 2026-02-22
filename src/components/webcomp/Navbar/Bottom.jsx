@@ -128,9 +128,9 @@ const navItems = [
       label: "Gallery",
       items: [
          { label: "Go to Home", href: "/" },
-         { label: "Bridal Gallery", href: "gallery" },
+         { label: "Bridal Makeup", href: "gallery" },
          { label: "Party Makeup", href: "gallery" },
-         { label: "Video Gallery", href: "gallery" },
+         { label: "Engagement Makeup", href: "gallery" },
       ],
       featured: {
          title: "Our Gallery",
@@ -192,12 +192,12 @@ const BottomBar = () => {
                      <div className="col-span-4">
                         <h3 className="text-lg font-display font-semibold text-[#750851] mb-2">{item.label}</h3>
 
-                        <ul className="space-y-2">
+                        <ul className="space-y-4">
                            {item.items.map((sub) => (
                               <li key={sub.label}>
                                  <a
                                     href={sub.href}
-                                    className="flex items-center gap-2 text-foreground hover:text-[#750851] group transition-all"
+                                    className="flex items-center text-xs gap-2 text-foreground hover:text-[#750851] group transition-all"
                                  >
                                     <ChevronRight className="w-4 h-4 text-[#750851] -translate-x-2 group-hover:translate-x-0 group-hover:opacity-100 transition-all" />
                                     {sub.label}
@@ -277,7 +277,7 @@ const BottomBar = () => {
                   <button
                      key={item.label}
                      onMouseEnter={() => handleMouseEnter(item.label)}
-                     className="px-2 py-2 text-black uppercase text-sm font-medium tracking-wide hover:bg-[#D99726] transition-colors"
+                     className="px-2 py-2 text-black uppercase text-xs font-medium tracking-wide hover:bg-[#D99726] transition-colors"
                   >
                      {item.label}
                   </button>
