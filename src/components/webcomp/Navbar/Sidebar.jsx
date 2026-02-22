@@ -128,11 +128,11 @@ const MobileSidebar = ({ open, onClose }) => {
          />
 
          {/* Sidebar */}
-         <aside className="absolute left-0 top-0 h-screen w-[300px] bg-white shadow-xl flex flex-col">
+         <aside className="absolute left-0 top-0 h-screen w-[300px] bg-[#191A1A] shadow-xl flex flex-col">
             {/* Header */}
             <div className="flex items-center justify-between px-4 py-4 border-b">
-               <span className="font-bold text-[#750851] text-lg">Menu</span>
-               <button onClick={onClose}>
+               <span className="font-bold text-[#D99726] text-lg">Menu</span>
+               <button onClick={onClose} className="text-[#D99726]">
                   <X />
                </button>
             </div>
@@ -147,7 +147,7 @@ const MobileSidebar = ({ open, onClose }) => {
                               openSection === section.label ? null : section.label
                            )
                         }
-                        className="flex w-full items-center justify-between font-semibold text-[#750851]"
+                        className="flex w-full items-center justify-between font-semibold text-white"
                      >
                         {section.label}
                         <ChevronDown
@@ -163,7 +163,7 @@ const MobileSidebar = ({ open, onClose }) => {
                                  <a
                                     href={item.href}
                                     onClick={onClose}
-                                    className="block text-sm text-gray-700 hover:text-[#D99726]"
+                                    className="block text-sm text-[#D99726] hover:text-[#D99726]"
                                  >
                                     {item.label}
                                  </a>

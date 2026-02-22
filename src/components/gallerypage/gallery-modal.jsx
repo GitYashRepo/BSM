@@ -109,23 +109,6 @@ export function GalleryModal({ image, onClose, onNext, onPrev, currentIndex, tot
                <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 relative z-10" />
             </button>
          </div>
-
-         <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 z-30 hidden md:flex items-center gap-6 text-white/30 text-xs tracking-wider">
-            <div className="flex items-center gap-2">
-               <kbd className="px-2 py-1 border border-white/10 text-[10px]">←</kbd>
-               <span>PREV</span>
-            </div>
-            <div className="w-px h-3 bg-white/10" />
-            <div className="flex items-center gap-2">
-               <kbd className="px-2 py-1 border border-white/10 text-[10px]">→</kbd>
-               <span>NEXT</span>
-            </div>
-            <div className="w-px h-3 bg-white/10" />
-            <div className="flex items-center gap-2">
-               <kbd className="px-2 py-1 border border-white/10 text-[10px]">ESC</kbd>
-               <span>CLOSE</span>
-            </div>
-         </div>
       </div>
    )
 }
