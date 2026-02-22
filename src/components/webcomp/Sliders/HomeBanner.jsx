@@ -114,10 +114,10 @@ export default function SalonSlider() {
    return (
       <div
          ref={sliderRef}
-         className="relative w-full h-[100vh] md:h-[80vh] overflow-hidden bg-white flex flex-col justify-between md:flex-row"
+         className="relative w-full h-[90vh] md:h-[80vh] overflow-hidden bg-white flex flex-col justify-between md:flex-row"
       >
          {/* IMAGE SECTION */}
-         <div className="w-full md:w-1/3 h-[60%] md:h-full relative order-1 md:order-2 overflow-hidden">
+         <div className="w-full md:w-2/5 h-[60%] md:h-full relative order-1 md:order-2 overflow-hidden">
             <AnimatePresence mode="wait">
                <motion.div
                   key={current}
@@ -139,7 +139,7 @@ export default function SalonSlider() {
          </div>
 
          {/* CONTENT SECTION */}
-         <div className="w-full md:w-2/3 flex flex-col justify-between p-6 md:p-12 lg:p-16 order-2 md:order-1 relative">
+         <div className="w-full md:w-2/3 flex flex-col justify-between px-6 pb-6 md:p-12 lg:p-16 order-2 md:order-1 relative">
             {/* TAG */}
             <motion.div
                key={`tag-${current}`}

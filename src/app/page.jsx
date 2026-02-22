@@ -5,13 +5,13 @@ import SalonSections from "@/components/homepage/aboutUs/AboutUs";
 import { ServiceSection } from "@/components/homepage/ourservices/Services";
 import { StatsSection } from "@/components/homepage/stats/Stats";
 import { InstagramGalleryCard } from "@/components/webcomp/IG/ig";
-// import FullScreenSlider from "@/components/homepage/bannerSlider/Slider";
+import FullScreenSlider from "@/components/homepage/bannerSlider/Slider";
 
 export default function Home() {
    return (
       <div>
          <main className="min-h-screen bg-background">
-            {/* <FullScreenSlider /> */}
+            <FullScreenSlider />
             <SalonSlider />
             <SalonSections />
             <StatsSection />
