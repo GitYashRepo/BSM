@@ -9,7 +9,6 @@ const navItems = [
       items: [
          { label: "Go to Home", href: "/" },
          { label: "Who Am I ?", href: "/about" },
-         // { label: "About BSM", href: "/bsm" },
          { label: "Experience our interior", href: "/gettour" },
       ],
       featured: {

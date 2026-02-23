@@ -40,7 +40,7 @@ export default function SignatureServicesPage() {
          id: 2,
          title: "Bridal Makeovers",
          subtitle: "Your Dream Wedding Look",
-         image: "/banner/Makeup.jpeg",
+         image: "/comp/Makeup.jpeg",
          description: [
             "Complete bridal hair & makeup",
             "Personalized consultations & trials",

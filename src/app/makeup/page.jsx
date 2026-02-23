@@ -27,7 +27,7 @@ export default function MakeupPage() {
          id: 1,
          title: "Makeup",
          subtitle: "Professional Makeup Artistry",
-         image: "/banner/Makeup.jpeg",
+         image: "/comp/Makeup.jpeg",
          description: [
             "Enhances your natural features with precision",
             "Customized to skin tone & face shape",
@@ -39,7 +39,7 @@ export default function MakeupPage() {
          id: 2,
          title: "Bridal",
          subtitle: "Your Special Wedding Day",
-         image: "/images/img8.jpg",
+         image: "/comp/img8.jpg",
          description: [
             "Flawless, camera-ready bridal makeup",
             "Long-lasting & waterproof finish",
@@ -51,7 +51,7 @@ export default function MakeupPage() {
          id: 3,
          title: "Party",
          subtitle: "Glamorous Evening Looks",
-         image: "/images/img1.jpg",
+         image: "/comp/img1.jpg",
          description: [
             "Bold, glamorous party-ready looks",
             "Enhances eyes, lips & contours",
@@ -63,7 +63,7 @@ export default function MakeupPage() {
          id: 4,
          title: "HD",
          subtitle: "Flawless HD & Film Makeup",
-         image: "/images/img9.jpg",
+         image: "/comp/img9.jpg",
          description: [
             "Perfect under HD cameras & lighting",
             "No flashback or texture issues",
@@ -75,7 +75,7 @@ export default function MakeupPage() {
          id: 5,
          title: "Airbrush",
          subtitle: "Flawless Airbrush Finish",
-         image: "/images/img2.jpg",
+         image: "/comp/img2.jpg",
          description: [
             "Lightweight & breathable coverage",
             "Waterproof & sweat-resistant",
@@ -87,7 +87,7 @@ export default function MakeupPage() {
          id: 6,
          title: "Engagement",
          subtitle: "Radiant Engagement Looks",
-         image: "/images/img7.jpg",
+         image: "/comp/img7.jpg",
          description: [
             "Soft, elegant & radiant makeup",
             "Designed for photography",
@@ -99,7 +99,7 @@ export default function MakeupPage() {
          id: 7,
          title: "Celebrity",
          subtitle: "Red Carpet Glamour",
-         image: "/images/img6.jpg",
+         image: "/comp/img6.jpg",
          description: [
             "High-fashion, bold makeup looks",
             "Inspired by celebrity trends",
