@@ -42,16 +42,12 @@ export default function Footer() {
       }, 500)
    }
 
-   const curveImage =
-      "/footerimg.png"
-
-
    return (
       <div className="w-full md:p-0.5">
          <div className="relative w-full flex justify-center">
             <div className="w-full md:rounded-tl-2xl bg-[#101518]"></div>
             <img
-               src={curveImage}
+               src="/footerimg.png"
                alt="Top curve"
                className="hidden w-40 md:block inset-0 z-20 pointer-events-none"
                draggable={false}

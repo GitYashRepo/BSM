@@ -16,7 +16,7 @@ const slides = [
          "Enhance your look with flawless makeup artistry tailored for parties, events, and everyday beauty.",
       buttonText: "EXPLORE",
       link: "/makeup",
-      image: "/banner/Makeup.jpeg",
+      image: "/comp/Makeup.jpeg",
    },
    {
       id: 2,
@@ -38,7 +38,7 @@ const slides = [
          "Refine your features with professional beauty services including brows, lashes, and signature detailing.",
       buttonText: "EXPLORE",
       link: "/beauty",
-      image: "/banner/beauty.jpeg",
+      image: "/comp/beauty.jpeg",
    },
    {
       id: 4,
@@ -49,7 +49,7 @@ const slides = [
          "Rejuvenate your skin with premium facials, peels, and esthetic therapies for long-lasting glow.",
       buttonText: "EXPLORE",
       link: "/esthetics",
-      image: "/banner/Esthetics.jpeg",
+      image: "/comp/Esthetics.jpeg",
    },
    {
       id: 5,
@@ -60,7 +60,7 @@ const slides = [
          "Brighten and nourish your skin with advanced skincare treatments crafted for clarity and hydration.",
       buttonText: "EXPLORE",
       link: "/signatureservices",
-      image: "/images/img3.jpg",
+      image: "/comp/img3.jpg",
    },
    {
       id: 6,
@@ -71,7 +71,7 @@ const slides = [
          "Experience luxurious bridal makeup designed to stay flawless, elegant, and radiant throughout your special day.",
       buttonText: "EXPLORE",
       link: "/makeup",
-      image: "/images/img15.jpg",
+      image: "/comp/img15.jpg",
    },
 ];
 

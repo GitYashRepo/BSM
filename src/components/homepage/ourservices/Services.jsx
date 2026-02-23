@@ -12,7 +12,7 @@ const services = [
       category: "MAKEUP",
       description:
          "Professional makeup application for any occasion. From natural everyday looks to glamorous evening makeup with premium products.",
-      image: "/images/img5.jpg",
+      image: "/comp/img5.jpg",
       duration: "45-60 min",
 
       href: "/makeup"
@@ -23,7 +23,7 @@ const services = [
       category: "HAIR",
       description:
          "Complete hair care services including cuts, styling, treatments, and coloring to enhance your natural beauty.",
-      image: "/images/img7.jpg",
+      image: "/comp/img7.jpg",
       duration: "60-90 min",
 
       href: "/hair"
@@ -34,7 +34,7 @@ const services = [
       category: "BEAUTY",
       description:
          "Comprehensive beauty treatments including lashes, brows, waxing, and more for a complete beauty transformation.",
-      image: "/images/img1.jpg",
+      image: "/comp/img1.jpg",
       duration: "30-60 min",
       href: "/beauty"
    },
@@ -44,7 +44,7 @@ const services = [
       category: "ESTHETICS",
       description:
          "Advanced skincare treatments, facials, and rejuvenation services for radiant, healthy skin using medical-grade products.",
-      image: "/images/img9.jpg",
+      image: "/comp/img9.jpg",
       duration: "75-90 min",
       href: "/esthetics"
    },
