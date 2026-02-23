@@ -27,7 +27,7 @@ const slides = [
          "Experience expert haircuts, smoothening, styling, and treatments crafted for your unique texture.",
       buttonText: "EXPLORE",
       link: "/hair",
-      image: "/banner/hairpic.jpg",
+      image: "/banner/hair3.jpeg",
    },
    {
       id: 3,

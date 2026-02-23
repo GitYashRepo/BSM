@@ -1,5 +1,6 @@
 import { connectDB } from "@/lib/mongodb";
 import Service from "@/models/Service";
+import Category from "@/models/Category";   // ← must import so Mongoose registers the schema before .populate()
 import { verifyToken } from "@/lib/auth";
 
 export async function GET(req) {

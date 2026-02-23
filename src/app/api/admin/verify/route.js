@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken";
 
-const JWT_SECRET = process.env.JWT_SECRET || "super_secret_jwt_key";
+const JWT_SECRET = process.env.JWT_SECRET;
 
 export async function GET(req) {
   const auth = req.headers.get("authorization");

@@ -4,7 +4,7 @@ import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
 import { cookies } from "next/headers";
 
-const JWT_SECRET = process.env.JWT_SECRET_PRICE || "super_secret_jwt_key";
+const JWT_SECRET = process.env.JWT_SECRET_PRICE;
 
 export async function POST(req) {
   await connectDB();
