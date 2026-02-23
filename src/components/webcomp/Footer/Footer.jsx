@@ -3,7 +3,6 @@
 import { Mail, Phone, MapPin, Instagram, Facebook, Linkedin, ArrowRight } from "lucide-react"
 import Link from "next/link"
 import { useState } from "react"
-import { backgroundColor } from "@/components/webcomp/webcolor/bgcolor";
 
 const PagesLinks = [
    {
@@ -47,7 +46,7 @@ export default function Footer() {
          <div className="relative w-full flex justify-center">
             <div className="w-full md:rounded-tl-2xl bg-[#101518]"></div>
             <img
-               src="/footerimg.png"
+               src="/Footerimg.png"
                alt="Top curve"
                className="hidden w-40 md:block inset-0 z-20 pointer-events-none"
                draggable={false}
@@ -198,16 +197,6 @@ export default function Footer() {
                </div>
             </div>
          </footer>
-         {/* <div className="relative w-full flex justify-center">
-            <div className="w-full rounded-bl-2xl" style={{ backgroundColor: backgroundColor.velvet }}></div>
-            <img
-               src={curveImage}
-               alt="Top curve"
-               className="hidden w-40 md:block rotate-180 z-20 pointer-events-none"
-               draggable={false}
-            />
-            <div className="w-full rounded-br-2xl" style={{ backgroundColor: backgroundColor.velvet }}></div>
-         </div> */}
       </div>
    )
 }
