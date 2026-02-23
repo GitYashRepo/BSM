@@ -14,7 +14,7 @@ const packages = [
       price: "₹21,000",
       type: "Basic Bridal Package",
       icon: <Star className="w-5 h-5" />,
-      image: "/banner/Makeup.jpeg",
+      image: "/comp/Makeup.jpeg",
       sittings: [
          {
             title: "Iˢᵗ Sitting",
@@ -36,7 +36,7 @@ const packages = [
       price: "₹29,000",
       type: "Makeup - H.D",
       icon: <Sparkles className="w-5 h-5" />,
-      image: "/images/img2.jpg",
+      image: "/comp/img2.jpg",
       sittings: [
          {
             title: "Iˢᵗ Sitting",
@@ -58,7 +58,7 @@ const packages = [
       price: "₹37,000",
       type: "Signature Makeup",
       icon: <Crown className="w-5 h-5" />,
-      image: "/images/img6.jpg",
+      image: "/comp/img6.jpg",
       sittings: [
          {
             title: "Iˢᵗ Sitting",
@@ -84,7 +84,7 @@ const packages = [
       price: "₹45,000",
       type: "Signature Makeup Luxury +",
       icon: <Gem className="w-5 h-5" />,
-      image: "/images/img14.jpg",
+      image: "/comp/img14.jpg",
       sittings: [
          {
             title: "Iˢᵗ Sitting",
