@@ -23,6 +23,7 @@ const navItems = [
       items: [
          { label: "Go to Home", href: "/" },
          { label: "Makeup", href: "/makeup" },
+         { label: "Bridal Packages", href: "/bridal-packages" },
          { label: "Bridal Makeup", href: "/makeup#bridal" },
          { label: "Party Makeup", href: "/makeup#party" },
          { label: "HD Makeup", href: "/makeup#hd" },
@@ -99,6 +100,7 @@ const navItems = [
          { label: "Signature Services", href: "/signatureservices" },
          { label: "Bridal Makeovers", href: "/signatureservices#bridal-makeover" },
          { label: "Pre-Bridal Package", href: "/signatureservices#pre-bridal" },
+         { label: "Bridal Packages", href: "/bridal-packages" },
          { label: "Groom Makeover", href: "/signatureservices#groom" },
          { label: "Celebrity Styling", href: "/signatureservices#celebrity-styling" },
       ],

@@ -43,22 +43,22 @@ export default function Footer() {
    }
 
    const curveImage =
-      "/footermidimg.png"
+      "/footerimg.png"
 
 
    return (
-      <div className="w-full md:p-4">
+      <div className="w-full md:p-0.5">
          <div className="relative w-full flex justify-center">
-            <div className="w-full md:rounded-tl-2xl" style={{ backgroundColor: backgroundColor.velvet }}></div>
+            <div className="w-full md:rounded-tl-2xl bg-[#101518]"></div>
             <img
                src={curveImage}
                alt="Top curve"
                className="hidden w-40 md:block inset-0 z-20 pointer-events-none"
                draggable={false}
             />
-            <div className="w-full md:rounded-tr-2xl" style={{ backgroundColor: backgroundColor.velvet }}></div>
+            <div className="w-full md:rounded-tr-2xl bg-[#101518]"></div>
          </div>
-         <footer className="text-white overflow-hidden md:rounded-b-2xl" style={{ backgroundColor: backgroundColor.velvet }}>
+         <footer className="text-white overflow-hidden md:rounded-b-2xl bg-[#101518]">
             {/* Section 1: Minimal Hero with Split Design */}
             <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen border-b border-white/10 pb-10">
                {/* Left: Large Typography */}
@@ -128,49 +128,6 @@ export default function Footer() {
                </div>
             </div>
 
-            {/* Section 3: Newsletter with Split Layout */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 p-8 md:p-12 lg:p-16 border-b border-white/10">
-               <div>
-                  <span className="text-[#D99726] text-xs font-light tracking-widest uppercase mb-8 block">Newsletter</span>
-                  <h3 className="text-4xl md:text-5xl font-light leading-tight mb-6">Stay In The Loop</h3>
-                  <p className="text-gray-400 text-base leading-relaxed">
-                     Get exclusive updates, special offers, and beauty tips delivered straight to your WhatsApp.
-                  </p>
-               </div>
-
-               <form onSubmit={handleNewsletterSubmit} className="space-y-4">
-                  <div className="relative flex items-center gap-2">
-
-                     {/* Fixed +91 */}
-                     <span className="text-white text-base">+91</span>
-
-                     {/* Phone Input */}
-                     <input
-                        type="text"
-                        placeholder="0000-000-000"
-                        value={phone}
-                        onChange={(e) => {
-                           const value = e.target.value.replace(/\D/g, ""); // keep digits only
-                           if (value.length <= 10) setPhone(value);
-                        }}
-                        maxLength={10}
-                        required
-                        className="w-full px-0 py-3 bg-transparent border-b border-white/20
-               text-white placeholder:text-gray-600 focus:outline-none
-               focus:border-[#D99726] transition-colors duration-300 text-base"
-                     />
-                  </div>
-                  <button
-                     type="submit"
-                     disabled={isSubmitting}
-                     className="text-sm font-light uppercase tracking-widest text-[#D99726] hover:text-white transition-colors duration-300 flex items-center gap-2 group disabled:opacity-50"
-                  >
-                     {isSubmitting ? "Subscribing..." : "Subscribe"}
-                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-                  </button>
-               </form>
-            </div>
-
             {/* Section 4: Bottom Bar with Navigation */}
             <div className="px-8 md:px-12 lg:px-16 py-12">
                <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 mb-12 pb-12 border-b border-white/10">
@@ -200,13 +157,17 @@ export default function Footer() {
                      <div>
                         <p className="text-xs uppercase tracking-widest text-gray-300 mb-4">Legal</p>
                         <ul className="space-y-2">
-                           {["Privacy", "Terms", "Cookies"].map((item) => (
-                              <li key={item}>
+                           {[
+                              { name: "Privacy", href: "/privacy" },
+                              { name: "Terms", href: "/terms" },
+                              { name: "Cookies", href: "/cookies" },
+                           ].map((item) => (
+                              <li key={item.name}>
                                  <Link
-                                    href="#"
+                                    href={item.href}
                                     className="text-sm text-gray-400 hover:text-[#D99726] transition-colors duration-300 font-light"
                                  >
-                                    {item}
+                                    {item.name}
                                  </Link>
                               </li>
                            ))}
