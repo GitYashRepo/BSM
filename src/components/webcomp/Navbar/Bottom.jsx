@@ -129,9 +129,9 @@ const navItems = [
       label: "Gallery",
       items: [
          { label: "Go to Home", href: "/" },
-         { label: "Bridal Makeup", href: "gallery" },
-         { label: "Party Makeup", href: "gallery" },
-         { label: "Engagement Makeup", href: "gallery" },
+         { label: "Bridal Makeup", href: "/gallery" },
+         { label: "Party Makeup", href: "/gallery" },
+         { label: "Engagement Makeup", href: "/gallery" },
       ],
       featured: {
          title: "Our Gallery",

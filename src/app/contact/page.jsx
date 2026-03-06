@@ -1,9 +1,7 @@
-// Updated Contact Page with full salon appointment booking fields
 "use client"
 
 import { useState } from "react"
-import { Mail, Phone, MapPin, Send, Calendar, Clock, User, Scissors, StickyNote } from "lucide-react"
-import Link from "next/link"
+import { Mail, Phone, MapPin } from "lucide-react"
 
 const contactData = [
    {
@@ -105,7 +103,10 @@ export default function ContactPage() {
                   <img className="w-full h-full object-cover" src="/images/banner.jpg" alt="Contact Banner" />
                </div>
                <div className="mb-16">
-                  <h1 className="text-5xl md:text-7xl font-serif font-light mb-6 text-[#D99726]">Let's Connect</h1>
+                  <div className="w-full flex gap-2 overflow-hidden">
+                     <Phone className="w-auto h-8 text-blue-900 md:h-12" />
+                     <img src="/letsconn.png" className="w-[70%] md:w-auto" alt="let's connect" />
+                  </div>
                   <p className="text-lg text-muted-foreground max-w-2xl leading-relaxed">
                      Have questions or want to book an appointment? Fill out the form and we'll reach out shortly.
                   </p>

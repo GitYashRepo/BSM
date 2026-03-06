@@ -10,17 +10,8 @@ export function OwnerSection() {
                {/* Left - Image */}
                <div className="scroll-card relative">
                   <div className="relative w-full aspect-square rounded-2xl overflow-hidden shadow-2xl">
-                     <div className="parallax-element w-full h-full bg-gradient-to-br from-[#AC2121] to-[#6E2E35] flex items-center justify-center">
-                        <div className="text-center text-white/30">
-                           <p className="text-sm font-light">Salon Founder</p>
-                           <p className="text-4xl font-serif italic">Est. 2015</p>
-                        </div>
-                     </div>
+                     <img src="/myimg.jpeg" className="w-full h-full object-cover" alt="Image" />
                   </div>
-
-                  {/* Accent Elements */}
-                  <div className="absolute -top-8 -right-8 w-24 h-24 border border-[#AC2121]/30 rounded-full"></div>
-                  <div className="absolute -bottom-8 -left-8 w-32 h-32 border border-[#AC2121]/20 rounded-full"></div>
                </div>
 
                {/* Right - Content */}

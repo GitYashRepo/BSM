@@ -222,7 +222,7 @@ export function ServiceSection() {
                      </AnimatedText>
                   </div>
 
-                  <button className="group relative px-8 py-4 my-10 bg-primary text-primary-foreground overflow-hidden transition-all duration-300 hover:scale-105">
+                  <button onClick={() => window.open("https://wa.me/919467777773", "_blank")} className="group relative px-8 py-4 my-10 bg-primary text-primary-foreground overflow-hidden transition-all duration-300 hover:scale-105">
                      <span className="relative z-10 flex items-center gap-2 text-sm group-hover:text-black font-mono tracking-wider uppercase">
                         Book Now
                         <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />

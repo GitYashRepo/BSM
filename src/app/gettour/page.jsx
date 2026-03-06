@@ -7,6 +7,7 @@ import { useEffect, useRef } from "react";
 import ReactLenis from "lenis/react";
 import "./gettour.css";
 import AnimatedCopy from "@/components/AnimatedCopy/AnimatedCopy";
+import CenterModeCarousel from "@/components/webcomp/CarouselDesign/Carousel";
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -115,15 +116,11 @@ export default function GetTour() {
          <ReactLenis root>
             <div className="page about">
                <section className="about-header">
-                  <h1>Estd.</h1>
+                  <h1>Est.</h1>
                   <h1>2015</h1>
                </section>
 
-               <section className="relative flex justify-center m-2 md:p-[2em] md:m-[2em] h-[40vh] rounded-[1em] overflow-hidden border-[1px] border-black border-dashed md:h-[100vh]">
-                  <div className="absolute top-0 left-0 w-full h-full">
-                     <img src="/scroll/scroll00015.png" className="w-full h-full" alt="Banner Image" />
-                  </div>
-               </section>
+               <CenterModeCarousel />
 
                <section className="about-me-copy">
                   <div className="about-me-copy-wrapper">
@@ -144,7 +141,7 @@ export default function GetTour() {
                <section className="services">
                   <div className="services-col">
                      <div className="services-banner">
-                        <img src="/images/img13.jpg" className="w-full h-full" alt="Image" />
+                        <img src="/myimg.jpeg" className="w-full h-full object-cover" alt="Image" />
                      </div>
                   </div>
                   <div className="services-col">
@@ -177,11 +174,11 @@ export default function GetTour() {
 
                         <div className="service-list-row">
                            <div className="service-list-col">
-                              <h5>Estd.</h5>
+                              <h5>Exp.</h5>
                            </div>
                            <div className="service-list-col">
                               <p>
-                                 2015
+                                 15+ Years
                               </p>
                            </div>
                         </div>
@@ -191,69 +188,7 @@ export default function GetTour() {
 
                <section className="about-banner-img">
                   <div className="about-banner-img-wrapper">
-                     <img src="/scroll/scroll00001.png" className="w-full h-full" alt="Image" />
-                  </div>
-               </section>
-
-               <section className="fav-tools">
-                  <div className="fav-tools-header">
-                     <AnimatedCopy tag="p" animateOnScroll={true} className="primary sm">
-                        BLUSH
-                     </AnimatedCopy>
-                     <AnimatedCopy tag="h2" animateOnScroll={true} delay={0.25}>
-                        Our Services
-                     </AnimatedCopy>
-                     <AnimatedCopy
-                        tag="p"
-                        animateOnScroll={true}
-                        className="secondary"
-                        delay={0.5}
-                     >
-                        Discover our complete range of professional beauty services, thoughtfully curated to enhance your natural beauty, elevate confidence, and deliver a refined, personalized salon experience.
-                     </AnimatedCopy>
-                  </div>
-
-                  <div className="fav-tools-list">
-                     <div className="fav-tools-list-row">
-                        <div className="fav-tool">
-                           <div className="fav-tool-img">
-                              <img src="/textures/img1.jpg" className="w-full" alt="" />
-                           </div>
-                           <h4>Makeup</h4>
-                        </div>
-                        <div className="fav-tool">
-                           <div className="fav-tool-img">
-                              <img src="/textures/img2.jpg" className="w-full" alt="" />
-                           </div>
-                           <h4>Hair</h4>
-                        </div>
-                        <div className="fav-tool">
-                           <div className="fav-tool-img">
-                              <img src="/textures/img3.jpg" className="w-full" alt="" />
-                           </div>
-                           <h4>Beauty</h4>
-                        </div>
-                     </div>
-                     <div className="fav-tools-list-row">
-                        <div className="fav-tool">
-                           <div className="fav-tool-img">
-                              <img src="/textures/img4.jpg" className="w-full" alt="" />
-                           </div>
-                           <h4>Esthetics</h4>
-                        </div>
-                        <div className="fav-tool">
-                           <div className="fav-tool-img">
-                              <img src="/textures/img5.jpg" className="w-full" alt="" />
-                           </div>
-                           <h4>Signature Services</h4>
-                        </div>
-                        <div className="fav-tool">
-                           <div className="fav-tool-img">
-                              <img src="/textures/img6.jpg" className="w-full" alt="" />
-                           </div>
-                           <h4>Franchise</h4>
-                        </div>
-                     </div>
+                     <img src="/scroll/scroll00001.png" className="w-full h-full object-cover" alt="Image" />
                   </div>
                </section>
             </div>
@@ -261,7 +196,7 @@ export default function GetTour() {
          <section ref={stickyTitlesRef} className="sticky-titles h-screen">
             <div className="sticky-titles-nav">
                <a href="/about" className="primary sm">About Me</a>
-               <a href="/bsm" className="primary sm">About BSM</a>
+               <a href="/about" className="primary sm">About BSM</a>
             </div>
             <div className="sticky-titles-footer">
                <a href="/franchise" className="primary sm">Franchise</a>
