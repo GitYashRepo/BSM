@@ -139,10 +139,8 @@ export default function GetTour() {
                </section>
 
                <section className="services">
-                  <div className="services-col">
-                     <div className="services-banner">
-                        <img src="/myimg.jpeg" className="w-full h-full object-cover" alt="Image" />
-                     </div>
+                  <div className="w-full lg:w-[30%] h-[350px] md:h-[450px] lg:h-[65vh] rounded-2xl overflow-hidden shadow-xl border border-white/5 transition-transform duration-500 hover:scale-[1.02]">
+                     <img src="/myimg.jpeg" className="w-full h-full object-cover" alt="Image" />
                   </div>
                   <div className="services-col">
                      <h4>
