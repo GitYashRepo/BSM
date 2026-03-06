@@ -18,11 +18,12 @@ const MiddleBar = ({ onMenuClick }) => {
          }
 
          if (role === "subadmin") {
-            await fetch("/api/admin/logoutSubAdmin", { method: "POST" });
+            await fetch("/api/admin/logoutsubadmin", { method: "POST" });
          }
 
-         router.refresh();
          router.push("/login");
+         // Force reload to clear all states and cached roles
+         window.location.reload();
       } catch (err) {
          console.error(err);
       }

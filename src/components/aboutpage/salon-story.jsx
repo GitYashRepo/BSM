@@ -27,7 +27,7 @@ export function SalonStory() {
             "Established a strong reputation through customer loyalty, word-of-mouth growth, and a commitment to quality.",
       },
       {
-         year: "2024",
+         year: "2026",
          title: "Franchise Launch",
          description:
             "Introduced franchising opportunities, inviting partners to grow with a proven salon model, strong brand identity, and operational support.",
