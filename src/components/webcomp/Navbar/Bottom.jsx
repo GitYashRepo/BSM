@@ -233,14 +233,14 @@ const BottomBar = () => {
                               <li className="flex items-center gap-3 text-foreground">
                                  <Phone className="w-4 h-4 text-[#750851]" />
                                  <div>
-                                    <p className="font-medium text-foreground">94684-56266</p>
+                                    <a href="tel:9053102324"><p className="font-medium text-foreground">90531-02324</p></a>
                                     <p className="text-xs text-foreground">Reception</p>
                                  </div>
                               </li>
                               <li className="flex items-center gap-3 text-foreground">
                                  <Phone className="w-4 h-4 text-[#750851]" />
                                  <div>
-                                    <p className="font-medium text-foreground">90531-02324</p>
+                                    <a href="tel:9468456266"><p className="font-medium text-foreground">94684-56266</p></a>
                                     <p className="text-xs text-foreground">(Sakshi Mukhija - Owner)</p>
                                  </div>
                               </li>
@@ -256,9 +256,9 @@ const BottomBar = () => {
 
                            <div className="mt-4 pt-4 border-t border-border">
                               <p className="text-xs text-foreground">For Complaints: Mr. Nitin (Brand Steward)</p>
-                              <p className="text-sm font-medium text-foreground">
+                              <a target="_blank" href="https://wa.me/919467777773"><p className="text-sm font-medium text-foreground">
                                  94677-77773 <span className="text-xs text-foreground">(WhatsApp only)</span>
-                              </p>
+                              </p></a>
                            </div>
                         </div>
                      </div>

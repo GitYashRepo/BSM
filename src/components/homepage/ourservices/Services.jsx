@@ -23,7 +23,7 @@ const services = [
       category: "HAIR",
       description:
          "Complete hair care services including cuts, styling, treatments, and coloring to enhance your natural beauty.",
-      image: "/comp/img7.jpg",
+      image: "/koreanModel/Hair.jpg",
       duration: "60-90 min",
 
       href: "/hair"
@@ -34,7 +34,7 @@ const services = [
       category: "BEAUTY",
       description:
          "Comprehensive beauty treatments including lashes, brows, waxing, and more for a complete beauty transformation.",
-      image: "/comp/img1.jpg",
+      image: "/koreanModel/Beauty.jpg",
       duration: "30-60 min",
       href: "/beauty"
    },
