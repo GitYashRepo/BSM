@@ -28,20 +28,8 @@ export default function EstheticsPage() {
    const estheticsTopics = [
       {
          id: 1,
-         title: "Esthetics",
-         subtitle: "Advanced Skin Care",
-         image: "/banner/Esthetics.jpeg",
-         description: [
-            "Advanced aesthetic skin solutions",
-            "Personalized skin analysis",
-            "Clinically proven treatments",
-            "Safe & effective results",
-         ],
-      },
-      {
-         id: 2,
          title: "Skin Treatments",
-         subtitle: "Healthy Skin Solutions",
+         subtitle: "Advanced Skin Care",
          image: "/services/esthetics/skintreat.jpg",
          description: [
             "Customized professional treatments",
@@ -51,7 +39,7 @@ export default function EstheticsPage() {
          ],
       },
       {
-         id: 3,
+         id: 2,
          title: "Anti-Aging",
          subtitle: "Youthful Skin Therapy",
          image: "/services/esthetics/antiage.png",
@@ -63,7 +51,7 @@ export default function EstheticsPage() {
          ],
       },
       {
-         id: 4,
+         id: 3,
          title: "Acne Treatment",
          subtitle: "Clear Skin Solutions",
          image: "/services/esthetics/acne.jpg",
@@ -75,7 +63,7 @@ export default function EstheticsPage() {
          ],
       },
       {
-         id: 5,
+         id: 4,
          title: "Pigmentation",
          subtitle: "Even Skin Tone Care",
          image: "/services/esthetics/pigmentation.jpg",
@@ -87,7 +75,7 @@ export default function EstheticsPage() {
          ],
       },
       {
-         id: 6,
+         id: 5,
          title: "Laser Treatment",
          subtitle: "Advanced Laser Solutions",
          image: "/services/esthetics/laser.jpg",
@@ -99,7 +87,7 @@ export default function EstheticsPage() {
          ],
       },
       {
-         id: 7,
+         id: 6,
          title: "Chemical Peels",
          subtitle: "Skin Renewal Therapy",
          image: "/services/esthetics/chempeel.jpg",

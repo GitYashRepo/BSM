@@ -23,7 +23,7 @@ export default function SalonSections() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="max-w-6xl px-6 py-20 grid grid-cols-1 md:grid-cols-2 gap-12"
+            className="max-w-6xl px-6 pb-10 grid grid-cols-1 md:grid-cols-2 gap-12"
          >
             <div>
                <motion.h1

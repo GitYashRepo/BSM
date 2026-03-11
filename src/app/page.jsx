@@ -12,9 +12,9 @@ export default function Home() {
       <div>
          <main className="min-h-screen bg-background">
             <FullScreenSlider />
-            <SalonSlider />
             <SalonSections />
             <StatsSection />
+            {/* <SalonSlider /> */}
             <ServiceSection />
             <div className="max-w-7xl mx-auto space-y-8 px-10 py-10">
                <h1 className="text-3xl font-bold text-center mb-8">Our Gallery</h1>

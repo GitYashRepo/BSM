@@ -114,7 +114,7 @@ export default function SalonSlider() {
    return (
       <div
          ref={sliderRef}
-         className="relative w-full h-[90vh] md:h-[80vh] overflow-hidden bg-white flex flex-col justify-between md:flex-row"
+         className="relative m-auto border md:border-0 w-[80%] md:w-full h-[90vh] md:h-[80vh] overflow-hidden bg-white flex flex-col justify-between md:flex-row"
       >
          {/* IMAGE SECTION */}
          <div className="w-full md:w-2/5 h-[60%] md:h-full relative order-1 md:order-2 overflow-hidden">
@@ -132,7 +132,7 @@ export default function SalonSlider() {
                      alt={slide.heading}
                      fill
                      priority
-                     className="object-cover object-center md:object-top"
+                     className="object-cover object-top md:object-top"
                   />
                </motion.div>
             </AnimatePresence>
@@ -152,7 +152,7 @@ export default function SalonSlider() {
             </motion.div>
 
             {/* CENTER CONTENT */}
-            <div className="flex flex-col md:flex-row gap-6 md:gap-20 flex-1 mt-6 ml-8 md:ml-0">
+            <div className="flex flex-col md:flex-row gap-6 md:gap-20 flex-1 mt-6 ml-4 md:ml-0">
                {/* PROGRESS BAR */}
                <div className="flex hidden md:block items-center md:flex-col md:justify-start justify-center">
                   <div className="w-full md:w-[2px] h-[4px] md:h-40 bg-gray-200 rounded-full overflow-hidden">
@@ -213,7 +213,7 @@ export default function SalonSlider() {
             </div>
 
             {/* NAVIGATION */}
-            <div className="flex items-center justify-between mt-6 mx-8 md:mx-0">
+            <div className="flex items-center justify-between mt-6 mx-2 md:mx-8 md:mx-0">
                <div className="flex gap-3">
                   <button onClick={() => paginate(-1)}>
                      <ChevronLeft className="md:w-12 md:h-12 hover:scale-105" />

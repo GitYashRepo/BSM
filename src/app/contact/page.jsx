@@ -99,13 +99,13 @@ export default function ContactPage() {
       <div className="min-h-screen bg-background text-foreground">
          <section className="pt-12 pb-20 px-4 md:px-8">
             <div className="max-w-6xl mx-auto">
-               <div className="w-full h-[50vh] pb-12">
-                  <img className="w-full h-full object-cover" src="/images/banner.jpg" alt="Contact Banner" />
+               <div className="w-full pb-12">
+                  <img className="w-full h-full object-cover object-center" src="/contactbanner.jpg" alt="Contact Banner" />
                </div>
                <div className="mb-16">
                   <div className="w-full flex gap-2 overflow-hidden">
-                     <Phone className="w-auto h-8 text-blue-900 md:h-12" />
-                     <img src="/letsconn.png" className="w-[70%] md:w-auto" alt="let's connect" />
+                     <Phone className="w-auto h-6 text-blue-900 md:h-12" />
+                     <img src="/letsconn.png" className="w-[50%] md:w-auto" alt="let's connect" />
                   </div>
                   <p className="text-lg text-muted-foreground max-w-2xl leading-relaxed">
                      Have questions or want to book an appointment? Fill out the form and we'll reach out shortly.
