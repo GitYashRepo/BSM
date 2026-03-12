@@ -39,18 +39,6 @@ export default function BeautyPage() {
       },
       {
          id: 2,
-         title: "Facial",
-         subtitle: "Radiant Skin Therapy",
-         image: "/services/beauty/facial.jpg",
-         description: [
-            "Deep cleansing & hydration",
-            "Brightens dull skin",
-            "Improves skin texture",
-            "Relaxing & rejuvenating",
-         ],
-      },
-      {
-         id: 3,
          title: "Cleanup",
          subtitle: "Instant Skin Refresh",
          image: "/services/beauty/cleanup.jpg",
@@ -59,6 +47,18 @@ export default function BeautyPage() {
             "Quick glow boost",
             "Unclogs pores",
             "Perfect before events",
+         ],
+      },
+      {
+         id: 3,
+         title: "Facial",
+         subtitle: "Radiant Skin Therapy",
+         image: "/services/beauty/facial.jpg",
+         description: [
+            "Deep cleansing & hydration",
+            "Brightens dull skin",
+            "Improves skin texture",
+            "Relaxing & rejuvenating",
          ],
       },
       {

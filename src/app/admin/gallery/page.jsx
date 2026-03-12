@@ -97,9 +97,16 @@ export default function Page() {
             <input value={desc} onChange={e => setDesc(e.target.value)} placeholder="Description" className="border p-2 rounded" />
             <select value={category} onChange={e => setCategory(e.target.value)} className="border p-2 rounded">
                <option value="All">All</option>
-               <option value="Bridal-MakeUp">Bridal-MakeUp</option>
-               <option value="Party-MakeUp">Party-MakeUp</option>
-               <option value="Engagement-MakeUp">Engagement-MakeUp</option>
+               <option value="Bridal-MakeUp">Bridal MakeUp</option>
+               <option value="Party-MakeUp">Party MakeUp</option>
+               <option value="Engagement-MakeUp">Engagement MakeUp</option>
+               <option value="Hair-Styling">Hair Styling</option>
+               {/* <option value="Hair-Color">Hair Color</option> */}
+               {/* <option value="Mehndi">Mehndi</option> */}
+               <option value="Nail-Art">Nail Art</option>
+               <option value="Skin-Care">Skin Care</option>
+               <option value="Eye-MakeUp">Eye MakeUp</option>
+               {/* <option value="Mehendi-Bridal">Mehendi Bridal</option> */}
             </select>
             <input type="file" accept="image/*" onChange={e => setImg(e.target.files[0])} className="border p-2 rounded" />
 

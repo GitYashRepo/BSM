@@ -11,7 +11,7 @@ gsap.registerPlugin(ScrollTrigger)
 const packages = [
    {
       name: "Package One",
-      price: "₹21,000",
+      price: "₹19,000",
       type: "Basic Bridal Package",
       icon: <Star className="w-5 h-5" />,
       image: "/comp/Makeup.jpeg",
