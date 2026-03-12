@@ -10,7 +10,7 @@ const services = [
       title: "Bridal Excellence",
       desc: "Exquisite bridal makeovers that bring out your natural glow on your special day.",
       bg: "/bgimg.jpg",
-      thumb: "/banner/Makeup.jpeg",
+      thumb: "/bridalnewimg.jpg",
    },
    {
       title: "Hair Couture",
