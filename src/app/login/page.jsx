@@ -63,7 +63,6 @@ export default function LoginPage() {
                className="border p-2 rounded-md focus:ring-2 focus:ring-blue-400"
             >
                <option value="admin">Login as Admin</option>
-               <option value="subadmin">Login as Sub-Admin</option>
             </select>
 
             <input

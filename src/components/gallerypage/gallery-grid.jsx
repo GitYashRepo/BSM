@@ -5,7 +5,19 @@ import { useState } from "react"
 
 export function GalleryGrid({ images, onImageClick }) {
    const [filter, setFilter] = useState("All")
-   const categories = ["All", "Bridal-MakeUp", "Party-MakeUp", "Engagement-MakeUp"]
+   const categories = [
+      "All",
+      "Bridal-MakeUp",
+      "Party-MakeUp",
+      "Engagement-MakeUp",
+      "Hair-Styling",
+      "Hair-Color",
+      "Mehndi",
+      "Nail-Art",
+      "Skin-Care",
+      "Eye-MakeUp",
+      "Mehendi-Bridal",
+   ]
 
    const filteredImages = filter === "All" ? images : images.filter((img) => img.category === filter)
 

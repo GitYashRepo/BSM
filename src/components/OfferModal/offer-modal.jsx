@@ -74,7 +74,7 @@ export default function OfferModal() {
             </div>
 
             {/* Body */}
-            <div className="space-y-4 px-4 py-4 text-sm max-h-[60vh] overflow-y-auto custom-scrollbar">
+            <div className="space-y-4 px-4 py-4 text-sm max-h-[60vh] overflow-y-scroll custom-scrollbar">
                {offers.length === 0 ? (
                   <p>Check back later for exciting offers!</p>
                ) : (

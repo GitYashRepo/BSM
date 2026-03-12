@@ -20,10 +20,6 @@ const PagesLinks = [
    {
       name: "Admin",
       href: "/admin/dashboard"
-   },
-   {
-      name: "Sub-Admin",
-      href: "/sub-admin/services"
    }
 ]
 
