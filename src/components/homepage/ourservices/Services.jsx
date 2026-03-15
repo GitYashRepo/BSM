@@ -44,7 +44,7 @@ const services = [
       category: "ESTHETICS",
       description:
          "Advanced skincare treatments, facials, and rejuvenation services for radiant, healthy skin using medical-grade products.",
-      image: "/comp/img9.jpg",
+      image: "/bridal/img4.jpeg",
       duration: "75-90 min",
       href: "/esthetics"
    },
@@ -127,17 +127,6 @@ export function ServiceSection() {
                               }`}
                            onClick={() => setActiveIndex(index)}
                         >
-                           {/* Cursor follower inside card */}
-                           {/* <div
-                              ref={cursorRef}
-                              className="pointer-events-none absolute z-10 opacity-0 group-hover:opacity-100  transition-opacity duration-300"
-                              style={{ width: "80px", height: "80px" }}
-                           >
-                              <div className="w-20 h-20 rounded-full bg-[#D99726] border-2 border-white flex items-center justify-center">
-                                 <span className="text-sm font-black font-mono">VIEW</span>
-                              </div>
-                           </div> */}
-
                            {/* Card Container */}
                            <Link href={service.href}>
                               <div className="relative h-[50vh] lg:h-full min-h-[400px] overflow-hidden bg-card rounded-sm">
