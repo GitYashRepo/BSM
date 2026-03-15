@@ -28,7 +28,7 @@ export function ServiceSlider({ topics, onBookAppointment }) {
    };
 
    return (
-      <section className="relative w-full h-screen overflow-hidden bg-gradient-to-b from-white to-amber-50">
+      <section className="relative w-full h-screen overflow-hidden bg-gradient-to-b from-white to-amber-50 pt-10">
          {/* Desktop Navigation Buttons */}
          <div className="absolute top-1/2 -translate-y-1/2 left-4 right-4 z-50 flex justify-between pointer-events-none md:flex hidden">
             <button

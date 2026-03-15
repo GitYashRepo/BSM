@@ -30,7 +30,7 @@ export default function MakeupPage() {
          id: 2,
          title: "Bridal",
          subtitle: "Your Special Wedding Day",
-         image: "/comp/img8.jpg",
+         image: "/bridal/img8.jpeg",
          description: [
             "Flawless, camera-ready bridal makeup",
             "Long-lasting & waterproof finish",
