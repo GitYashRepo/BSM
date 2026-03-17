@@ -44,7 +44,7 @@ const services = [
       category: "ESTHETICS",
       description:
          "Advanced skincare treatments, facials, and rejuvenation services for radiant, healthy skin using medical-grade products.",
-      image: "/bridal/img4.jpeg",
+      image: "/services/esthetics/acne.jpg",
       duration: "75-90 min",
       href: "/esthetics"
    },
@@ -134,7 +134,7 @@ export function ServiceSection() {
                                     <img
                                        src={service.image}
                                        alt={service.title}
-                                       className="w-full h-full object-cover object-top transition-all duration-700 group-hover:scale-105"
+                                       className={`w-full h-full object-cover object-top ${service.number === "04" ? "md:object-center" : "object-top"} transition-all duration-700 group-hover:scale-105`}
                                     />
                                     <div className="absolute inset-0 bg-primary/60 group-hover:bg-primary/40 transition-colors duration-700" />
                                  </div>

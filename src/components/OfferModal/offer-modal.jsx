@@ -15,8 +15,30 @@ export default function OfferModal() {
          try {
             const res = await fetch("/api/offer");
             const data = await res.json();
-            // Filter only active offers if needed (though API can also be updated to only return active)
-            const activeOffers = data.filter(o => o.isActive !== false);
+            
+            const now = new Date();
+            const currentTimeStr = now.getHours().toString().padStart(2, '0') + ':' + now.getMinutes().toString().padStart(2, '0');
+
+            const activeOffers = data.filter(offer => {
+               if (offer.isActive === false) return false;
+
+               // Date filtering
+               if (offer.startDate && new Date(offer.startDate) > now) return false;
+               if (offer.endDate) {
+                  const end = new Date(offer.endDate);
+                  end.setHours(23, 59, 59, 999); // Inclusion of the entire end date
+                  if (end < now) return false;
+               }
+
+               // Time filtering
+               if (offer.startTime || offer.endTime) {
+                  if (offer.startTime && currentTimeStr < offer.startTime) return false;
+                  if (offer.endTime && currentTimeStr > offer.endTime) return false;
+               }
+
+               return true;
+            });
+
             setOffers(activeOffers);
 
             if (activeOffers.length > 0) {
