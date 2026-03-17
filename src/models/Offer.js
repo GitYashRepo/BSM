@@ -16,6 +16,10 @@ const OfferSchema = new mongoose.Schema({
   discountPercentage: Number,
 
   validTill: Date,
+  startDate: Date,
+  endDate: Date,
+  startTime: String, // format: "HH:mm"
+  endTime: String,   // format: "HH:mm"
 
   isActive: { type: Boolean, default: true }
 }, { timestamps: true });

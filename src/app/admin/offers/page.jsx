@@ -8,7 +8,11 @@ export default function OffersPage() {
       heading: "",
       regularPrice: "",
       discountedPrice: "",
-      description: ""
+      description: "",
+      startDate: "",
+      endDate: "",
+      startTime: "",
+      endTime: ""
    });
    const [list, setList] = useState([]);
    const [loading, setLoading] = useState(false);
@@ -32,7 +36,17 @@ export default function OffersPage() {
             body: JSON.stringify(form)
          });
          if (res.ok) {
-            setForm({ type: "daily", heading: "", regularPrice: "", discountedPrice: "", description: "" });
+            setForm({
+               type: "daily",
+               heading: "",
+               regularPrice: "",
+               discountedPrice: "",
+               description: "",
+               startDate: "",
+               endDate: "",
+               startTime: "",
+               endTime: ""
+            });
             load();
          }
       } catch (err) {
@@ -103,6 +117,46 @@ export default function OffersPage() {
                   />
                </div>
 
+               <div className="md:col-span-2 grid grid-cols-1 md:grid-cols-4 gap-4">
+                  <div className="md:col-span-1">
+                     <label className="block text-sm font-medium text-gray-700 mb-1">Start Date</label>
+                     <input
+                        type="date"
+                        value={form.startDate}
+                        onChange={e => setForm({ ...form, startDate: e.target.value })}
+                        className="w-full border p-2.5 rounded-lg outline-none text-sm"
+                     />
+                  </div>
+                  <div className="md:col-span-1">
+                     <label className="block text-sm font-medium text-gray-700 mb-1">End Date</label>
+                     <input
+                        type="date"
+                        value={form.endDate}
+                        onChange={e => setForm({ ...form, endDate: e.target.value })}
+                        className="w-full border p-2.5 rounded-lg outline-none text-sm"
+                     />
+                  </div>
+                  <div className="md:col-span-1">
+                     <label className="block text-sm font-medium text-gray-700 mb-1">Start Time</label>
+                     <input
+                        type="time"
+                        value={form.startTime}
+                        onChange={e => setForm({ ...form, startTime: e.target.value })}
+                        className="w-full border p-2.5 rounded-lg outline-none text-sm"
+                     />
+                  </div>
+                  <div className="md:col-span-1">
+                     <label className="block text-sm font-medium text-gray-700 mb-1">End Time</label>
+                     <input
+                        type="time"
+                        value={form.endTime}
+                        onChange={e => setForm({ ...form, endTime: e.target.value })}
+                        className="w-full border p-2.5 rounded-lg outline-none text-sm"
+                     />
+                  </div>
+                  <p className="md:col-span-4 text-[11px] text-gray-500 italic">Leaves blank for continuous visibility.</p>
+               </div>
+
                <div className="md:col-span-2">
                   <label className="block text-sm font-medium text-gray-700 mb-1">Short Description (Optional)</label>
                   <textarea
@@ -127,7 +181,7 @@ export default function OffersPage() {
             <h2 className="text-xl font-semibold mb-4 text-gray-800">Existing Offers</h2>
             {list.length === 0 && <p className="text-gray-500 italic">No offers found.</p>}
             {list.map(o => (
-               <div key={o._id} className="bg-white p-5 rounded-xl border shadow-sm flex justify-between items-center group hover:border-amber-200 transition">
+               <div key={o._id} className="bg-white p-5 rounded-xl border shadow-sm flex justify-between items-center group hover:border-amber-200 transition text-sm">
                   <div className="space-y-1">
                      <div className="flex items-center gap-2">
                         <span className={`text-[10px] uppercase tracking-widest px-2 py-0.5 rounded-full ${o.type === 'daily' ? 'bg-blue-50 text-blue-600' : 'bg-amber-50 text-amber-600'}`}>
@@ -138,6 +192,12 @@ export default function OffersPage() {
                      <p className="text-sm text-gray-500">
                         Price: <span className="line-through">₹{o.regularPrice}</span> <span className="text-green-600 font-bold ml-1">₹{o.discountedPrice}</span>
                      </p>
+                     {(o.startDate || o.endDate || o.startTime || o.endTime) && (
+                        <p className="text-[11px] text-amber-600 font-medium">
+                           Timing: {o.startDate ? new Date(o.startDate).toLocaleDateString() : 'Always'} - {o.endDate ? new Date(o.endDate).toLocaleDateString() : 'Forever'}
+                           { (o.startTime || o.endTime) && ` | ${o.startTime || '00:00'} to ${o.endTime || '23:59'}`}
+                        </p>
+                     )}
                   </div>
                   <button
                      onClick={() => del(o._id)}
