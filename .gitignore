@@ -9,6 +9,8 @@
 !.yarn/plugins
 !.yarn/releases
 !.yarn/versions
+*.mp4
+public/video/homevdo.mp4
 
 # testing
 /coverage
