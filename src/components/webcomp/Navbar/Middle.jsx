@@ -1,9 +1,10 @@
 import { Phone, Calendar, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const MiddleBar = () => {
    return (
-      <div className="bg-navbar-middle border-b border-border">
+      <div className="bg-navbar-middle border-b border-border px-14">
          <div className="container mx-auto px-4 py-1">
             <div className="flex items-center justify-between gap-6">
                {/* Logo */}
@@ -59,10 +60,12 @@ const MiddleBar = () => {
 
                   {/* Action Buttons */}
                   <div className="flex items-center gap-3">
-                     <Button className="bg-[#D99726] hover:cursor-pointer hover:bg-primary/90 text-primary-foreground font-medium px-6 rounded-full gap-2">
-                        <Calendar className="w-4 h-4" />
-                        <span className="hidden sm:inline">Book Appointment</span>
-                     </Button>
+                     <Link href="/contact#appointment">
+                        <Button className="bg-[#D99726] hover:cursor-pointer hover:bg-primary/90 text-primary-foreground font-medium px-6 rounded-full gap-2">
+                           <Calendar className="w-4 h-4" />
+                           <span className="hidden sm:inline">Book Appointment</span>
+                        </Button>
+                     </Link>
                   </div>
                </div>
             </div>
