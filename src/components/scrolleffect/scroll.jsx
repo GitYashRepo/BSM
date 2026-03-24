@@ -111,8 +111,6 @@ export function ScrollCanvas() {
 
 
    return (
-      <>
-         {/* Animation Section */}
       <div className="scroll-canvas-safe-wrapper">
          <div
             ref={containerRef}
@@ -127,6 +125,6 @@ export function ScrollCanvas() {
                />
             </div>
          </div>
-      </>
+      </div>
    )
 }

@@ -3,7 +3,7 @@
 import { ScrollCanvas } from "@/components/scrolleffect/scroll"
 import gsap from "gsap";
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import { useEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
 import ReactLenis from "lenis/react";
 import "./gettour.css";
 import AnimatedCopy from "@/components/AnimatedCopy/AnimatedCopy";
@@ -19,7 +19,7 @@ export default function GetTour() {
    useLayoutEffect(() => {
       const titles = titlesRef.current.filter(Boolean);
       const stickySection = stickyTitlesRef.current;
-      
+
       if (!stickySection || titles.length !== 3) return;
 
       const ctx = gsap.context(() => {
@@ -143,25 +143,27 @@ export default function GetTour() {
                </section>
             </div>
          </ReactLenis>
-         <section ref={stickyTitlesRef} className="sticky-titles h-screen">
-            <div className="sticky-titles-nav">
-               <a href="/about" className="primary sm">About Me</a>
-               <a href="/about" className="primary sm">About BSM</a>
-            </div>
-            <div className="sticky-titles-footer">
-               <a href="/franchise" className="primary sm">Franchise</a>
-               <a href="/contact" className="primary sm">Contact</a>
-            </div>
-            <h2 ref={(el) => (titlesRef.current[0] = el)}>
-               Blush Salon offers premium beauty services with personalized, expert care.
-            </h2>
-            <h2 ref={(el) => (titlesRef.current[1] = el)}>
-               Established in 2015, Blush is trusted for quality and professionalism.
-            </h2>
-            <h2 ref={(el) => (titlesRef.current[2] = el)}>
-               Over 500 brides choose Blush for flawless, memorable transformations.
-            </h2>
-         </section>
+         <div className="sticky-titles-safe-wrapper">
+            <section ref={stickyTitlesRef} className="sticky-titles h-screen">
+               <div className="sticky-titles-nav">
+                  <a href="/about" className="primary sm">About Me</a>
+                  <a href="/about" className="primary sm">About BSM</a>
+               </div>
+               <div className="sticky-titles-footer">
+                  <a href="/franchise" className="primary sm">Franchise</a>
+                  <a href="/contact" className="primary sm">Contact</a>
+               </div>
+               <h2 ref={(el) => (titlesRef.current[0] = el)}>
+                  Blush Salon offers premium beauty services with personalized, expert care.
+               </h2>
+               <h2 ref={(el) => (titlesRef.current[1] = el)}>
+                  Established in 2015, Blush is trusted for quality and professionalism.
+               </h2>
+               <h2 ref={(el) => (titlesRef.current[2] = el)}>
+                  Over 500 brides choose Blush for flawless, memorable transformations.
+               </h2>
+            </section>
+         </div>
          <ScrollCanvas />
       </>
    )
