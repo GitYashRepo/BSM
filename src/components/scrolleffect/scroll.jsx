@@ -35,7 +35,7 @@ export function ScrollCanvas() {
    }, [])
 
 
-   useEffect(() => {
+   useLayoutEffect(() => { // Changed useEffect to useLayoutEffect
       if (!imagesLoaded || !canvasRef.current || !containerRef.current) return
 
       const canvas = canvasRef.current
@@ -113,6 +113,7 @@ export function ScrollCanvas() {
    return (
       <>
          {/* Animation Section */}
+      <div className="scroll-canvas-safe-wrapper">
          <div
             ref={containerRef}
             className="relative w-screen bg-black"

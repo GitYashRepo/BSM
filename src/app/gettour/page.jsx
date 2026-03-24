@@ -16,7 +16,7 @@ export default function GetTour() {
    const stickyTitlesRef = useRef(null);
    const titlesRef = useRef([]);
 
-   useEffect(() => {
+   useLayoutEffect(() => {
       const titles = titlesRef.current.filter(Boolean);
       const stickySection = stickyTitlesRef.current;
       
