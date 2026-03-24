@@ -99,10 +99,8 @@ export default function GetTour() {
          );
 
       return () => {
-         pinTrigger.kill();
-         if (masterTimeline.scrollTrigger) {
-            masterTimeline.scrollTrigger.kill();
-         }
+         // Kill ALL ScrollTriggers to prevent GSAP pin nodes conflicting with React's virtualDOM cleanup
+         ScrollTrigger.getAll().forEach(trigger => trigger.kill());
          masterTimeline.kill();
          window.removeEventListener("resize", handleResize);
       };
