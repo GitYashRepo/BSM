@@ -100,9 +100,6 @@ export default function GetTour() {
 
       return () => {
          pinTrigger.kill();
-         if (workHeaderPinTrigger) {
-            workHeaderPinTrigger.kill();
-         }
          if (masterTimeline.scrollTrigger) {
             masterTimeline.scrollTrigger.kill();
          }
