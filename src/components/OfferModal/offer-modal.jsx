@@ -22,16 +22,25 @@ export default function OfferModal() {
             const activeOffers = data.filter(offer => {
                if (offer.isActive === false) return false;
 
+               const now = new Date();
+               const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+
                // Date filtering
-               if (offer.startDate && new Date(offer.startDate) > now) return false;
+               if (offer.startDate) {
+                  const start = new Date(offer.startDate);
+                  const offerStart = new Date(start.getFullYear(), start.getMonth(), start.getDate());
+                  if (offerStart > today) return false;
+               }
+
                if (offer.endDate) {
                   const end = new Date(offer.endDate);
-                  end.setHours(23, 59, 59, 999); // Inclusion of the entire end date
-                  if (end < now) return false;
+                  const offerEnd = new Date(end.getFullYear(), end.getMonth(), end.getDate());
+                  if (offerEnd < today) return false;
                }
 
                // Time filtering
                if (offer.startTime || offer.endTime) {
+                  const currentTimeStr = now.getHours().toString().padStart(2, '0') + ':' + now.getMinutes().toString().padStart(2, '0');
                   if (offer.startTime && currentTimeStr < offer.startTime) return false;
                   if (offer.endTime && currentTimeStr > offer.endTime) return false;
                }
@@ -118,11 +127,15 @@ export default function OfferModal() {
                            <p className="text-gray-300 text-xs mb-3">{offer.description}</p>
                         )}
 
-                        {/* Only render price block if any price exists */}
-                        {(offer.discountedPrice || offer.regularPrice) && (
+                        {/* Only render price block if any price exists and is > 0 */}
+                        {((offer.discountedPrice && Number(offer.discountedPrice) > 0) || (offer.regularPrice && Number(offer.regularPrice) > 0)) && (
                            <div className="flex items-center gap-2 mt-2">
-                              {offer.discountedPrice && <span className="font-bold text-xl text-green-400 leading-none">₹{offer.discountedPrice}</span>}
-                              {offer.regularPrice && <span className="text-gray-400 line-through text-xs leading-none">₹{offer.regularPrice}</span>}
+                              {offer.discountedPrice && Number(offer.discountedPrice) > 0 && (
+                                 <span className="font-bold text-xl text-green-400 leading-none">₹{offer.discountedPrice}</span>
+                              )}
+                              {offer.regularPrice && Number(offer.regularPrice) > 0 && (
+                                 <span className="text-gray-400 line-through text-xs leading-none">₹{offer.regularPrice}</span>
+                              )}
                            </div>
                         )}
                      </div>

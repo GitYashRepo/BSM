@@ -7,29 +7,29 @@ const navItems = [
    {
       label: "About",
       items: [
-         { label: "Home", href: "/" },
-         { label: "Experience our interior", href: "/gettour" },
+         { label: "Go to Home", href: "/" },
          { label: "Who Am I ?", href: "/about" },
-         // { label: "About BSM", href: "/bsm" },
-      ],
+         { label: "Experience our interior", href: "/gettour" },
+      ]
    },
    {
       label: "Makeup",
       items: [
-         { label: "Home", href: "/" },
+         { label: "Go to Home", href: "/" },
          { label: "Makeup", href: "/makeup" },
+         { label: "Bridal Packages", href: "/bridal-packages" },
          { label: "Bridal Makeup", href: "/makeup#bridal" },
          { label: "Party Makeup", href: "/makeup#party" },
          { label: "HD Makeup", href: "/makeup#hd" },
          { label: "Airbrush Makeup", href: "/makeup#airbrush" },
          { label: "Engagement Makeup", href: "/makeup#engagement" },
          { label: "Celebrity Makeup", href: "/makeup#celebrity" },
-      ],
+      ]
    },
    {
       label: "Hair",
       items: [
-         { label: "Home", href: "/" },
+         { label: "Go to Home", href: "/" },
          { label: "Hair", href: "/hair" },
          { label: "Haircuts", href: "/hair#haircuts" },
          { label: "Hair Color", href: "/hair#color" },
@@ -38,12 +38,12 @@ const navItems = [
          { label: "Smoothening", href: "/hair#smoothening" },
          { label: "Hair Extensions", href: "/hair#extensions" },
          { label: "Bridal Hairstyling", href: "/hair#bridal-hair" },
-      ],
+      ]
    },
    {
       label: "Beauty",
       items: [
-         { label: "Home", href: "/" },
+         { label: "Go to Home", href: "/" },
          { label: "Beauty", href: "/beauty" },
          { label: "Facial", href: "/beauty#facial" },
          { label: "Cleanup", href: "/beauty#cleanup" },
@@ -52,12 +52,12 @@ const navItems = [
          { label: "Waxing", href: "/beauty#waxing" },
          { label: "Manicure", href: "/beauty#manicure" },
          { label: "Pedicure", href: "/beauty#pedicure" },
-      ],
+      ]
    },
    {
       label: "Esthetics",
       items: [
-         { label: "Home", href: "/" },
+         { label: "Go to Home", href: "/" },
          { label: "Esthetics", href: "/esthetics" },
          { label: "Skin Treatments", href: "/esthetics#skin" },
          { label: "Anti-Aging", href: "/esthetics#anti-aging" },
@@ -65,47 +65,47 @@ const navItems = [
          { label: "Pigmentation", href: "/esthetics#pigmentation" },
          { label: "Laser Treatment", href: "/esthetics#laser" },
          { label: "Chemical Peels", href: "/esthetics#peels" },
-      ],
+      ]
    },
    {
       label: "Signature Services",
       items: [
-         { label: "Home", href: "/" },
+         { label: "Go to Home", href: "/" },
          { label: "Signature Services", href: "/signatureservices" },
-         { label: "Bridal Makeovers", href: "#bridal-makeover" },
-         { label: "Pre-Bridal Package", href: "#pre-bridal" },
-         { label: "Groom Makeover", href: "#groom" },
-         { label: "Celebrity Styling", href: "#celebrity-styling" },
-      ],
+         { label: "Bridal Makeovers", href: "/signatureservices#bridal-makeover" },
+         { label: "Pre-Bridal Package", href: "/signatureservices#pre-bridal" },
+         { label: "Bridal Packages", href: "/bridal-packages" },
+         { label: "Groom Makeover", href: "/signatureservices#groom" },
+         { label: "Celebrity Styling", href: "/signatureservices#celebrity-styling" },
+      ]
    },
    {
       label: "Franchise",
       items: [
-         { label: "Home", href: "/" },
+         { label: "Go to Home", href: "/" },
          { label: "Franchise", href: "/franchise" },
          { label: "Why Partner With Us", href: "/franchise#whypartnerwithus" },
          { label: "Investment Details", href: "/franchise#investment" },
          { label: "Support & Training", href: "/franchise#support" },
          { label: "Apply Now", href: "/franchise#apply" },
-      ],
+      ]
    },
    {
       label: "Gallery",
       items: [
-         { label: "Home", href: "/" },
-         { label: "Bridal Gallery", href: "/gallery" },
+         { label: "Go to Home", href: "/" },
+         { label: "Bridal Makeup", href: "/gallery" },
          { label: "Party Makeup", href: "/gallery" },
-         { label: "Video Gallery", href: "/gallery" },
-      ],
+         { label: "Engagement Makeup", href: "/gallery" },
+      ]
    },
    {
       label: "Contact",
       items: [
-         { label: "Home", href: "/" },
-         { label: "Contact", href: "/contact" },
-         { label: "Book Appointment", href: "/contact#appointment" },
-         { label: "Our Locations", href: "/contact#location" },
-      ],
+         { label: "Go to Home", href: "/" },
+         { label: "Contact-Support", href: "/contact" },
+            { label: "Our Locations", href: "/contact#location" },
+      ]
    },
 ]
 

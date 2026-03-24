@@ -30,10 +30,20 @@ export default function OffersPage() {
       e.preventDefault();
       setLoading(true);
       try {
+         const payload = {
+            ...form,
+            regularPrice: form.regularPrice === "" ? null : Number(form.regularPrice),
+            discountedPrice: form.discountedPrice === "" ? null : Number(form.discountedPrice),
+            startDate: form.startDate === "" ? null : form.startDate,
+            endDate: form.endDate === "" ? null : form.endDate,
+            startTime: form.startTime === "" ? null : form.startTime,
+            endTime: form.endTime === "" ? null : form.endTime,
+         };
+
          const res = await fetch("/api/offer", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(form)
+            body: JSON.stringify(payload)
          });
          if (res.ok) {
             setForm({
@@ -187,15 +197,38 @@ export default function OffersPage() {
                         <span className={`text-[10px] uppercase tracking-widest px-2 py-0.5 rounded-full ${o.type === 'daily' ? 'bg-blue-50 text-blue-600' : 'bg-amber-50 text-amber-600'}`}>
                            {o.type}
                         </span>
+                        {(() => {
+                           const now = new Date();
+                           const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+                           
+                           if (o.startDate) {
+                              const start = new Date(o.startDate);
+                              const offerStart = new Date(start.getFullYear(), start.getMonth(), start.getDate());
+                              if (offerStart > today) return <span className="text-[10px] uppercase tracking-widest px-2 py-0.5 rounded-full bg-gray-100 text-gray-600">Upcoming</span>;
+                           }
+                           
+                           if (o.endDate) {
+                              const end = new Date(o.endDate);
+                              const offerEnd = new Date(end.getFullYear(), end.getMonth(), end.getDate());
+                              if (offerEnd < today) return <span className="text-[10px] uppercase tracking-widest px-2 py-0.5 rounded-full bg-red-100 text-red-600">Expired</span>;
+                           }
+                           
+                           return <span className="text-[10px] uppercase tracking-widest px-2 py-0.5 rounded-full bg-green-100 text-green-600">Active Now</span>;
+                        })()}
                         <h3 className="font-bold text-gray-900">{o.heading}</h3>
                      </div>
-                     <p className="text-sm text-gray-500">
-                        Price: <span className="line-through">₹{o.regularPrice}</span> <span className="text-green-600 font-bold ml-1">₹{o.discountedPrice}</span>
-                     </p>
+                     {((o.discountedPrice && Number(o.discountedPrice) > 0) || (o.regularPrice && Number(o.regularPrice) > 0)) ? (
+                        <p className="text-sm text-gray-500">
+                           Price: {o.regularPrice && Number(o.regularPrice) > 0 && <span className="line-through mr-1">₹{o.regularPrice}</span>}
+                           {o.discountedPrice && Number(o.discountedPrice) > 0 && <span className="text-green-600 font-bold">₹{o.discountedPrice}</span>}
+                        </p>
+                     ) : (
+                        <p className="text-sm text-gray-400 italic">No price set (Optional display)</p>
+                     )}
                      {(o.startDate || o.endDate || o.startTime || o.endTime) && (
                         <p className="text-[11px] text-amber-600 font-medium">
                            Timing: {o.startDate ? new Date(o.startDate).toLocaleDateString() : 'Always'} - {o.endDate ? new Date(o.endDate).toLocaleDateString() : 'Forever'}
-                           { (o.startTime || o.endTime) && ` | ${o.startTime || '00:00'} to ${o.endTime || '23:59'}`}
+                           {(o.startTime || o.endTime) && ` | ${o.startTime || '00:00'} to ${o.endTime || '23:59'}`}
                         </p>
                      )}
                   </div>

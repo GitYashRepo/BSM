@@ -24,7 +24,7 @@ export default function FullScreenSlider() {
    }
 
    return (
-      <div className="relative w-full h-auto md:h-[90vh] mb-10">
+      <div className="relative w-full h-auto md:h-[90vh]">
          <div
             className="flex transition-transform duration-700 ease-in-out h-full"
             style={{ transform: `translateX(-${currentIndex * 100}%)` }}
