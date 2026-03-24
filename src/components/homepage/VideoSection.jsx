@@ -47,7 +47,7 @@ export default function VideoSection() {
                whileInView={{ opacity: 1, y: 0 }}
                viewport={{ once: true }}
                transition={{ duration: 0.8 }}
-               className="relative group cursor-pointer overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.3)] bg-neutral-900 border border-white/10 w-full md:h-screen h-auto"
+               className="relative group cursor-pointer overflow-hidden bg-neutral-900 border border-white/10 w-full md:h-screen h-auto"
                onClick={() => setIsModalOpen(true)}
             >
                {/* Video Thumbnail / Preview */}
