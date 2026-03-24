@@ -53,7 +53,7 @@ export default function VideoSection() {
                {/* Video Thumbnail / Preview */}
                <video
                   ref={videoRef}
-                  src="/video/homevdo.mp4"
+                  src={`https://ik.imagekit.io/imageidsetupkey/homevdo%20(2).mp4`}
                   autoPlay
                   muted
                   loop
@@ -123,7 +123,7 @@ export default function VideoSection() {
                      onClick={(e) => e.stopPropagation()}
                   >
                      <video
-                        src="/video/homevdo.mp4"
+                        src={`https://drive.google.com/uc?export=download&id=1gNviwZUyhzUbjEf05pAmxiext_nf7GaZ`}
                         controls
                         autoPlay
                         className="w-full max-h-screen object-contain"
