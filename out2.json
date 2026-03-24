@@ -1,0 +1,42 @@
+[
+  {
+    "_id": "6999fd54c537c7920dcd8592",
+    "heading": "Engagement Makeup",
+    "description": "",
+    "createdAt": "2026-02-21T18:45:40.474Z",
+    "updatedAt": "2026-02-21T18:45:40.474Z",
+    "__v": 0
+  },
+  {
+    "_id": "6999fbc2c537c7920dcd858d",
+    "heading": "Party Makeup",
+    "description": "",
+    "createdAt": "2026-02-21T18:38:58.318Z",
+    "updatedAt": "2026-02-21T18:38:58.318Z",
+    "__v": 0
+  },
+  {
+    "_id": "6999fabac537c7920dcd8586",
+    "heading": "Bridal",
+    "description": "",
+    "createdAt": "2026-02-21T18:34:34.170Z",
+    "updatedAt": "2026-02-21T18:34:34.170Z",
+    "__v": 0
+  },
+  {
+    "_id": "6999f93ac537c7920dcd8573",
+    "heading": "Bridal Image",
+    "description": "",
+    "createdAt": "2026-02-21T18:28:10.883Z",
+    "updatedAt": "2026-02-21T18:28:10.883Z",
+    "__v": 0
+  },
+  {
+    "_id": "6999f27c1dc091cf1767b54c",
+    "heading": "Bridal Image",
+    "description": "",
+    "createdAt": "2026-02-21T17:59:24.298Z",
+    "updatedAt": "2026-02-21T17:59:24.298Z",
+    "__v": 0
+  }
+]

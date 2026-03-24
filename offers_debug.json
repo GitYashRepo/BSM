@@ -1,0 +1,49 @@
+﻿{
+    "value":  [
+                  {
+                      "_id":  "69c20e4c3e272c9ea67bbccd",
+                      "type":  "daily",
+                      "heading":  "Test Heading",
+                      "description":  "Testing .................",
+                      "regularPrice":  null,
+                      "discountedPrice":  null,
+                      "startDate":  "2026-03-26T00:00:00.000Z",
+                      "endDate":  "2026-03-31T00:00:00.000Z",
+                      "startTime":  "10:01",
+                      "endTime":  "22:01",
+                      "isActive":  true,
+                      "createdAt":  "2026-03-24T04:08:44.757Z",
+                      "updatedAt":  "2026-03-24T04:08:44.757Z",
+                      "__v":  0
+                  },
+                  {
+                      "_id":  "69be230bdb04c9f5281cd826",
+                      "type":  "seasonal",
+                      "heading":  "New Offer For April Season",
+                      "description":  "April Season offer upto 25% off",
+                      "regularPrice":  null,
+                      "discountedPrice":  null,
+                      "startDate":  "2026-04-01T00:00:00.000Z",
+                      "endDate":  "2026-04-30T00:00:00.000Z",
+                      "startTime":  "10:00",
+                      "endTime":  "20:00",
+                      "isActive":  true,
+                      "createdAt":  "2026-03-21T04:48:11.741Z",
+                      "updatedAt":  "2026-03-21T04:48:11.741Z",
+                      "__v":  0
+                  },
+                  {
+                      "_id":  "69aaa70ee4928c578111e068",
+                      "type":  "daily",
+                      "heading":  "Everyday value",
+                      "description":  "With Rica Wax , De-tan free",
+                      "regularPrice":  950,
+                      "discountedPrice":  600,
+                      "isActive":  true,
+                      "createdAt":  "2026-03-06T10:06:06.568Z",
+                      "updatedAt":  "2026-03-06T10:06:06.568Z",
+                      "__v":  0
+                  }
+              ],
+    "Count":  3
+}

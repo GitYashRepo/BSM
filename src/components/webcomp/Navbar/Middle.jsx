@@ -1,11 +1,37 @@
-import { Phone, Calendar, MessageCircle } from "lucide-react";
-import { Button } from "@/components/ui/button";
+"use client";
+
+import { Phone, LogOut, MessageCircle, Menu, Instagram, Facebook, } from "lucide-react";
+import AppointmentPopover from "../Appointment/AppointmentPopover";
+import useAdminAuth from "@/hooks/useAdminAuth";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 
-const MiddleBar = () => {
+
+const MiddleBar = ({ onMenuClick }) => {
+   const role = useAdminAuth();
+   const router = useRouter();
+
+   async function handleLogout() {
+      try {
+         if (role === "admin") {
+            await fetch("/api/admin/logout", { method: "POST" });
+         }
+
+         if (role === "subadmin") {
+            await fetch("/api/admin/logoutsubadmin", { method: "POST" });
+         }
+
+         router.push("/login");
+         // Force reload to clear all states and cached roles
+         window.location.reload();
+      } catch (err) {
+         console.error(err);
+      }
+   }
+
    return (
-      <div className="bg-navbar-middle border-b border-border px-14">
-         <div className="container mx-auto px-4 py-1">
+      <div className="bg-[#191A1A] px-2 md:px-14">
+         <div className="container mx-auto py-2">
             <div className="flex items-center justify-between gap-6">
                {/* Logo */}
                <div className="flex-shrink-0">
@@ -18,7 +44,7 @@ const MiddleBar = () => {
 
                      <div className="flex flex-col">
                         <div
-                           className="flex flex-row text-[#D99726] font-bold whitespace-nowrap justify-between text-xl"
+                           className="flex flex-row text-[#D99726] font-bold whitespace-nowrap justify-between text-base md:text-xl"
                         >
                            <span>B</span>
                            <span>L</span>
@@ -28,8 +54,8 @@ const MiddleBar = () => {
                         </div>
 
                         {/* Subtitle */}
-                        <span className="text-[10px] md:text-xs font-bold tracking-widest uppercase text-gray-700">
-                           By Sakshi Makeovers
+                        <span className="text-[12px] md:text-xs font-bold tracking-widest uppercase text-white">
+                           By Sakshi
                         </span>
                      </div>
                   </a>
@@ -38,39 +64,55 @@ const MiddleBar = () => {
 
                {/* Contact & Actions */}
                <div className="flex items-center gap-6">
-                  {/* Contact Info */}
-                  <div className="hidden lg:flex items-center gap-6 text-sm">
-                     <a
-                        href="tel:9053102324"
-                        className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
-                     >
-                        <Phone className="w-4 h-4" />
-                        <span>90531-02324</span>
-                     </a>
-                     <a
-                        href="https://wa.me/9467777773"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
-                     >
-                        <MessageCircle className="w-4 h-4" />
-                        <span>WhatsApp</span>
-                     </a>
-                  </div>
+                  {!role && (
+                     <ul className="flex gap-4">
+                        {[
+                           { icon: Instagram, label: "Instagram", link: "https://www.instagram.com/sakshi.makeovers" },
+                           { icon: Facebook, label: "Facebook", link: "https://www.facebook.com/share/1C6Croo93d/?mibextid=wwXIfr" },
+                        ].map(({ icon: Icon, label, link }) => (
+                           <li key={label}>
+                              <a
+                                 href={link}
+                                 target="_blank"
+                                 className="text-gray-400 hover:text-[#D99726] transition-colors duration-300"
+                                 aria-label={label}
+                              >
+                                 <Icon className="w-4 h-4" />
+                              </a>
+                           </li>
+                        ))}
+                     </ul>
+                  )}
 
-                  {/* Action Buttons */}
+
                   <div className="flex items-center gap-3">
-                     <Link href="/contact#appointment">
-                        <Button className="bg-[#D99726] hover:cursor-pointer hover:bg-primary/90 text-primary-foreground font-medium px-6 rounded-full gap-2">
-                           <Calendar className="w-4 h-4" />
-                           <span className="hidden sm:inline">Book Appointment</span>
-                        </Button>
-                     </Link>
+                     {!role && (
+                        <div className="hidden md:block">
+                           <AppointmentPopover />
+                        </div>
+                     )}
+
+                     {/* Logout Button */}
+                     {role && (
+                        <button
+                           onClick={handleLogout}
+                           className="flex items-center gap-2 p-1 text-xl rounded-sm border bg-red-600 text-white hover:bg-red-700 transition"
+                        >
+                           <LogOut size={16} />
+                        </button>
+                     )}
+
+                     <button
+                        onClick={onMenuClick}
+                        className="lg:hidden p-1 rounded-sm border bg-white"
+                     >
+                        <Menu size={16} />
+                     </button>
                   </div>
                </div>
             </div>
          </div>
-      </div>
+      </div >
    );
 };
 

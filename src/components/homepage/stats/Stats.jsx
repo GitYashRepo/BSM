@@ -16,13 +16,13 @@ export function StatsSection() {
          <div className="max-w-6xl mx-auto px-4">
             <AnimatedText
                as="p"
-               animation="char"
+               animation="words"
                className="text-xl uppercase text-neutral-600 mb-6"
             >
                By the Numbers
             </AnimatedText>
 
-            <div className="flex flex-row justify-between">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-y-12 gap-x-6">
                {stats.map((stat, index) => (
                   <StatCard key={index} stat={stat} index={index} />
                ))}
@@ -92,7 +92,6 @@ function StatCard({ stat, index }) {
       >
          <div className="space-y-4">
 
-            {/* Number */}
             <div className="flex items-baseline gap-2">
                <span className="text-4xl md:text-4xl lg:text-6xl font-light tracking-tight text-neutral-900 tabular-nums leading-none">
                   {count.toLocaleString()}

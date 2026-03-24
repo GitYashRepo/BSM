@@ -1,14 +1,19 @@
 import jwt from "jsonwebtoken";
 
 export function verifyToken(req) {
-  const authHeader = req.headers.get("authorization");
-
-  if (!authHeader) return null;
-
-  const token = authHeader.split(" ")[1];
-
   try {
-    return jwt.verify(token, process.env.JWT_SECRET);
+    const adminToken = req.cookies.get("admin_token")?.value;
+    const subAdminToken = req.cookies.get("subadmin_token")?.value;
+
+    if (adminToken) {
+      return jwt.verify(adminToken, process.env.JWT_SECRET);
+    }
+
+    if (subAdminToken) {
+      return jwt.verify(subAdminToken, process.env.JWT_SECRET_PRICE);
+    }
+
+    return null;
   } catch {
     return null;
   }

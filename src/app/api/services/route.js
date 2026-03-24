@@ -1,11 +1,21 @@
 import { connectDB } from "@/lib/mongodb";
-import Service from "@/lib/models/Service";
+import Service from "@/models/Service";
+import Category from "@/models/Category";   // ← must import so Mongoose registers the schema before .populate()
 import { verifyToken } from "@/lib/auth";
 
 export async function GET(req) {
   await connectDB();
-  const services = await Service.find();
-  return Response.json(services);
+  const { searchParams } = new URL(req.url);
+  const categoryId = searchParams.get("categoryId");
+
+  const filter = {};
+  if (categoryId) filter.category = categoryId;
+
+  const data = await Service.find(filter)
+    .populate("category", "name order")
+    .sort({ createdAt: -1 });
+
+  return Response.json(data);
 }
 
 export async function POST(req) {
@@ -13,10 +23,20 @@ export async function POST(req) {
   if (!user) return Response.json({ message: "Unauthorized" }, { status: 401 });
 
   await connectDB();
-  const data = await req.json();
-  const service = await Service.create(data);
+  const body = await req.json();
+  const { category, workName, price, offerPrice } = body;
 
-  return Response.json(service);
+  try {
+    const created = await Service.create({
+      category,
+      workName,
+      price: price?.trim(),
+      offerPrice: offerPrice?.trim() || null,
+    });
+    return Response.json(created);
+  } catch (err) {
+    return Response.json({ message: err.message }, { status: 400 });
+  }
 }
 
 export async function PUT(req) {
@@ -24,10 +44,21 @@ export async function PUT(req) {
   if (!user) return Response.json({ message: "Unauthorized" }, { status: 401 });
 
   await connectDB();
-  const { id, ...data } = await req.json();
+  const body = await req.json();
+  const { id, price, offerPrice, ...rest } = body;
 
-  const updated = await Service.findByIdAndUpdate(id, data, { new: true });
-  return Response.json(updated);
+  const updateData = {
+    ...rest,
+    ...(price !== undefined && { price: price?.trim() }),
+    ...(offerPrice !== undefined && { offerPrice: offerPrice?.trim() || null }),
+  };
+
+  try {
+    const updated = await Service.findByIdAndUpdate(id, updateData, { new: true });
+    return Response.json(updated);
+  } catch (err) {
+    return Response.json({ message: err.message }, { status: 400 });
+  }
 }
 
 export async function DELETE(req) {
@@ -37,6 +68,10 @@ export async function DELETE(req) {
   await connectDB();
   const { id } = await req.json();
 
-  await Service.findByIdAndDelete(id);
-  return Response.json({ message: "Deleted" });
+  try {
+    await Service.findByIdAndDelete(id);
+    return Response.json({ message: "Deleted" });
+  } catch (err) {
+    return Response.json({ message: err.message }, { status: 400 });
+  }
 }

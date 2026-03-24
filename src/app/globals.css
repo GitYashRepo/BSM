@@ -8,6 +8,41 @@
   font-style: normal;
 }
 
+:root {
+  --bg: #e3e3db;
+  --bg200: rgba(227, 227, 219, 0.25);
+  --fg: #0f0f0f;
+  --fg200: #1f1f1f;
+}
+
+/* Custom Scrollbar Styles - Awwwards Inspired */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #1e293b 0%, #334155 50%, #1e293b 100%);
+  border-radius: 2px;
+  transition: background 0.3s ease;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+  width: 10px;
+}
+
+/* Firefox Scrollbar */
+.custom-scrollbar {
+  scrollbar-color: #334155 transparent;
+  scrollbar-width: thin;
+}
+
+
 html, body {
   margin: 0;
   padding: 0;

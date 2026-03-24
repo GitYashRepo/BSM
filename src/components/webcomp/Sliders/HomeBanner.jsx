@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
 const slides = [
    {
@@ -14,7 +15,8 @@ const slides = [
       description:
          "Enhance your look with flawless makeup artistry tailored for parties, events, and everyday beauty.",
       buttonText: "EXPLORE",
-      image: "/images/img2.jpg",
+      link: "/makeup",
+      image: "/comp/Makeup.jpeg",
    },
    {
       id: 2,
@@ -24,7 +26,8 @@ const slides = [
       description:
          "Experience expert haircuts, smoothening, styling, and treatments crafted for your unique texture.",
       buttonText: "EXPLORE",
-      image: "/images/img5.jpg",
+      link: "/hair",
+      image: "/banner/hair3.jpeg",
    },
    {
       id: 3,
@@ -34,7 +37,8 @@ const slides = [
       description:
          "Refine your features with professional beauty services including brows, lashes, and signature detailing.",
       buttonText: "EXPLORE",
-      image: "/images/img7.jpg",
+      link: "/beauty",
+      image: "/comp/beauty.jpeg",
    },
    {
       id: 4,
@@ -44,17 +48,19 @@ const slides = [
       description:
          "Rejuvenate your skin with premium facials, peels, and esthetic therapies for long-lasting glow.",
       buttonText: "EXPLORE",
-      image: "/images/img9.jpg",
+      link: "/esthetics",
+      image: "/comp/Esthetics.jpeg",
    },
    {
       id: 5,
       tag: "BLUSH",
-      heading: "Skin",
+      heading: "Signature Services",
       title: "Glow",
       description:
          "Brighten and nourish your skin with advanced skincare treatments crafted for clarity and hydration.",
       buttonText: "EXPLORE",
-      image: "/images/img3.jpg",
+      link: "/signatureservices",
+      image: "/comp/img3.jpg",
    },
    {
       id: 6,
@@ -64,264 +70,174 @@ const slides = [
       description:
          "Experience luxurious bridal makeup designed to stay flawless, elegant, and radiant throughout your special day.",
       buttonText: "EXPLORE",
-      image: "/images/img8.jpg",
+      link: "/makeup",
+      image: "/comp/img15.jpg",
    },
 ];
 
 
 const SLIDE_DURATION = 5000
 
+
 export default function SalonSlider() {
    const [current, setCurrent] = useState(0)
    const [direction, setDirection] = useState(0)
    const [progress, setProgress] = useState(0)
-   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
    const sliderRef = useRef(null)
 
-   const slideVariants = {
-      enter: (dir) => ({
-         x: dir > 0 ? 1000 : -1000,
-         opacity: 0,
-      }),
-      center: {
-         zIndex: 1,
-         x: 0,
-         opacity: 1,
-      },
-      exit: (dir) => ({
-         zIndex: 0,
-         x: dir < 0 ? 1000 : -1000,
-         opacity: 0,
-      }),
-   }
+   const slide = slides[current]
 
-   const contentVariants = {
-      hidden: { y: 80, opacity: 0 },
-      visible: (i) => ({
-         y: 0,
-         opacity: 1,
-         transition: {
-            delay: i * 0.1,
-            duration: 0.6,
-            ease: "easeOut",
-         },
-      }),
-      exit: {
-         y: 80,
-         opacity: 0,
-         transition: { duration: 0.4 },
-      },
-   }
-
-   const paginate = (newDirection) => {
-      setDirection(newDirection)
-      setCurrent((prev) => (prev + newDirection + slides.length) % slides.length)
+   const paginate = (dir) => {
+      setDirection(dir)
+      setCurrent((prev) => (prev + dir + slides.length) % slides.length)
       setProgress(0)
    }
 
    useEffect(() => {
       setProgress(0)
-      const startTime = Date.now()
+      const start = Date.now()
 
-      const animationInterval = setInterval(() => {
-         const elapsed = Date.now() - startTime
-         const newProgress = Math.min((elapsed / SLIDE_DURATION) * 100, 100)
-         setProgress(newProgress)
+      const timer = setInterval(() => {
+         const elapsed = Date.now() - start
+         const pct = Math.min((elapsed / SLIDE_DURATION) * 100, 100)
+         setProgress(pct)
 
-         if (newProgress >= 100) {
-            clearInterval(animationInterval)
+         if (pct === 100) {
+            clearInterval(timer)
             paginate(1)
          }
-      }, 8)
+      }, 16)
 
-      return () => clearInterval(animationInterval)
+      return () => clearInterval(timer)
    }, [current])
-
-   const handleMouseMove = (e) => {
-      if (!sliderRef.current) return
-
-      const rect = sliderRef.current.getBoundingClientRect()
-      const x = (e.clientX - rect.left) / rect.width - 0.5
-      const y = (e.clientY - rect.top) / rect.height - 0.5
-
-      setMousePosition({
-         x: x * -20,
-         y: y * -20,
-      })
-   }
-
-   const handleMouseLeave = () => {
-      setMousePosition({ x: 0, y: 0 })
-   }
-
-   const slide = slides[current]
 
    return (
       <div
          ref={sliderRef}
-         onMouseMove={handleMouseMove}
-         onMouseLeave={handleMouseLeave}
-         className="relative w-full h-[80vh] overflow-hidden bg-white flex"
+         className="relative m-auto border md:border-0 w-[80%] md:w-full h-[90vh] md:h-[80vh] overflow-hidden bg-white flex flex-col justify-between md:flex-row"
       >
-         {/* Left Side - White background with black text */}
-         <div className="w-1/2 flex flex-col justify-between p-8 md:p-12 lg:p-16 z-10 bg-white">
-            {/* Top Section */}
-            <div>
+         {/* IMAGE SECTION */}
+         <div className="w-full md:w-2/5 h-[60%] md:h-full relative order-1 md:order-2 overflow-hidden">
+            <AnimatePresence mode="wait">
                <motion.div
-                  key={`tag-${current}`}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.5 }}
-                  className="text-xs md:text-sm tracking-widest text-[#750851] font-bold uppercase"
+                  key={current}
+                  initial={{ opacity: 0, scale: 1.05 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.8, ease: "easeInOut" }}
+                  className="absolute inset-0"
                >
-                  {slide.tag}
+                  <Image
+                     src={slide.image}
+                     alt={slide.heading}
+                     fill
+                     priority
+                     className="object-cover object-top md:object-top"
+                  />
                </motion.div>
-            </div>
+            </AnimatePresence>
+         </div>
 
-            {/* Center Content - Animates from below */}
-            <div className="flex-1 flex gap-20">
-               <div className="flex flex-col items-center justify-start pt-12">
-                  <div className="w-[1px] h-40 bg-gray-200 relative rounded-full overflow-hidden">
+         {/* CONTENT SECTION */}
+         <div className="w-full md:w-2/3 flex flex-col justify-between px-6 pb-6 md:p-12 lg:p-16 order-2 md:order-1 relative">
+            {/* TAG */}
+            <motion.div
+               key={`tag-${current}`}
+               initial={{ opacity: 0, y: 10 }}
+               animate={{ opacity: 1, y: 0 }}
+               transition={{ duration: 0.4 }}
+               className="tracking-widest text-sm text-[#750851] font-bold hidden md:block"
+            >
+               {slide.tag}
+            </motion.div>
+
+            {/* CENTER CONTENT */}
+            <div className="flex flex-col md:flex-row gap-6 md:gap-20 flex-1 mt-6 ml-4 md:ml-0">
+               {/* PROGRESS BAR */}
+               <div className="flex hidden md:block items-center md:flex-col md:justify-start justify-center">
+                  <div className="w-full md:w-[2px] h-[4px] md:h-40 bg-gray-200 rounded-full overflow-hidden">
                      <motion.div
-                        className="absolute top-0 left-0 w-full bg-[#750851] rounded-full"
-                        style={{ height: `${progress}%` }}
-                        transition={{ type: "linear" }}
+                        className="bg-[#750851]"
+                        style={{
+                           width:
+                              typeof window !== "undefined" && window.innerWidth < 768
+                                 ? `${progress}%`
+                                 : "100%",
+                           height:
+                              typeof window !== "undefined" && window.innerWidth >= 768
+                                 ? `${progress}%`
+                                 : "100%",
+                        }}
                      />
                   </div>
                </div>
 
-               {/* Content */}
-               <div className="flex-1 flex flex-col justify-start relative z-0">
+               {/* TEXT */}
+               <div className="relative flex-1 ">
+                  {/* WATERMARK NUMBER */}
                   <motion.div
-                     key={`number-${current}`}
+                     key={`num-${current}`}
                      initial={{ opacity: 0 }}
                      animate={{ opacity: 0.08 }}
-                     exit={{ opacity: 0 }}
-                     transition={{ duration: 0.5 }}
-                     className="absolute -top-20 left-6 pointer-events-none -z-10"
+                     className="absolute -top-10 md:-top-32 right-0 md:left-6 text-[160px] md:text-[300px] font-extrabold pointer-events-none select-none"
+                     style={{ fontFamily: "Georgia, serif" }}
                   >
-                     <span
-                        className="text-[300px] font-extrabold text-black select-none"
-                        style={{ fontFamily: "Georgia, serif", letterSpacing: "-0.05em" }}
-                     >
-                        {String(current + 1).padStart(2, "0")}
-                     </span>
+                     {String(current + 1).padStart(2, "0")}
                   </motion.div>
 
-                  <div className="pt-10">
-                     <AnimatePresence mode="wait">
-                        <motion.div
-                           key={`title-${current}`}
-                           variants={contentVariants}
-                           initial="hidden"
-                           animate="visible"
-                           exit="exit"
-                           custom={1}
-                           className="relative z-10 py-4"
-                        >
-                           <p className="text-sm uppercase tracking-widest md:text-md lg:text-md text-[#750851] font-light">{slide.title}</p>
-                        </motion.div>
+                  <AnimatePresence mode="wait">
+                     <motion.div
+                        key={`title-${current}`}
+                        initial={{ y: 40, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        exit={{ y: 40, opacity: 0 }}
+                        transition={{ duration: 0.5 }}
+                     >
+                        <p className="uppercase tracking-widest text-sm text-[#750851]">
+                           {slide.title}
+                        </p>
+                        <h2 className="text-xl md:text-4xl font-bold mt-3">
+                           {slide.heading}
+                        </h2>
+                     </motion.div>
+                  </AnimatePresence>
 
-                        <motion.div
-                           key={`heading-${current}`}
-                           variants={contentVariants}
-                           initial="hidden"
-                           animate="visible"
-                           exit="exit"
-                           custom={0}
-                           className="mb-6 pb-10 relative z-10"
-                        >
-                           <h2 className="text-4xl md:text-3xl lg:text-6xl font-bold text-black leading-none">{slide.heading}</h2>
-                        </motion.div>
-
-                        <button
-                           key={`button-${current}`}
-                           variants={contentVariants}
-                           initial="hidden"
-                           animate="visible"
-                           exit="exit"
-                           custom={3}
-                           className=" group w-auto flex flex-row gap-4 items-center cursor-pointer text-black hover:text-[#D99726] transition-colors duration-300"
-                        >
-                           <span>{slide.buttonText}</span>
-
-                           <span className=" h-[1px] w-[80px] bg-black transition-all duration-300 group-hover:w-[120px] group-hover:bg-[#D99726]"
-                           ></span>
-                        </button>
-
-                     </AnimatePresence>
-                  </div>
+                  {/* CTA */}
+                  <Link href={slide.link}>
+                     <button className="group mt-6 flex items-center gap-4 text-black hover:text-[#D99726] transition">
+                        <span>{slide.buttonText}</span>
+                        <span className="h-[1px] w-16 bg-black group-hover:w-24 group-hover:bg-[#D99726] transition-all" />
+                     </button>
+                  </Link>
                </div>
             </div>
 
-            {/* Bottom Navigation */}
-            <div className="flex items-center justify-between gap-6">
-               {/* Navigation Arrows */}
-               <div className="flex gap-4">
-                  <button
-                     onClick={() => paginate(-1)}
-                     className="p-3 hover:bg-gray-100 transition-colors duration-200 rounded-full group"
-                     aria-label="Previous slide"
-                  >
-                     <ChevronLeft className="w-5 h-5 md:w-6 md:h-6 text-black group-hover:scale-110 transition-transform" />
+            {/* NAVIGATION */}
+            <div className="flex items-center justify-between mt-6 mx-2 md:mx-8 md:mx-0">
+               <div className="flex gap-3">
+                  <button onClick={() => paginate(-1)}>
+                     <ChevronLeft className="md:w-12 md:h-12 hover:scale-105" />
                   </button>
-                  <button
-                     onClick={() => paginate(1)}
-                     className="p-3 hover:bg-gray-100 transition-colors duration-200 rounded-full group"
-                     aria-label="Next slide"
-                  >
-                     <ChevronRight className="w-5 h-5 md:w-6 md:h-6 text-black group-hover:scale-110 transition-transform" />
+                  <button onClick={() => paginate(1)}>
+                     <ChevronRight className="md:w-12 md:h-12 hover:scale-105" />
                   </button>
                </div>
 
-               {/* Slide Indicators */}
-               <div className="flex gap-3 items-center">
-                  {slides.map((_, index) => (
-                     <motion.button
-                        key={index}
+               <div className="flex gap-2">
+                  {slides.map((_, i) => (
+                     <button
+                        key={i}
                         onClick={() => {
-                           setDirection(index > current ? 1 : -1)
-                           setCurrent(index)
+                           setDirection(i > current ? 1 : -1)
+                           setCurrent(i)
                            setProgress(0)
                         }}
-                        className={`h-1 transition-all duration-300 cursor-pointer ${index === current ? "bg-black w-8" : "bg-gray-300 w-2"
+                        className={`h-1 transition-all ${i === current ? "w-8 bg-black" : "w-2 bg-gray-300"
                            }`}
-                        aria-label={`Go to slide ${index + 1}`}
                      />
                   ))}
                </div>
             </div>
-         </div>
-
-         {/* Right Side - Image (50%) with Parallax */}
-         <div className="w-1/2 relative overflow-hidden">
-            <AnimatePresence initial={false} custom={direction} mode="wait">
-               <motion.div
-                  key={current}
-                  custom={direction}
-                  initial={{ opacity: 0, scale: 1.05 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{
-                     opacity: { duration: 0.8, ease: "easeInOut" },
-                     scale: { duration: 0.8, ease: "easeInOut" },
-                  }}
-                  className="absolute inset-0"
-                  style={{
-                     x: mousePosition.x,
-                     y: mousePosition.y,
-                  }}
-               >
-                  <Image
-                     src={slide.image || "/placeholder.svg"}
-                     alt={`${slide.heading} ${slide.title}`}
-                     fill
-                     className="object-cover object-top scale-104"
-                     priority
-                  />
-               </motion.div>
-            </AnimatePresence>
          </div>
       </div>
    )
