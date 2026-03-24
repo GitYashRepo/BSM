@@ -123,7 +123,7 @@ export default function VideoSection() {
                      onClick={(e) => e.stopPropagation()}
                   >
                      <video
-                        src={`https://drive.google.com/uc?export=download&id=1gNviwZUyhzUbjEf05pAmxiext_nf7GaZ`}
+                        src={`https://ik.imagekit.io/imageidsetupkey/homevdo%20(2).mp4`}
                         controls
                         autoPlay
                         className="w-full max-h-screen object-contain"
