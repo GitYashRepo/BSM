@@ -1,6 +1,7 @@
 "use client"
 
 import { X, ChevronDown } from "lucide-react"
+import Link from "next/link"
 import { useState, useEffect } from "react"
 
 const navItems = [
@@ -104,7 +105,7 @@ const navItems = [
       items: [
          { label: "Go to Home", href: "/" },
          { label: "Contact-Support", href: "/contact" },
-            { label: "Our Locations", href: "/contact#location" },
+         { label: "Our Locations", href: "/contact#location" },
       ]
    },
 ]
@@ -160,13 +161,13 @@ const MobileSidebar = ({ open, onClose }) => {
                         <ul className="mt-2 space-y-2 pl-2">
                            {section.items.map((item) => (
                               <li key={item.label}>
-                                 <a
+                                 <Link
                                     href={item.href}
                                     onClick={onClose}
                                     className="block text-sm text-[#D99726] hover:text-[#D99726]"
                                  >
                                     {item.label}
-                                 </a>
+                                 </Link>
                               </li>
                            ))}
                         </ul>

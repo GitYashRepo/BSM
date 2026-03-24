@@ -1,6 +1,7 @@
 "use client"
 
 import { ChevronRight, Sparkles, Phone, Mail, Clock } from "lucide-react"
+import Link from "next/link"
 import { useEffect, useState } from "react"
 
 const navItems = [
@@ -196,13 +197,13 @@ const BottomBar = () => {
                         <ul className="space-y-4">
                            {item.items.map((sub) => (
                               <li key={sub.label}>
-                                 <a
+                                 <Link
                                     href={sub.href}
                                     className="flex items-center text-xs gap-2 text-foreground hover:text-[#750851] group transition-all"
                                  >
                                     <ChevronRight className="w-4 h-4 text-[#750851] -translate-x-2 group-hover:translate-x-0 group-hover:opacity-100 transition-all" />
                                     {sub.label}
-                                 </a>
+                                 </Link>
                               </li>
                            ))}
                         </ul>
@@ -218,9 +219,9 @@ const BottomBar = () => {
 
                            <p className="text-foreground text-sm mb-4">{item.featured.description}</p>
 
-                           <a href={item.featured.href} className="inline-flex items-center gap-2 text-[#750851] hover:underline">
+                           <Link href={item.featured.href} className="inline-flex items-center gap-2 text-[#750851] hover:underline">
                               Learn More <ChevronRight className="w-4 h-4" />
-                           </a>
+                           </Link>
                         </div>
                      </div>
 
