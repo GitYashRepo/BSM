@@ -3,7 +3,7 @@
 import { ScrollCanvas } from "@/components/scrolleffect/scroll"
 import gsap from "gsap";
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import { useEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
 import ReactLenis from "lenis/react";
 import "./gettour.css";
 import AnimatedCopy from "@/components/AnimatedCopy/AnimatedCopy";
@@ -16,92 +16,49 @@ export default function GetTour() {
    const stickyTitlesRef = useRef(null);
    const titlesRef = useRef([]);
 
-   useEffect(() => {
+   useLayoutEffect(() => {
+      const titles = titlesRef.current.filter(Boolean);
+      const stickySection = stickyTitlesRef.current;
+
+      if (!stickySection || titles.length !== 3) return;
+
+      const ctx = gsap.context(() => {
+         gsap.set(titles[0], { opacity: 1, scale: 1 });
+         gsap.set(titles[1], { opacity: 0, scale: 0.75 });
+         gsap.set(titles[2], { opacity: 0, scale: 0.75 });
+
+         const pinTrigger = ScrollTrigger.create({
+            trigger: stickySection,
+            start: "top top",
+            end: `+=${window.innerHeight * 5}`,
+            pin: true,
+            pinSpacing: true,
+            anticipatePin: 1
+         });
+
+         const masterTimeline = gsap.timeline({
+            scrollTrigger: {
+               trigger: stickySection,
+               start: "top top",
+               end: `+=${window.innerHeight * 4}`,
+               scrub: 0.5,
+            },
+         });
+
+         masterTimeline
+            .to(titles[0], { opacity: 0, scale: 0.75, duration: 0.3, ease: "power2.out" }, 1)
+            .to(titles[1], { opacity: 1, scale: 1, duration: 0.3, ease: "power2.in" }, 1.25)
+            .to(titles[1], { opacity: 0, scale: 0.75, duration: 0.3, ease: "power2.out" }, 2.5)
+            .to(titles[2], { opacity: 1, scale: 1, duration: 0.3, ease: "power2.in" }, 2.75);
+      });
+
       const handleResize = () => {
          ScrollTrigger.refresh();
       };
-
       window.addEventListener("resize", handleResize);
 
-      const stickySection = stickyTitlesRef.current;
-      const titles = titlesRef.current.filter(Boolean);
-
-      if (!stickySection || titles.length !== 3) {
-         window.removeEventListener("resize", handleResize);
-         return;
-      }
-
-      gsap.set(titles[0], { opacity: 1, scale: 1 });
-      gsap.set(titles[1], { opacity: 0, scale: 0.75 });
-      gsap.set(titles[2], { opacity: 0, scale: 0.75 });
-
-      const pinTrigger = ScrollTrigger.create({
-         trigger: stickySection,
-         start: "top top",
-         end: `+=${window.innerHeight * 5}`,
-         pin: true,
-         pinSpacing: true,
-      });
-
-      const masterTimeline = gsap.timeline({
-         scrollTrigger: {
-            trigger: stickySection,
-            start: "top top",
-            end: `+=${window.innerHeight * 4}`,
-            scrub: 0.5,
-         },
-      });
-
-      masterTimeline
-         .to(
-            titles[0],
-            {
-               opacity: 0,
-               scale: 0.75,
-               duration: 0.3,
-               ease: "power2.out",
-            },
-            1
-         )
-
-         .to(
-            titles[1],
-            {
-               opacity: 1,
-               scale: 1,
-               duration: 0.3,
-               ease: "power2.in",
-            },
-            1.25
-         );
-
-      masterTimeline
-         .to(
-            titles[1],
-            {
-               opacity: 0,
-               scale: 0.75,
-               duration: 0.3,
-               ease: "power2.out",
-            },
-            2.5
-         )
-
-         .to(
-            titles[2],
-            {
-               opacity: 1,
-               scale: 1,
-               duration: 0.3,
-               ease: "power2.in",
-            },
-            2.75
-         );
-
       return () => {
-         // Kill ALL ScrollTriggers to prevent GSAP pin nodes conflicting with React's virtualDOM cleanup
-         ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-         masterTimeline.kill();
+         ctx.revert(); // This reverts ALL GSAP animations and ScrollTriggers within the context
          window.removeEventListener("resize", handleResize);
       };
    }, []);
@@ -186,25 +143,27 @@ export default function GetTour() {
                </section>
             </div>
          </ReactLenis>
-         <section ref={stickyTitlesRef} className="sticky-titles h-screen">
-            <div className="sticky-titles-nav">
-               <a href="/about" className="primary sm">About Me</a>
-               <a href="/about" className="primary sm">About BSM</a>
-            </div>
-            <div className="sticky-titles-footer">
-               <a href="/franchise" className="primary sm">Franchise</a>
-               <a href="/contact" className="primary sm">Contact</a>
-            </div>
-            <h2 ref={(el) => (titlesRef.current[0] = el)}>
-               Blush Salon offers premium beauty services with personalized, expert care.
-            </h2>
-            <h2 ref={(el) => (titlesRef.current[1] = el)}>
-               Established in 2015, Blush is trusted for quality and professionalism.
-            </h2>
-            <h2 ref={(el) => (titlesRef.current[2] = el)}>
-               Over 500 brides choose Blush for flawless, memorable transformations.
-            </h2>
-         </section>
+         <div className="sticky-titles-safe-wrapper">
+            <section ref={stickyTitlesRef} className="sticky-titles h-screen">
+               <div className="sticky-titles-nav">
+                  <a href="/about" className="primary sm">About Me</a>
+                  <a href="/about" className="primary sm">About BSM</a>
+               </div>
+               <div className="sticky-titles-footer">
+                  <a href="/franchise" className="primary sm">Franchise</a>
+                  <a href="/contact" className="primary sm">Contact</a>
+               </div>
+               <h2 ref={(el) => (titlesRef.current[0] = el)}>
+                  Blush Salon offers premium beauty services with personalized, expert care.
+               </h2>
+               <h2 ref={(el) => (titlesRef.current[1] = el)}>
+                  Established in 2015, Blush is trusted for quality and professionalism.
+               </h2>
+               <h2 ref={(el) => (titlesRef.current[2] = el)}>
+                  Over 500 brides choose Blush for flawless, memorable transformations.
+               </h2>
+            </section>
+         </div>
          <ScrollCanvas />
       </>
    )

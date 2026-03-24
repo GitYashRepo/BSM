@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, useLayoutEffect } from 'react'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import { IMAGE_URLS, imageCache, imageLoadState } from '@/lib/getTourImageCache'
@@ -35,19 +35,19 @@ export function ScrollCanvas() {
    }, [])
 
 
-   useEffect(() => {
+   useLayoutEffect(() => { // Changed useEffect to useLayoutEffect
       if (!imagesLoaded || !canvasRef.current || !containerRef.current) return
 
       const canvas = canvasRef.current
-      const ctx = canvas.getContext('2d')
-      if (!ctx) return
+      const ctx_canvas = canvas.getContext('2d')
+      if (!ctx_canvas) return
 
       const drawFrame = (frameIndex) => {
          const frame = Math.min(frameIndex, imagesRef.current.length - 1)
          const img = imagesRef.current[frame]
          if (!img || !img.complete || img.naturalWidth === 0) return
 
-         ctx.clearRect(0, 0, canvas.width, canvas.height)
+         ctx_canvas.clearRect(0, 0, canvas.width, canvas.height)
 
          const imgAspect = img.naturalWidth / img.naturalHeight
          const canvasAspect = canvas.width / canvas.height
@@ -66,7 +66,7 @@ export function ScrollCanvas() {
             offsetY = (canvas.height - drawHeight) / 2
          }
 
-         ctx.drawImage(img, offsetX, offsetY, drawWidth, drawHeight)
+         ctx_canvas.drawImage(img, offsetX, offsetY, drawWidth, drawHeight)
       }
 
       const updateCanvasSize = () => {
@@ -78,41 +78,40 @@ export function ScrollCanvas() {
       window.addEventListener('resize', updateCanvasSize)
       updateCanvasSize()
 
-      const frameObj = { frame: 0 }
-
-      const tween = gsap.to(frameObj, {
-         frame: imagesRef.current.length - 1,
-         ease: 'none',
-         scrollTrigger: {
-            trigger: containerRef.current,
-            start: 'top top',
-            end: `+=${window.innerHeight * 16}`,
-            scrub: 2.2,
-            pin: true,
-            anticipatePin: 1,
-         },
-         onUpdate: () => {
-            const frame = Math.floor(frameObj.frame)
-            if (frame !== currentFrameRef.current) {
-               currentFrameRef.current = frame
-               drawFrame(frame)
-            }
-         },
+      const ctx = gsap.context(() => {
+         const frameObj = { frame: 0 }
+         gsap.to(frameObj, {
+            frame: imagesRef.current.length - 1,
+            ease: 'none',
+            scrollTrigger: {
+               trigger: containerRef.current,
+               start: 'top top',
+               end: `+=${window.innerHeight * 16}`,
+               scrub: 2.2,
+               pin: true,
+               anticipatePin: 1,
+            },
+            onUpdate: () => {
+               const frame = Math.floor(frameObj.frame)
+               if (frame !== currentFrameRef.current) {
+                  currentFrameRef.current = frame
+                  drawFrame(frame)
+               }
+            },
+         })
       })
 
       drawFrame(0)
 
       return () => {
-         tween.scrollTrigger?.kill()
-         tween.kill()
+         ctx.revert() // Safe cleanup for React
          window.removeEventListener('resize', updateCanvasSize)
       }
    }, [imagesLoaded])
 
 
    return (
-      <>
-         {/* Animation Section */}
+      <div className="scroll-canvas-safe-wrapper">
          <div
             ref={containerRef}
             className="relative w-screen bg-black"
@@ -126,6 +125,6 @@ export function ScrollCanvas() {
                />
             </div>
          </div>
-      </>
+      </div>
    )
 }
