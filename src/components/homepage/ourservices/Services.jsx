@@ -12,20 +12,18 @@ const services = [
       category: "MAKEUP",
       description:
          "Professional makeup application for any occasion. From natural everyday looks to glamorous evening makeup with premium products.",
-      image: "/comp/img5.jpg",
+      image: "/bridal/img6.jpeg",
       duration: "45-60 min",
-
       href: "/makeup"
    },
    {
       number: "02",
-      title: "Hair\nStyling",
+      title: "Hair\nSolutions",
       category: "HAIR",
       description:
          "Complete hair care services including cuts, styling, treatments, and coloring to enhance your natural beauty.",
-      image: "/koreanModel/Hair.jpg",
+      image: "/hair/hairstylenew.jpg",
       duration: "60-90 min",
-
       href: "/hair"
    },
    {

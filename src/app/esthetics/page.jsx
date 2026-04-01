@@ -29,6 +29,7 @@ export default function EstheticsPage() {
             "Targets specific skin concerns",
             "Visible long-term results",
          ],
+         price: "399"
       },
       {
          id: 2,
@@ -41,6 +42,7 @@ export default function EstheticsPage() {
             "Improves skin elasticity",
             "Restores youthful glow",
          ],
+         price: "3499"
       },
       {
          id: 3,
@@ -53,6 +55,7 @@ export default function EstheticsPage() {
             "Balances oil production",
             "Clinically safe procedures",
          ],
+         price: "999"
       },
       {
          id: 4,
@@ -65,6 +68,7 @@ export default function EstheticsPage() {
             "Advanced pigmentation therapies",
             "Long-lasting brightening results",
          ],
+         price: "399"
       },
       {
          id: 5,
@@ -77,6 +81,7 @@ export default function EstheticsPage() {
             "Boosts skin regeneration",
             "Instant visible glow",
          ],
+         price: "999"
       },
       {
          id: 6,
@@ -89,6 +94,7 @@ export default function EstheticsPage() {
             "Targets skin concerns precisely",
             "Minimal downtime",
          ],
+         price: "1499"
       },
 
    ];

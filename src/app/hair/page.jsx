@@ -17,30 +17,6 @@ export default function HairPage() {
 
    const hairTopics = [
       {
-         id: 1,
-         title: "Hair",
-         subtitle: "Complete Hair Care Solutions",
-         image: "/services/hair/hair2.jpg",
-         description: [
-            "Personalized hair care for every hair type",
-            "Healthy, shiny & well-maintained hair",
-            "Professional salon-grade products",
-            "Expert styling & treatments",
-         ],
-      },
-      {
-         id: 2,
-         title: "Haircuts",
-         subtitle: "Precision Cuts & Styling",
-         image: "/services/hair/haircut.jpg",
-         description: [
-            "Customized cuts for face shape",
-            "Trendy & classic styles",
-            "Perfect finishing & blow-dry",
-            "Easy-to-maintain looks",
-         ],
-      },
-      {
          id: 3,
          title: "Hair Color",
          subtitle: "Professional Hair Coloring",
@@ -51,6 +27,7 @@ export default function HairPage() {
             "Long-lasting vibrant shades",
             "Grey coverage perfection",
          ],
+         price: "649"
       },
       {
          id: 4,
@@ -63,6 +40,7 @@ export default function HairPage() {
             "Boosts shine & softness",
             "Relaxing rejuvenation treatment",
          ],
+         price: "999"
       },
       {
          id: 5,
@@ -75,6 +53,7 @@ export default function HairPage() {
             "Long-lasting results",
             "Perfect for unmanageable hair",
          ],
+         price: "2999"
       },
       {
          id: 6,
@@ -87,18 +66,20 @@ export default function HairPage() {
             "Soft, manageable texture",
             "Professional safe products",
          ],
+         price: "1999"
       },
       {
-         id: 7,
-         title: "Hair Extensions",
-         subtitle: "Length & Volume Instantly",
-         image: "/services/hair/hairext.jpg",
+         id: 2,
+         title: "Haircuts",
+         subtitle: "Precision Cuts & Styling",
+         image: "/services/hair/haircut.jpg",
          description: [
-            "100% natural-looking extensions",
-            "Adds volume & length",
-            "Comfortable & secure fit",
-            "Style versatility",
+            "Customized cuts for face shape",
+            "Trendy & classic styles",
+            "Perfect finishing & blow-dry",
+            "Easy-to-maintain looks",
          ],
+         price: "99"
       },
       {
          id: 8,
@@ -111,6 +92,20 @@ export default function HairPage() {
             "Customized to outfit & makeup",
             "Perfect for photos & ceremonies",
          ],
+         pricing: "1999"
+      },
+      {
+         id: 7,
+         title: "Hair Extensions",
+         subtitle: "Length & Volume Instantly",
+         image: "/services/hair/hairext.jpg",
+         description: [
+            "100% natural-looking extensions",
+            "Adds volume & length",
+            "Comfortable & secure fit",
+            "Style versatility",
+         ],
+         price: "3999"
       },
    ];
 

@@ -77,7 +77,7 @@ export default function OffersPage() {
    }
 
    return (
-      <div className="p-6 max-w-4xl mx-auto">
+      <div className="max-w-4xl mx-auto">
          <h1 className="text-3xl font-serif font-bold mb-8">Offer Management</h1>
 
          <form onSubmit={create} className="bg-white p-6 rounded-xl shadow-sm border mb-10 space-y-4">

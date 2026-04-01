@@ -35,16 +35,16 @@ const MiddleBar = ({ onMenuClick }) => {
             <div className="flex items-center justify-between gap-6">
                {/* Logo */}
                <div className="flex-shrink-0">
-                  <a href="/" className="flex items-center gap-2 md:gap-3">
+                  <a href="/" className="flex items-center gap-3">
                      <img
                         src="/logo/logo.jpg"
                         alt="BSM Logo"
-                        className="w-10 md:w-12 rounded-full"
+                        className="w-14 md:w-20 rounded-full border-2 border-[#D99726]"
                      />
 
                      <div className="flex flex-col">
                         <div
-                           className="flex flex-row text-[#D99726] font-bold whitespace-nowrap justify-between text-base md:text-xl"
+                           className="flex flex-row text-[#D99726] font-extrabold whitespace-nowrap justify-between text-xl md:text-3xl tracking-tighter"
                         >
                            <span>B</span>
                            <span>L</span>
@@ -54,7 +54,7 @@ const MiddleBar = ({ onMenuClick }) => {
                         </div>
 
                         {/* Subtitle */}
-                        <span className="text-[12px] md:text-xs font-bold tracking-widest uppercase text-white">
+                        <span className="text-[14px] md:text-sm font-bold tracking-[0.2em] uppercase text-white -mt-1 text-center">
                            By Sakshi
                         </span>
                      </div>
@@ -63,21 +63,32 @@ const MiddleBar = ({ onMenuClick }) => {
 
 
                {/* Contact & Actions */}
-               <div className="flex items-center gap-6">
+               <div className="flex items-center gap-2">
                   {!role && (
-                     <ul className="flex gap-4">
+                     <ul className="flex gap-2">
                         {[
-                           { icon: Instagram, label: "Instagram", link: "https://www.instagram.com/sakshi.makeovers" },
-                           { icon: Facebook, label: "Facebook", link: "https://www.facebook.com/share/1C6Croo93d/?mibextid=wwXIfr" },
-                        ].map(({ icon: Icon, label, link }) => (
+                           {
+                              icon: Instagram,
+                              label: "Instagram",
+                              link: "https://www.instagram.com/sakshi.makeovers",
+                              color: "#E4405F"
+                           },
+                           {
+                              icon: Facebook,
+                              label: "Facebook",
+                              link: "https://www.facebook.com/share/1C6Croo93d/?mibextid=wwXIfr",
+                              color: "#1877F2"
+                           },
+                        ].map(({ icon: Icon, label, link, color }) => (
                            <li key={label}>
                               <a
                                  href={link}
                                  target="_blank"
-                                 className="text-gray-400 hover:text-[#D99726] transition-colors duration-300"
+                                 className="transition-transform duration-300 hover:scale-110 block"
+                                 style={{ color }}
                                  aria-label={label}
                               >
-                                 <Icon className="w-4 h-4" />
+                                 <Icon className="w-6 h-6" />
                               </a>
                            </li>
                         ))}

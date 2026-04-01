@@ -28,6 +28,7 @@ export default function SignatureServicesPage() {
             "Premium products & techniques",
             "Tailored for special occasions",
          ],
+         price: "5999"
       },
       {
          id: 2,
@@ -40,6 +41,7 @@ export default function SignatureServicesPage() {
             "Flawless, long-lasting finish",
             "Picture-perfect results",
          ],
+         price: "18999"
       },
       {
          id: 3,
@@ -52,6 +54,7 @@ export default function SignatureServicesPage() {
             "Ensures radiant bridal glow",
             "Stress-free wedding prep",
          ],
+         price: "9999"
       },
       {
          id: 4,
@@ -64,6 +67,7 @@ export default function SignatureServicesPage() {
             "Natural, polished finish",
             "Designed for wedding day confidence",
          ],
+         price: "4999"
       },
       {
          id: 5,
@@ -76,6 +80,7 @@ export default function SignatureServicesPage() {
             "Perfect for shoots & events",
             "Statement-making luxury looks",
          ],
+         price: "9999"
       },
    ];
 

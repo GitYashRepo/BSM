@@ -8,8 +8,10 @@ export async function middleware(req) {
   const { pathname } = req.nextUrl;
   const isAdminRoute = pathname.startsWith("/admin");
   const isSubAdminRoute = pathname.startsWith("/sub-admin");
+  const isPricingRoute = pathname.startsWith("/ourpricing");
 
-  if (!isAdminRoute && !isSubAdminRoute) {
+  // Only intercept protected routes
+  if (!isAdminRoute && !isSubAdminRoute && !isPricingRoute) {
     return NextResponse.next();
   }
 
@@ -17,20 +19,18 @@ export async function middleware(req) {
   const subAdminToken = req.cookies.get("subadmin_token")?.value;
 
   try {
+    // ✅ Admin token — can access /admin, /sub-admin, and /ourpricing
     if (adminToken) {
       const { payload } = await jwtVerify(adminToken, ADMIN_SECRET);
-
       if (payload.role === "admin") {
         return NextResponse.next();
       }
     }
 
-    /** ---------------- SUBADMIN TOKEN ---------------- */
-    if (subAdminToken && isSubAdminRoute) {
+    // ✅ SubAdmin token — can ONLY access /ourpricing (NOT /admin)
+    if (subAdminToken && isPricingRoute) {
       const { payload } = await jwtVerify(subAdminToken, SUBADMIN_SECRET);
-
       if (payload.role === "subadmin") {
-        // ✅ Sub-admin can access ONLY sub-admin
         return NextResponse.next();
       }
     }
@@ -38,14 +38,12 @@ export async function middleware(req) {
     throw new Error("Unauthorized");
   } catch (err) {
     const response = NextResponse.redirect(new URL("/login", req.url));
-
     response.cookies.set("admin_token", "", { maxAge: 0 });
     response.cookies.set("subadmin_token", "", { maxAge: 0 });
-
     return response;
   }
 }
 
 export const config = {
-  matcher: ["/admin/:path*", "/sub-admin/:path*"],
+  matcher: ["/admin/:path*", "/sub-admin/:path*", "/ourpricing/:path*", "/ourpricing"],
 };

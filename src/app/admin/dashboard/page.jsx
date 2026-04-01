@@ -67,7 +67,7 @@ export default function ServicesDashboard() {
    }
 
    return (
-      <div className="p-6">
+      <div>
          <h1 className="text-2xl font-bold mb-6">Services Dashboard</h1>
 
          <form onSubmit={createService} className="bg-white p-6 rounded-lg shadow-md mb-8 grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -101,12 +101,12 @@ export default function ServicesDashboard() {
                   className="w-full border p-2 rounded font-mono"
                />
             </div>
-            <div className="md:col-span-2 flex justify-end">
+            <div className="max-w-xl md:col-span-2 flex justify-end">
                <button type="submit" className="bg-black text-white px-6 py-2 rounded hover:bg-gray-800 transition">Add Service</button>
             </div>
          </form>
 
-         <div className="bg-white rounded-lg shadow-md overflow-x-auto">
+         <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-md overflow-x-auto">
             <table className="w-full text-left text-sm">
                <thead className="bg-gray-50 text-xs uppercase tracking-wider text-gray-500">
                   <tr>
