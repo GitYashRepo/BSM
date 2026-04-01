@@ -17,30 +17,6 @@ export default function HairPage() {
 
    const hairTopics = [
       {
-         id: 1,
-         title: "Hair",
-         subtitle: "Complete Hair Care Solutions",
-         image: "/services/hair/hair2.jpg",
-         description: [
-            "Personalized hair care for every hair type",
-            "Healthy, shiny & well-maintained hair",
-            "Professional salon-grade products",
-            "Expert styling & treatments",
-         ],
-      },
-      {
-         id: 2,
-         title: "Haircuts",
-         subtitle: "Precision Cuts & Styling",
-         image: "/services/hair/haircut.jpg",
-         description: [
-            "Customized cuts for face shape",
-            "Trendy & classic styles",
-            "Perfect finishing & blow-dry",
-            "Easy-to-maintain looks",
-         ],
-      },
-      {
          id: 3,
          title: "Hair Color",
          subtitle: "Professional Hair Coloring",
@@ -89,15 +65,15 @@ export default function HairPage() {
          ],
       },
       {
-         id: 7,
-         title: "Hair Extensions",
-         subtitle: "Length & Volume Instantly",
-         image: "/services/hair/hairext.jpg",
+         id: 2,
+         title: "Haircuts",
+         subtitle: "Precision Cuts & Styling",
+         image: "/services/hair/haircut.jpg",
          description: [
-            "100% natural-looking extensions",
-            "Adds volume & length",
-            "Comfortable & secure fit",
-            "Style versatility",
+            "Customized cuts for face shape",
+            "Trendy & classic styles",
+            "Perfect finishing & blow-dry",
+            "Easy-to-maintain looks",
          ],
       },
       {
@@ -110,6 +86,18 @@ export default function HairPage() {
             "Long-lasting hold",
             "Customized to outfit & makeup",
             "Perfect for photos & ceremonies",
+         ],
+      },
+      {
+         id: 7,
+         title: "Hair Extensions",
+         subtitle: "Length & Volume Instantly",
+         image: "/services/hair/hairext.jpg",
+         description: [
+            "100% natural-looking extensions",
+            "Adds volume & length",
+            "Comfortable & secure fit",
+            "Style versatility",
          ],
       },
    ];

@@ -107,9 +107,9 @@ export default function MakeupPage() {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="relative min-h-screen bg-gradient-to-br from-white via-amber-50 to-white flex items-center justify-center px-6 py-20"
+            className="relative bg-gradient-to-br from-white via-amber-50 to-white flex items-center justify-center px-6 py-10"
          >
-            <div className="max-w-5xl mx-auto text-center space-y-8">
+            <div className="mx-auto text-center space-y-4">
                {/* Decorative Top Accent */}
                <motion.div
                   initial={{ opacity: 0, scale: 0 }}
