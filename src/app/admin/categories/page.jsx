@@ -77,26 +77,30 @@ export default function CategoriesPage() {
    }
 
    return (
-      <div className="p-6 max-w-xl">
+      <div className="max-w-xl">
          <h1 className="text-2xl font-bold mb-6">Categories</h1>
 
          {/* Add form */}
-         <form onSubmit={addCategory} className="flex gap-2 mb-8">
+         <form onSubmit={addCategory} className="flex flex-col sm:flex-row gap-3 mb-8">
             <input
                value={name}
                onChange={e => setName(e.target.value)}
                placeholder="Category name"
-               className="flex-1 border p-2 rounded"
+               className="flex-1 border p-2 rounded w-full"
                required
             />
-            <input
-               type="number"
-               value={order}
-               onChange={e => setOrder(e.target.value)}
-               placeholder="Sequence"
-               className="w-24 border p-2 rounded"
-            />
-            <button type="submit" className="bg-black text-white px-4 py-2 rounded hover:bg-gray-800 transition">Add</button>
+            <div className="flex gap-2">
+               <input
+                  type="number"
+                  value={order}
+                  onChange={e => setOrder(e.target.value)}
+                  placeholder="Sequence"
+                  className="w-24 border p-2 rounded"
+               />
+               <button type="submit" className="flex-1 sm:flex-none bg-black text-white px-6 py-2 rounded hover:bg-gray-800 transition font-bold uppercase text-xs tracking-widest">
+                  Add
+               </button>
+            </div>
          </form>
 
          {/* Category list */}

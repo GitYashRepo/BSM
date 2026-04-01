@@ -34,7 +34,7 @@ export default function FranchiseAdminPage() {
    if (loading) return <div className="p-6">Loading submissions...</div>;
 
    return (
-      <div className="p-6 max-w-6xl mx-auto">
+      <div className="max-w-6xl mx-auto">
          <h1 className="text-3xl font-serif font-bold mb-8">Franchise Applications</h1>
 
          {forms.length === 0 ? (

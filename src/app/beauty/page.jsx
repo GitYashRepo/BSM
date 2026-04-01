@@ -28,6 +28,7 @@ export default function BeautyPage() {
             "Premium salon products",
             "Customized beauty solutions",
          ],
+         price: "799",
       },
       {
          id: 2,
@@ -40,6 +41,7 @@ export default function BeautyPage() {
             "Unclogs pores",
             "Perfect before events",
          ],
+         price: "799",
       },
       {
          id: 3,
@@ -52,6 +54,7 @@ export default function BeautyPage() {
             "Improves skin texture",
             "Relaxing & rejuvenating",
          ],
+         price: "1,299",
       },
       {
          id: 4,
@@ -64,6 +67,7 @@ export default function BeautyPage() {
             "Safe & gentle formulas",
             "Even complexion",
          ],
+         price: "350"
       },
       {
          id: 5,
@@ -76,6 +80,7 @@ export default function BeautyPage() {
             "Clean & defined look",
             "Long-lasting results",
          ],
+         price: "50"
       },
       {
          id: 6,
@@ -88,6 +93,7 @@ export default function BeautyPage() {
             "Long-lasting hair removal",
             "Suitable for all skin types",
          ],
+         price: "99"
       },
       {
          id: 7,
@@ -100,6 +106,7 @@ export default function BeautyPage() {
             "Polish & nail spa",
             "Relaxing experience",
          ],
+         price: "799"
       },
       {
          id: 8,
@@ -112,6 +119,7 @@ export default function BeautyPage() {
             "Relaxing foot massage",
             "Perfect polish finish",
          ],
+         price: "999"
       },
    ];
 

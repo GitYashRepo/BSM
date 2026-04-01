@@ -154,6 +154,17 @@ const navItems = [
          href: "/contact",
       },
    },
+   {
+      label: "Get-Pricing",
+      items: [
+         { label: "Our Pricing", href: "/ourpricing" },
+      ],
+      featured: {
+         title: "Want to see our pricing?",
+         description: "Contact us for more details",
+         href: "/contact",
+      },
+   },
 ]
 
 const BottomBar = () => {

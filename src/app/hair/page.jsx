@@ -27,6 +27,7 @@ export default function HairPage() {
             "Long-lasting vibrant shades",
             "Grey coverage perfection",
          ],
+         price: "649"
       },
       {
          id: 4,
@@ -39,6 +40,7 @@ export default function HairPage() {
             "Boosts shine & softness",
             "Relaxing rejuvenation treatment",
          ],
+         price: "999"
       },
       {
          id: 5,
@@ -51,6 +53,7 @@ export default function HairPage() {
             "Long-lasting results",
             "Perfect for unmanageable hair",
          ],
+         price: "2999"
       },
       {
          id: 6,
@@ -63,6 +66,7 @@ export default function HairPage() {
             "Soft, manageable texture",
             "Professional safe products",
          ],
+         price: "1999"
       },
       {
          id: 2,
@@ -75,6 +79,7 @@ export default function HairPage() {
             "Perfect finishing & blow-dry",
             "Easy-to-maintain looks",
          ],
+         price: "99"
       },
       {
          id: 8,
@@ -87,6 +92,7 @@ export default function HairPage() {
             "Customized to outfit & makeup",
             "Perfect for photos & ceremonies",
          ],
+         pricing: "1999"
       },
       {
          id: 7,
@@ -99,6 +105,7 @@ export default function HairPage() {
             "Comfortable & secure fit",
             "Style versatility",
          ],
+         price: "3999"
       },
    ];
 

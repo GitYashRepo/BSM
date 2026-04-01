@@ -15,7 +15,7 @@ export default function OfferModal() {
          try {
             const res = await fetch("/api/offer");
             const data = await res.json();
-            
+
             const now = new Date();
             const currentTimeStr = now.getHours().toString().padStart(2, '0') + ':' + now.getMinutes().toString().padStart(2, '0');
 
@@ -85,7 +85,7 @@ export default function OfferModal() {
          {showButton && !open && (
             <Button
                onClick={openModal}
-               className="fixed bottom-20 -left-7 z-[999] h-10 px-2 rotate-90 bg-[#300708] border border-white text-lg text-white shadow-lg hover:bg-[#300708]/98 hover:cursor-pointer"
+               className="fixed bottom-20 -left-7 z-[999999] h-10 px-2 rotate-90 bg-[#300708] border border-white text-lg text-white shadow-lg hover:bg-[#300708]/98 hover:cursor-pointer"
             >
                Offers 🔥
             </Button>

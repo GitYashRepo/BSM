@@ -60,16 +60,6 @@ export function ServiceSlider({ topics, onBookAppointment }) {
                   Signature Services
                </h2>
             </div>
-
-            {/* slide count */}
-            {/* <span
-               className="text-stone-400 text-sm tabular-nums"
-               style={{ fontFamily: "sans-serif", letterSpacing: "0.05em" }}
-            >
-               <span className="text-stone-700 font-medium">{String(current + 1).padStart(2, "0")}</span>
-               {" / "}
-               {String(topics.length).padStart(2, "0")}
-            </span> */}
          </div>
 
          {/* ── Draggable track ── */}
@@ -197,25 +187,10 @@ export function ServiceSlider({ topics, onBookAppointment }) {
 
                         {/* ── Card content ── */}
                         <div className="absolute bottom-0 left-0 right-0 px-6 pb-7 pt-10">
-                           {/* index line */}
-                           {/* <div className="flex items-center gap-3 mb-3">
-                    <span
-                      className="text-[10px] text-white/50 font-mono tracking-widest"
-                    >
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <span className="flex-1 h-px bg-white/20" />
-                    <span
-                      className="text-[9px] uppercase tracking-[0.25em] text-white/50"
-                      style={{ fontFamily: "sans-serif" }}
-                    >
-                      {topic.subtitle}
-                    </span>
-                  </div> */}
 
                            {/* Title */}
                            <h3
-                              className="text-white mb-4 leading-tight"
+                              className="text-white leading-tight"
                               style={{
                                  fontFamily: "Georgia, serif",
                                  fontWeight: 300,
@@ -224,6 +199,7 @@ export function ServiceSlider({ topics, onBookAppointment }) {
                            >
                               {topic.title}
                            </h3>
+                           <p className="text-white mb-4 text-sm leading-tight" style={{ fontFamily: "Georgia, serif", fontWeight: 300, }}>Starting from ₹{topic.price}</p>
 
                            {/* Bullet points — only active card */}
                            <motion.div

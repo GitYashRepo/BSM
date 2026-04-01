@@ -25,6 +25,7 @@ export default function MakeupPage() {
             "Premium, long-lasting products",
             "Perfect for everyday or glam looks",
          ],
+         price: "2,999",
       },
       {
          id: 2,
@@ -37,6 +38,7 @@ export default function MakeupPage() {
             "Personalized trials & consultations",
             "Designed to last all day & night",
          ],
+         price: "19,000",
       },
       {
          id: 3,
@@ -49,6 +51,7 @@ export default function MakeupPage() {
             "Complements outfit & event style",
             "Fresh, long-lasting finish",
          ],
+         price: "1499",
       },
       {
          id: 4,
@@ -61,6 +64,7 @@ export default function MakeupPage() {
             "Smooth, flawless skin finish",
             "Ideal for shoots & events",
          ],
+         price: "7999",
       },
       {
          id: 5,
@@ -73,6 +77,7 @@ export default function MakeupPage() {
             "Smooth, second-skin finish",
             "Ideal for long events",
          ],
+         price: "9999",
       },
       {
          id: 6,
@@ -85,6 +90,7 @@ export default function MakeupPage() {
             "Enhances natural beauty",
             "Comfortable & long-lasting",
          ],
+         price: "4999",
       },
       {
          id: 7,
@@ -97,6 +103,7 @@ export default function MakeupPage() {
             "Perfect under professional lighting",
             "Statement-making finish",
          ],
+         price: "5999",
       },
    ];
 

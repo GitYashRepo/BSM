@@ -38,7 +38,7 @@ export default function DealsPopup() {
    if (!show) return null;
 
    return (
-      <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+      <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-[999999]">
          <div className="bg-white p-6 rounded-xl shadow-xl max-w-sm text-center">
             <h2 className="text-xl font-bold mb-3">🔥 Special Deals Today!</h2>
             <p className="mb-4">Don't miss out on exclusive offers!</p>

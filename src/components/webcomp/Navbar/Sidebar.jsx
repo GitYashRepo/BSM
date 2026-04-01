@@ -108,6 +108,17 @@ const navItems = [
          { label: "Our Locations", href: "/contact#location" },
       ]
    },
+   {
+      label: "Get-Pricing",
+      items: [
+         { label: "Our Pricing", href: "/ourpricing" },
+      ],
+      featured: {
+         title: "Want to see our pricing?",
+         description: "Contact us for more details",
+         href: "/contact",
+      },
+   },
 ]
 
 const MobileSidebar = ({ open, onClose }) => {
@@ -121,7 +132,7 @@ const MobileSidebar = ({ open, onClose }) => {
    if (!open) return null
 
    return (
-      <div className="fixed inset-0 z-[999999]">
+      <div className="fixed inset-0 z-[9999999]">
          {/* Overlay */}
          <div
             className="absolute inset-0 bg-black/50"
