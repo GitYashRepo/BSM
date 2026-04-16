@@ -2,6 +2,7 @@
 
 import { X, ChevronDown } from "lucide-react"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 import { useState, useEffect } from "react"
 
 const navItems = [
@@ -122,6 +123,7 @@ const navItems = [
 ]
 
 const MobileSidebar = ({ open, onClose }) => {
+   const router = useRouter()
    const [openSection, setOpenSection] = useState(null)
 
    useEffect(() => {
@@ -172,13 +174,15 @@ const MobileSidebar = ({ open, onClose }) => {
                         <ul className="mt-2 space-y-2 pl-2">
                            {section.items.map((item) => (
                               <li key={item.label}>
-                                 <Link
-                                    href={item.href}
-                                    onClick={() => setTimeout(onClose, 150)}
-                                    className="block text-sm text-[#D99726] hover:text-[#D99726]"
+                                 <button
+                                    onClick={() => {
+                                       onClose()
+                                       router.push(item.href)
+                                    }}
+                                    className="block w-full text-left py-3 text-sm text-[#D99726] hover:text-[#D99726]"
                                  >
                                     {item.label}
-                                 </Link>
+                                 </button>
                               </li>
                            ))}
                         </ul>

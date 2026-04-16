@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { 
    LayoutDashboard, 
    Grid, 
@@ -21,6 +21,7 @@ const navItems = [
 
 export default function AdminSidebar({ onClose }) {
    const pathname = usePathname();
+   const router = useRouter();
 
    return (
       <aside className="w-64 bg-black text-white h-screen flex flex-col border-r border-white/10 shadow-2xl overflow-y-auto">
@@ -44,19 +45,21 @@ export default function AdminSidebar({ onClose }) {
                const Icon = item.icon;
 
                return (
-                  <Link
+                  <button
                      key={item.href}
-                     href={item.href}
-                     onClick={() => setTimeout(onClose, 150)}
-                     className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 group ${
+                     onClick={() => {
+                        onClose && onClose();
+                        router.push(item.href);
+                     }}
+                     className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 group ${
                         isActive 
                            ? "bg-white text-black" 
                            : "text-gray-400 hover:bg-white/5 hover:text-white"
                      }`}
                   >
                      <Icon size={18} className={isActive ? "text-black" : "text-gray-500 group-hover:text-white"} />
-                     {item.label}
-                  </Link>
+                     <span className="text-left flex-1">{item.label}</span>
+                  </button>
                );
             })}
          </nav>
