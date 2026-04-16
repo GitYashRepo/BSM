@@ -47,7 +47,7 @@ export default function AdminSidebar({ onClose }) {
                   <Link
                      key={item.href}
                      href={item.href}
-                     onClick={onClose}
+                     onClick={() => setTimeout(onClose, 150)}
                      className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 group ${
                         isActive 
                            ? "bg-white text-black" 
