@@ -174,7 +174,7 @@ const MobileSidebar = ({ open, onClose }) => {
                               <li key={item.label}>
                                  <Link
                                     href={item.href}
-                                    onClick={onClose}
+                                    onClick={() => setTimeout(onClose, 150)}
                                     className="block text-sm text-[#D99726] hover:text-[#D99726]"
                                  >
                                     {item.label}
