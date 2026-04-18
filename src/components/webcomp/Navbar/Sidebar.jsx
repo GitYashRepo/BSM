@@ -12,7 +12,12 @@ const navItems = [
          { label: "Go to Home", href: "/" },
          { label: "Who Am I ?", href: "/about" },
          { label: "Experience our interior", href: "/gettour" },
-      ]
+      ],
+      featured: {
+         title: "Bridal Special",
+         description: "Complete bridal package with pre-bridal treatments, trials & D-day makeup",
+         href: "/makeup",
+      },
    },
    {
       label: "Makeup",
@@ -26,7 +31,12 @@ const navItems = [
          { label: "Airbrush Makeup", href: "/makeup#airbrush" },
          { label: "Engagement Makeup", href: "/makeup#engagement" },
          { label: "Celebrity Makeup", href: "/makeup#celebrity" },
-      ]
+      ],
+      featured: {
+         title: "Bridal Special",
+         description: "Complete bridal package with pre-bridal treatments, trials & D-day makeup",
+         href: "/makeup",
+      },
    },
    {
       label: "Hair",
@@ -40,7 +50,12 @@ const navItems = [
          { label: "Smoothening", href: "/hair#smoothening" },
          { label: "Hair Extensions", href: "/hair#extensions" },
          { label: "Bridal Hairstyling", href: "/hair#bridal-hair" },
-      ]
+      ],
+      featured: {
+         title: "Hair Transformation",
+         description: "Expert stylists for the perfect look you deserve",
+         href: "/hair",
+      },
    },
    {
       label: "Beauty",
@@ -54,7 +69,12 @@ const navItems = [
          { label: "Waxing", href: "/beauty#waxing" },
          { label: "Manicure", href: "/beauty#manicure" },
          { label: "Pedicure", href: "/beauty#pedicure" },
-      ]
+      ],
+      featured: {
+         title: "Glow Package",
+         description: "Complete beauty treatments for radiant skin",
+         href: "/beauty",
+      },
    },
    {
       label: "Esthetics",
@@ -67,7 +87,12 @@ const navItems = [
          { label: "Pigmentation", href: "/esthetics#pigmentation" },
          { label: "Laser Treatment", href: "/esthetics#laser" },
          { label: "Chemical Peels", href: "/esthetics#peels" },
-      ]
+      ],
+      featured: {
+         title: "Advanced Skincare",
+         description: "Clinical treatments for lasting results",
+         href: "/esthetics",
+      },
    },
    {
       label: "Signature Services",
@@ -79,7 +104,12 @@ const navItems = [
          { label: "Bridal Packages", href: "/bridal-packages" },
          { label: "Groom Makeover", href: "/signatureservices#groom" },
          { label: "Celebrity Styling", href: "/signatureservices#celebrity-styling" },
-      ]
+      ],
+      featured: {
+         title: "Complete Bridal Experience",
+         description: "From engagement to reception - we've got you covered",
+         href: "/signatureservices",
+      },
    },
    {
       label: "Franchise",
@@ -90,7 +120,12 @@ const navItems = [
          { label: "Investment Details", href: "/franchise#investment" },
          { label: "Support & Training", href: "/franchise#support" },
          { label: "Apply Now", href: "/franchise#apply" },
-      ]
+      ],
+      featured: {
+         title: "Own a BSM Franchise",
+         description: "Contact Nitin (CEO): 94677-77773",
+         href: "/franchise",
+      },
    },
    {
       label: "Gallery",
@@ -99,15 +134,26 @@ const navItems = [
          { label: "Bridal Makeup", href: "/gallery" },
          { label: "Party Makeup", href: "/gallery" },
          { label: "Engagement Makeup", href: "/gallery" },
-      ]
+      ],
+      featured: {
+         title: "Our Gallery",
+         description: "We're here to help you look your best",
+         href: "/gallery",
+      },
    },
    {
       label: "Contact",
       items: [
          { label: "Go to Home", href: "/" },
          { label: "Contact-Support", href: "/contact" },
+         { label: "Book Appointment", href: "/contact#appointment" },
          { label: "Our Locations", href: "/contact#location" },
-      ]
+      ],
+      featured: {
+         title: "Get In Touch",
+         description: "We're here to help you look your best",
+         href: "/contact",
+      },
    },
    {
       label: "Get-Pricing",
