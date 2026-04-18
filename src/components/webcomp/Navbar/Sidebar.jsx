@@ -177,10 +177,8 @@ const MobileSidebar = ({ open, onClose }) => {
       return () => (document.body.style.overflow = "")
    }, [open])
 
-   if (!open) return null
-
    return (
-      <div className="fixed inset-0 z-[9999999]">
+      <div className={`fixed inset-0 z-[9999999] transition-opacity duration-300 ${open ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"}`}>
          {/* Overlay */}
          <div
             className="absolute inset-0 bg-black/50"
@@ -188,7 +186,7 @@ const MobileSidebar = ({ open, onClose }) => {
          />
 
          {/* Sidebar */}
-         <aside className="absolute left-0 top-0 h-screen w-[300px] bg-[#191A1A] shadow-xl flex flex-col">
+         <aside className={`absolute left-0 top-0 h-screen w-[300px] bg-[#191A1A] shadow-xl flex flex-col transition-transform duration-300 ${open ? "translate-x-0" : "-translate-x-full"}`}>
             {/* Header */}
             <div className="flex items-center justify-between px-4 py-4 border-b">
                <span className="font-bold text-[#D99726] text-lg">Menu</span>
