@@ -174,15 +174,13 @@ const MobileSidebar = ({ open, onClose }) => {
                         <ul className="mt-2 space-y-2 pl-2">
                            {section.items.map((item) => (
                               <li key={item.label}>
-                                 <button
-                                    onClick={() => {
-                                       onClose()
-                                       router.push(item.href)
-                                    }}
+                                 <Link
+                                    href={item.href}
+                                    onClick={onClose}
                                     className="block w-full text-left py-3 text-sm text-[#D99726] hover:text-[#D99726]"
                                  >
                                     {item.label}
-                                 </button>
+                                 </Link>
                               </li>
                            ))}
                         </ul>
