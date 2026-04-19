@@ -1173,4 +1173,6 @@ export const imageCache = new Array(IMAGE_URLS.length)
 export const imageLoadState = {
   loadedCount: 0,
   started: false,
+  isActive: false,
+  lastIndex: 0,
 }

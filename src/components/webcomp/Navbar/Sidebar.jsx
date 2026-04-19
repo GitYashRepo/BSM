@@ -2,8 +2,8 @@
 
 import { X, ChevronDown } from "lucide-react"
 import Link from "next/link"
-import { useRouter } from "next/navigation"
 import { useState, useEffect } from "react"
+import { usePathname } from "next/navigation"
 
 const navItems = [
    {
@@ -169,8 +169,13 @@ const navItems = [
 ]
 
 const MobileSidebar = ({ open, onClose }) => {
-   const router = useRouter()
+   const pathname = usePathname()
    const [openSection, setOpenSection] = useState(null)
+
+   // Automatically close sidebar when pathname changes
+   useEffect(() => {
+      onClose()
+   }, [pathname])
 
    useEffect(() => {
       document.body.style.overflow = open ? "hidden" : ""
@@ -196,7 +201,10 @@ const MobileSidebar = ({ open, onClose }) => {
             </div>
 
             {/* Scrollable Content */}
-            <div className="flex-1 overflow-y-auto px-4 py-4">
+            <div
+               className="flex-1 overflow-y-auto px-4 py-4 custom-scrollbar"
+               data-lenis-prevent
+            >
                {navItems.map((section) => (
                   <div key={section.label} className="mb-4">
                      <button
@@ -220,7 +228,6 @@ const MobileSidebar = ({ open, onClose }) => {
                               <li key={item.label}>
                                  <Link
                                     href={item.href}
-                                    onClick={onClose}
                                     className="block w-full text-left py-3 text-sm text-[#D99726] hover:text-[#D99726]"
                                  >
                                     {item.label}

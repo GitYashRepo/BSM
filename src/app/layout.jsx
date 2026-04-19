@@ -32,7 +32,6 @@ export default function RootLayout({ children }) {
             className={`${geistSans.variable} ${geistMono.variable} antialiased`}
          >
             <LenisProvider>
-               <PreloadGetTourImages />
                <OfferModal />
                {/* <DealsPopup /> */}
                <WhatsAppWidget brandName="Blush" phone='+919467777773' />

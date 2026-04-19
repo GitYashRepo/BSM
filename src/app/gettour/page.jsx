@@ -8,6 +8,7 @@ import ReactLenis from "lenis/react";
 import "./gettour.css";
 import AnimatedCopy from "@/components/AnimatedCopy/AnimatedCopy";
 import CenterModeCarousel from "@/components/webcomp/CarouselDesign/Carousel";
+import PreloadGetTourImages from "@/components/PreloadGetTourImages";
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -65,6 +66,7 @@ export default function GetTour() {
 
    return (
       <>
+         <PreloadGetTourImages />
          <ReactLenis root>
             <div className="page about">
                <section className="about-header">
