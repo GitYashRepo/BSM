@@ -8,32 +8,32 @@ export const useScrollHide = () => {
    const [ticking, setTicking] = useState(false);
 
    useEffect(() => {
+      let lastScrollYVal = 0;
+      let tickingVal = false;
+
       const updateScroll = () => {
          const currentScrollY = window.scrollY;
 
-         // If scrolling down → hide
-         if (currentScrollY > lastScrollY && currentScrollY > 50) {
+         if (currentScrollY > lastScrollYVal && currentScrollY > 50) {
             setIsVisible(false);
-         }
-         // If scrolling up → show
-         else if (currentScrollY < lastScrollY) {
+         } else if (currentScrollY < lastScrollYVal) {
             setIsVisible(true);
          }
 
-         setLastScrollY(currentScrollY);
-         setTicking(false);
+         lastScrollYVal = currentScrollY;
+         tickingVal = false;
       };
 
       const handleScroll = () => {
-         if (!ticking) {
+         if (!tickingVal) {
             window.requestAnimationFrame(updateScroll);
-            setTicking(true);
+            tickingVal = true;
          }
       };
 
       window.addEventListener("scroll", handleScroll, { passive: true });
       return () => window.removeEventListener("scroll", handleScroll);
-   }, [lastScrollY, ticking]);
+   }, []);
 
    return isVisible;
 };
